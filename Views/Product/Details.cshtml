@@ -1,0 +1,16 @@
+﻿@model ELabel.ViewModels.WineProductDetailsDto
+
+@{
+    ViewData["Title"] = "Product details";
+}
+
+<h1>Product</h1>
+
+<partial name="_DetailsPartial" />
+
+<partial name="_AuditableEntityPartial" />
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

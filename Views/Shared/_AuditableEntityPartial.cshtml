@@ -1,0 +1,31 @@
+﻿@model ELabel.Models.IAuditableEntity
+
+<h4>Audit</h4>
+<hr />
+
+<dl class="row">
+    <dt class="col-sm-2 mb-2">
+        @Html.DisplayNameFor(model => model.CreatedOn)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.CreatedOnToLocalTime)
+    </dd>
+    <dt class="col-sm-2 mb-2">
+        @Html.DisplayNameFor(model => model.CreatedBy)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.CreatedBy)
+    </dd>
+    <dt class="col-sm-2 mb-2">
+        @Html.DisplayNameFor(model => model.UpdatedOn)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.UpdatedOnToLocalTime)
+    </dd>
+    <dt class="col-sm-2 mb-2">
+        @Html.DisplayNameFor(model => model.UpdatedBy)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.UpdatedBy)
+    </dd>
+</dl>
