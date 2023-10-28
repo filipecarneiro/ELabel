@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
 using ELabel.Data;
 using ELabel.Models;
 using ELabel.ViewModels;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
-using AutoMapper;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+using Ganss.Excel;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace ELabel.Controllers
 {
@@ -187,6 +181,93 @@ namespace ELabel.Controllers
         private bool ProductExists(Guid id)
         {
           return (_context.Product?.Any(e => e.Id == id)).GetValueOrDefault();
+        }
+
+        // GET: Product/Export
+        public async Task<IActionResult> Export()
+        {
+            var products = await _context.Product.OrderBy(e => e.Name).AsNoTracking().ToListAsync();
+
+            byte[] byteArray;
+            var excel = new ExcelMapper();
+            using (MemoryStream stream = new MemoryStream())
+            {
+                excel.Save(stream, products, "Products");
+
+                byteArray = stream.ToArray();
+            }
+
+            return File(byteArray, "application/xlsx", $"e-label-products.xlsx");
+        }
+
+        // GET: Product/Import
+        public IActionResult Import()
+        {
+            return View();
+        }
+
+        // POST: Analysis/Import
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Import([Bind("File")] ImportFileUpload importFileUpload)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(importFileUpload);
+            }
+
+            if (importFileUpload.File == null || importFileUpload.File.Length == 0)
+            {
+                ModelState.AddModelError("CustomError", "Empty file!");
+                return View(importFileUpload);
+            }
+
+            IEnumerable<Product> importedProducts;
+
+            using (var memoryStream = new MemoryStream())
+            {
+                await importFileUpload.File.CopyToAsync(memoryStream);
+                memoryStream.Position = 0;
+                //StreamReader textReader = new StreamReader(memoryStream);
+
+                try
+                {
+                    importedProducts = new ExcelMapper(memoryStream).Fetch<Product>();
+                }
+                catch (Exception e)
+                {
+                    ModelState.AddModelError("CustomError", e.Message);
+                    return View(importFileUpload);
+                }
+            }
+
+            if (importedProducts == null || !importedProducts.Any())
+            {
+                ModelState.AddModelError("CustomError", "Empty excel!");
+                return View(importFileUpload);
+            }
+
+            using (var transaction = _context.Database.BeginTransaction())
+            {
+                foreach (Product importedProduct in importedProducts)
+                {
+                    if (importedProduct.Id != Guid.Empty && ProductExists(importedProduct.Id))
+                        _context.Update(importedProduct);
+                    else
+                    {
+                        importedProduct.Id = Guid.NewGuid();
+                        _context.Add(importedProduct);
+                    }
+
+                    await _context.SaveChangesAsync();
+                }
+
+                // Commit transaction if all commands succeed, transaction will auto-rollback
+                // when disposed if either commands fails
+                transaction.Commit();
+            }
+
+            return RedirectToAction(nameof(Index));
         }
     }
 }
