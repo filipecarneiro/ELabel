@@ -8,6 +8,8 @@ namespace ScriptumDigital.WebApp.Data
     {
         public AutoMapperProfile()
         {
+            CreateMap<Image, ImageDto>();
+
             CreateMap<Product, WineProductDetailsDto>();
 
             CreateMap<WineProductCreateDto, Product>();

@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ELabel.Models
 {
@@ -35,19 +36,21 @@ namespace ELabel.Models
          * Other details
          */
 
+        // TODO: Country of provenance
+
         // TODO: Analytics (Alcohol, Production method)
 
-        // TODO: Producer
+        // TODO: Producer (Name, logo and website)
 
-        // TODO: Ingredients
+        // TODO: List of ingredients (Mandatory)
 
-        // TODO: Nutrition (Energy, Nutrition information)
+        // TODO: Nutrition declaration per 100 ml (Mandatory)
+
+        // TODO: Responsible consumption (pictogram warning against drinking during pregnanc and a generic message are Mandatory)
 
         // TODO: Sustainability & other certifications (Certifications, Sustainability message)
 
-        // TODO: Packaging & Recycling
-
-        // TODO: Responsible consumption
+        // TODO: Packaging & Recycling (Mandatory in Italy)
 
         // TODO: Food business operators
 
@@ -56,5 +59,11 @@ namespace ELabel.Models
          */
 
         public ulong? Ean { get; set; }
+
+        // Navigation properties
+        // https://docs.microsoft.com/en-us/ef/core/modeling/relationships
+
+        [InverseProperty("Product")]
+        public virtual Image? Image { get; set; }
     }
 }

@@ -1,10 +1,6 @@
 ﻿using ELabel.Models;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
-using System.Linq;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace ELabel.Data
 {
@@ -19,6 +15,7 @@ namespace ELabel.Data
         }
 
         public DbSet<Product> Product { get; set; }
+        public DbSet<Image> Image { get; set; }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {

@@ -6,11 +6,28 @@
 
 <h1>Product</h1>
 
+@if (Model.Image != null)
+{
+    <div class="float-end">
+        <img class="img-fluid float-end ms-5"
+             style="max-width: 100px"
+             src="@Model.Image.Source"
+             width="@Model.Image.Width"
+             height="@Model.Image.Height"
+             alt="@Model.Name">
+    </div>
+}
+
 <partial name="_DetailsPartial" />
 
 <partial name="_AuditableEntityPartial" />
 
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    @if (Model != null && Model.Image != null)
+    {
+        <a asp-action="DeleteImage" asp-route-id="@Model?.Id">Delete Image</a> <span>|</span>
+    }
+    <a asp-action="ChangeImage" asp-route-id="@Model?.Id">Change Image</a> |
     <a asp-action="Index">Back to List</a>
 </div>

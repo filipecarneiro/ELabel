@@ -1,5 +1,4 @@
 ﻿using ELabel.Models;
-using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 
 namespace ELabel.ViewModels
@@ -16,6 +15,12 @@ namespace ELabel.ViewModels
         [Display(Name = "Net volume", Description = "Enter the volume of the liquid in liters.")]
         [Range(float.Epsilon, float.MaxValue)]
         public float? Volume { get; set; }
+
+        /*
+         * Image
+         */
+
+        public ImageDto? Image { get; set; }
 
         /*
          * Wine Details

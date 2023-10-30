@@ -5,6 +5,7 @@ using ELabel.ViewModels;
 using Ganss.Excel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using SkiaSharp;
 
 namespace ELabel.Controllers
 {
@@ -44,13 +45,18 @@ namespace ELabel.Controllers
             }
 
             var product = await _context.Product
-                .FirstOrDefaultAsync(m => m.Id == id);
+                                        .Include(p => p.Image)
+                                        .AsNoTracking() 
+                                        .FirstOrDefaultAsync(m => m.Id == id);
+
             if (product == null)
             {
                 return NotFound();
             }
 
-            return View(_mapper.Map<WineProductDetailsDto>(product));
+            WineProductDetailsDto wineProductDetailsDto = _mapper.Map<WineProductDetailsDto>(product);
+
+            return View(wineProductDetailsDto);
         }
 
         // GET: Product/Create
@@ -180,19 +186,24 @@ namespace ELabel.Controllers
 
         private bool ProductExists(Guid id)
         {
-          return (_context.Product?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Product?.Any(e => e.Id == id)).GetValueOrDefault();
         }
 
         // GET: Product/Export
         public async Task<IActionResult> Export()
         {
-            var products = await _context.Product.OrderBy(e => e.Name).AsNoTracking().ToListAsync();
+            var products = await _context.Product.AsNoTracking().OrderBy(p => p.Name).ToListAsync();
+            var images = await _context.Image.AsNoTracking().OrderBy(p => p.Id).ToListAsync();
 
             byte[] byteArray;
             var excel = new ExcelMapper();
+            excel.IgnoreNestedTypes = true;
+            excel.Ignore<Image>(p => p.Content);
+
             using (MemoryStream stream = new MemoryStream())
             {
-                excel.Save(stream, products, "Products");
+                excel.Save(Stream.Null, products, "Products");
+                excel.Save(stream, images, "Images");
 
                 byteArray = stream.ToArray();
             }
@@ -269,5 +280,123 @@ namespace ELabel.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
+        // Get: Product/DeleteImage/5
+        public async Task<IActionResult> DeleteImage(Guid id)
+        {
+            if (_context.Image == null)
+            {
+                return Problem("Entity set 'ApplicationDbContext.Image'  is null.");
+            }
+
+            await _context.Image.Where(i => i.ProductId == id).ExecuteDeleteAsync();
+
+            return RedirectToAction(nameof(Details), new { id });
+        }
+
+        // GET: Product/ChangeImage
+        public IActionResult ChangeImage(Guid id)
+        {
+            ImageFileUpload imageFileUpload = new ImageFileUpload(){
+                ProductId = id
+            };
+
+            return View(imageFileUpload);
+        }
+
+        // POST: Analysis/ChangeImage
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ChangeImage(Guid id, [Bind("File,ProductId")] ImageFileUpload imageFileUpload)
+        {
+            if (id != imageFileUpload.ProductId)
+            {
+                return NotFound();
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return View(imageFileUpload);
+            }
+
+            if (imageFileUpload.File == null || imageFileUpload.File.Length == 0)
+            {
+                ModelState.AddModelError("CustomError", "Empty file!");
+                return View(imageFileUpload);
+            }
+
+            const int MinWidth = 100;
+            const int MaxWidth = 500;
+            const int MinHeight = 100;
+            const int MaxHeight = 500;
+            const string mimeType = "image/webp";
+
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                await imageFileUpload.File.CopyToAsync(memoryStream);
+
+                try
+                {
+                    // Resize image
+
+                    memoryStream.Position = 0;
+                    using (SKBitmap sourceBitmap = SKBitmap.Decode(memoryStream))
+                    { 
+                        int width = sourceBitmap.Width;
+                        int height = sourceBitmap.Height;
+
+                        if (width < MinWidth || height < MinHeight)
+                        {
+                            ModelState.AddModelError("CustomError", $"Image is too small ({width}x{height})! Chose an image with, at least, {MinWidth}x{MinHeight} pixels.");
+                            return View(imageFileUpload);
+                        }
+
+                        if (width > MaxWidth)
+                        {
+                            double ratio = height / (double)width;
+                            width = MaxWidth;
+                            height = (int)(width * ratio);
+                        }
+                        if (height > MaxHeight)
+                        {
+                            double ratio = width / (double)height;
+                            height = MaxHeight;
+                            width = (int)(height * ratio);
+                        }
+
+                        using SKBitmap scaledBitmap = sourceBitmap.Resize(new SKImageInfo(width, height), SKFilterQuality.High);
+                        using SKImage scaledImage = SKImage.FromBitmap(scaledBitmap);
+                        using SKData data = scaledImage.Encode(SKEncodedImageFormat.Webp, 75); // mimeType
+
+                        // Delete existing image
+
+                        await _context.Image.Where(i => i.ProductId == id).ExecuteDeleteAsync();
+
+                        // Add new image to database
+                        
+                        Image image = new Image()
+                        {
+                            Id = Guid.NewGuid(),
+                            Content = data.ToArray(),
+                            ContentType = mimeType,
+                            Width = width,
+                            Height = height,
+                            ProductId = id
+                        };
+
+                        _context.Add(image);
+                        await _context.SaveChangesAsync();
+                    }
+                }
+                catch (Exception e)
+                {
+                    ModelState.AddModelError("CustomError", e.Message);
+                    return View(imageFileUpload);
+                }
+            }
+
+            return RedirectToAction(nameof(Details), new { id });
+        }
+
     }
 }

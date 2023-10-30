@@ -1,0 +1,55 @@
+﻿@model ELabel.ViewModels.ImageFileUpload
+
+@{
+    ViewData["Title"] = "Change Image";
+}
+
+<h2>Change Image</h2>
+
+<h4>Product</h4>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form method="post" enctype="multipart/form-data" asp-action="ChangeImage">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @Html.ValidationMessage("CustomError", new { @class = "text-danger" })
+            <input type="hidden" asp-for="ProductId" />
+            <div class="mb-3">
+                <label asp-for="File" class="form-label"></label>
+                <input asp-for="File" class="form-control" accept="image/*" aria-describedby="FileHelp" />
+                <div id="FileHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "File").FirstOrDefault()?.Description</div>
+                <span asp-validation-for="File" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <input type="submit" value="Upload" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-6 col-md-offset-2">
+        <div class="p-3 bg-light rounded-3">
+            <h3>Image Compression</h3>
+            <small>For better performance, lossly compress you images before uploading.</small>
+            <br />
+            <p>
+                <a class="btn btn-outline-primary btn-lg" href="https://tinypng.com/" target="_blank">TinyPNG</a>
+                <a class="btn btn-outline-primary btn-lg" href="https://tinyjpg.com/" target="_blank">TinyJPG</a>
+            </p>
+            <h3>BMP Color Depth</h3>
+            <small>For better quality with lower color depths, use a Image Processing program with good color quantization and dithering algorithms.</small>
+            <br />
+            <p>
+                <a class="btn btn-outline-primary btn-lg" href="https://online-converting.com/image/convert2bmp/" target="_blank">Free Online Converter</a>
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<div>
+    <a asp-action="Details" asp-route-id="@Model.ProductId">Back to Product</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
