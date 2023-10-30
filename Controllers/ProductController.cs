@@ -325,12 +325,6 @@ namespace ELabel.Controllers
                 return View(imageFileUpload);
             }
 
-            const int MinWidth = 100;
-            const int MaxWidth = 500;
-            const int MinHeight = 100;
-            const int MaxHeight = 500;
-            const string mimeType = "image/webp";
-
             using (MemoryStream memoryStream = new MemoryStream())
             {
                 await imageFileUpload.File.CopyToAsync(memoryStream);
@@ -345,28 +339,28 @@ namespace ELabel.Controllers
                         int width = sourceBitmap.Width;
                         int height = sourceBitmap.Height;
 
-                        if (width < MinWidth || height < MinHeight)
+                        if (width < ImageFileUpload.MinWidth || height < ImageFileUpload.MinHeight)
                         {
-                            ModelState.AddModelError("CustomError", $"Image is too small ({width}x{height})! Chose an image with, at least, {MinWidth}x{MinHeight} pixels.");
+                            ModelState.AddModelError("CustomError", $"Image is too small ({width}x{height})! Chose an image with, at least, {ImageFileUpload.MinWidth}x{ImageFileUpload.MinHeight} pixels.");
                             return View(imageFileUpload);
                         }
 
-                        if (width > MaxWidth)
+                        if (width > ImageFileUpload.MaxWidth)
                         {
                             double ratio = height / (double)width;
-                            width = MaxWidth;
+                            width = ImageFileUpload.MaxWidth;
                             height = (int)(width * ratio);
                         }
-                        if (height > MaxHeight)
+                        if (height > ImageFileUpload.MaxHeight)
                         {
                             double ratio = width / (double)height;
-                            height = MaxHeight;
+                            height = ImageFileUpload.MaxHeight;
                             width = (int)(height * ratio);
                         }
 
                         using SKBitmap scaledBitmap = sourceBitmap.Resize(new SKImageInfo(width, height), SKFilterQuality.High);
                         using SKImage scaledImage = SKImage.FromBitmap(scaledBitmap);
-                        using SKData data = scaledImage.Encode(SKEncodedImageFormat.Webp, 75); // mimeType
+                        using SKData data = scaledImage.Encode(SKEncodedImageFormat.Webp, ImageFileUpload.Quality); // mimeType
 
                         // Delete existing image
 
@@ -378,7 +372,7 @@ namespace ELabel.Controllers
                         {
                             Id = Guid.NewGuid(),
                             Content = data.ToArray(),
-                            ContentType = mimeType,
+                            ContentType = ImageFileUpload.MimeType,
                             Width = width,
                             Height = height,
                             ProductId = id

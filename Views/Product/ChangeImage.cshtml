@@ -1,4 +1,5 @@
-﻿@model ELabel.ViewModels.ImageFileUpload
+﻿@using ELabel.ViewModels;
+@model ELabel.ViewModels.ImageFileUpload
 
 @{
     ViewData["Title"] = "Change Image";
@@ -28,19 +29,14 @@
 
     <div class="col-md-6 col-md-offset-2">
         <div class="p-3 bg-light rounded-3">
-            <h3>Image Compression</h3>
-            <small>For better performance, lossly compress you images before uploading.</small>
-            <br />
-            <p>
-                <a class="btn btn-outline-primary btn-lg" href="https://tinypng.com/" target="_blank">TinyPNG</a>
-                <a class="btn btn-outline-primary btn-lg" href="https://tinyjpg.com/" target="_blank">TinyJPG</a>
-            </p>
-            <h3>BMP Color Depth</h3>
-            <small>For better quality with lower color depths, use a Image Processing program with good color quantization and dithering algorithms.</small>
-            <br />
-            <p>
-                <a class="btn btn-outline-primary btn-lg" href="https://online-converting.com/image/convert2bmp/" target="_blank">Free Online Converter</a>
-            </p>
+            <h3>Image Optimization</h3>
+            <p>For better performance, image will be resized and compressed for web.</p>
+            <p>Please provide a product image, in any format, with the folloing minimum dimensions:</p>
+            <ul>
+                <li>Minimum width: @ImageFileUpload.MinWidth px</li>
+                <li>Minimum height: @ImageFileUpload.MinHeight px</li>
+            </ul>
+            <small>Uploaded images will be scaled down to a maximum size of @ImageFileUpload.MaxWidth x @ImageFileUpload.MaxHeight px and will be stored in <a href="https://en.wikipedia.org/wiki/WebP" target="_blank">WebP format</a>, with @ImageFileUpload.Quality% quality.</small>
         </div>
     </div>
 
