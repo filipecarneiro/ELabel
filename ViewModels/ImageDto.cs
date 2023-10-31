@@ -1,16 +1,19 @@
-﻿using ELabel.Models;
-using System.ComponentModel.DataAnnotations;
+﻿using Ganss.Excel;
 
 namespace ELabel.ViewModels
 {
     public class ImageDto
     {
-        public required string Source { get; set; }
+        [Column("Image")]
+        public required string DataUrl { get; set; }
 
-        public required string MimeType { get; set; }
+        [Ignore]
+        public required string MediaType { get; set; }
 
+        [Ignore]
         public int? Width { get; set; }
 
+        [Ignore]
         public int? Height { get; set; }
     }
 }

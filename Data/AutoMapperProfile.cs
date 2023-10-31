@@ -10,7 +10,9 @@ namespace ScriptumDigital.WebApp.Data
         {
             CreateMap<Image, ImageDto>();
 
-            CreateMap<Product, WineProductDetailsDto>();
+            CreateMap<Product, WineProductDetailsDto>()
+                .ReverseMap()
+                .ForPath(p => p.Image, opt => opt.Ignore());
 
             CreateMap<WineProductCreateDto, Product>();
 

@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
 using ELabel.Data;
+using ELabel.Extensions;
 using ELabel.Models;
 using ELabel.ViewModels;
 using Ganss.Excel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using SkiaSharp;
 
 namespace ELabel.Controllers
 {
@@ -189,21 +189,28 @@ namespace ELabel.Controllers
             return (_context.Product?.Any(e => e.Id == id)).GetValueOrDefault();
         }
 
+        private bool ImageExists(Guid id)
+        {
+            return (_context.Image?.Any(e => e.Id == id)).GetValueOrDefault();
+        }
+
         // GET: Product/Export
         public async Task<IActionResult> Export()
         {
-            var products = await _context.Product.AsNoTracking().OrderBy(p => p.Name).ToListAsync();
-            var images = await _context.Image.AsNoTracking().OrderBy(p => p.Id).ToListAsync();
+            var query = await _context.Product
+                                      .Include(p => p.Image)
+                                      .AsNoTracking()
+                                      .OrderBy(p => p.Name)
+                                      .ToListAsync();
+
+            List<WineProductDetailsDto> products = _mapper.Map<List<WineProductDetailsDto>>(query);
 
             byte[] byteArray;
             var excel = new ExcelMapper();
-            excel.IgnoreNestedTypes = true;
-            excel.Ignore<Image>(p => p.Content);
-
+            
             using (MemoryStream stream = new MemoryStream())
             {
-                excel.Save(Stream.Null, products, "Products");
-                excel.Save(stream, images, "Images");
+                excel.Save(stream, products, "Products");
 
                 byteArray = stream.ToArray();
             }
@@ -233,17 +240,17 @@ namespace ELabel.Controllers
                 return View(importFileUpload);
             }
 
-            IEnumerable<Product> importedProducts;
+            IEnumerable<WineProductDetailsDto> importedProducts;
 
             using (var memoryStream = new MemoryStream())
             {
                 await importFileUpload.File.CopyToAsync(memoryStream);
                 memoryStream.Position = 0;
-                //StreamReader textReader = new StreamReader(memoryStream);
 
                 try
                 {
-                    importedProducts = new ExcelMapper(memoryStream).Fetch<Product>();
+                    ExcelMapper excelMapper = new ExcelMapper(memoryStream);
+                    importedProducts = excelMapper.Fetch<WineProductDetailsDto>("Products");
                 }
                 catch (Exception e)
                 {
@@ -260,17 +267,59 @@ namespace ELabel.Controllers
 
             using (var transaction = _context.Database.BeginTransaction())
             {
-                foreach (Product importedProduct in importedProducts)
+                foreach (WineProductDetailsDto importedProduct in importedProducts)
                 {
-                    if (importedProduct.Id != Guid.Empty && ProductExists(importedProduct.Id))
-                        _context.Update(importedProduct);
+                    Product product = _mapper.Map<Product>(importedProduct);
+
+                    if (product.Id != Guid.Empty && ProductExists(product.Id))
+                    {
+                        _context.Update(product);
+                    }
                     else
                     {
-                        importedProduct.Id = Guid.NewGuid();
-                        _context.Add(importedProduct);
+                        product.Id = Guid.NewGuid();
+                        _context.Add(product);
                     }
 
                     await _context.SaveChangesAsync();
+
+                    if(importedProduct.Image != null && !String.IsNullOrEmpty(importedProduct.Image.DataUrl))
+                    {
+                        bool newImage = false;
+                        var image = await _context.Image.FirstOrDefaultAsync(m => m.ProductId == product.Id);
+
+                        if (image == null)
+                        {
+                            newImage = true;
+                            image = new Image() {
+                                Id = Guid.NewGuid(),
+                                ProductId = product.Id,
+                                ContentType = String.Empty,
+                                Content = new byte[0]
+                            };
+                        }
+
+                        byte[]? imageByteBuffer = ImageHelper.ConvertFromDataUrl(importedProduct.Image.DataUrl);
+
+                        if (imageByteBuffer == null)
+                            continue;
+
+                        OptimizedImage? optimizedImage = ImageHelper.Optimize(imageByteBuffer, ImageFileUpload.MaxWidth, ImageFileUpload.MaxHeight, ImageFileUpload.Quality);
+
+                        if (optimizedImage == null || optimizedImage.Width < ImageFileUpload.MinWidth || optimizedImage.Height < ImageFileUpload.MinHeight)
+                            continue;
+
+                        image.ContentType = optimizedImage.ContentType;
+                        image.Content = optimizedImage.Content;
+                        image.Width = optimizedImage.Width;
+                        image.Height = optimizedImage.Height;
+
+                        if (newImage)
+                            _context.Add(image);
+                        else
+                            _context.Update(image);
+                        await _context.SaveChangesAsync();
+                    }
                 }
 
                 // Commit transaction if all commands succeed, transaction will auto-rollback
@@ -325,68 +374,57 @@ namespace ELabel.Controllers
                 return View(imageFileUpload);
             }
 
+            byte[] byteArray;
+
             using (MemoryStream memoryStream = new MemoryStream())
             {
                 await imageFileUpload.File.CopyToAsync(memoryStream);
 
-                try
+                memoryStream.Position = 0;
+                byteArray = memoryStream.ToArray();
+            }
+
+            try
+            {
+                // Resize image
+
+                OptimizedImage? optimizedImage = ImageHelper.Optimize(byteArray, ImageFileUpload.MaxWidth, ImageFileUpload.MaxHeight, ImageFileUpload.Quality);
+
+                if(optimizedImage == null)
                 {
-                    // Resize image
-
-                    memoryStream.Position = 0;
-                    using (SKBitmap sourceBitmap = SKBitmap.Decode(memoryStream))
-                    { 
-                        int width = sourceBitmap.Width;
-                        int height = sourceBitmap.Height;
-
-                        if (width < ImageFileUpload.MinWidth || height < ImageFileUpload.MinHeight)
-                        {
-                            ModelState.AddModelError("CustomError", $"Image is too small ({width}x{height})! Chose an image with, at least, {ImageFileUpload.MinWidth}x{ImageFileUpload.MinHeight} pixels.");
-                            return View(imageFileUpload);
-                        }
-
-                        if (width > ImageFileUpload.MaxWidth)
-                        {
-                            double ratio = height / (double)width;
-                            width = ImageFileUpload.MaxWidth;
-                            height = (int)(width * ratio);
-                        }
-                        if (height > ImageFileUpload.MaxHeight)
-                        {
-                            double ratio = width / (double)height;
-                            height = ImageFileUpload.MaxHeight;
-                            width = (int)(height * ratio);
-                        }
-
-                        using SKBitmap scaledBitmap = sourceBitmap.Resize(new SKImageInfo(width, height), SKFilterQuality.High);
-                        using SKImage scaledImage = SKImage.FromBitmap(scaledBitmap);
-                        using SKData data = scaledImage.Encode(SKEncodedImageFormat.Webp, ImageFileUpload.Quality); // mimeType
-
-                        // Delete existing image
-
-                        await _context.Image.Where(i => i.ProductId == id).ExecuteDeleteAsync();
-
-                        // Add new image to database
-                        
-                        Image image = new Image()
-                        {
-                            Id = Guid.NewGuid(),
-                            Content = data.ToArray(),
-                            ContentType = ImageFileUpload.MimeType,
-                            Width = width,
-                            Height = height,
-                            ProductId = id
-                        };
-
-                        _context.Add(image);
-                        await _context.SaveChangesAsync();
-                    }
-                }
-                catch (Exception e)
-                {
-                    ModelState.AddModelError("CustomError", e.Message);
+                    ModelState.AddModelError("CustomError", $"Invalid image format! Try another file.");
                     return View(imageFileUpload);
                 }
+
+                if (optimizedImage.Width < ImageFileUpload.MinWidth || optimizedImage.Height < ImageFileUpload.MinHeight)
+                {
+                    ModelState.AddModelError("CustomError", $"Image is too small ({optimizedImage.Width}x{optimizedImage.Height})! Chose an image with, at least, {ImageFileUpload.MinWidth}x{ImageFileUpload.MinHeight} pixels.");
+                    return View(imageFileUpload);
+                }
+
+                // Delete existing image
+
+                await _context.Image.Where(i => i.ProductId == id).ExecuteDeleteAsync();
+
+                // Add new image to database
+                        
+                Image image = new Image()
+                {
+                    Id = Guid.NewGuid(),
+                    Content = optimizedImage.Content,
+                    ContentType = optimizedImage.ContentType,
+                    Width = optimizedImage.Width,
+                    Height = optimizedImage.Height,
+                    ProductId = id
+                };
+
+                _context.Add(image);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("CustomError", e.Message);
+                return View(imageFileUpload);
             }
 
             return RedirectToAction(nameof(Details), new { id });

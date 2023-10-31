@@ -1,6 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using ELabel.Extensions;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.RegularExpressions;
 
 namespace ELabel.Models
 {
@@ -18,15 +20,14 @@ namespace ELabel.Models
 
         public int? Height { get; set; }
 
+
         // Auxiliary read-only properties
 
-        public string Source
+        public string DataUrl
         {
             get
             {
-                string base64String = Convert.ToBase64String(Content);
-
-                return $"data:{MimeType};base64,{base64String}";
+                return ImageHelper.ConvertToDataUrl(MediaType, Content);
             }
         }
 
@@ -49,7 +50,7 @@ namespace ELabel.Models
             }
         }
 
-        public string MimeType
+        public string MediaType
         {
             get
             {

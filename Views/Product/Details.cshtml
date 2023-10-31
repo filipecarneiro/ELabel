@@ -11,9 +11,9 @@
     <div class="float-end">
         <img class="img-fluid float-end ms-5"
              style="max-width: 100px"
-             src="@Model.Image.Source"
-             width="@Model.Image.Width"
-             height="@Model.Image.Height"
+             src="@Model.Image.DataUrl"
+             @(@Model.Image.Width != null ? "width='@Model.Image.Width'" : "")
+             @(@Model.Image.Height != null ? "height='@Model.Image.Height'" : "")
              alt="@Model.Name">
     </div>
 }
