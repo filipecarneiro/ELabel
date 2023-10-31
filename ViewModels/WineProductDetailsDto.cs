@@ -14,6 +14,7 @@ namespace ELabel.ViewModels
 
         [Display(Name = "Net volume", Description = "Enter the volume of the liquid in liters.")]
         [Range(float.Epsilon, float.MaxValue)]
+        [DisplayFormat(DataFormatString = "{0:G} l")]
         public float? Volume { get; set; }
 
         /*

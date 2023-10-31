@@ -35,6 +35,8 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseRequestLocalization("en-US");
+
 app.UseAuthorization();
 
 app.MapControllerRoute(
