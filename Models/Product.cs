@@ -36,8 +36,6 @@ namespace ELabel.Models
          * Other details
          */
 
-        // TODO: Country of provenance
-
         // TODO: Analytics (Alcohol, Production method)
 
         // TODO: Producer (Name, logo and website)
@@ -54,9 +52,17 @@ namespace ELabel.Models
 
         // TODO: Food business operators
 
+        // TODO: Production method (Traditional method, Barrel aged, Stainless steel fermented, Cask aged, etc.)
+
         /*
          * Logistics
          */
+
+        [MaxLength(2)]
+        public string? Country { get; set; }
+
+        [MaxLength(20)]
+        public string? Sku { get; set; }
 
         public ulong? Ean { get; set; }
 

@@ -55,6 +55,18 @@
                 <span asp-validation-for="WineAppellation" class="text-danger"></span>
             </div>
             <div class="mb-3">
+                <label asp-for="Country" class="form-label"></label>
+                <input asp-for="Country" class="form-control" aria-describedby="CountryHelp" />
+                <div id="CountryHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Country").FirstOrDefault()?.Description</div>
+                <span asp-validation-for="Country" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Sku" class="form-label"></label>
+                <input asp-for="Sku" class="form-control" aria-describedby="SkuHelp" />
+                <div id="SkuHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Sku").FirstOrDefault()?.Description</div>
+                <span asp-validation-for="Sku" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
                 <label asp-for="Ean" class="control-label"></label>
                 <input asp-for="Ean" class="form-control" aria-describedby="EanHelp" />
                 <div id="EanHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Ean").FirstOrDefault()?.Description</div>
