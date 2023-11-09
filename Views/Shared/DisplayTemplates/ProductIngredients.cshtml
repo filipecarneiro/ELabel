@@ -1,0 +1,24 @@
+﻿@using ELabel.ViewModels
+@model List<ProductIngredientDto>
+
+<ul class="list-group list-group-flush">
+
+    @foreach (ProductIngredientDto productIngredient in Model.OrderBy(pi => pi.Order))
+    {
+        @if (productIngredient.Ingredient != null)
+        {
+            <li class="list-group-item d-flex justify-content-between align-items-center" title="@productIngredient.Order">
+                @productIngredient.Ingredient.Name
+                <div>
+                    @if (productIngredient.Ingredient.Allergen)
+                    {
+                        <span class="badge rounded-pill text-bg-warning">Allergen</span>
+                    }
+                    <span class="badge rounded-pill text-bg-light">@Html.DisplayFor(pi => productIngredient.Ingredient.Category)</span>
+                </div>
+            </li>
+        }
+    }
+
+</ul>
+

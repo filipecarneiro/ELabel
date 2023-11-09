@@ -17,6 +17,10 @@ namespace ELabel.Data
         public DbSet<Product> Product { get; set; }
         public DbSet<Image> Image { get; set; }
 
+        public DbSet<Ingredient> Ingredient { get; set; }
+
+        public DbSet<ProductIngredient> ProductIngredient { get; set; }
+
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             ApplyAuditing();
@@ -52,6 +56,16 @@ namespace ELabel.Data
                     entity.UpdatedOn = now;
                 }
             }
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Product>()
+                .HasMany(e => e.Ingredients)
+                .WithMany(e => e.Products)
+                .UsingEntity<ProductIngredient>();
         }
     }
 }

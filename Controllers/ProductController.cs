@@ -5,7 +5,10 @@ using ELabel.Models;
 using ELabel.ViewModels;
 using Ganss.Excel;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
+using NPOI.SS.Formula.Functions;
 
 namespace ELabel.Controllers
 {
@@ -46,6 +49,8 @@ namespace ELabel.Controllers
 
             var product = await _context.Product
                                         .Include(p => p.Image)
+                                        .Include(p => p.ProductIngredients.OrderBy(pi => pi.Order))
+                                        .ThenInclude(pi => pi.Ingredient)
                                         .AsNoTracking() 
                                         .FirstOrDefaultAsync(m => m.Id == id);
 
@@ -93,7 +98,10 @@ namespace ELabel.Controllers
                 return NotFound();
             }
 
-            var product = await _context.Product.FindAsync(id);
+            var product = await _context.Product
+                                        .Include(p => p.ProductIngredients.OrderBy(pi => pi.Order))
+                                             //.ThenInclude(pi => pi.Ingredient)
+                                        .FirstOrDefaultAsync(m => m.Id == id);
             if (product == null)
             {
                 return NotFound();
@@ -101,6 +109,7 @@ namespace ELabel.Controllers
 
             WineProductEditDto wineProductEditDto = _mapper.Map<WineProductEditDto>(product);
 
+            ViewBag.Ingredients = GetAvailableIngredientsList();
             return View(wineProductEditDto);
         }
 
@@ -109,7 +118,7 @@ namespace ELabel.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Name,Volume,WineVintage,WineType,WineStyle,WineAppellation,Country,Sku,Ean")] WineProductEditDto wineProductEditDto)
+        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Name,Volume,WineVintage,WineType,WineStyle,WineAppellation,ProductIngredients,Country,Sku,Ean")] WineProductEditDto wineProductEditDto)
         {
             if (id != wineProductEditDto.Id)
             {
@@ -126,9 +135,70 @@ namespace ELabel.Controllers
             {
                 try
                 {
+                    // Update Product
+
                     _mapper.Map<WineProductEditDto,Product>(wineProductEditDto, product);
 
                     _context.Update(product);
+                    await _context.SaveChangesAsync();
+
+                    // Update Product Ingredients
+
+                    var productIngredients = await _context.ProductIngredient
+                                                           .Where(pi => pi.ProductId == product.Id)
+                                                           .ToListAsync();
+
+                    //_context.ChangeTracker.DetectChanges();
+                    //Console.WriteLine(_context.ChangeTracker.DebugView.LongView);
+
+                    productIngredients.ForEach( pi => {
+                        _context.Entry(pi).State = EntityState.Deleted;
+                    });
+
+                    short order = 0;
+                    foreach(ProductIngredientDto productIngredientDto in wineProductEditDto.ProductIngredients.OrderBy(pi => pi.Order)) 
+                    {
+                        ProductIngredient? auxProductIngredient = productIngredients
+                                                                    .Where(pi => pi.Id == productIngredientDto.Id && pi.ProductId == product.Id).FirstOrDefault();
+                        
+                        if(productIngredientDto.ToDelete)
+                        {
+                            if (auxProductIngredient == null)
+                                continue;
+
+                            _mapper.Map<ProductIngredientDto, ProductIngredient>(productIngredientDto, auxProductIngredient);
+
+                            _context.Entry(auxProductIngredient).State = EntityState.Deleted;
+                            _context.Remove(auxProductIngredient);
+
+                            continue;
+                        }
+
+                        if (auxProductIngredient == null)
+                        {
+                            auxProductIngredient = new ProductIngredient() { 
+                                Id = Guid.NewGuid(),
+                                ProductId = product.Id,
+                                IngredientId = productIngredientDto.IngredientId
+                            };
+
+                            auxProductIngredient.Order = ++order;
+
+                            _context.Entry(auxProductIngredient).State = EntityState.Added;
+                            _context.Add(auxProductIngredient);
+
+                        }
+                        else
+                        { 
+                            _mapper.Map<ProductIngredientDto, ProductIngredient>(productIngredientDto, auxProductIngredient);
+
+                            auxProductIngredient.Order = ++order;
+
+                            _context.Entry(auxProductIngredient).State = EntityState.Modified;
+                            _context.Update(auxProductIngredient);
+                        }
+                    }
+
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -144,6 +214,8 @@ namespace ELabel.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+
+            ViewBag.Ingredients = GetAvailableIngredientsList();
             return View(product);
         }
 
@@ -189,6 +261,25 @@ namespace ELabel.Controllers
             return (_context.Product?.Any(e => e.Id == id)).GetValueOrDefault();
         }
 
+        private Guid? FindProductId(string name, float? volume, ushort? wineVintage)
+        {
+            return _context.Product.Where(e => e.Name == name && e.Volume == volume && e.WineVintage == wineVintage).AsNoTracking().FirstOrDefault()?.Id;
+        }
+
+        private SelectList GetAvailableIngredientsList()
+        {
+            var ingredients = _context.Ingredient
+                                .AsNoTracking()
+                                .Select(i => new
+                                {
+                                    Id = i.Id,
+                                    Name = i.Name + " (" + EnumHelper.GetDisplayName(i.Category) + ")"
+                                })
+                                .ToList();
+
+            return new SelectList(ingredients, "Id", "Name");
+        }
+
         private bool ImageExists(Guid id)
         {
             return (_context.Image?.Any(e => e.Id == id)).GetValueOrDefault();
@@ -199,6 +290,8 @@ namespace ELabel.Controllers
         {
             var query = await _context.Product
                                       .Include(p => p.Image)
+                                      .Include(p => p.ProductIngredients.OrderBy(pi => pi.Order))
+                                        .ThenInclude(pi => pi.Ingredient)
                                       .AsNoTracking()
                                       .OrderBy(p => p.Name)
                                       .ToListAsync();
@@ -224,7 +317,7 @@ namespace ELabel.Controllers
             return View();
         }
 
-        // POST: Analysis/Import
+        // POST: Product/Import
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Import([Bind("File")] ImportFileUpload importFileUpload)
@@ -271,13 +364,19 @@ namespace ELabel.Controllers
                 {
                     Product product = _mapper.Map<Product>(importedProduct);
 
-                    if (product.Id != Guid.Empty && ProductExists(product.Id))
+                    if (product.Id == Guid.Empty)
+                    {
+                        Guid? existingId = FindProductId(product.Name, product.Volume, product.WineVintage);
+
+                        product.Id = (existingId == null ? Guid.NewGuid() : existingId.Value);
+                    }
+
+                    if (ProductExists(product.Id))
                     {
                         _context.Update(product);
                     }
                     else
                     {
-                        product.Id = Guid.NewGuid();
                         _context.Add(product);
                     }
 
@@ -428,6 +527,38 @@ namespace ELabel.Controllers
             }
 
             return RedirectToAction(nameof(Details), new { id });
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddIngredient([Bind("ProductIngredients")] WineProductEditDto wineProductEditDto)
+        {
+            wineProductEditDto.ProductIngredients.Add(new ProductIngredientDto()
+            {
+                Id = Guid.Empty,
+                ProductId = wineProductEditDto.Id,
+                IngredientId = Guid.Empty,
+                Order = 99
+            });
+
+            ViewBag.Ingredients = GetAvailableIngredientsList();
+            return PartialView("ProductIngredients", wineProductEditDto);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult RemoveIngredient([Bind("ProductIngredients")] WineProductEditDto wineProductEditDto)
+        {
+            if (wineProductEditDto.ProductIngredients.Count == 0)
+            {
+                ViewBag.Ingredients = GetAvailableIngredientsList();
+                return PartialView("ProductIngredients", wineProductEditDto);
+            }
+
+            wineProductEditDto.ProductIngredients.RemoveAt(wineProductEditDto.ProductIngredients.Count - 1);
+
+            ViewBag.Ingredients = GetAvailableIngredientsList();
+            return PartialView("ProductIngredients", wineProductEditDto);
         }
 
     }

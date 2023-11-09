@@ -20,6 +20,19 @@
 
 <partial name="_DetailsPartial" />
 
+@if (Model.ProductIngredients != null && Model.ProductIngredients.Count > 0)
+{
+    <div class="mb-2">
+        <h4>Ingredients</h4>
+        <hr />
+        <div class="row col-12 col-md-5">
+
+            @Html.DisplayFor(model => model.ProductIngredients, "ProductIngredients")
+        
+        </div>
+    </div>
+}
+
 <partial name="_AuditableEntityPartial" />
 
 <div>

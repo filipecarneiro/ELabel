@@ -1,0 +1,28 @@
+﻿@model ELabel.ViewModels.ProductIngredientDto
+<div class="row">
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="ProductId" />
+    <div class="col-2">
+        <div class="mb-3">
+            <label asp-for="Order" class="form-label"></label>
+            <input asp-for="Order" class="form-control" />
+            <span asp-validation-for="Order" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="col-8">
+        <div class="mb-3">
+            <label asp-for="IngredientId" class="form-label">Ingredient</label>
+            <select asp-for="IngredientId" asp-items="@ViewBag.Ingredients" class="form-select"></select>
+            <span asp-validation-for="IngredientId" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="col-2">
+        <div class="mb-3">
+            <label asp-for="ToDelete" class="form-label">Delete</label>
+            <div>
+                <input asp-for="ToDelete" class="form-check-input" type="checkbox" />
+            </div>
+            <span asp-validation-for="ToDelete" class="text-danger"></span>
+        </div>
+    </div>
+</div>

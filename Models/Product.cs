@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ELabel.Models
 {
-    [Index(nameof(Name), nameof(Volume), nameof(WineVintage), IsUnique = true)]
+    [Index(nameof(Name), nameof(Volume), nameof(WineVintage), IsUnique = true)] // TODO: Protect UI for this constraint on Create, Edit and Import
     public class Product : AuditableEntity
     {
         [MaxLength(100)]
@@ -40,8 +40,6 @@ namespace ELabel.Models
 
         // TODO: Producer (Name, logo and website)
 
-        // TODO: List of ingredients (Mandatory)
-
         // TODO: Nutrition declaration per 100 ml (Mandatory)
 
         // TODO: Responsible consumption (pictogram warning against drinking during pregnanc and a generic message are Mandatory)
@@ -71,5 +69,8 @@ namespace ELabel.Models
 
         [InverseProperty("Product")]
         public virtual Image? Image { get; set; }
+
+        public List<Ingredient> Ingredients { get; } = new();
+        public List<ProductIngredient> ProductIngredients { get; } = new();
     }
 }

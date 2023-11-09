@@ -1,5 +1,6 @@
 ﻿using ELabel.Models;
 using System.ComponentModel.DataAnnotations;
+using static Azure.Core.HttpHeader;
 
 namespace ELabel.ViewModels
 {
@@ -44,6 +45,31 @@ namespace ELabel.ViewModels
         [StringLength(100)]
         [DataType(DataType.Text)]
         public string? WineAppellation { get; set; }
+
+        /*
+         * Ingredients
+         */
+
+        [Ganss.Excel.Ignore]
+        public List<ProductIngredientDto> ProductIngredients { get; } = new();
+
+        public string Ingredients
+        {
+            get
+            {
+                if (ProductIngredients == null)
+                    return string.Empty;
+
+                List<string?> ingredients = ProductIngredients.Select(pi => pi.Ingredient?.Name).ToList();
+                return String.Join(", ", ingredients.ToArray());
+            }
+
+            set
+            {
+                // TODO: Import Ingredients
+                return;
+            }
+        }
 
         /*
          * Logistics

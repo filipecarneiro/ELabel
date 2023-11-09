@@ -1,5 +1,4 @@
 ﻿using ELabel.Models;
-using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 
 namespace ELabel.ViewModels

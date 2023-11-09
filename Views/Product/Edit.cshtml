@@ -6,34 +6,48 @@
 
 <h1>Edit</h1>
 
-<h4>Product</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
+<form asp-action="Edit" id="form">
+
+    <div class="row">
+        <div class="col-lg-6">
+
+            <h4>Product</h4>
+            <hr />
+
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             @Html.ValidationMessage("CustomError", new { @class = "text-danger" })
             <input type="hidden" asp-for="Id" />
+            
             <div class="mb-3">
-                <label asp-for="Name" class="control-label"></label>
+                <label asp-for="Name" class="form-label"></label>
                 <input asp-for="Name" class="form-control" aria-describedby="NameHelp" />
                 <div id="NameHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Name").FirstOrDefault()?.Description</div>
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="mb-3">
-                <label asp-for="Volume" class="control-label"></label>
+                <label asp-for="Volume" class="form-label"></label>
                 <input asp-for="Volume" class="form-control" aria-describedby="VolumeHelp" />
                 <div id="VolumeHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Volume").FirstOrDefault()?.Description</div>
                 <span asp-validation-for="Volume" class="text-danger"></span>
             </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6">
+
+            <h4>Wine Details</h4>
+            <hr />
+
             <div class="mb-3">
-                <label asp-for="WineVintage" class="control-label"></label>
+                <label asp-for="WineVintage" class="form-label"></label>
                 <input asp-for="WineVintage" class="form-control" aria-describedby="WineVintageHelp" />
                 <div id="WineVintageHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "WineVintage").FirstOrDefault()?.Description</div>
                 <span asp-validation-for="WineVintage" class="text-danger"></span>
             </div>
             <div class="mb-3">
-                <label asp-for="WineType" class="control-label"></label>
+                <label asp-for="WineType" class="form-label"></label>
                 <select asp-for="WineType" asp-items="Html.GetEnumSelectList<WineType>()" class="form-select" aria-describedby="WineTypeHelp">
                     <option value="">(none)</option>
                 </select>
@@ -41,7 +55,7 @@
                 <span asp-validation-for="WineType" class="text-danger"></span>
             </div>
             <div class="mb-3">
-                <label asp-for="WineStyle" class="control-label"></label>
+                <label asp-for="WineStyle" class="form-label"></label>
                 <select asp-for="WineStyle" asp-items="Html.GetEnumSelectList<WineStyle>()" class="form-select" aria-describedby="WineStyleHelp">
                     <option value="">(none)</option>
                 </select>
@@ -49,11 +63,39 @@
                 <span asp-validation-for="WineStyle" class="text-danger"></span>
             </div>
             <div class="mb-3">
-                <label asp-for="WineAppellation" class="control-label"></label>
+                <label asp-for="WineAppellation" class="form-label"></label>
                 <input asp-for="WineAppellation" class="form-control" aria-describedby="WineAppellationHelp" />
                 <div id="WineAppellationHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "WineAppellation").FirstOrDefault()?.Description</div>
                 <span asp-validation-for="WineAppellation" class="text-danger"></span>
             </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <h4>Ingredients</h4>
+            <hr />
+
+            <div id="productIngredientsContainer">
+                @Html.EditorFor(model => model.ProductIngredients)
+            </div>
+
+            <div class="mb-3">
+                <!--
+                <a id="buttonRemove" class="btn btn-link ps-0">Remove</a> |
+                -->
+                <a id="buttonAdd" class="btn btn-link ps-0">Add</a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6">
+
+            <h4>Logistics</h4>
+            <hr />
+
             <div class="mb-3">
                 <label asp-for="Country" class="form-label"></label>
                 <input asp-for="Country" class="form-control" aria-describedby="CountryHelp" />
@@ -67,7 +109,7 @@
                 <span asp-validation-for="Sku" class="text-danger"></span>
             </div>
             <div class="mb-3">
-                <label asp-for="Ean" class="control-label"></label>
+                <label asp-for="Ean" class="form-label"></label>
                 <input asp-for="Ean" class="form-control" aria-describedby="EanHelp" />
                 <div id="EanHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Ean").FirstOrDefault()?.Description</div>
                 <span asp-validation-for="Ean" class="text-danger"></span>
@@ -75,9 +117,9 @@
             <div class="mb-3">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
-        </form>
+        </div>
     </div>
-</div>
+</form>
 
 <div>
     <a asp-action="Index">Back to List</a>
@@ -85,4 +127,35 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+        $(document).ready(function () {
+
+            $("#buttonRemove").on('click', function () {
+                $.ajax({
+                    async: true,
+                    data: $('#form').serialize(),
+                    type: "POST",
+                    url: '/Product/RemoveIngredient',
+                    success: function (partialView) {
+                        console.log("partialView: " + partialView);
+                        $('#productIngredientsContainer').html(partialView);
+                    }
+                });
+            });
+
+            $("#buttonAdd").on('click', function () {
+                $.ajax({
+                    async: true,
+                    data: $('#form').serialize(),
+                    type: "POST",
+                    url: '/Product/AddIngredient',
+                    success: function (partialView) {
+                        console.log("partialView: " + partialView);
+                        $('#productIngredientsContainer').html(partialView);
+                    }
+                });
+            });
+        });
+    </script>
 }

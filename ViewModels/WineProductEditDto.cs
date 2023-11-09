@@ -1,5 +1,4 @@
 ﻿using ELabel.Models;
-using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 
 namespace ELabel.ViewModels
@@ -41,6 +40,12 @@ namespace ELabel.ViewModels
         [StringLength(100)]
         [DataType(DataType.Text)]
         public string? WineAppellation { get; set; }
+
+        /*
+         * Ingredients
+         */
+
+        public List<ProductIngredientDto> ProductIngredients { get; } = new();
 
         /*
          * Logistics
