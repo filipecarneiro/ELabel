@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ELabel.Models
 {
-    [Index(nameof(Name), nameof(Volume), nameof(WineVintage), IsUnique = true)] // TODO: Protect UI for this constraint on Create, Edit and Import
+    //[Index(nameof(Name), nameof(Volume), "WineInformation_Vintage", IsUnique = true)] // TODO: Protect UI for this constraint on Create, Edit and Import
     public class Product : AuditableEntity
     {
         [MaxLength(100)]
@@ -14,27 +14,14 @@ namespace ELabel.Models
 
         public float? Weight { get; set; }
 
-        public required ProductKind Kind { get; set; }
+        public required ProductKind Kind { get; set; } = ProductKind.Wine;
 
         /*
          * Wine Details
          * ProductKind = 3 (Wine, Table wine)
          */
 
-        public ushort? WineVintage { get; set; }
-
-        public WineType? WineType { get; set; }
-
-        public WineStyle? WineStyle { get; set; }
-
-        [MaxLength(100)]
-        public string? WineAppellation { get; set; }
-
-        // TODO: Grape varieties
-
-        // TODO: Alcohol on label
-
-        // TODO: Production method (Traditional method, Barrel aged, Stainless steel fermented, Cask aged, etc.)
+        public required WineInformation WineInformation { get; set; } = new();
 
         /*
          * Other details

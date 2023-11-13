@@ -1,0 +1,30 @@
+﻿@model WineInformation
+
+<div class="mb-3">
+    <label asp-for="Vintage" class="form-label"></label>
+    <input asp-for="Vintage" class="form-control" aria-describedby="WineVintageHelp" />
+    <div id="WineVintageHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Vintage").FirstOrDefault()?.Description</div>
+    <span asp-validation-for="Vintage" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="Type" class="form-label"></label>
+    <select asp-for="Type" asp-items="Html.GetEnumSelectList<WineType>()" class="form-select" aria-describedby="WineTypeHelp">
+        <option value="">(none)</option>
+    </select>
+    <div id="WineTypeHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Type").FirstOrDefault()?.Description</div>
+    <span asp-validation-for="Type" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="Style" class="form-label"></label>
+    <select asp-for="Style" asp-items="Html.GetEnumSelectList<WineStyle>()" class="form-select" aria-describedby="WineStyleHelp">
+        <option value="">(none)</option>
+    </select>
+    <div id="WineStyleHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Style").FirstOrDefault()?.Description</div>
+    <span asp-validation-for="Style" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="Appellation" class="form-label"></label>
+    <input asp-for="Appellation" class="form-control" aria-describedby="WineAppellationHelp" />
+    <div id="WineAppellationHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Appellation").FirstOrDefault()?.Description</div>
+    <span asp-validation-for="Appellation" class="text-danger"></span>
+</div>

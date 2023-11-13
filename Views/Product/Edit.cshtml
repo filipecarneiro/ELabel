@@ -40,34 +40,8 @@
             <h4>Wine Details</h4>
             <hr />
 
-            <div class="mb-3">
-                <label asp-for="WineVintage" class="form-label"></label>
-                <input asp-for="WineVintage" class="form-control" aria-describedby="WineVintageHelp" />
-                <div id="WineVintageHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "WineVintage").FirstOrDefault()?.Description</div>
-                <span asp-validation-for="WineVintage" class="text-danger"></span>
-            </div>
-            <div class="mb-3">
-                <label asp-for="WineType" class="form-label"></label>
-                <select asp-for="WineType" asp-items="Html.GetEnumSelectList<WineType>()" class="form-select" aria-describedby="WineTypeHelp">
-                    <option value="">(none)</option>
-                </select>
-                <div id="WineTypeHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "WineType").FirstOrDefault()?.Description</div>
-                <span asp-validation-for="WineType" class="text-danger"></span>
-            </div>
-            <div class="mb-3">
-                <label asp-for="WineStyle" class="form-label"></label>
-                <select asp-for="WineStyle" asp-items="Html.GetEnumSelectList<WineStyle>()" class="form-select" aria-describedby="WineStyleHelp">
-                    <option value="">(none)</option>
-                </select>
-                <div id="WineStyleHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "WineStyle").FirstOrDefault()?.Description</div>
-                <span asp-validation-for="WineStyle" class="text-danger"></span>
-            </div>
-            <div class="mb-3">
-                <label asp-for="WineAppellation" class="form-label"></label>
-                <input asp-for="WineAppellation" class="form-control" aria-describedby="WineAppellationHelp" />
-                <div id="WineAppellationHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "WineAppellation").FirstOrDefault()?.Description</div>
-                <span asp-validation-for="WineAppellation" class="text-danger"></span>
-            </div>
+            @Html.EditorFor(model => model.WineInformation)
+
         </div>
     </div>
 

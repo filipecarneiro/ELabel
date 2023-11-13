@@ -75,7 +75,7 @@ namespace ELabel.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Name,Volume,WineVintage,WineType,WineStyle,WineAppellation,Country,Sku,Ean")] WineProductCreateDto wineProductCreateDto)
+        public async Task<IActionResult> Create([Bind("Name,Volume,WineInformation,Country,Sku,Ean")] WineProductCreateDto wineProductCreateDto)
         {
             if (ModelState.IsValid)
             {
@@ -119,7 +119,7 @@ namespace ELabel.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Name,Volume,WineVintage,WineType,WineStyle,WineAppellation,ProductIngredients,NutritionInformation,Country,Sku,Ean")] WineProductEditDto wineProductEditDto)
+        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Name,Volume,WineInformation,ProductIngredients,NutritionInformation,Country,Sku,Ean")] WineProductEditDto wineProductEditDto)
         {
             if (id != wineProductEditDto.Id)
             {
@@ -264,7 +264,7 @@ namespace ELabel.Controllers
 
         private Guid? FindProductId(string name, float? volume, ushort? wineVintage)
         {
-            return _context.Product.Where(e => e.Name == name && e.Volume == volume && e.WineVintage == wineVintage).AsNoTracking().FirstOrDefault()?.Id;
+            return _context.Product.Where(e => e.Name == name && e.Volume == volume && e.WineInformation.Vintage == wineVintage).AsNoTracking().FirstOrDefault()?.Id;
         }
 
         private SelectList GetAvailableIngredientsList()
@@ -367,7 +367,7 @@ namespace ELabel.Controllers
 
                     if (product.Id == Guid.Empty)
                     {
-                        Guid? existingId = FindProductId(product.Name, product.Volume, product.WineVintage);
+                        Guid? existingId = FindProductId(product.Name, product.Volume, product.WineInformation.Vintage);
 
                         product.Id = (existingId == null ? Guid.NewGuid() : existingId.Value);
                     }

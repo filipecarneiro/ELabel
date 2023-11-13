@@ -20,23 +20,7 @@ namespace ELabel.ViewModels
          * Wine Details
          */
 
-        [Display(Name = "Vintage", Description = "The year that the wine was produced. Do not fill for non-vintage wines.")]
-        [DisplayFormat(DataFormatString = "{0:D4}")]
-        [Range(1, 2099)]
-        public ushort? WineVintage { get; set; }
-
-        [Display(Name = "Wine type", Description = "Wine classification by vinification process. Sometimes refered as wine 'colour'.")]
-        [EnumDataType(typeof(WineType))]
-        public WineType? WineType { get; set; }
-
-        [Display(Name = "Wine style", Description = "Wine style, sweetness of wine or 'product type', according to EU Commission Regulation.")]
-        [EnumDataType(typeof(WineStyle))]
-        public WineStyle? WineStyle { get; set; }
-
-        [Display(Name = "Appellation", Description = "Legally defined and protected geographical indication.")]
-        [StringLength(100)]
-        [DataType(DataType.Text)]
-        public string? WineAppellation { get; set; }
+        public required WineInformation WineInformation { get; set; } = new();
 
         /*
          * Logistics
