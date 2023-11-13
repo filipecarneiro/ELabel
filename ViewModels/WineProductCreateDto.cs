@@ -26,6 +26,7 @@ namespace ELabel.ViewModels
          * Logistics
          */
 
+        /*
         [Display(Name = "Country of origin", Description = "Enter the ISO 3166-1 two-letter contry code.", Prompt = "PT")]
         [RegularExpression("^[A-Z]{2}$", ErrorMessage = "Please use, exactly, 2 capital letters (A-Z)")]
         [StringLength(2)]
@@ -41,5 +42,6 @@ namespace ELabel.ViewModels
         [Display(Name = "EAN/GTIN", Description = "Enter your European Article Number (EAN) or Global Trade Item Number (GTIN) of your product.")]
         [RegularExpression("^(\\d{12,14})$", ErrorMessage = "Invalid GTIN (12, 13 or 14 digits)")]
         public ulong? Ean { get; set; }
+        */
     }
 }

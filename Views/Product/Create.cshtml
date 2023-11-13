@@ -28,6 +28,7 @@
 
             @Html.EditorFor(model => model.WineInformation)
 
+            @*
             <div class="mb-3">
                 <label asp-for="Country" class="form-label"></label>
                 <input asp-for="Country" class="form-control" aria-describedby="CountryHelp" />
@@ -46,6 +47,7 @@
                 <div id="EanHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Ean").FirstOrDefault()?.Description</div>
                 <span asp-validation-for="Ean" class="text-danger"></span>
             </div>
+            *@
             <div class="mb-3">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
