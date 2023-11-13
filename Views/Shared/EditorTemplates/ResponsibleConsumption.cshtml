@@ -1,0 +1,20 @@
+﻿@model ResponsibleConsumption
+
+<div class="form-check">
+    <input asp-for="WarningDrinkingDuringPregnancy" class="form-check-input" type="checkbox" aria-describedby="WarningDrinkingDuringPregnancyHelp" />
+    <label asp-for="WarningDrinkingDuringPregnancy" class="form-check-label"></label>
+    <div id="WarningDrinkingDuringPregnancyHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "WarningDrinkingDuringPregnancy").FirstOrDefault()?.Description</div>
+    <span asp-validation-for="WarningDrinkingDuringPregnancy" class="text-danger"></span>
+</div>
+<div class="form-check">
+    <input asp-for="WarningDrinkingBelowLegalAge" class="form-check-input" type="checkbox" aria-describedby="WarningDrinkingBelowLegalAgeHelp" />
+    <label asp-for="WarningDrinkingBelowLegalAge" class="form-check-label"></label>
+    <div id="WarningDrinkingBelowLegalAgeHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "WarningDrinkingBelowLegalAge").FirstOrDefault()?.Description</div>
+    <span asp-validation-for="WarningDrinkingBelowLegalAge" class="text-danger"></span>
+</div>
+<div class="form-check">
+    <input asp-for="WarningDrinkingWhenDriving" class="form-check-input" type="checkbox" aria-describedby="WarningDrinkingWhenDrivingHelp" />
+    <label asp-for="WarningDrinkingWhenDriving" class="form-check-label"></label>
+    <div id="WarningDrinkingWhenDrivingHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "WarningDrinkingWhenDriving").FirstOrDefault()?.Description</div>
+    <span asp-validation-for="WarningDrinkingWhenDriving" class="text-danger"></span>
+</div>

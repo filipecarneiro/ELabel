@@ -75,7 +75,7 @@ namespace ELabel.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Name,Volume,WineInformation,Country,Sku,Ean")] WineProductCreateDto wineProductCreateDto)
+        public async Task<IActionResult> Create([Bind("Name,Volume,WineInformation")] WineProductCreateDto wineProductCreateDto)
         {
             if (ModelState.IsValid)
             {
@@ -120,7 +120,7 @@ namespace ELabel.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Name,Volume,WineInformation,ProductIngredients,NutritionInformation,Country,Sku,Ean")] WineProductEditDto wineProductEditDto)
+        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Name,Volume,WineInformation,ProductIngredients,NutritionInformation,ResponsibleConsumption,Country,Sku,Ean")] WineProductEditDto wineProductEditDto)
         {
             if (id != wineProductEditDto.Id)
             {

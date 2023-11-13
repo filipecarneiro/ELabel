@@ -1,0 +1,31 @@
+﻿@model ResponsibleConsumption
+
+<dl class="row">
+    <dt class="col-sm-4 mb-2">
+        @Html.DisplayNameFor(model => model.WarningDrinkingDuringPregnancy)
+    </dt>
+    <dd class="col-sm-2">
+        @Html.DisplayFor(model => model.WarningDrinkingDuringPregnancy)
+    </dd>
+    <dd class="col-sm-6">
+        <span class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "WarningDrinkingDuringPregnancy").FirstOrDefault()?.Description</span>
+    </dd>
+    <dt class="col-sm-4 mb-2">
+        @Html.DisplayNameFor(model => model.WarningDrinkingBelowLegalAge)
+    </dt>
+    <dd class="col-sm-2">
+        @Html.DisplayFor(model => model.WarningDrinkingBelowLegalAge)
+    </dd>
+    <dd class="col-sm-6">
+        <span class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "WarningDrinkingBelowLegalAge").FirstOrDefault()?.Description</span>
+    </dd>
+    <dt class="col-sm-4 mb-2">
+        @Html.DisplayNameFor(model => model.WarningDrinkingWhenDriving)
+    </dt>
+    <dd class="col-sm-2">
+        @Html.DisplayFor(model => model.WarningDrinkingWhenDriving)
+    </dd>
+    <dd class="col-sm-6">
+        <span class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "WarningDrinkingWhenDriving").FirstOrDefault()?.Description</span>
+    </dd>
+</dl>

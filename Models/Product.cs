@@ -27,8 +27,6 @@ namespace ELabel.Models
          * Other details
          */
 
-        // TODO: Responsible consumption (pictogram warning against drinking during pregnanc and a generic message are Mandatory)
-
         // TODO: Producer (Name, logo and website)
 
         // TODO: Sustainability & other certifications (Certifications, Sustainability message)
@@ -42,6 +40,8 @@ namespace ELabel.Models
          */
 
         public required NutritionInformation NutritionInformation { get; set; } = new();
+
+        public required ResponsibleConsumption ResponsibleConsumption { get; set; } = new();
 
         /*
          * Logistics

@@ -20,7 +20,7 @@ namespace ELabel.ViewModels
         public float? Volume { get; set; }
 
         /*
-         * Wine Details
+         * Details
          */
 
         public required WineInformation WineInformation { get; set; } = new();
@@ -36,6 +36,8 @@ namespace ELabel.ViewModels
          */
 
         public required NutritionInformation NutritionInformation { get; set; } = new();
+
+        public required ResponsibleConsumption ResponsibleConsumption { get; set; } = new();
 
         /*
          * Logistics
