@@ -72,6 +72,12 @@ namespace ELabel.ViewModels
         }
 
         /*
+         * Nutrition declaration
+         */
+
+        public required NutritionInformation NutritionInformation { get; set; } = new();
+
+        /*
          * Logistics
          */
 

@@ -20,7 +20,7 @@
             
             <div class="mb-3">
                 <label asp-for="Name" class="form-label"></label>
-                <input asp-for="Name" class="form-control" aria-describedby="NameHelp" />
+                <input asp-for="Name" class="form-control" aria-describedby="NameHelp" autocomplete="off" />
                 <div id="NameHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Name").FirstOrDefault()?.Description</div>
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
@@ -92,13 +92,23 @@
 
     <div class="row">
         <div class="col-lg-6">
+            <h4>Nutrition information</h4>
+            <hr />
+
+            @Html.EditorFor(model => model.NutritionInformation)
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6">
 
             <h4>Logistics</h4>
             <hr />
 
             <div class="mb-3">
                 <label asp-for="Country" class="form-label"></label>
-                <input asp-for="Country" class="form-control" aria-describedby="CountryHelp" />
+                <input asp-for="Country" class="form-control" aria-describedby="CountryHelp" autocomplete="country" />
                 <div id="CountryHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Country").FirstOrDefault()?.Description</div>
                 <span asp-validation-for="Country" class="text-danger"></span>
             </div>

@@ -32,17 +32,17 @@ namespace ELabel.Models
 
         // TODO: Grape varieties
 
+        // TODO: Alcohol on label
+
+        // TODO: Production method (Traditional method, Barrel aged, Stainless steel fermented, Cask aged, etc.)
+
         /*
          * Other details
          */
 
-        // TODO: Analytics (Alcohol, Production method)
+        // TODO: Responsible consumption (pictogram warning against drinking during pregnanc and a generic message are Mandatory)
 
         // TODO: Producer (Name, logo and website)
-
-        // TODO: Nutrition declaration per 100 ml (Mandatory)
-
-        // TODO: Responsible consumption (pictogram warning against drinking during pregnanc and a generic message are Mandatory)
 
         // TODO: Sustainability & other certifications (Certifications, Sustainability message)
 
@@ -50,7 +50,11 @@ namespace ELabel.Models
 
         // TODO: Food business operators
 
-        // TODO: Production method (Traditional method, Barrel aged, Stainless steel fermented, Cask aged, etc.)
+        /*
+         * Nutrition declaration
+         */
+
+        public required NutritionInformation NutritionInformation { get; set; } = new();
 
         /*
          * Logistics

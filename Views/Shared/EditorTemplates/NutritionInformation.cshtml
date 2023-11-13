@@ -1,0 +1,133 @@
+﻿@model ELabel.Models.NutritionInformation
+@{
+    LabAnalysis labAnalysis = new LabAnalysis();
+}
+
+<div class="mb-3">
+    <label asp-for="PortionVolume" class="form-label"></label>
+    <input asp-for="PortionVolume" class="form-control" aria-describedby="PortionVolumeHelp" />
+    <div id="PortionVolumeHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "PortionVolume").FirstOrDefault()?.Description</div>
+    <span asp-validation-for="PortionVolume" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="Energy" class="form-label" for="NutritionInformation_Energy_Kilocalorie"></label>
+    <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#calculateEnergyModal">
+        Calculate
+    </button>
+    <input asp-for="Energy.Kilocalorie" class="form-control" aria-describedby="EnergyHelp" />
+    <div id="EnergyHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Energy").FirstOrDefault()?.Description</div>
+    <span asp-validation-for="Energy" class="text-danger"></span>
+</div>
+
+<!-- Calculate Energy Modal -->
+<div class="modal fade" id="calculateEnergyModal" tabindex="-1" aria-labelledby="calculateEnergyModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="calculateEnergyModalLabel">Energy calculation</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Calculate the energy value based on Lab analysis.</p>
+                <div class="mb-3">
+                    <label asp-for="@labAnalysis.Alcohol" class="form-label"></label>
+                    <input asp-for="@labAnalysis.Alcohol" class="form-control" aria-describedby="LabAnalysisAlcoholHelp" />
+                    <div id="LabAnalysisAlcoholHelp" class="form-text">Alcohol as measured by lab (% vol.)</div>
+                    <span asp-validation-for="@labAnalysis.Alcohol" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@labAnalysis.ResidualSugar" class="form-label"></label>
+                    <input asp-for="@labAnalysis.ResidualSugar" class="form-control" aria-describedby="LabAnalysisResidualSugarHelp" />
+                    <div id="LabAnalysisResidualSugarHelp" class="form-text">Glucose + Fructose (g/dm3)</div>
+                    <span asp-validation-for="@labAnalysis.ResidualSugar" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@labAnalysis.TotalAcidity" class="form-label"></label>
+                    <input asp-for="@labAnalysis.TotalAcidity" class="form-control" aria-describedby="LabAnalysisTotalAcidityHelp" />
+                    <div id="LabAnalysisTotalAcidityHelp" class="form-text">Total acidity (g/dm3 tartaric)</div>
+                    <span asp-validation-for="@labAnalysis.TotalAcidity" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button id="button-update-energy" type="button" class="btn btn-primary" data-bs-dismiss="modal">Update Energy</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mb-3">
+    <label asp-for="FatTotal" class="form-label"></label>
+    <input asp-for="FatTotal" class="form-control" aria-describedby="FatTotalHelp" />
+    <div id="FatTotalHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "FatTotal").FirstOrDefault()?.Description</div>
+    <span asp-validation-for="FatTotal" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="FatSaturates" class="form-label"></label>
+    <input asp-for="FatSaturates" class="form-control" aria-describedby="FatSaturatesHelp" />
+    <div id="FatSaturatesHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "FatSaturates").FirstOrDefault()?.Description</div>
+    <span asp-validation-for="FatSaturates" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="CarbohydrateTotal" class="form-label"></label>
+    <input asp-for="CarbohydrateTotal" class="form-control" aria-describedby="CarbohydrateTotalHelp" />
+    <div id="CarbohydrateTotalHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "CarbohydrateTotal").FirstOrDefault()?.Description</div>
+    <span asp-validation-for="CarbohydrateTotal" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="CarbohydrateSugar" class="form-label"></label>
+    <input asp-for="CarbohydrateSugar" class="form-control" aria-describedby="CarbohydrateSugarHelp" />
+    <div id="CarbohydrateSugarHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "CarbohydrateSugar").FirstOrDefault()?.Description</div>
+    <span asp-validation-for="CarbohydrateSugar" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="Protein" class="form-label"></label>
+    <input asp-for="Protein" class="form-control" aria-describedby="ProteinHelp" />
+    <div id="ProteinHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Protein").FirstOrDefault()?.Description</div>
+    <span asp-validation-for="Protein" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="Salt" class="form-label"></label>
+    <input asp-for="Salt" class="form-control" aria-describedby="SaltHelp" />
+    <div id="SaltHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Salt").FirstOrDefault()?.Description</div>
+    <span asp-validation-for="Salt" class="text-danger"></span>
+</div>
+
+<script>
+    var inputPortionVolume = document.getElementById("NutritionInformation_PortionVolume");
+
+    var inputLabAnalysisAlcohol = document.getElementById("NutritionInformation_labAnalysis_Alcohol");
+    var inputLabAnalysisResidualSugar = document.getElementById("NutritionInformation_labAnalysis_ResidualSugar");
+    var inputLabAnalysisTotalAcidity = document.getElementById("NutritionInformation_labAnalysis_TotalAcidity");
+    
+    var buttonUpdateEnergy = document.getElementById("button-update-energy");
+    
+    var inputEnergyKilocalorie = document.getElementById("NutritionInformation_Energy_Kilocalorie");
+    var inputCarbohydrateSugar = document.getElementById("NutritionInformation_CarbohydrateSugar");
+
+    buttonUpdateEnergy.addEventListener("click", function (event) {
+        var portionVolume = parseFloat(inputPortionVolume.value)
+
+        var alcohol = parseFloat(inputLabAnalysisAlcohol.value)
+        console.log("alcohol = " + alcohol)
+
+        var residualSugar = parseFloat(inputLabAnalysisResidualSugar.value)
+        console.log("residualSugar = " + residualSugar)
+
+        var totalAcidity = parseFloat(inputLabAnalysisTotalAcidity.value)
+        console.log("totalAcidity = " + totalAcidity)
+
+        var kilocalories = ((7.9 * alcohol) * 7) + (residualSugar * 4) + (totalAcidity * 4)
+        console.log("kilocalories = " + kilocalories)
+
+        var kilocaloriesPerPortion = (portionVolume / 1000) * kilocalories
+        console.log("kilocaloriesPerPortion = " + kilocaloriesPerPortion)
+
+        var carbohydrateSugarPerPortion = (portionVolume / 1000) * residualSugar
+        console.log("carbohydrateSugarPerPortion = " + carbohydrateSugarPerPortion)
+
+        inputEnergyKilocalorie.value = Math.ceil(kilocaloriesPerPortion * 10) / 10
+        inputCarbohydrateSugar.value = Math.ceil(carbohydrateSugarPerPortion * 10) / 10
+    });
+
+</script>

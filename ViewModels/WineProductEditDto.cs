@@ -48,6 +48,12 @@ namespace ELabel.ViewModels
         public List<ProductIngredientDto> ProductIngredients { get; } = new();
 
         /*
+         * Nutrition declaration
+         */
+
+        public required NutritionInformation NutritionInformation { get; set; } = new();
+
+        /*
          * Logistics
          */
 

@@ -82,6 +82,7 @@ namespace ELabel.Controllers
                 Product product = _mapper.Map<Product>(wineProductCreateDto);
                 product.Id = Guid.NewGuid();
                 product.Kind = ProductKind.Wine;
+                //product.NutritionInformation = new NutritionInformation();
 
                 _context.Add(product);
                 await _context.SaveChangesAsync();
@@ -118,7 +119,7 @@ namespace ELabel.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Name,Volume,WineVintage,WineType,WineStyle,WineAppellation,ProductIngredients,Country,Sku,Ean")] WineProductEditDto wineProductEditDto)
+        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Name,Volume,WineVintage,WineType,WineStyle,WineAppellation,ProductIngredients,NutritionInformation,Country,Sku,Ean")] WineProductEditDto wineProductEditDto)
         {
             if (id != wineProductEditDto.Id)
             {

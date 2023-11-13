@@ -1,0 +1,40 @@
+﻿@model NutritionInformation
+
+
+<table class="table table-responsive caption-top w-auto">
+    <caption class="text-end border-bottom">Nutritions per @Html.DisplayFor(model => model.PortionVolume)</caption>
+
+    <tbody>
+        <tr>
+            <th colspan="2" rowspan="2">Energy</th>
+            <td class="text-end">@Html.DisplayFor(model => model.Energy.Kilocalorie)</td>
+        </tr>
+        <tr>
+            <td class="text-end">@Html.DisplayFor(model => model.Energy.Kilojoule)</td>
+        </tr>
+        <tr>
+            <th rowspan="2">Fat</th>
+            <td colspan="2" class="text-end">@Html.DisplayFor(model => model.FatTotal)</td>
+        </tr>
+        <tr>
+            <td class="fst-italic">of which Saturates</td>
+            <td class="text-end">@Html.DisplayFor(model => model.FatSaturates)</td>
+        </tr>
+        <tr>
+            <th rowspan="2">Carbohydrate</th>
+            <td colspan="2" class="text-end">@Html.DisplayFor(model => model.CarbohydrateTotal)</td>
+        </tr>
+        <tr>
+            <td class="fst-italic">of which Sugars</td>
+            <td class="text-end">@Html.DisplayFor(model => model.CarbohydrateSugar)</td>
+        </tr>
+        <tr>
+            <th colspan="2">Protein</th>
+            <td class="text-end">@Html.DisplayFor(model => model.Protein)</td>
+        </tr>
+        <tr>
+            <th colspan="2">Salt</th>
+            <td class="text-end">@Html.DisplayFor(model => model.Salt)</td>
+        </tr>
+    </tbody>
+</table>
