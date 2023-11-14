@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ELabel.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231031170820_Logistics")]
-    partial class Logistics
+    [Migration("20231114113501_v0.1")]
+    partial class v01
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -54,6 +54,33 @@ namespace ELabel.Data.Migrations
                         .IsUnique();
 
                     b.ToTable("Image");
+                });
+
+            modelBuilder.Entity("ELabel.Models.Ingredient", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("Allergen")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Category")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Custom")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Name", "Category")
+                        .IsUnique();
+
+                    b.ToTable("Ingredient");
                 });
 
             modelBuilder.Entity("ELabel.Models.Product", b =>
@@ -102,26 +129,33 @@ namespace ELabel.Data.Migrations
                     b.Property<float?>("Weight")
                         .HasColumnType("real");
 
-                    b.Property<string>("WineAppellation")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                    b.HasKey("Id");
 
-                    b.Property<int?>("WineStyle")
-                        .HasColumnType("int");
+                    b.ToTable("Product");
+                });
 
-                    b.Property<int?>("WineType")
-                        .HasColumnType("int");
+            modelBuilder.Entity("ELabel.Models.ProductIngredient", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int?>("WineVintage")
-                        .HasColumnType("int");
+                    b.Property<Guid>("IngredientId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<short>("Order")
+                        .HasColumnType("smallint");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Name", "Volume", "WineVintage")
-                        .IsUnique()
-                        .HasFilter("[Volume] IS NOT NULL AND [WineVintage] IS NOT NULL");
+                    b.HasIndex("IngredientId");
 
-                    b.ToTable("Product");
+                    b.HasIndex("ProductId", "IngredientId")
+                        .IsUnique();
+
+                    b.ToTable("ProductIngredient");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -337,6 +371,161 @@ namespace ELabel.Data.Migrations
                     b.Navigation("Product");
                 });
 
+            modelBuilder.Entity("ELabel.Models.Product", b =>
+                {
+                    b.OwnsOne("ELabel.Models.Certifications", "Certifications", b1 =>
+                        {
+                            b1.Property<Guid>("ProductId")
+                                .HasColumnType("uniqueidentifier");
+
+                            b1.Property<bool>("Organic")
+                                .HasColumnType("bit");
+
+                            b1.HasKey("ProductId");
+
+                            b1.ToTable("Product");
+
+                            b1.WithOwner()
+                                .HasForeignKey("ProductId");
+                        });
+
+                    b.OwnsOne("ELabel.Models.NutritionInformation", "NutritionInformation", b1 =>
+                        {
+                            b1.Property<Guid>("ProductId")
+                                .HasColumnType("uniqueidentifier");
+
+                            b1.Property<float>("CarbohydrateSugar")
+                                .HasColumnType("real");
+
+                            b1.Property<float>("CarbohydrateTotal")
+                                .HasColumnType("real");
+
+                            b1.Property<float>("FatSaturates")
+                                .HasColumnType("real");
+
+                            b1.Property<float>("FatTotal")
+                                .HasColumnType("real");
+
+                            b1.Property<float>("PortionVolume")
+                                .HasColumnType("real");
+
+                            b1.Property<float>("Protein")
+                                .HasColumnType("real");
+
+                            b1.Property<float>("Salt")
+                                .HasColumnType("real");
+
+                            b1.HasKey("ProductId");
+
+                            b1.ToTable("Product");
+
+                            b1.WithOwner()
+                                .HasForeignKey("ProductId");
+
+                            b1.OwnsOne("ELabel.Models.Energy", "Energy", b2 =>
+                                {
+                                    b2.Property<Guid>("NutritionInformationProductId")
+                                        .HasColumnType("uniqueidentifier");
+
+                                    b2.Property<float>("Kilocalorie")
+                                        .HasColumnType("real");
+
+                                    b2.HasKey("NutritionInformationProductId");
+
+                                    b2.ToTable("Product");
+
+                                    b2.WithOwner()
+                                        .HasForeignKey("NutritionInformationProductId");
+                                });
+
+                            b1.Navigation("Energy")
+                                .IsRequired();
+                        });
+
+                    b.OwnsOne("ELabel.Models.ResponsibleConsumption", "ResponsibleConsumption", b1 =>
+                        {
+                            b1.Property<Guid>("ProductId")
+                                .HasColumnType("uniqueidentifier");
+
+                            b1.Property<bool>("WarningDrinkingBelowLegalAge")
+                                .HasColumnType("bit");
+
+                            b1.Property<bool>("WarningDrinkingDuringPregnancy")
+                                .HasColumnType("bit");
+
+                            b1.Property<bool>("WarningDrinkingWhenDriving")
+                                .HasColumnType("bit");
+
+                            b1.HasKey("ProductId");
+
+                            b1.ToTable("Product");
+
+                            b1.WithOwner()
+                                .HasForeignKey("ProductId");
+                        });
+
+                    b.OwnsOne("ELabel.Models.WineInformation", "WineInformation", b1 =>
+                        {
+                            b1.Property<Guid>("ProductId")
+                                .HasColumnType("uniqueidentifier");
+
+                            b1.Property<string>("Appellation")
+                                .HasMaxLength(100)
+                                .HasColumnType("nvarchar(100)")
+                                .HasColumnName("WineAppellation");
+
+                            b1.Property<int?>("Style")
+                                .HasColumnType("int")
+                                .HasColumnName("WineStyle");
+
+                            b1.Property<int?>("Type")
+                                .HasColumnType("int")
+                                .HasColumnName("WineType");
+
+                            b1.Property<int?>("Vintage")
+                                .HasColumnType("int")
+                                .HasColumnName("WineVintage");
+
+                            b1.HasKey("ProductId");
+
+                            b1.ToTable("Product");
+
+                            b1.WithOwner()
+                                .HasForeignKey("ProductId");
+                        });
+
+                    b.Navigation("Certifications")
+                        .IsRequired();
+
+                    b.Navigation("NutritionInformation")
+                        .IsRequired();
+
+                    b.Navigation("ResponsibleConsumption")
+                        .IsRequired();
+
+                    b.Navigation("WineInformation")
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("ELabel.Models.ProductIngredient", b =>
+                {
+                    b.HasOne("ELabel.Models.Ingredient", "Ingredient")
+                        .WithMany("ProductIngredients")
+                        .HasForeignKey("IngredientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ELabel.Models.Product", "Product")
+                        .WithMany("ProductIngredients")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Ingredient");
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -388,9 +577,16 @@ namespace ELabel.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("ELabel.Models.Ingredient", b =>
+                {
+                    b.Navigation("ProductIngredients");
+                });
+
             modelBuilder.Entity("ELabel.Models.Product", b =>
                 {
                     b.Navigation("Image");
+
+                    b.Navigation("ProductIngredients");
                 });
 #pragma warning restore 612, 618
         }
