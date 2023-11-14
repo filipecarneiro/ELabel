@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@{
+    Version? version = GetType().Assembly.GetName().Version;
+    int currentYear = DateTime.UtcNow.Year;
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -7,6 +11,7 @@
     <link rel="icon" type="image/svg+xml" href="~/favicon.svg">
     <link rel="icon" type="image/png" href="~/favicon.png">
     <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap-icons/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
 <body>
@@ -15,10 +20,9 @@
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
                     <img src="~/img/icon.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-                    E-Label
+                    Open E-Label
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-md-inline-flex justify-content-between">
@@ -41,9 +45,9 @@
         </main>
     </div>
 
-    <footer class="text-center border-top text-body-secondary pt-3 mt-3">
+    <footer class="text-center border-top text-body-secondary py-3 mt-3">
         <div class="container">
-            &copy; 2023 - E-Label - <a href="https://safe-elabel.org/" target="_blank" rel="noopener">SAFE E-Label Standard</a>
+            &copy; @currentYear - Open E-Label @String.Format($"v{version?.Major}.{version?.Minor}.{version?.Build}") - <a href="https://safe-elabel.org/" target="_blank" rel="noopener">SAFE E-Label Standard</a>
         </div>
     </footer>
     <script src="~/lib/jquery/jquery.min.js"></script>
