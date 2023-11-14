@@ -1,0 +1,13 @@
+﻿@model Certifications
+
+<dl class="row">
+    <dt class="col-sm-4 mb-2">
+        @Html.DisplayNameFor(model => model.Organic)
+    </dt>
+    <dd class="col-sm-2">
+        @Html.DisplayFor(model => model.Organic)
+    </dd>
+    <dd class="col-sm-6">
+        <span class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Organic").FirstOrDefault()?.Description</span>
+    </dd>
+</dl>

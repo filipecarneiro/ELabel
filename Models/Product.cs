@@ -29,8 +29,6 @@ namespace ELabel.Models
 
         // TODO: Producer (Name, logo and website)
 
-        // TODO: Sustainability & other certifications (Certifications, Sustainability message)
-
         // TODO: Packaging & Recycling (Mandatory in Italy)
 
         // TODO: Food business operators
@@ -42,6 +40,8 @@ namespace ELabel.Models
         public required NutritionInformation NutritionInformation { get; set; } = new();
 
         public required ResponsibleConsumption ResponsibleConsumption { get; set; } = new();
+
+        public required Certifications Certifications { get; set; } = new();
 
         /*
          * Logistics

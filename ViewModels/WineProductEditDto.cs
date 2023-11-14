@@ -39,6 +39,8 @@ namespace ELabel.ViewModels
 
         public required ResponsibleConsumption ResponsibleConsumption { get; set; } = new();
 
+        public required Certifications Certifications { get; set; } = new();
+
         /*
          * Logistics
          */
