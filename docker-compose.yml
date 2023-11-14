@@ -1,0 +1,39 @@
+﻿version: '3.4'
+
+services:
+
+  app:
+    restart: always
+    image: 'fcarneiro/elabel:latest'
+    networks:
+      backend:
+    ports:
+      - 80:80
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__DefaultConnection: 'Server=elabel_db;Database=elabel;User id=sa;Password=yourStrong(!)Password;Trust Server Certificate=true;MultipleActiveResultSets=true'
+    depends_on:
+      - db
+
+  db:
+    restart: always
+    image: mcr.microsoft.com/mssql/server:2022-CU5-ubuntu-20.04
+#    ports:
+#      - "1433:1433"
+    networks:
+      backend:
+        aliases:
+          - 'elabel_db'
+    volumes:
+      - data:/var/opt/mssql
+    environment:
+      ACCEPT_EULA: Y
+      MSSQL_PID: Express
+      MSSQL_SA_PASSWORD: yourStrong(!)Password
+
+volumes:
+  data:
+
+networks:
+  backend:
+    driver: bridge
