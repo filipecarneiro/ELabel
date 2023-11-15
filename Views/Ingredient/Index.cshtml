@@ -20,7 +20,7 @@
     </div>
 </div>
 
-<form method="post" class="form-inline">
+<form id="search" method="post" class="form-inline">
     <div class="input-group mb-3 flex-fill">
         <div class="input-group-prepend">
             <span class="input-group-text"><i class="bi bi-search"></i></span>
@@ -64,7 +64,10 @@
                 </a>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Allergen)
+                @if(item.Allergen)
+                {
+                    <i class="bi bi-check-lg text-warning"></i>
+                }
             </td>
             @*
             <td>
