@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using ELabel.Data;
-using ELabel.Models;
+﻿using ELabel.Data;
 using ELabel.Extensions;
+using ELabel.Models;
 using ELabel.ViewModels;
 using Ganss.Excel;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace ELabel.Controllers
 {
@@ -23,20 +18,71 @@ namespace ELabel.Controllers
         }
 
         // GET: Ingredient
-        public async Task<IActionResult> Index()
+        public IActionResult Index(string filterText = "", string sortOrder = "")
         {
             if (_context.Ingredient == null)
             {
                 return Problem("Entity set 'ApplicationDbContext.Ingredient'  is null.");
             }
 
-            var query = await _context.Ingredient
-                                      .AsNoTracking()
-                                      .OrderBy(i => i.Name)
-                                      .ThenBy(i => i.Category)
-                                      .ToListAsync();
+            ViewBag.SortParmName = String.IsNullOrEmpty(sortOrder) ? "-Name" : "";
+            ViewBag.SortParmCategory = sortOrder == "Category" ? "-Category" : "Category";
+            ViewBag.SortParmAllergen = sortOrder == "Allergen" ? "-Allergen" : "Allergen";
+            ViewBag.SortParmCustom = sortOrder == "Custom" ? "-Custom" : "Custom";
 
-            return View(query);
+            var query = _context.Ingredient
+                                .AsNoTracking()
+                                .OrderBy(i => i.Name)
+                                .ThenBy(i => i.Category)
+                                .AsQueryable()
+                                .AsEnumerable();
+
+            // Filter
+
+            if (!String.IsNullOrWhiteSpace(filterText))
+            {
+                filterText = filterText.Trim();
+
+                query = query.Where(t => ((t.Name.Contains(filterText, StringComparison.InvariantCultureIgnoreCase)) ||
+                                          (EnumHelper.GetDisplayName(t.Category)?.ToLower() == filterText.ToLower()) ||
+                                          ("allergen" == filterText.ToLower() && t.Allergen == true) ||
+                                          ("custom" == filterText.ToLower() && t.Custom == true)
+                                         )
+                                   );
+            }
+
+            // Sort
+
+            switch (sortOrder)
+            {
+                default: // "Name":
+                    query = query.OrderBy(t => t.Name).ThenBy(t => t.Id);
+                    break;
+                case "-Name":
+                    query = query.OrderByDescending(t => t.Name).ThenByDescending(t => t.Id);
+                    break;
+                case "Category":
+                    query = query.OrderBy(t => t.Category).ThenBy(t => t.Name).ThenBy(t => t.Id);
+                    break;
+                case "-Category":
+                    query = query.OrderByDescending(t => t.Category).ThenByDescending(t => t.Name).ThenByDescending(t => t.Id);
+                    break;
+                case "Allergen":
+                    query = query.OrderBy(t => t.Allergen).ThenBy(t => t.Name).ThenBy(t => t.Id);
+                    break;
+                case "-Allergen":
+                    query = query.OrderByDescending(t => t.Allergen).ThenByDescending(t => t.Name).ThenByDescending(t => t.Id);
+                    break;
+                case "Custom":
+                    query = query.OrderBy(t => t.Custom).ThenBy(t => t.Name).ThenBy(t => t.Id);
+                    break;
+                case "-Custom":
+                    query = query.OrderByDescending(t => t.Custom).ThenByDescending(t => t.Name).ThenByDescending(t => t.Id);
+                    break;
+            }
+
+            ViewBag.FilterText = filterText;
+            return View(query.ToList());
         }
 
         // GET: Ingredient/Details/5

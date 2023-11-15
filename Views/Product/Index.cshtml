@@ -1,47 +1,68 @@
-﻿@model IEnumerable<ELabel.ViewModels.WineProductDetailsDto>
+﻿@using ELabel.Extensions
+@model IEnumerable<ELabel.ViewModels.WineProductDetailsDto>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Products";
 }
 
 <h1>Products</h1>
 
-<p>
-    <a asp-action="Create">Create New</a> |
-    <a asp-action="Import">Import</a> |
-    <a asp-action="Export">Export</a>
-</p>
+<div class="d-flex justify-content-between mb-3">
+    <div class="">
+        <a asp-action="Create">Create New</a>
+    </div>
+    <div class="">
+        <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Data</a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" asp-action="Import">Import</a>
+            <a class="dropdown-item" asp-action="Export">Export</a>
+        </div>
+    </div>
+</div>
+
+<form method="post" class="form-inline">
+    <div class="input-group mb-3 flex-fill">
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="bi bi-search"></i></span>
+        </div>
+        <input id="FilterText" name="FilterText" class="form-control" type="search" placeholder="Search by name, volume, wine vintage, wine type, wine style, wine appellation or SKU." value="@ViewBag.FilterText" />
+        <div class="input-group-append">
+            <input type="submit" value="Search" class="btn btn-outline-secondary" />
+        </div>
+    </div>
+</form>
+
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
+            <th scope="col">
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.SortParmName">@Html.DisplayNameFor(model => model.Name)</a>
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Volume)
+            <th scope="col">
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.SortParmVolume">@Html.DisplayNameFor(model => model.Volume)</a>
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.WineInformation.Vintage)
+            <th scope="col">
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.SortParmWineVintage">@Html.DisplayNameFor(model => model.WineInformation.Vintage)</a>
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.WineInformation.Type)
+            <th scope="col">
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.SortParmWineType">@Html.DisplayNameFor(model => model.WineInformation.Type)</a>
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.WineInformation.Style)
+            <th scope="col">
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.SortParmWineStyle">@Html.DisplayNameFor(model => model.WineInformation.Style)</a>
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.WineInformation.Appellation)
+            <th scope="col">
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.SortParmWineAppelation">@Html.DisplayNameFor(model => model.WineInformation.Appellation)</a>
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Sku)
+            <th scope="col">
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.SortParmSku">@Html.DisplayNameFor(model => model.Sku)</a>
             </th>
-            <th></th>
+            <th scope="col"></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
+            <td class="clickable" data-href='/Product/Details/@item.Id'>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
@@ -51,10 +72,20 @@
                 @Html.DisplayFor(modelItem => item.WineInformation.Vintage)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.WineInformation.Type)
+                @if(item.WineInformation.Type != null)
+                {
+                    <a class="btn btn-light btn-sm" asp-action="Index" asp-route-filterText="@EnumHelper.GetDisplayName(item.WineInformation.Type)" role="button" title="@EnumHelper.GetDisplayDescription(item.WineInformation.Type)">
+                        @EnumHelper.GetDisplayName(item.WineInformation.Type)
+                    </a>
+                }
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.WineInformation.Style)
+                @if(item.WineInformation.Style != null)
+                {
+                    <a class="btn btn-light btn-sm" asp-action="Index" asp-route-filterText="@EnumHelper.GetDisplayName(item.WineInformation.Style)" role="button" title="@EnumHelper.GetDisplayDescription(item.WineInformation.Style)">
+                            @EnumHelper.GetDisplayName(item.WineInformation.Style)
+                    </a>
+                }
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.WineInformation.Appellation)
@@ -63,11 +94,28 @@
                 @Html.DisplayFor(modelItem => item.Sku)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <div class="dropend">
+                    <a class="" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span>&#x2807;</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" asp-action="Edit" asp-route-id="@item.Id">Edit</a></li>
+                        <li><a class="dropdown-item" asp-action="Details" asp-route-id="@item.Id">Details</a></li>
+                        <li><a class="dropdown-item" asp-action="Delete" asp-route-id="@item.Id">Delete</a></li>
+                    </ul>
+                </div>
             </td>
         </tr>
 }
     </tbody>
 </table>
+
+@section Scripts {
+    <script>
+        jQuery(document).ready(function ($) {
+            $('*[data-href]').on('click', function () {
+                window.location = $(this).data("href");
+            });
+        });
+    </script>
+}

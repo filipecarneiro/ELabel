@@ -24,18 +24,98 @@ namespace ELabel.Controllers
         }
 
         // GET: Product
-        public async Task<IActionResult> Index()
+        public IActionResult Index(string filterText = "", string sortOrder = "")
         {
             if (_context.Product == null)
             {
                 return Problem("Entity set 'ApplicationDbContext.Product'  is null.");
             }
 
-            var query = await _context.Product
-                                      .AsNoTracking()
-                                      .ToListAsync();
+            ViewBag.SortParmName = String.IsNullOrEmpty(sortOrder) ? "-Name" : "";
+            ViewBag.SortParmVolume = sortOrder == "Volume" ? "-Volume" : "Volume";
+            ViewBag.SortParmWineVintage = sortOrder == "WineVintage" ? "-WineVintage" : "WineVintage";
+            ViewBag.SortParmWineType = sortOrder == "WineType" ? "-WineType" : "WineType";
+            ViewBag.SortParmWineStyle = sortOrder == "WineStyle" ? "-WineStyle" : "WineStyle";
+            ViewBag.SortParmWineAppelation = sortOrder == "WineAppelation" ? "-WineAppelation" : "WineAppelation";
+            ViewBag.SortParmSku = sortOrder == "Sku" ? "-Sku" : "Sku";
 
-            return View(_mapper.Map<IEnumerable<WineProductDetailsDto>>(query));
+            var query = _context.Product
+                                .AsNoTracking()
+                                .OrderBy(i => i.Name)
+                                .ThenBy(i => i.Volume)
+                                .ThenBy(i => i.WineInformation.Vintage)
+                                .AsQueryable()
+                                .AsEnumerable();
+
+            // Filter
+
+            if (!String.IsNullOrWhiteSpace(filterText))
+            {
+                filterText = filterText.Trim().ToLower();
+                float filterFloat;
+                ushort filterUShort;
+
+                query = query.Where(p => ((p.Name.Contains(filterText, StringComparison.InvariantCultureIgnoreCase)) ||
+                                          (p.Volume != null && float.TryParse(filterText, out filterFloat) && p.Volume == filterFloat) ||
+                                          (p.WineInformation.Vintage != null && ushort.TryParse(filterText, out filterUShort) && p.WineInformation.Vintage == filterUShort) ||
+                                          (p.WineInformation.Type != null && EnumHelper.GetDisplayName(p.WineInformation.Type)?.ToLower() == filterText) ||
+                                          (p.WineInformation.Style != null && EnumHelper.GetDisplayName(p.WineInformation.Style)?.ToLower() == filterText) ||
+                                          (p.WineInformation.Appellation != null && p.WineInformation.Appellation.Contains(filterText, StringComparison.InvariantCultureIgnoreCase)) ||
+                                          (p.Sku != null && p.Sku.Contains(filterText, StringComparison.InvariantCultureIgnoreCase))
+                                         )
+                                   );
+            }
+
+            // Sort
+
+            switch (sortOrder)
+            {
+                default: // "Name":
+                    query = query.OrderBy(p => p.Name).ThenBy(p => p.Volume).ThenBy(p => p.WineInformation.Vintage);
+                    break;
+                case "-Name":
+                    query = query.OrderByDescending(p => p.Name).ThenByDescending(p => p.Volume).ThenByDescending(p => p.WineInformation.Vintage);
+                    break;
+                case "Volume":
+                    query = query.OrderBy(p => p.Volume).ThenBy(p => p.Name).ThenBy(p => p.Volume).ThenBy(p => p.WineInformation.Vintage);
+                    break;
+                case "-Volume":
+                    query = query.OrderByDescending(p => p.Volume).ThenBy(p => p.Name).ThenBy(p => p.Volume).ThenBy(p => p.WineInformation.Vintage);
+                    break;
+                case "WineVintage":
+                    query = query.OrderBy(p => p.WineInformation.Vintage).ThenBy(p => p.Name).ThenBy(p => p.Volume).ThenBy(p => p.WineInformation.Vintage);
+                    break;
+                case "-WineVintage":
+                    query = query.OrderByDescending(p => p.WineInformation.Vintage).ThenBy(p => p.Name).ThenBy(p => p.Volume).ThenBy(p => p.WineInformation.Vintage);
+                    break;
+                case "WineType":
+                    query = query.OrderBy(p => p.WineInformation.Type).ThenBy(p => p.Name).ThenBy(p => p.Volume).ThenBy(p => p.WineInformation.Vintage);
+                    break;
+                case "-WineType":
+                    query = query.OrderByDescending(p => p.WineInformation.Type).ThenBy(p => p.Name).ThenBy(p => p.Volume).ThenBy(p => p.WineInformation.Vintage);
+                    break;
+                case "WineStyle":
+                    query = query.OrderBy(p => p.WineInformation.Style).ThenBy(p => p.Name).ThenBy(p => p.Volume).ThenBy(p => p.WineInformation.Vintage);
+                    break;
+                case "-WineStyle":
+                    query = query.OrderByDescending(p => p.WineInformation.Style).ThenBy(p => p.Name).ThenBy(p => p.Volume).ThenBy(p => p.WineInformation.Vintage);
+                    break;
+                case "WineAppelation":
+                    query = query.OrderBy(p => p.WineInformation.Appellation).ThenBy(p => p.Name).ThenBy(p => p.Volume).ThenBy(p => p.WineInformation.Vintage);
+                    break;
+                case "-WineAppelation":
+                    query = query.OrderByDescending(p => p.WineInformation.Appellation).ThenBy(p => p.Name).ThenBy(p => p.Volume).ThenBy(p => p.WineInformation.Vintage);
+                    break;
+                case "Sku":
+                    query = query.OrderBy(p => p.Sku).ThenBy(p => p.Name).ThenBy(p => p.Volume).ThenBy(p => p.WineInformation.Vintage);
+                    break;
+                case "-Sku":
+                    query = query.OrderByDescending(p => p.Sku).ThenBy(p => p.Name).ThenBy(p => p.Volume).ThenBy(p => p.WineInformation.Vintage);
+                    break;
+            }
+
+            ViewBag.FilterText = filterText;
+            return View(_mapper.Map<IEnumerable<WineProductDetailsDto>>(query.ToList()));
                          
         }
 

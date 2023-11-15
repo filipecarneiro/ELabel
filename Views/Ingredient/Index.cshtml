@@ -1,45 +1,67 @@
-﻿@model IEnumerable<ELabel.Models.Ingredient>
+﻿@using ELabel.Extensions;
+@model IEnumerable<ELabel.Models.Ingredient>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Ingredients";
 }
 
-<h1>Index</h1>
+<h1>Ingredients</h1>
 
-<p>
-    <a asp-action="Create">Create New</a> |
-    <a asp-action="Import">Import</a> |
-    <a asp-action="Export">Export</a>
+<div class="d-flex justify-content-between mb-3">
+    <div class="">
+        <a asp-action="Create">Create New</a>
+    </div>
+    <div class="">
+        <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Data</a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" asp-action="Import">Import</a>
+            <a class="dropdown-item" asp-action="Export">Export</a>
+        </div>
+    </div>
+</div>
 
-</p>
+<form method="post" class="form-inline">
+    <div class="input-group mb-3 flex-fill">
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="bi bi-search"></i></span>
+        </div>
+        <input id="FilterText" name="FilterText" class="form-control" type="search" placeholder="Search by name, category or allergen." value="@ViewBag.FilterText" />
+        <div class="input-group-append">
+            <input type="submit" value="Search" class="btn btn-outline-secondary" />
+        </div>
+    </div>
+</form>
+
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
+            <th scope="col">
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.SortParmName">@Html.DisplayNameFor(model => model.Name)</a>
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Category)
+            <th scope="col">
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.SortParmCategory">@Html.DisplayNameFor(model => model.Category)</a>
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Allergen)
+            <th scope="col">
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.SortParmAllergen">@Html.DisplayNameFor(model => model.Allergen)</a>
             </th>
             @*
-            <th>
-                @Html.DisplayNameFor(model => model.Custom)
+            <th scope="col">
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.SortParmCustom">@Html.DisplayNameFor(model => model.Custom)</a>
             </th>
             *@
-            <th></th>
+            <th scope="col"></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td class="">
+            <td class="clickable" data-href='/Ingredient/Details/@item.Id'>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Category)
+                <a class="btn btn-light btn-sm" asp-action="Index" asp-route-filterText="@EnumHelper.GetDisplayName(item.Category)" role="button" title="@EnumHelper.GetDisplayDescription(item.Category)">
+                        @EnumHelper.GetDisplayName(item.Category)
+                </a>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Allergen)
@@ -50,11 +72,28 @@
             </td>
             *@
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <div class="dropend">
+                    <a class="" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span>&#x2807;</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" asp-action="Edit" asp-route-id="@item.Id">Edit</a></li>
+                        <li><a class="dropdown-item" asp-action="Details" asp-route-id="@item.Id">Details</a></li>
+                        <li><a class="dropdown-item" asp-action="Delete" asp-route-id="@item.Id">Delete</a></li>
+                    </ul>
+                </div>
             </td>
         </tr>
 }
     </tbody>
 </table>
+
+@section Scripts {
+    <script>
+        jQuery(document).ready(function ($) {
+            $('*[data-href]').on('click', function () {
+                window.location = $(this).data("href");
+            });
+        });
+    </script>
+}
