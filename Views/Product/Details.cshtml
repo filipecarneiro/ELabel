@@ -39,8 +39,8 @@
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
     @if (Model != null && Model.Image != null)
     {
-        <a asp-action="DeleteImage" asp-route-id="@Model?.Id">Delete Image</a> <span>|</span>
+        <a asp-action="DeleteImage" asp-route-id="@Model?.Id">Delete image</a> <span>|</span>
     }
-    <a asp-action="ChangeImage" asp-route-id="@Model?.Id">Change Image</a> |
+    <a asp-action="ChangeImage" asp-route-id="@Model?.Id">Change image</a> |
     <a asp-action="Index">Back to List</a>
 </div>
