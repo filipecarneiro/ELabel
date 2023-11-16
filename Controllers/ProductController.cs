@@ -4,6 +4,7 @@ using ELabel.Extensions;
 using ELabel.Models;
 using ELabel.ViewModels;
 using Ganss.Excel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -144,6 +145,32 @@ namespace ELabel.Controllers
             return View(wineProductDetailsDto);
         }
 
+        // GET: Product/Preview/5
+        [AllowAnonymous]
+        public async Task<IActionResult> Preview(Guid? id)
+        {
+            if (id == null || _context.Product == null)
+            {
+                return NotFound();
+            }
+
+            var product = await _context.Product
+                                        .Include(p => p.Image)
+                                        .Include(p => p.ProductIngredients.OrderBy(pi => pi.Order))
+                                        .ThenInclude(pi => pi.Ingredient)
+                                        .AsNoTracking()
+                                        .FirstOrDefaultAsync(m => m.Id == id);
+
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            WineProductDetailsDto wineProductDetailsDto = _mapper.Map<WineProductDetailsDto>(product);
+
+            return View(wineProductDetailsDto);
+        }
+
         // GET: Product/Create
         public IActionResult Create()
         {
@@ -181,6 +208,7 @@ namespace ELabel.Controllers
             }
 
             var product = await _context.Product
+                                        .Include(p => p.Image)
                                         .Include(p => p.ProductIngredients.OrderBy(pi => pi.Order))
                                              //.ThenInclude(pi => pi.Ingredient)
                                         .FirstOrDefaultAsync(m => m.Id == id);

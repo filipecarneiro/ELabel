@@ -1,0 +1,22 @@
+﻿@using ELabel.ViewModels
+@model List<ProductIngredientDto>
+
+<div class="d-flex flex-row">
+
+    @foreach (ProductIngredientDto productIngredient in Model.OrderBy(pi => pi.Order))
+    {
+        @if (productIngredient.Ingredient != null)
+        {
+            <p class="@(productIngredient.Ingredient.Allergen ? "fw-bold" : "")">@productIngredient.Ingredient.Name</p>
+            @if (productIngredient != Model.Last())
+            {
+                <span>,&nbsp;</span>
+            }
+            else
+            {
+                <span>.</span>
+            }
+        }
+    }
+
+</div>

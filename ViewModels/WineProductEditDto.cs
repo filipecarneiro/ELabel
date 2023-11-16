@@ -23,6 +23,8 @@ namespace ELabel.ViewModels
          * Details
          */
 
+        public ImageDto? Image { get; set; }
+
         public required WineInformation WineInformation { get; set; } = new();
 
         /*

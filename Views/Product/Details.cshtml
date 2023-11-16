@@ -12,8 +12,14 @@
         <img class="img-fluid float-end ms-5"
              style="max-width: 100px"
              src="@Model.Image.DataUrl"
-             @(@Model.Image.Width != null ? "width='@Model.Image.Width'" : "")
-             @(@Model.Image.Height != null ? "height='@Model.Image.Height'" : "")
+             @if(Model.Image.Width != null)
+             {
+                 @:width='@Model.Image.Width'
+             }
+             @if(Model.Image.Height != null)
+             {
+                 @:height='@Model.Image.Height'
+             }
              alt="@Model.Name">
     </div>
 }

@@ -10,22 +10,22 @@ namespace ELabel.Models
 
     public enum WineType
     {
-        [Display(Name = "White")]
+        [Display(Name = "White", Description = "White wine")]
         White = 1,
 
-        [Display(Name = "Red")]
+        [Display(Name = "Red", Description = "Red wine")]
         Red = 2,
 
-        [Display(Name = "Rosé")]
+        [Display(Name = "Rosé", Description = "Rosé wine")]
         Rose = 3,
 
-        [Display(Name = "Sparkling")]
+        [Display(Name = "Sparkling", Description = "Sparkling wine")]
         Sparkling = 4,
 
-        [Display(Name = "Fortified")]
+        [Display(Name = "Fortified", Description = "Fortified wine")]
         Fortified = 5,
 
-        [Display(Name = "Orange")]
+        [Display(Name = "Orange", Description = "Orange wine")]
         Orange = 6
     }
 }

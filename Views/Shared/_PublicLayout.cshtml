@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - E-Label</title>
+    <link rel="icon" type="image/svg+xml" href="~/favicon.svg">
+    <link rel="icon" type="image/png" href="~/favicon.png">
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap-icons/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="" >
+        <div class="container text-center py-3">
+            <h1 class="fs-1 text-uppercase">@ViewData["Title"]</h1>
+            <h2 class="fs-1">@ViewData["Subtitle"]</h2>
+            <p class="fs-3">@ViewData["Description"]</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <main role="main" class="py-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="text-center border-top text-body-secondary py-3 mt-3">
+        <div class="container">
+            <small>Electronic label provided by <a href="https://safe-elabel.org/" target="_blank" rel="noopener">Open E-Label</a>.</small>
+        </div>
+    </footer>
+</body>
+</html>

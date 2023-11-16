@@ -94,20 +94,24 @@
                 @Html.DisplayFor(modelItem => item.Sku)
             </td>
             <td>
-                <div class="dropend">
-                    <a class="" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span>&#x2807;</span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" asp-action="Edit" asp-route-id="@item?.Id">Edit</a></li>
-                        @if (item != null && item.Image != null)
-                        {
-                            <li><a class="dropdown-item" asp-action="DeleteImage" asp-route-id="@item.Id">Delete image</a></li>
-                        }
-                        <li><a class="dropdown-item" asp-action="ChangeImage" asp-route-id="@item?.Id">Change image</a></li>
-                        <li><a class="dropdown-item" asp-action="Details" asp-route-id="@item?.Id">Details</a></li>
-                        <li><a class="dropdown-item" asp-action="Delete" asp-route-id="@item?.Id">Delete</a></li>
-                    </ul>
+                <div class="d-flex justify-content-end align-items-center">
+                    <a class="fw-bold" asp-action="Edit" asp-route-id="@item?.Id" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                    <a class="fw-bold ms-3" asp-action="Preview" asp-route-id="@item?.Id" target="_blank" rel="external" title="Preview"><i class="bi bi-eye"></i></a>
+                    <div class="dropend">
+                        <a class="ms-3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span>&#x2807;</span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" asp-action="Edit" asp-route-id="@item?.Id">Edit</a></li>
+                            @if (item != null && item.Image != null)
+                            {
+                                <li><a class="dropdown-item" asp-action="DeleteImage" asp-route-id="@item.Id">Delete image</a></li>
+                            }
+                            <li><a class="dropdown-item" asp-action="ChangeImage" asp-route-id="@item?.Id">Change image</a></li>
+                            <li><a class="dropdown-item" asp-action="Details" asp-route-id="@item?.Id">Details</a></li>
+                            <li><a class="dropdown-item" asp-action="Delete" asp-route-id="@item?.Id">Delete</a></li>
+                        </ul>
+                    </div>
                 </div>
             </td>
         </tr>
