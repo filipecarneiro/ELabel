@@ -30,9 +30,12 @@ namespace ELabel.Models
         [MaxLength(100)]
         public string? Appellation { get; set; }
 
-        // TODO: Grape varieties
+        [Column("WineAlcohol")]
+        [Display(Name = "Alcohol", Description = "Alcohol on label (% vol.)")]
+        [DisplayFormat(DataFormatString = "{0:G} % vol.")]
+        public float? Alcohol { get; set; }
 
-        // TODO: Alcohol on label
+        // TODO: Grape varieties
 
         // TODO: Production method (Traditional method, Barrel aged, Stainless steel fermented, Cask aged, etc.)
     }

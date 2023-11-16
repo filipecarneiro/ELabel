@@ -28,3 +28,9 @@
     <div id="WineAppellationHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Appellation").FirstOrDefault()?.Description</div>
     <span asp-validation-for="Appellation" class="text-danger"></span>
 </div>
+<div class="mb-3">
+    <label asp-for="Alcohol" class="form-label"></label>
+    <input asp-for="Alcohol" class="form-control" aria-describedby="WineAlcoholHelp" />
+    <div id="WineAlcoholHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Alcohol").FirstOrDefault()?.Description</div>
+    <span asp-validation-for="Alcohol" class="text-danger"></span>
+</div>
