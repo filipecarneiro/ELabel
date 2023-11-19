@@ -7,7 +7,7 @@
     {
         ViewData["Title"] += " " + Model.WineInformation.Vintage.ToString();
     }
-    ViewData["Subtitle"] = "A&D Wines";
+    ViewData["Subtitle"] = ViewData["ProducerName"];
     ViewData["Description"] = @Model.WineInformation.Appellation;
     Layout = "_PublicLayout";
 }

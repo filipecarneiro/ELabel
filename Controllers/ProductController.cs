@@ -8,8 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
-using NPOI.SS.Formula.Functions;
+using Microsoft.Extensions.Options;
 
 namespace ELabel.Controllers
 {
@@ -17,11 +16,13 @@ namespace ELabel.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly IMapper _mapper;
+        private readonly Producer _producer;
 
-        public ProductController(ApplicationDbContext context, IMapper mapper)
+        public ProductController(ApplicationDbContext context, IMapper mapper, IOptions<Producer> producerConfiguration)
         {
             _context = context;
             _mapper = mapper;
+            _producer = producerConfiguration.Value;
         }
 
         // GET: Product
@@ -168,6 +169,7 @@ namespace ELabel.Controllers
 
             WineProductDetailsDto wineProductDetailsDto = _mapper.Map<WineProductDetailsDto>(product);
 
+            ViewData["ProducerName"] = _producer.Name;
             return View(wineProductDetailsDto);
         }
 

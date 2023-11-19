@@ -27,8 +27,6 @@ namespace ELabel.Models
          * Other details
          */
 
-        // TODO: Producer (Name, logo and website)
-
         // TODO: Packaging & Recycling (Mandatory in Italy)
 
         // TODO: Food business operators
