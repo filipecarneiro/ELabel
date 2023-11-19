@@ -63,7 +63,7 @@
 
 @if (Model.ProductIngredients != null && Model.ProductIngredients.Count > 0)
 {
-    <div class="mb-2">
+    <div class="pb-3">
         <h3>Ingredients</h3>
         <div class="">
 
@@ -71,12 +71,12 @@
         
         </div>
     </div>
-    <hr />
+    <hr/>
 }
 
 @if (Model.NutritionInformation != null && Model.NutritionInformation.Energy != null)
 {
-    <div class="mb-2">
+    <div class="pb-3">
         <h3>Nutrition Information</h3>
         <div class="">
 
@@ -89,7 +89,7 @@
 
 @if (Model.ResponsibleConsumption != null && Model.ResponsibleConsumption.WarningDrinkingDuringPregnancy)
 {
-    <div class="mb-2">
+    <div class="pb-3">
         <h3>Responsible Consumption</h3>
         <div class="">
 
@@ -102,7 +102,7 @@
 
 @if (Model.Certifications != null && Model.Certifications.Organic)
 {
-    <div class="mb-2">
+    <div class="pb-3">
         <h3>Certifications</h3>
         <div class="">
 
@@ -110,5 +110,4 @@
 
         </div>
     </div>
-    <hr />
 }
