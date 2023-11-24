@@ -8,7 +8,7 @@ services:
     networks:
       backend:
     ports:
-      - 80:80
+      - 80:8080
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ConnectionStrings__DefaultConnection: 'Server=elabel_db;Database=elabel;User id=sa;Password=yourStrong(!)Password;Trust Server Certificate=true;MultipleActiveResultSets=true'
