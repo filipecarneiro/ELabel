@@ -1,8 +1,9 @@
+using ELabel.Controllers;
 using ELabel.Data;
+using ELabel.Middleware;
 using ELabel.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,15 +11,33 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
+
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
+// Load Producer configuration from appsettings.json
 builder.Services.Configure<Producer>(builder.Configuration.GetSection("Producer"));
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ApplicationDbContext>();
+// Load environment variable with ELABEL prefix
+builder.Configuration.AddEnvironmentVariables(prefix: "ELABEL_");
+
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => {
+        options.SignIn.RequireConfirmedAccount = false;
+        options.User.RequireUniqueEmail = false;
+        options.Password.RequiredLength = 4;
+        options.Password.RequireNonAlphanumeric = false;
+        options.Password.RequireDigit = false;
+    })
+    .AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddDefaultUI()
+    .AddDefaultTokenProviders();
+
 builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+builder.Services.AddTransient<DatabaseInitializationController>();
+builder.Services.AddTransient<IStartupFilter, DatabaseInitializationStartupFilter>();
 
 var app = builder.Build();
 

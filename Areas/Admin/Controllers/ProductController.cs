@@ -13,6 +13,7 @@ using Microsoft.Extensions.Options;
 namespace ELabel.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize()]
     public class ProductController : Controller
     {
         private readonly ApplicationDbContext _context;

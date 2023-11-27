@@ -3,12 +3,14 @@ using ELabel.Extensions;
 using ELabel.Models;
 using ELabel.ViewModels;
 using Ganss.Excel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace ELabel.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize()]
     public class IngredientController : Controller
     {
         private readonly ApplicationDbContext _context;

@@ -1,10 +1,12 @@
 ﻿using ELabel.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace ELabel.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize()]
     public class DashboardController : Controller
     {
         private readonly ILogger<DashboardController> _logger;
