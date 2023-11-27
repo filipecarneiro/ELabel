@@ -10,8 +10,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 
-namespace ELabel.Controllers
+namespace ELabel.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class ProductController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -33,7 +34,7 @@ namespace ELabel.Controllers
                 return Problem("Entity set 'ApplicationDbContext.Product'  is null.");
             }
 
-            ViewBag.SortParmName = String.IsNullOrEmpty(sortOrder) ? "-Name" : "";
+            ViewBag.SortParmName = string.IsNullOrEmpty(sortOrder) ? "-Name" : "";
             ViewBag.SortParmVolume = sortOrder == "Volume" ? "-Volume" : "Volume";
             ViewBag.SortParmWineVintage = sortOrder == "WineVintage" ? "-WineVintage" : "WineVintage";
             ViewBag.SortParmWineType = sortOrder == "WineType" ? "-WineType" : "WineType";
@@ -51,20 +52,20 @@ namespace ELabel.Controllers
 
             // Filter
 
-            if (!String.IsNullOrWhiteSpace(filterText))
+            if (!string.IsNullOrWhiteSpace(filterText))
             {
                 filterText = filterText.Trim().ToLower();
                 float filterFloat;
                 ushort filterUShort;
 
-                query = query.Where(p => ((p.Name.Contains(filterText, StringComparison.InvariantCultureIgnoreCase)) ||
-                                          (p.Volume != null && float.TryParse(filterText, out filterFloat) && p.Volume == filterFloat) ||
-                                          (p.WineInformation.Vintage != null && ushort.TryParse(filterText, out filterUShort) && p.WineInformation.Vintage == filterUShort) ||
-                                          (p.WineInformation.Type != null && EnumHelper.GetDisplayName(p.WineInformation.Type)?.ToLower() == filterText) ||
-                                          (p.WineInformation.Style != null && EnumHelper.GetDisplayName(p.WineInformation.Style)?.ToLower() == filterText) ||
-                                          (p.WineInformation.Appellation != null && p.WineInformation.Appellation.Contains(filterText, StringComparison.InvariantCultureIgnoreCase)) ||
-                                          (p.Sku != null && p.Sku.Contains(filterText, StringComparison.InvariantCultureIgnoreCase))
-                                         )
+                query = query.Where(p => p.Name.Contains(filterText, StringComparison.InvariantCultureIgnoreCase) ||
+                                          p.Volume != null && float.TryParse(filterText, out filterFloat) && p.Volume == filterFloat ||
+                                          p.WineInformation.Vintage != null && ushort.TryParse(filterText, out filterUShort) && p.WineInformation.Vintage == filterUShort ||
+                                          p.WineInformation.Type != null && EnumHelper.GetDisplayName(p.WineInformation.Type)?.ToLower() == filterText ||
+                                          p.WineInformation.Style != null && EnumHelper.GetDisplayName(p.WineInformation.Style)?.ToLower() == filterText ||
+                                          p.WineInformation.Appellation != null && p.WineInformation.Appellation.Contains(filterText, StringComparison.InvariantCultureIgnoreCase) ||
+                                          p.Sku != null && p.Sku.Contains(filterText, StringComparison.InvariantCultureIgnoreCase)
+                                         
                                    );
             }
 
@@ -118,37 +119,11 @@ namespace ELabel.Controllers
 
             ViewBag.FilterText = filterText;
             return View(_mapper.Map<IEnumerable<WineProductDetailsDto>>(query.ToList()));
-                         
+
         }
 
         // GET: Product/Details/5
         public async Task<IActionResult> Details(Guid? id)
-        {
-            if (id == null || _context.Product == null)
-            {
-                return NotFound();
-            }
-
-            var product = await _context.Product
-                                        .Include(p => p.Image)
-                                        .Include(p => p.ProductIngredients.OrderBy(pi => pi.Order))
-                                        .ThenInclude(pi => pi.Ingredient)
-                                        .AsNoTracking() 
-                                        .FirstOrDefaultAsync(m => m.Id == id);
-
-            if (product == null)
-            {
-                return NotFound();
-            }
-
-            WineProductDetailsDto wineProductDetailsDto = _mapper.Map<WineProductDetailsDto>(product);
-
-            return View(wineProductDetailsDto);
-        }
-
-        // GET: Product/Preview/5
-        [AllowAnonymous]
-        public async Task<IActionResult> Preview(Guid? id)
         {
             if (id == null || _context.Product == null)
             {
@@ -169,8 +144,14 @@ namespace ELabel.Controllers
 
             WineProductDetailsDto wineProductDetailsDto = _mapper.Map<WineProductDetailsDto>(product);
 
-            ViewData["ProducerName"] = _producer.Name;
             return View(wineProductDetailsDto);
+        }
+
+        // GET: Product/Preview/5
+        [AllowAnonymous]
+        public IActionResult Preview(Guid? id)
+        {
+            return RedirectToAction("Product", "Label", new { area = "", id });
         }
 
         // GET: Product/Create
@@ -212,7 +193,7 @@ namespace ELabel.Controllers
             var product = await _context.Product
                                         .Include(p => p.Image)
                                         .Include(p => p.ProductIngredients.OrderBy(pi => pi.Order))
-                                             //.ThenInclude(pi => pi.Ingredient)
+                                        //.ThenInclude(pi => pi.Ingredient)
                                         .FirstOrDefaultAsync(m => m.Id == id);
             if (product == null)
             {
@@ -249,7 +230,7 @@ namespace ELabel.Controllers
                 {
                     // Update Product
 
-                    _mapper.Map<WineProductEditDto,Product>(wineProductEditDto, product);
+                    _mapper.Map(wineProductEditDto, product);
 
                     _context.Update(product);
                     await _context.SaveChangesAsync();
@@ -263,22 +244,23 @@ namespace ELabel.Controllers
                     //_context.ChangeTracker.DetectChanges();
                     //Console.WriteLine(_context.ChangeTracker.DebugView.LongView);
 
-                    productIngredients.ForEach( pi => {
+                    productIngredients.ForEach(pi =>
+                    {
                         _context.Entry(pi).State = EntityState.Deleted;
                     });
 
                     short order = 0;
-                    foreach(ProductIngredientDto productIngredientDto in wineProductEditDto.ProductIngredients.OrderBy(pi => pi.Order)) 
+                    foreach (ProductIngredientDto productIngredientDto in wineProductEditDto.ProductIngredients.OrderBy(pi => pi.Order))
                     {
                         ProductIngredient? auxProductIngredient = productIngredients
                                                                     .Where(pi => pi.Id == productIngredientDto.Id && pi.ProductId == product.Id).FirstOrDefault();
-                        
-                        if(productIngredientDto.ToDelete)
+
+                        if (productIngredientDto.ToDelete)
                         {
                             if (auxProductIngredient == null)
                                 continue;
 
-                            _mapper.Map<ProductIngredientDto, ProductIngredient>(productIngredientDto, auxProductIngredient);
+                            _mapper.Map(productIngredientDto, auxProductIngredient);
 
                             _context.Entry(auxProductIngredient).State = EntityState.Deleted;
                             _context.Remove(auxProductIngredient);
@@ -288,7 +270,8 @@ namespace ELabel.Controllers
 
                         if (auxProductIngredient == null)
                         {
-                            auxProductIngredient = new ProductIngredient() { 
+                            auxProductIngredient = new ProductIngredient()
+                            {
                                 Id = Guid.NewGuid(),
                                 ProductId = product.Id,
                                 IngredientId = productIngredientDto.IngredientId
@@ -301,8 +284,8 @@ namespace ELabel.Controllers
 
                         }
                         else
-                        { 
-                            _mapper.Map<ProductIngredientDto, ProductIngredient>(productIngredientDto, auxProductIngredient);
+                        {
+                            _mapper.Map(productIngredientDto, auxProductIngredient);
 
                             auxProductIngredient.Order = ++order;
 
@@ -363,7 +346,7 @@ namespace ELabel.Controllers
             {
                 _context.Product.Remove(product);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
@@ -384,7 +367,7 @@ namespace ELabel.Controllers
                                 .AsNoTracking()
                                 .Select(i => new
                                 {
-                                    Id = i.Id,
+                                    i.Id,
                                     Name = i.Name + " (" + EnumHelper.GetDisplayName(i.Category) + ")"
                                 })
                                 .ToList();
@@ -412,7 +395,7 @@ namespace ELabel.Controllers
 
             byte[] byteArray;
             var excel = new ExcelMapper();
-            
+
             using (MemoryStream stream = new MemoryStream())
             {
                 excel.Save(stream, products, "Products");
@@ -480,7 +463,7 @@ namespace ELabel.Controllers
                     {
                         Guid? existingId = FindProductId(product.Name, product.Volume, product.WineInformation.Vintage);
 
-                        product.Id = (existingId == null ? Guid.NewGuid() : existingId.Value);
+                        product.Id = existingId == null ? Guid.NewGuid() : existingId.Value;
                     }
 
                     if (ProductExists(product.Id))
@@ -494,7 +477,7 @@ namespace ELabel.Controllers
 
                     await _context.SaveChangesAsync();
 
-                    if(importedProduct.Image != null && !String.IsNullOrEmpty(importedProduct.Image.DataUrl))
+                    if (importedProduct.Image != null && !string.IsNullOrEmpty(importedProduct.Image.DataUrl))
                     {
                         bool newImage = false;
                         var image = await _context.Image.FirstOrDefaultAsync(m => m.ProductId == product.Id);
@@ -502,10 +485,11 @@ namespace ELabel.Controllers
                         if (image == null)
                         {
                             newImage = true;
-                            image = new Image() {
+                            image = new Image()
+                            {
                                 Id = Guid.NewGuid(),
                                 ProductId = product.Id,
-                                ContentType = String.Empty,
+                                ContentType = string.Empty,
                                 Content = new byte[0]
                             };
                         }
@@ -557,7 +541,8 @@ namespace ELabel.Controllers
         // GET: Product/ChangeImage
         public IActionResult ChangeImage(Guid id)
         {
-            ImageFileUpload imageFileUpload = new ImageFileUpload(){
+            ImageFileUpload imageFileUpload = new ImageFileUpload()
+            {
                 ProductId = id
             };
 
@@ -601,7 +586,7 @@ namespace ELabel.Controllers
 
                 OptimizedImage? optimizedImage = ImageHelper.Optimize(byteArray, ImageFileUpload.MaxWidth, ImageFileUpload.MaxHeight, ImageFileUpload.Quality);
 
-                if(optimizedImage == null)
+                if (optimizedImage == null)
                 {
                     ModelState.AddModelError("CustomError", $"Invalid image format! Try another file.");
                     return View(imageFileUpload);
@@ -618,7 +603,7 @@ namespace ELabel.Controllers
                 await _context.Image.Where(i => i.ProductId == id).ExecuteDeleteAsync();
 
                 // Add new image to database
-                        
+
                 Image image = new Image()
                 {
                     Id = Guid.NewGuid(),

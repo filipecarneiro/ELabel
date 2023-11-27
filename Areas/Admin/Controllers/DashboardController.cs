@@ -1,28 +1,24 @@
 ﻿using ELabel.Models;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace ELabel.Controllers
+namespace ELabel.Areas.Admin.Controllers
 {
-    [AllowAnonymous]
-    public class HomeController : Controller
+    [Area("Admin")]
+    public class DashboardController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<DashboardController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public DashboardController(ILogger<DashboardController> logger)
         {
             _logger = logger;
         }
 
         public IActionResult Index()
         {
-            return View();
-        }
+            //return View(); TODO: Admin Dashboard
 
-        public IActionResult Privacy()
-        {
-            return View();
+            return RedirectToAction("Index", "Product");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -1,0 +1,58 @@
+﻿@{
+    Version? version = GetType().Assembly.GetName().Version;
+    int currentYear = DateTime.UtcNow.Year;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - E-Label</title>
+    <link rel="icon" type="image/svg+xml" href="~/favicon.svg">
+    <link rel="icon" type="image/png" href="~/favicon.png">
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap-icons/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md bg-body-tertiary">
+            <div class="container">
+                <a class="navbar-brand" asp-area="Admin" asp-controller="Dashboard" asp-action="Index">
+                    <img src="~/img/icon.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                    Open E-Label
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-md-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="Product" asp-action="Index">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="Ingredient" asp-action="Index">Ingredients</a>
+                        </li>
+                    </ul>
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="py-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="text-center border-top text-body-secondary py-3 mt-3">
+        <div class="container">
+            &copy; @currentYear - <a href="#" target="_blank" rel="noopener">Open E-Label</a> @String.Format($"v{version?.Major}.{version?.Minor}.{version?.Build}")
+        </div>
+    </footer>
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

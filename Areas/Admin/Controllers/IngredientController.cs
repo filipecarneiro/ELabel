@@ -6,8 +6,9 @@ using Ganss.Excel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace ELabel.Controllers
+namespace ELabel.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class IngredientController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -25,7 +26,7 @@ namespace ELabel.Controllers
                 return Problem("Entity set 'ApplicationDbContext.Ingredient'  is null.");
             }
 
-            ViewBag.SortParmName = String.IsNullOrEmpty(sortOrder) ? "-Name" : "";
+            ViewBag.SortParmName = string.IsNullOrEmpty(sortOrder) ? "-Name" : "";
             ViewBag.SortParmCategory = sortOrder == "Category" ? "-Category" : "Category";
             ViewBag.SortParmAllergen = sortOrder == "Allergen" ? "-Allergen" : "Allergen";
             ViewBag.SortParmCustom = sortOrder == "Custom" ? "-Custom" : "Custom";
@@ -39,15 +40,15 @@ namespace ELabel.Controllers
 
             // Filter
 
-            if (!String.IsNullOrWhiteSpace(filterText))
+            if (!string.IsNullOrWhiteSpace(filterText))
             {
                 filterText = filterText.Trim();
 
-                query = query.Where(t => ((t.Name.Contains(filterText, StringComparison.InvariantCultureIgnoreCase)) ||
-                                          (EnumHelper.GetDisplayName(t.Category)?.ToLower() == filterText.ToLower()) ||
-                                          ("allergen" == filterText.ToLower() && t.Allergen == true) ||
-                                          ("custom" == filterText.ToLower() && t.Custom == true)
-                                         )
+                query = query.Where(t => t.Name.Contains(filterText, StringComparison.InvariantCultureIgnoreCase) ||
+                                          EnumHelper.GetDisplayName(t.Category)?.ToLower() == filterText.ToLower() ||
+                                          "allergen" == filterText.ToLower() && t.Allergen == true ||
+                                          "custom" == filterText.ToLower() && t.Custom == true
+                                         
                                    );
             }
 
@@ -213,14 +214,14 @@ namespace ELabel.Controllers
             {
                 _context.Ingredient.Remove(ingredient);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool IngredientExists(Guid id)
         {
-          return (_context.Ingredient?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Ingredient?.Any(e => e.Id == id)).GetValueOrDefault();
         }
 
         private Guid? FindIngredientId(string name, IngredientCategory category)
@@ -306,8 +307,8 @@ namespace ELabel.Controllers
                     if (importedIngredient.Id == Guid.Empty)
                     {
                         Guid? existingId = FindIngredientId(importedIngredient.Name, importedIngredient.Category);
-    
-                        importedIngredient.Id = (existingId == null ? Guid.NewGuid() : existingId.Value);
+
+                        importedIngredient.Id = existingId == null ? Guid.NewGuid() : existingId.Value;
                     }
 
                     if (IngredientExists(importedIngredient.Id))
