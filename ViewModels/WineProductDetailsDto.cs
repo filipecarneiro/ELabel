@@ -1,6 +1,5 @@
 ﻿using ELabel.Models;
 using System.ComponentModel.DataAnnotations;
-using static Azure.Core.HttpHeader;
 
 namespace ELabel.ViewModels
 {
