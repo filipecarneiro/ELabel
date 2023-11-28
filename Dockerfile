@@ -9,17 +9,17 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["E-Label.csproj", "."]
-RUN dotnet restore "./E-Label.csproj"
+COPY ["ELabel.csproj", "."]
+RUN dotnet restore "./ELabel.csproj"
 COPY . .
 WORKDIR "/src/."
-RUN dotnet build "E-Label.csproj" -c $BUILD_CONFIGURATION -o /app/build
+RUN dotnet build "ELabel.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "E-Label.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "ELabel.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "E-Label.dll"]
+ENTRYPOINT ["dotnet", "ELabel.dll"]

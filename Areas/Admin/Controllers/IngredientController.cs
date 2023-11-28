@@ -251,7 +251,7 @@ namespace ELabel.Areas.Admin.Controllers
                 byteArray = stream.ToArray();
             }
 
-            return File(byteArray, "application/xlsx", $"e-label-ingredients.xlsx");
+            return File(byteArray, "application/xlsx", $"elabel-ingredients.xlsx");
         }
 
         // GET: Ingredient/Import

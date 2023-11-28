@@ -404,7 +404,7 @@ namespace ELabel.Areas.Admin.Controllers
                 byteArray = stream.ToArray();
             }
 
-            return File(byteArray, "application/xlsx", $"e-label-products.xlsx");
+            return File(byteArray, "application/xlsx", $"elabel-products.xlsx");
         }
 
         // GET: Product/Import
