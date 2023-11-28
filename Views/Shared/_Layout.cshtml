@@ -1,5 +1,7 @@
-﻿<!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+﻿@inject IHtmlLocalizer<SharedResource> Localizer
+
+<!DOCTYPE html>
+<html lang="@System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName" data-bs-theme="dark">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,8 +12,15 @@
     <link rel="stylesheet" href="~/lib/bootstrap-icons/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
-<body>
-    <header class="" >
+<body class="d-flex flex-column min-vh-100">
+    <header class="header">
+        <nav class="navbar text-body-secondary bg-body-tertiary">
+            <div class="container">
+                <div class="ms-auto">
+                    @await Html.PartialAsync("_SelectLanguagePartial")
+                </div>
+            </div>
+        </nav>
     </header>
 
     <div class="container">
@@ -20,9 +29,9 @@
         </main>
     </div>
 
-    <footer class="text-center border-top text-body-secondary py-3 mt-3">
+    <footer class="mt-auto text-center border-top text-body-secondary bg-body-tertiary py-3 mt-3">
         <div class="container">
-            <small>Electronic label provided by <a href="#" target="_blank" rel="noopener">Open E-Label</a>.</small>
+            <small>@Localizer["Electronic label provided by"] <a href="#" target="_blank" rel="noopener">Open E-Label</a>.</small>
         </div>
     </footer>
 </body>

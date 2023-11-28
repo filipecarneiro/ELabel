@@ -3,7 +3,11 @@ using ELabel.Data;
 using ELabel.Middleware;
 using ELabel.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Localization;
+using Microsoft.Extensions.Options;
+using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,24 +24,76 @@ builder.Services.Configure<Producer>(builder.Configuration.GetSection("Producer"
 // Load environment variable with ELABEL prefix
 builder.Configuration.AddEnvironmentVariables(prefix: "ELABEL_");
 
-builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => {
-        options.SignIn.RequireConfirmedAccount = false;
-        options.User.RequireUniqueEmail = false;
-        options.Password.RequiredLength = 4;
-        options.Password.RequireNonAlphanumeric = false;
-        options.Password.RequireDigit = false;
-    })
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
+{
+    options.SignIn.RequireConfirmedAccount = false;
+    options.User.RequireUniqueEmail = false;
+    options.Password.RequiredLength = 4;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireDigit = false;
+})
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultUI()
     .AddDefaultTokenProviders();
 
-builder.Services.AddControllersWithViews();
+// Adding the view/localization services
+builder.Services.AddLocalization();
+builder.Services.AddControllersWithViews().AddViewLocalization();
+builder.Services.AddSingleton<IStringLocalizerFactory, ResourceManagerStringLocalizerFactory>();
+
 builder.Services.AddRazorPages();
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddTransient<DatabaseInitializationController>();
 builder.Services.AddTransient<IStartupFilter, DatabaseInitializationStartupFilter>();
+
+// Configure supported cultures and localization options
+builder.Services.Configure<RequestLocalizationOptions>(options =>
+{
+    // Official languages of the EU (and ISO 639-1 language codes)
+    CultureInfo[] supportedCultures = new[]
+    {
+        new CultureInfo("bg"), // Bulgarian (BG)
+        new CultureInfo("hr"), // Croatian (HR)
+        new CultureInfo("cs"), // Czech (CS)
+        new CultureInfo("da"), // Danish (DA)
+        new CultureInfo("nl"), // Dutch (NL)
+        new CultureInfo("en"), // English (EN)
+        new CultureInfo("et"), // Estonian (ET)
+        new CultureInfo("fi"), // Finnish (FI)
+        new CultureInfo("fr"), // French (FR)
+        new CultureInfo("de"), // German (DE)
+        new CultureInfo("el"), // Greek (EL)
+        new CultureInfo("hu"), // Hungarian (HU)
+        new CultureInfo("ga"), // Irish (GA)
+        new CultureInfo("it"), // Italian (IT)
+        new CultureInfo("lv"), // Latvian (LV)
+        new CultureInfo("lt"), // Lithuanian (LT)
+        new CultureInfo("mt"), // Maltese (MT)
+        new CultureInfo("pl"), // Polish (PL)
+        new CultureInfo("pt"), // Portuguese (PT)
+        new CultureInfo("ro"), // Romanian (RO)
+        new CultureInfo("sk"), // Slovak (SK)
+        new CultureInfo("sl"), // Slovene (SL)
+        new CultureInfo("es"), // Spanish (ES)
+        new CultureInfo("sv"), // Swedish (SV)
+    };
+
+    // State what the default culture for your application is. This will be used if no specific culture
+    // can be determined for a given request.
+    options.DefaultRequestCulture = new RequestCulture(culture: "en", uiCulture: "en");
+
+    // You must explicitly state which cultures your application supports.
+    // These are the cultures the app supports for formatting numbers, dates, etc.
+    options.SupportedCultures = supportedCultures;
+
+    // These are the cultures the app supports for UI strings, i.e. we have localized resources for.
+    options.SupportedUICultures = supportedCultures;
+
+    // Using Accept-Language HTTP header from browsers
+    options.ApplyCurrentCultureToResponseHeaders = true;
+});
 
 var app = builder.Build();
 
@@ -64,7 +120,8 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseRequestLocalization("en-US");
+var locOptions = app.Services.GetService<IOptions<RequestLocalizationOptions>>();
+app.UseRequestLocalization(locOptions?.Value!);
 
 app.UseAuthorization();
 

@@ -1,5 +1,7 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@inject IHtmlLocalizer<SharedResource> Localizer
+
+@{
+    ViewData["Title"] = Localizer["Home Page"];
 }
 
 <section class="hero text-center pt-5">
@@ -10,7 +12,7 @@
         <i class="bi bi-qr-code-scan" style="font-size: 10em"></i>
     </div>
     <h1 class="display-1 text-bold">Open E-Label</h1>
-    <h5 class="text-gray-soft text-regular mb-4">Open-source solution for electronic labels.</h5>
-    <a class="btn btn-light btn-lg mb-5" href="/Admin">Admin Dashboard</a>
+    <h5 class="text-gray-soft text-regular mb-4">@Localizer["Open-source solution for electronic labels"].</h5>
+    <a class="btn btn-light btn-lg mb-5" href="/Admin">@Localizer["Admin Dashboard"]</a>
 
 </section>

@@ -1,4 +1,8 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
-
-// Write your JavaScript code.
+﻿(function() {
+  const selectElement = $("#selectLanguage select");
+  // Attach event listener to the select element
+  selectElement.on("change", function() {
+    // Submit the parent form
+    selectElement.parent().trigger("submit");
+  });
+})();

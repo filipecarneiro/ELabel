@@ -1,4 +1,5 @@
 ﻿@model Certifications
+@inject IHtmlLocalizer<SharedResource> Localizer
 
 <div class="text-center">
     <div class="row align-items-start">
@@ -11,7 +12,7 @@
                 loading="lazy"
                 src="~/img/certification-organic.svg"
                 alt="@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Organic").FirstOrDefault()?.Description"
-                title="@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Organic").FirstOrDefault()?.Description"
+                title="@Localizer[ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Organic").FirstOrDefault()?.Description ?? ""]"
             />
         </div>
         }

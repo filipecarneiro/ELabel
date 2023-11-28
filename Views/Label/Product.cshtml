@@ -1,4 +1,6 @@
 ﻿@model ELabel.ViewModels.LabelDto
+@inject IHtmlLocalizer<SharedResource> Localizer
+
 @{
     ViewData["Title"] = @Model.Name;
     if (Model.WineInformation?.Vintage != null)
@@ -37,14 +39,14 @@
         @if (Model.WineInformation is not null && Model.WineInformation.Type is not null)
         {
             <div class="p-2">
-                @EnumHelper.GetDisplayDescription(Model.WineInformation.Type)
+                @Localizer[EnumHelper.GetDisplayDescription(Model.WineInformation.Type)!]
             </div>
         }
 
         @if (Model.WineInformation is not null && Model.WineInformation.Style is not null)
         {
             <div class="p-2">
-                @Html.DisplayFor(model => model.WineInformation!.Style)
+                @Localizer[EnumHelper.GetDisplayName(Model.WineInformation.Style)!]
             </div>
         }
 
@@ -68,7 +70,7 @@
 @if (Model.ProductIngredients is not null && Model.ProductIngredients.Count > 0)
 {
     <div class="pb-3">
-        <h3>Ingredients</h3>
+        <h3>@Localizer["Ingredients"]</h3>
         <div class="">
 
             @Html.DisplayFor(model => model.ProductIngredients, "ProductIngredientsText")
@@ -81,7 +83,7 @@
 @if (Model.NutritionInformation is not null && Model.NutritionInformation.Energy is not null)
 {
     <div class="pb-3">
-        <h3>Nutrition Information</h3>
+        <h3>@Localizer["Nutrition Information"]</h3>
         <div class="">
 
         @Html.DisplayFor(model => model.NutritionInformation)
@@ -94,7 +96,7 @@
 @if (Model.ResponsibleConsumption is not null && Model.ResponsibleConsumption.WarningDrinkingDuringPregnancy)
 {
     <div class="pb-3">
-        <h3>Responsible Consumption</h3>
+        <h3>@Localizer["Responsible Consumption"]</h3>
         <div class="">
 
             @Html.DisplayFor(model => model.ResponsibleConsumption)
@@ -107,7 +109,7 @@
 @if (Model.Certifications is not null && Model.Certifications.Organic)
 {
     <div class="pb-3">
-        <h3>Certifications</h3>
+        <h3>@Localizer["Certifications"]</h3>
         <div class="">
 
             @Html.DisplayFor(model => model.Certifications)
