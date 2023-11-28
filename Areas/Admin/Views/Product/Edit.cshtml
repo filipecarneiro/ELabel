@@ -145,7 +145,7 @@
                     async: true,
                     data: $('#form').serialize(),
                     type: "POST",
-                    url: '/Product/RemoveIngredient',
+                    url: '/Admin/Product/RemoveIngredient',
                     success: function (partialView) {
                         console.log("partialView: " + partialView);
                         $('#productIngredientsContainer').html(partialView);
@@ -158,7 +158,7 @@
                     async: true,
                     data: $('#form').serialize(),
                     type: "POST",
-                    url: '/Product/AddIngredient',
+                    url: '/Admin/Product/AddIngredient',
                     success: function (partialView) {
                         console.log("partialView: " + partialView);
                         $('#productIngredientsContainer').html(partialView);
