@@ -1,6 +1,11 @@
-# Open E-Label
+<div align="center">
+<img src="wwwroot/img/icon.svg" width="100" height="100">
+</div>
 
 ![GitHub License](https://img.shields.io/github/license/filipecarneiro/ELabel)
+![Static Badge](https://img.shields.io/badge/Docker-Image-brightgreen?link=https%3A%2F%2Fhub.docker.com%2Fr%2Ffcarneiro%2Felabel)
+
+# Open E-Label
 
 The Open E-Label project aims to provide a standardized and open-source solution for electronic labels on table wine bottles selled within the European Union. This initiative seeks to enhance transparency, efficiency, and information accessibility in the wine industry.
 
