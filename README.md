@@ -35,7 +35,7 @@ To build the Open E-Label project using Visual Studio, follow these steps:
 
 ## Deployment
 
-The web app can be deployed using the published Docker image. Here are the steps to run it with Docker compose:
+The web app can be deployed using the [published Docker image](https://hub.docker.com/r/fcarneiro/elabel). Here are the steps to run it with Docker compose:
 
 1 Copy `docker-compose.yml` to your server. Change server details as needed:
 
