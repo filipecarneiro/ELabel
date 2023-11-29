@@ -1,6 +1,15 @@
 ﻿@model NutritionInformation
 @inject IHtmlLocalizer<SharedResource> Localizer
 
+@{
+    const float toleratedFatTotal = 0.5f;
+    const float toleratedFatSaturates = 0.1f;
+    const float toleratedCarbohydrateTotal = 0.0f;
+    const float toleratedCarbohydrateSugar = 0.0f;
+    const float toleratedProtein = 0.5f;
+    const float toleratedSalt = 0.01f;
+}
+
 <table class="table table-responsive caption-top w-100 mb-3">
     <caption class="text-end border-bottom">@Localizer["Nutritions per"]&nbsp;@Html.DisplayFor(model => model.PortionVolume)</caption>
 
@@ -14,27 +23,27 @@
         </tr>
         <tr>
             <th rowspan="2">@Localizer["Fats"]</th>
-            <td colspan="2" class="text-end">@Html.DisplayFor(model => model.FatTotal)</td>
+            <td colspan="2" class="text-end">@(Model.FatTotal < toleratedFatTotal ? String.Format("<{0:G} g", toleratedFatTotal) : Html.DisplayFor(model => model.FatTotal))</td>
         </tr>
         <tr>
             <td class="fst-italic">@Localizer["of which Saturates"]</td>
-            <td class="text-end">@Html.DisplayFor(model => model.FatSaturates)</td>
+            <td class="text-end">@(Model.FatSaturates < toleratedFatSaturates ? String.Format("<{0:G} g", toleratedFatSaturates) : Html.DisplayFor(model => model.FatSaturates))</td>
         </tr>
         <tr>
             <th rowspan="2">@Localizer["Carbohydrates"]</th>
-            <td colspan="2" class="text-end">@Html.DisplayFor(model => model.CarbohydrateTotal)</td>
+            <td colspan="2" class="text-end">@(Model.CarbohydrateTotal < toleratedCarbohydrateTotal ? String.Format("<{0:G} g", toleratedCarbohydrateTotal) : Html.DisplayFor(model => model.CarbohydrateTotal))</td>
         </tr>
         <tr>
             <td class="fst-italic">@Localizer["of which Sugars"]</td>
-            <td class="text-end">@Html.DisplayFor(model => model.CarbohydrateSugar)</td>
+            <td class="text-end">@(Model.CarbohydrateSugar < toleratedCarbohydrateSugar ? String.Format("<{0:G} g", toleratedCarbohydrateSugar) : Html.DisplayFor(model => model.CarbohydrateSugar))</td>
         </tr>
         <tr>
             <th colspan="2">@Localizer["Protein"]</th>
-            <td class="text-end">@Html.DisplayFor(model => model.Protein)</td>
+            <td class="text-end">@(Model.Protein < toleratedProtein ? String.Format("<{0:G} g", toleratedProtein) : Html.DisplayFor(model => model.Protein))</td>
         </tr>
         <tr>
             <th colspan="2">@Localizer["Salt"]</th>
-            <td class="text-end">@Html.DisplayFor(model => model.Salt)</td>
+            <td class="text-end">@(Model.Salt < toleratedSalt ? String.Format("<{0:G} g", toleratedSalt) : Html.DisplayFor(model => model.Salt))</td>
         </tr>
     </tbody>
 </table>
