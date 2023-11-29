@@ -1,0 +1,21 @@
+﻿<div>
+    <a id="switchTheme" class="text-reset text-decoration-none" href="#" role="button">
+        <svg class="bi" width="16" height="16" fill="currentColor">
+            <use xlink:href="/lib/bootstrap-icons/bootstrap-icons.svg#circle-half" />
+        </svg>
+    </a>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var btnSwitchTheme = document.getElementById('switchTheme');
+        btnSwitchTheme.addEventListener('click', function () {
+            if (document.documentElement.getAttribute('data-bs-theme') === 'dark' ) {
+                document.documentElement.setAttribute('data-bs-theme', 'light')
+            }
+            else {
+                document.documentElement.setAttribute('data-bs-theme', 'dark')
+            }
+        });
+    });
+</script>

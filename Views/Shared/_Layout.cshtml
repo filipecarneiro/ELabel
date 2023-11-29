@@ -5,17 +5,19 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Open E-Label</title>
-    <link rel="icon" type="image/svg+xml" href="~/favicon.svg">
-    <link rel="icon" type="image/png" href="~/favicon.png">
+    <title>@ViewData["Title"] - E-Label</title>
+    <meta name="description" content="Open E-Label - @Localizer["Open-source solution for electronic labels"]" />
+    <link rel="icon" type="image/svg+xml" href="~/favicon.svg" />
+    <link rel="icon" type="image/png" href="~/favicon.png" />
     <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/lib/bootstrap-icons/font/bootstrap-icons.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
 <body class="d-flex flex-column min-vh-100">
     <header class="header">
         <nav class="navbar text-body-secondary bg-body-tertiary">
             <div class="container">
+                <div class="">
+                    @await Html.PartialAsync("_SelectThemePartial")
+                </div>
                 <div class="ms-auto">
                     @await Html.PartialAsync("_SelectLanguagePartial")
                 </div>

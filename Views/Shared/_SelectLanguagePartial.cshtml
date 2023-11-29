@@ -19,8 +19,10 @@
 }
 
 <div>
-    <form id="selectLanguage" class="" role="form" asp-controller="Home" asp-action="SetLanguage" asp-route-returnUrl="@returnUrl" method="post">
-        <i class="bi bi-translate"></i>
+    <form id="selectLanguage" asp-controller="Home" asp-action="SetLanguage" asp-route-returnUrl="@returnUrl" method="post">
+        <svg class="bi" width="16" height="16" fill="currentColor">
+            <use xlink:href="/lib/bootstrap-icons/bootstrap-icons.svg#translate" />
+        </svg>
         <select name="culture" class="ms-2" aria-label="Languange select"
           onchange="this.form.submit();"
           asp-for="@requestCulture.RequestCulture.UICulture.TwoLetterISOLanguageName" asp-items="cultureItems">
