@@ -18,36 +18,28 @@ The Open E-Label project aims to provide a standardized and open-source solution
 2. The E-label for the wine will be displayed on your device.
 3. You can switch between languages using the language selection option on the E-label.
 
-## Build & Push Docker image
+## Build & Run locally
 
-To build the Open E-Label project using Docker, follow these steps:
+To build the Open E-Label project using Visual Studio, follow these steps:
 
-1. Build the Docker image:
-
-```shell
-docker build -t fcarneiro/elabel:latest -f Dockerfile .
-```
-
-2. Push the image to a Docker repository:
-
-```shell
-docker push fcarneiro/elabel:latest
-```
+1. Clone this repository to a local folder
+1. Open `ELabel.sln` solution with Visual Studio
+1. Build and start the project
 
 ## Deployment
 
 The web app can be deployed using the published Docker image. Here are the steps to run it with Docker compose:
 
-1 Copy `docker-compose.yml` to server. Change server details as needed:
+1 Copy `docker-compose.yml` to your server. Change server details as needed:
 
 ```shell
-scp docker-compose.yml devops@build-101:~/elabel/
+scp docker-compose.yml user@server:~/elabel/
 ```
 
 2 Start containers on server:
 
 ```shell
-ssh devops@build-101
+ssh user@server
 
 cd elabel/
 docker-compose pull
@@ -62,7 +54,7 @@ docker-compose logs -f
 
 ## Contributing
 
-Contributions are welcome! Please read our contributing guidelines before getting started.
+Contributions are welcome! Please read our [contributing guidelines](CONTRIBUTING.md) before getting started.
 
 ## License
 
