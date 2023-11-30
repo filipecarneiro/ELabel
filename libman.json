@@ -19,7 +19,6 @@
       "destination": "wwwroot/lib/jquery-validation-unobtrusive/"
     },
     {
-      "provider": "cdnjs",
       "library": "bootstrap-icons@1.11.2",
       "destination": "wwwroot/lib/bootstrap-icons/",
       "files": [
@@ -30,6 +29,21 @@
         "font/bootstrap-icons.json",
         "font/bootstrap-icons.min.css"
       ]
+    },
+    {
+      "provider": "jsdelivr",
+      "library": "jquery-validation-globalize@0.1.1",
+      "destination": "wwwroot/lib/jquery-validation-globalize/",
+      "files": [
+        "README.md",
+        "jquery.validate.globalize.min.js.map",
+        "jquery.validate.globalize.min.js",
+        "jquery.validate.globalize.js"
+      ]
+    },
+    {
+      "library": "globalize@1.7.0",
+      "destination": "wwwroot/lib/globalize/"
     }
   ]
 }
