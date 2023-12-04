@@ -66,6 +66,18 @@
 
     <div class="row">
         <div class="col-lg-6">
+            <div class="mb-3">
+                <label asp-for="PackagingGases" class="form-label"></label>
+                <select asp-for="PackagingGases" asp-items="Html.GetEnumSelectList<PackagingGases>()" class="form-select" aria-describedby="PackagingGasesHelp">
+                </select>
+                <div id="PackagingGasesHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "PackagingGases").FirstOrDefault()?.Description</div>
+                <span asp-validation-for="PackagingGases" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6">
             <h4>Nutrition information</h4>
             <hr />
 

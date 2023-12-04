@@ -71,11 +71,15 @@
 {
     <div class="pb-3">
         <h3>@Localizer["Ingredients"]</h3>
-        <div class="">
+        <div class="ps-2">
 
             @Html.DisplayFor(model => model.ProductIngredients, "ProductIngredientsText")
         
         </div>
+        @if (Model.PackagingGases != null && Model.PackagingGases != PackagingGases.None)
+        {
+            <p class="ps-2 mb-2">@Localizer[EnumHelper.GetDisplayName(Model.PackagingGases)!]<span>.</span></p>
+        }
     </div>
     <hr/>
 }

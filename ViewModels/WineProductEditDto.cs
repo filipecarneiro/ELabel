@@ -33,6 +33,10 @@ namespace ELabel.ViewModels
 
         public List<ProductIngredientDto> ProductIngredients { get; } = new();
 
+        [Display(Name = "Packaging gases", Description = "Select an option for botteling atmosphere.")]
+        [EnumDataType(typeof(PackagingGases))]
+        public required PackagingGases PackagingGases { get; set; }
+
         /*
          * Nutrition declaration
          */

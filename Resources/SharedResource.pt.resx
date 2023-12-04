@@ -121,6 +121,14 @@
     <value>Painel de Administração</value>
     <comment>Home</comment>
   </data>
+  <data name="Bottled in a protective atmosphere" xml:space="preserve">
+    <value>Engarrafado em atmosfera protetora</value>
+    <comment>Packaging gases</comment>
+  </data>
+  <data name="Bottling may happen in a protective atmosphere" xml:space="preserve">
+    <value>O engarrafamento pode ocorrer em atmosfera protetora</value>
+    <comment>Packaging gases</comment>
+  </data>
   <data name="Carbohydrates" xml:space="preserve">
     <value>Carboidratos</value>
     <comment>Nutrition Information</comment>

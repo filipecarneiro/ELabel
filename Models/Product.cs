@@ -35,6 +35,10 @@ namespace ELabel.Models
          * Nutrition declaration
          */
 
+        // Ingredient list (ProductIngredients bellow)
+
+        public required PackagingGases PackagingGases { get; set; }
+
         public required NutritionInformation NutritionInformation { get; set; } = new();
 
         public required ResponsibleConsumption ResponsibleConsumption { get; set; } = new();

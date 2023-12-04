@@ -50,6 +50,8 @@ namespace ELabel.ViewModels
             }
         }
 
+        public required PackagingGases PackagingGases { get; set; }
+
         /*
          * Nutrition declaration
          */
