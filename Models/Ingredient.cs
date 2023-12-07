@@ -15,7 +15,7 @@ namespace ELabel.Models
 
         public required bool Custom { get; set; }
 
-        //public JsonObject? Translations { get; set; }
+        public required LocalizableStrings LocalizableStrings { get; set; } = new();
 
         public List<Product> Products { get; } = new();
         public List<ProductIngredient> ProductIngredients { get; } = new();

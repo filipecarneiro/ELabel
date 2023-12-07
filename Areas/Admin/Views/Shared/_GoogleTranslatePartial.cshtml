@@ -1,0 +1,10 @@
+﻿@model string
+
+@{
+    const string sourceLanguage = "en";
+    string translateLanguage = Model;
+}
+
+<div>
+    <a href="https://translate.google.com/?sl=@(sourceLanguage)&tl=@(translateLanguage)&text=@(ViewData["Name"])&op=translate" target="_blank">Google Translate</a>
+</div>

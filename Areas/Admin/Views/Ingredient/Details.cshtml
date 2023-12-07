@@ -1,13 +1,13 @@
 ﻿@model ELabel.Models.Ingredient
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Ingredient details";
 }
 
-<h1>Details</h1>
+<h1>Ingredient</h1>
 
 <div>
-    <h4>Ingredient</h4>
+    <h4>Details</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -33,6 +33,12 @@
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Custom)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LocalizableStrings)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LocalizableStrings)
         </dd>
     </dl>
 </div>
