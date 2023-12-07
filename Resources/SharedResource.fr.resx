@@ -118,99 +118,99 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Acidity regulator" xml:space="preserve">
-    <value>Regulador de acidez</value>
+    <value>Régulateurs d’acidité</value>
     <comment>IngredientCategory</comment>
   </data>
   <data name="Activators for alcoholic and malolactic fermentation" xml:space="preserve">
-    <value>Ativadores de fermentação alcoólica e malolática</value>
+    <value>Activateurs de fermentation alcoolique et malolactique</value>
     <comment>IngredientCategory</comment>
   </data>
   <data name="Admin Dashboard" xml:space="preserve">
-    <value>Painel de Administração</value>
+    <value>Panneau Administrateur</value>
     <comment>Home</comment>
   </data>
   <data name="Antioxidant" xml:space="preserve">
-    <value>Antioxidante</value>
+    <value>Antioxydant</value>
     <comment>IngredientCategory</comment>
   </data>
   <data name="Bottled in a protective atmosphere" xml:space="preserve">
-    <value>Engarrafado em atmosfera protetora</value>
+    <value>Conditionné sous atmosphère protectrice</value>
     <comment>Packaging gases</comment>
   </data>
   <data name="Bottling may happen in a protective atmosphere" xml:space="preserve">
-    <value>O engarrafamento pode ocorrer em atmosfera protetora</value>
+    <value>L'embouteillage peut avoir lieu sous atmosphère protectrice</value>
     <comment>Packaging gases</comment>
   </data>
   <data name="Carbohydrates" xml:space="preserve">
-    <value>Carboidratos</value>
+    <value>Glucides</value>
     <comment>Nutrition Information</comment>
   </data>
   <data name="Certifications" xml:space="preserve">
-    <value>Certificações</value>
+    <value>Certifications</value>
     <comment>Certifications</comment>
   </data>
   <data name="Certified organic based on EU-Guidelines" xml:space="preserve">
-    <value>Orgânico certificado com base nas diretrizes da UE</value>
+    <value>Certifié biologique selon les directives de l'UE</value>
     <comment>Certifications</comment>
   </data>
   <data name="Clarifying agent" xml:space="preserve">
-    <value>Agente clarificante</value>
+    <value>Agent clarifiant</value>
     <comment>IngredientCategory</comment>
   </data>
   <data name="Correction of defect" xml:space="preserve">
-    <value>Correção de defeito</value>
+    <value>Correction d'un défaut</value>
     <comment>IngredientCategory</comment>
   </data>
   <data name="Don't drink during pregnancy and breastfeeding" xml:space="preserve">
-    <value>Não beba durante a gravidez e amamentação</value>
+    <value>Ne buvez pas pendant la grossesse et l'allaitement</value>
     <comment>Responsible Consumption</comment>
   </data>
   <data name="Don't drink when below legal drinking age" xml:space="preserve">
-    <value>Não beba quando estiver abaixo da idade legal para beber</value>
+    <value>Ne buvez pas si vous n’avez pas l’âge légal pour boire</value>
     <comment>Responsible Consumption</comment>
   </data>
   <data name="Don't drink when driving a car, motorbike or operating machinery" xml:space="preserve">
-    <value>Não beba a conduzir carro, moto ou operar máquinas</value>
+    <value>Ne buvez pas lorsque vous conduisez une voiture, une moto ou lorsque vous utilisez des machines</value>
     <comment>Responsible Consumption</comment>
   </data>
   <data name="Dry" xml:space="preserve">
-    <value>Seco</value>
+    <value>Sec</value>
     <comment>WineStyle</comment>
   </data>
   <data name="Electronic label provided by" xml:space="preserve">
-    <value>Etiqueta eletrónica fornecida por</value>
+    <value>Étiquette électronique fournie par</value>
     <comment>Footer</comment>
   </data>
   <data name="Energy" xml:space="preserve">
-    <value>Energia</value>
+    <value>Énergie</value>
     <comment>Nutrition Information</comment>
   </data>
   <data name="Enrichment substance" xml:space="preserve">
-    <value>Substâncias de enriquecimento </value>
+    <value>Substances utilisées pour l’enrichissement</value>
     <comment>IngredientCategory</comment>
   </data>
   <data name="Enzyme" xml:space="preserve">
-    <value>Enzima </value>
+    <value>Enzyme</value>
     <comment>IngredientCategory</comment>
   </data>
   <data name="Fats" xml:space="preserve">
-    <value>Gorduras</value>
+    <value>Graisses</value>
     <comment>Nutrition Information</comment>
   </data>
   <data name="Fermentation agent" xml:space="preserve">
-    <value>Agente de fermentação</value>
+    <value>Agent de fermentation</value>
     <comment>IngredientCategory</comment>
   </data>
   <data name="Fortified wine" xml:space="preserve">
-    <value>Vinho fortificado</value>
+    <value>Vin fortifié</value>
     <comment>WineType</comment>
   </data>
   <data name="Gases and packaging gas" xml:space="preserve">
-    <value>Gases e gases de embalamento</value>
+    <value>Gaz et gas d'emballage</value>
     <comment>IngredientCategory</comment>
   </data>
   <data name="Home Page" xml:space="preserve">
-    <value>Página Inicial</value>
+    <value>Page d'accueil</value>
     <comment>Home</comment>
   </data>
   <data name="Ingredients" xml:space="preserve">
@@ -218,91 +218,91 @@
     <comment>Ingredients</comment>
   </data>
   <data name="Medium dry" xml:space="preserve">
-    <value>Meio seco</value>
+    <value>Demi-sec</value>
     <comment>WineStyle</comment>
   </data>
   <data name="Medium sweet" xml:space="preserve">
-    <value>Meio doce</value>
+    <value>Demi-doux</value>
     <comment>WineStyle</comment>
   </data>
   <data name="Nutrition Information" xml:space="preserve">
-    <value>Informação Nutricional</value>
+    <value>Information nutritionnelle</value>
     <comment>Nutrition Information</comment>
   </data>
   <data name="Nutritions per" xml:space="preserve">
-    <value>Nutrientes por</value>
+    <value>Nutrition par</value>
     <comment>Nutrition Information</comment>
   </data>
   <data name="of which Saturates" xml:space="preserve">
-    <value>das quais Saturadas</value>
+    <value>Dont gras saturés </value>
     <comment>Nutrition Information</comment>
   </data>
   <data name="of which Sugars" xml:space="preserve">
-    <value>dos quais Açúcares</value>
+    <value>Dont sucres</value>
     <comment>Nutrition Information</comment>
   </data>
   <data name="Open-source solution for electronic labels" xml:space="preserve">
-    <value>Solução de código aberto para etiquetas eletrónicas</value>
+    <value>Solution open source pour étiquettes électroniques</value>
     <comment>Home</comment>
   </data>
   <data name="Orange wine" xml:space="preserve">
-    <value>Vinho laranja</value>
+    <value>Vin orange</value>
     <comment>WineType</comment>
   </data>
   <data name="Other ingredient" xml:space="preserve">
-    <value>Outro ingrediente</value>
+    <value>Autre ingrédient</value>
     <comment>IngredientCategory</comment>
   </data>
   <data name="Preservative" xml:space="preserve">
-    <value>Conservante</value>
+    <value>Conservateur</value>
     <comment>IngredientCategory</comment>
   </data>
   <data name="Protein" xml:space="preserve">
-    <value>Proteína</value>
+    <value>Protéine</value>
     <comment>Nutrition Information</comment>
   </data>
   <data name="Raw material" xml:space="preserve">
-    <value>Matéria-prima</value>
+    <value>Matières premières</value>
     <comment>IngredientCategory</comment>
   </data>
   <data name="Red wine" xml:space="preserve">
-    <value>Vinho tinto</value>
+    <value>Vin rouge</value>
     <comment>WineType</comment>
   </data>
   <data name="Responsible Consumption" xml:space="preserve">
-    <value>Consumo Responsável</value>
+    <value>Consommation responsable</value>
     <comment>Responsible Consumption</comment>
   </data>
   <data name="Rosé wine" xml:space="preserve">
-    <value>Vinho rosé</value>
+    <value>Vin rosé</value>
     <comment>WineType</comment>
   </data>
   <data name="Salt" xml:space="preserve">
-    <value>Sal</value>
+    <value>Sel</value>
     <comment>Nutrition Information</comment>
   </data>
   <data name="Sequestrant" xml:space="preserve">
-    <value>Sequestrante</value>
+    <value>Séquestrant</value>
     <comment>IngredientCategory</comment>
   </data>
   <data name="Sparkling wine" xml:space="preserve">
-    <value>Vinho espumante</value>
+    <value>Vin mousseux</value>
     <comment>WineType</comment>
   </data>
   <data name="Stabiliser" xml:space="preserve">
-    <value>Estabilizador</value>
+    <value>Stabilisant</value>
     <comment>IngredientCategory</comment>
   </data>
   <data name="Sweet" xml:space="preserve">
-    <value>Doce</value>
+    <value>Doux</value>
     <comment>WineStyle</comment>
   </data>
   <data name="Sweetener" xml:space="preserve">
-    <value>Edulcorante</value>
+    <value>Édulcorant</value>
     <comment>IngredientCategory</comment>
   </data>
   <data name="White wine" xml:space="preserve">
-    <value>Vinho branco</value>
+    <value>Vin blanc</value>
     <comment>WineType</comment>
   </data>
 </root>
