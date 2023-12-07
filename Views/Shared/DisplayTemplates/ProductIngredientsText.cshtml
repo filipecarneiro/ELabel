@@ -6,7 +6,14 @@
     {
         @if (productIngredient.Ingredient != null)
         {
-            <p class="@(productIngredient.Ingredient.Allergen ? "fw-bold" : "")">@productIngredient.Ingredient.Name</p>
+            string? localizedName = productIngredient.Ingredient.LocalizableStrings.GetLocalized(@System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName);
+
+            if(String.IsNullOrEmpty(localizedName))
+            {
+                localizedName = productIngredient.Ingredient.Name;
+            }
+
+            <p class="@(productIngredient.Ingredient.Allergen ? "fw-bold" : "")">@localizedName</p>
             @if (productIngredient != Model.Last())
             {
                 <span>,&nbsp;</span>

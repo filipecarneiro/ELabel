@@ -1,4 +1,5 @@
-﻿using ELabel.Data;
+﻿using AutoMapper;
+using ELabel.Data;
 using ELabel.Extensions;
 using ELabel.Models;
 using ELabel.ViewModels;
@@ -14,10 +15,12 @@ namespace ELabel.Areas.Admin.Controllers
     public class IngredientController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly IMapper _mapper;
 
-        public IngredientController(ApplicationDbContext context)
+        public IngredientController(ApplicationDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         // GET: Ingredient
@@ -152,7 +155,7 @@ namespace ELabel.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("Name,Category,Allergen,Custom,Id")] Ingredient ingredient)
+        public async Task<IActionResult> Edit(Guid id, [Bind("Name,Category,Allergen,Custom,LocalizableStrings,Id")] Ingredient ingredient)
         {
             if (id != ingredient.Id)
             {
@@ -234,15 +237,16 @@ namespace ELabel.Areas.Admin.Controllers
         // GET: Ingredient/Export
         public async Task<IActionResult> Export()
         {
-            var ingredients = await _context.Ingredient
-                                            .AsNoTracking()
-                                            .OrderBy(i => i.Name)
-                                            .ThenBy(i => i.Category)
-                                            .ToListAsync();
+            var query = await _context.Ingredient
+                                      .AsNoTracking()
+                                      .OrderBy(i => i.Name)
+                                      .ThenBy(i => i.Category)
+                                      .ToListAsync();
+
+            List<IngredientDto> ingredients = _mapper.Map<List<IngredientDto>>(query);
 
             byte[] byteArray;
             var excelMapper = new ExcelMapper();
-            excelMapper.IgnoreNestedTypes = true;
 
             using (MemoryStream stream = new MemoryStream())
             {
@@ -276,7 +280,7 @@ namespace ELabel.Areas.Admin.Controllers
                 return View(importFileUpload);
             }
 
-            IEnumerable<Ingredient> importedIngredients;
+            IEnumerable<IngredientDto> importedIngredients;
 
             using (var memoryStream = new MemoryStream())
             {
@@ -286,8 +290,7 @@ namespace ELabel.Areas.Admin.Controllers
                 try
                 {
                     ExcelMapper excelMapper = new ExcelMapper(memoryStream);
-                    excelMapper.IgnoreNestedTypes = true;
-                    importedIngredients = excelMapper.Fetch<Ingredient>("Ingredients");
+                    importedIngredients = excelMapper.Fetch<IngredientDto>("Ingredients");
                 }
                 catch (Exception e)
                 {
@@ -304,22 +307,24 @@ namespace ELabel.Areas.Admin.Controllers
 
             using (var transaction = _context.Database.BeginTransaction())
             {
-                foreach (Ingredient importedIngredient in importedIngredients)
+                foreach (IngredientDto importedIngredient in importedIngredients)
                 {
-                    if (importedIngredient.Id == Guid.Empty)
-                    {
-                        Guid? existingId = FindIngredientId(importedIngredient.Name, importedIngredient.Category);
+                    Ingredient ingredient = _mapper.Map<Ingredient>(importedIngredient);
 
-                        importedIngredient.Id = existingId == null ? Guid.NewGuid() : existingId.Value;
+                    if (ingredient.Id == Guid.Empty)
+                    {
+                        Guid? existingId = FindIngredientId(ingredient.Name, ingredient.Category);
+
+                        ingredient.Id = existingId == null ? Guid.NewGuid() : existingId.Value;
                     }
 
-                    if (IngredientExists(importedIngredient.Id))
+                    if (IngredientExists(ingredient.Id))
                     {
-                        _context.Update(importedIngredient);
+                        _context.Update(ingredient);
                     }
                     else
                     {
-                        _context.Add(importedIngredient);
+                        _context.Add(ingredient);
                     }
 
                     await _context.SaveChangesAsync();

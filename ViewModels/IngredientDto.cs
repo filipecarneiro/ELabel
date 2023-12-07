@@ -23,5 +23,7 @@ namespace ELabel.ViewModels
         [Required]
         public required bool Custom { get; set; }
 
+        [Required]
+        public required LocalizableStrings LocalizableStrings { get; set; } = new();
     }
 }

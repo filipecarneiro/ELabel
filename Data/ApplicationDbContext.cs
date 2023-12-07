@@ -66,6 +66,12 @@ namespace ELabel.Data
                 .HasMany(e => e.Ingredients)
                 .WithMany(e => e.Products)
                 .UsingEntity<ProductIngredient>();
+
+            modelBuilder.Entity<Ingredient>().OwnsOne(
+                ingredient => ingredient.LocalizableStrings, builder =>
+                {
+                    builder.ToJson();
+                });
         }
     }
 }
