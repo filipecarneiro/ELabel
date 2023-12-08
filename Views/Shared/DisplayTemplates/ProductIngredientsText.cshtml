@@ -1,4 +1,5 @@
 ﻿@model List<ProductIngredientDto>
+@inject IHtmlLocalizer<SharedResource> Localizer
 
 <div class="d-flex flex-row">
 
@@ -10,7 +11,7 @@
 
             if(String.IsNullOrEmpty(localizedName))
             {
-                localizedName = productIngredient.Ingredient.Name;
+                localizedName = Localizer[productIngredient.Ingredient.Name].Value;
             }
 
             <p class="@(productIngredient.Ingredient.Allergen ? "fw-bold" : "")">@localizedName</p>
