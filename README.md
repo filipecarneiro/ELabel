@@ -93,6 +93,18 @@ docker-compose logs -f
 
 Contributions are welcome! Please read our [contributing guidelines](CONTRIBUTING.md) before getting started.
 
+### Translation
+
+Translations for Open E-Label are managed through [Lokalise](https://lokalise.com/), an online translation management tool.
+
+Click the link below to join the project! Even if your language is completely translated, extra proofreading is a big help! Please feel free to review the existing translations, and vote for alternatives that might be more appropriate.
+
+- [Join the E-Label translation team](https://app.lokalise.com/public/811531676572f985a58773.20133510/)
+
+For more information about the translation editor and tools, please see the [Lokalise translate and collaborate documents](https://docs.lokalise.com/en/collections/2909016-translate-and-collaborate).
+
+Translations are downloaded from Lokalise on every release.
+
 ## License
 
 Open E-Label is open-source under the MIT license. See the [LICENSE file](LICENSE.txt) for more information.
