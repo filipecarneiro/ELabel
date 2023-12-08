@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0"/>
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string"/>
+							<xsd:attribute name="type" type="xsd:string"/>
+							<xsd:attribute name="mimetype" type="xsd:string"/>
+							<xsd:attribute ref="xml:space"/>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string"/>
+							<xsd:attribute name="name" type="xsd:string"/>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+							<xsd:attribute ref="xml:space"/>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required"/>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="Home Page" xml:space="preserve">
+		<value>Startseite</value>
+		<comment>Home</comment>
+	</data>
+	<data name="Acidity regulator" xml:space="preserve">
+		<value>Säureregulator</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Activators for alcoholic and malolactic fermentation" xml:space="preserve">
+		<value>Aktivatoren für die alkoholische und malolaktische Gärung</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Admin Dashboard" xml:space="preserve">
+		<value>Admin-Dashboard</value>
+		<comment>Home</comment>
+	</data>
+	<data name="Antioxidant" xml:space="preserve">
+		<value>Antioxidans</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Bottled in a protective atmosphere" xml:space="preserve">
+		<value>Unter Schutzatmosphäre abgefüllt</value>
+		<comment>Packaging gases</comment>
+	</data>
+	<data name="Bottling may happen in a protective atmosphere" xml:space="preserve">
+		<value>Die Abfüllung kann unter Schutzatmosphäre erfolgen</value>
+		<comment>Packaging gases</comment>
+	</data>
+	<data name="Carbohydrates" xml:space="preserve">
+		<value>Kohlenhydrate</value>
+		<comment>Nutrition Information</comment>
+	</data>
+	<data name="Certifications" xml:space="preserve">
+		<value>Zertifizierungen</value>
+		<comment>Certifications</comment>
+	</data>
+	<data name="Certified organic based on EU-Guidelines" xml:space="preserve">
+		<value>Bio-zertifiziert nach EU-Richtlinien</value>
+		<comment>Certifications</comment>
+	</data>
+	<data name="Clarifying agent" xml:space="preserve">
+		<value>Klärmittel</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Correction of defect" xml:space="preserve">
+		<value>Mängelbeseitigung</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Don't drink during pregnancy and breastfeeding" xml:space="preserve">
+		<value>Trinken Sie nicht während der Schwangerschaft und Stillzeit</value>
+		<comment>Responsible Consumption</comment>
+	</data>
+	<data name="Don't drink when below legal drinking age" xml:space="preserve">
+		<value>Trinken Sie nicht, wenn Sie das gesetzliche Mindestalter für Alkoholkonsum noch nicht erreicht haben</value>
+		<comment>Responsible Consumption</comment>
+	</data>
+	<data name="Don't drink when driving a car, motorbike or operating machinery" xml:space="preserve">
+		<value>Trinken Sie nicht, wenn Sie Auto oder Motorrad fahren oder Maschinen bedienen</value>
+		<comment>Responsible Consumption</comment>
+	</data>
+	<data name="Dry" xml:space="preserve">
+		<value>Trocken</value>
+		<comment>WineStyle</comment>
+	</data>
+	<data name="Electronic label provided by" xml:space="preserve">
+		<value>Elektronisches Etikett bereitgestellt von</value>
+		<comment>Footer</comment>
+	</data>
+	<data name="Energy" xml:space="preserve">
+		<value>Energie</value>
+		<comment>Nutrition Information</comment>
+	</data>
+	<data name="Enrichment substance" xml:space="preserve">
+		<value>Anreicherungsstoff</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Enzyme" xml:space="preserve">
+		<value>Enzym</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Fats" xml:space="preserve">
+		<value>Fette</value>
+		<comment>Nutrition Information</comment>
+	</data>
+	<data name="Fermentation agent" xml:space="preserve">
+		<value>Gärmittel</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Fortified wine" xml:space="preserve">
+		<value>Likörwein</value>
+		<comment>WineType</comment>
+	</data>
+	<data name="Gases and packaging gas" xml:space="preserve">
+		<value>Gase und Verpackungsgase</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Ingredients" xml:space="preserve">
+		<value>Zutaten</value>
+		<comment>Ingredients</comment>
+	</data>
+	<data name="Medium dry" xml:space="preserve">
+		<value>Mitteltrocken</value>
+		<comment>WineStyle</comment>
+	</data>
+	<data name="Medium sweet" xml:space="preserve">
+		<value>Mittelsüß</value>
+		<comment>WineStyle</comment>
+	</data>
+	<data name="Nutrition Information" xml:space="preserve">
+		<value>Ernährungsinformation</value>
+		<comment>Nutrition Information</comment>
+	</data>
+	<data name="Nutritions per" xml:space="preserve">
+		<value>Nährwerte pro</value>
+		<comment>Nutrition Information</comment>
+	</data>
+	<data name="of which Saturates" xml:space="preserve">
+		<value>davon gesättigte Fettsäuren</value>
+		<comment>Nutrition Information</comment>
+	</data>
+	<data name="of which Sugars" xml:space="preserve">
+		<value>davon Zucker</value>
+		<comment>Nutrition Information</comment>
+	</data>
+	<data name="Open-source solution for electronic labels" xml:space="preserve">
+		<value>Open-Source-Lösung für elektronische Etiketten</value>
+		<comment>Home</comment>
+	</data>
+	<data name="Orange wine" xml:space="preserve">
+		<value>Orangenwein</value>
+		<comment>WineType</comment>
+	</data>
+	<data name="Other ingredient" xml:space="preserve">
+		<value>Andere Zutat</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Preservative" xml:space="preserve">
+		<value>Konservierungsmittel</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Protein" xml:space="preserve">
+		<value>Eiweiß</value>
+		<comment>Nutrition Information</comment>
+	</data>
+	<data name="Raw material" xml:space="preserve">
+		<value>Rohmaterial</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Red wine" xml:space="preserve">
+		<value>Rotwein</value>
+		<comment>WineType</comment>
+	</data>
+	<data name="Responsible Consumption" xml:space="preserve">
+		<value>Verantwortungsvoller Konsum</value>
+		<comment>Responsible Consumption</comment>
+	</data>
+	<data name="Rosé wine" xml:space="preserve">
+		<value>Roséwein</value>
+		<comment>WineType</comment>
+	</data>
+	<data name="Salt" xml:space="preserve">
+		<value>Salz</value>
+		<comment>Nutrition Information</comment>
+	</data>
+	<data name="Sequestrant" xml:space="preserve">
+		<value>Sequestriermittel</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Sparkling wine" xml:space="preserve">
+		<value>Schaumwein</value>
+		<comment>WineType</comment>
+	</data>
+	<data name="Stabiliser" xml:space="preserve">
+		<value>Stabilisator</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Sweet" xml:space="preserve">
+		<value>Süß</value>
+		<comment>WineStyle</comment>
+	</data>
+	<data name="Sweetener" xml:space="preserve">
+		<value>Süßstoff</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="White wine" xml:space="preserve">
+		<value>Weißwein</value>
+		<comment>WineType</comment>
+	</data>
+</root>
