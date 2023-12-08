@@ -104,6 +104,7 @@ Click the link below to join the project! Even if your language is completely tr
 For more information about the translation editor and tools, please see the [Lokalise translate and collaborate documents](https://docs.lokalise.com/en/collections/2909016-translate-and-collaborate).
 
 Translations are downloaded from Lokalise on every release.
+Check the current [localization statistics](https://app.lokalise.com/statistics/811531676572f985a58773.20133510/).
 
 ## License
 
