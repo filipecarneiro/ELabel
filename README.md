@@ -9,6 +9,31 @@
 
 The Open E-Label project aims to provide a standardized and open-source solution for electronic labels on table wine bottles selled within the European Union. This initiative seeks to enhance transparency, efficiency, and information accessibility in the wine industry.
 
+[<img title="Bulgarian" width="30px" src="wwwroot/lib/flag-icons/flags/4x3/bg.svg" target="_blank" />](https://app.lokalise.com/project/811531676572f985a58773.20133510/?view=single&reference_lang_id=640&single_lang_id=781)
+[<img title="Croatian" width="30px" src="wwwroot/lib/flag-icons/flags/4x3/hr.svg" target="_blank" />](https://app.lokalise.com/project/811531676572f985a58773.20133510/?view=single&reference_lang_id=640&single_lang_id=793)
+[<img title="Czech" width="30px" src="wwwroot/lib/flag-icons/flags/4x3/cz.svg" target="_blank" />](https://app.lokalise.com/project/811531676572f985a58773.20133510/?view=single&reference_lang_id=640&single_lang_id=765)
+[<img title="Danish" width="30px" src="wwwroot/lib/flag-icons/flags/4x3/dk.svg" target="_blank" />](https://app.lokalise.com/project/811531676572f985a58773.20133510/?view=single&reference_lang_id=640&single_lang_id=767)
+[<img title="Dutch" width="30px" src="wwwroot/lib/flag-icons/flags/4x3/nl.svg" target="_blank" />](https://app.lokalise.com/project/811531676572f985a58773.20133510/?view=single&reference_lang_id=640&single_lang_id=737)
+[<img title="English" width="30px" src="wwwroot/lib/flag-icons/flags/4x3/gb.svg" target="_blank" />](https://app.lokalise.com/project/811531676572f985a58773.20133510/?view=single&reference_lang_id=640&single_lang_id=640)
+[<img title="Estonian" width="30px" src="wwwroot/lib/flag-icons/flags/4x3/ee.svg" target="_blank" />](https://app.lokalise.com/project/811531676572f985a58773.20133510/?view=single&reference_lang_id=640&single_lang_id=10154)
+[<img title="Finnish" width="30px" src="wwwroot/lib/flag-icons/flags/4x3/fi.svg" target="_blank" />](https://app.lokalise.com/project/811531676572f985a58773.20133510/?view=single&reference_lang_id=640&single_lang_id=768)
+[<img title="French" width="30px" src="wwwroot/lib/flag-icons/flags/4x3/fr.svg" target="_blank" />](https://app.lokalise.com/project/811531676572f985a58773.20133510/?view=single&reference_lang_id=640&single_lang_id=673)
+[<img title="German" width="30px" src="wwwroot/lib/flag-icons/flags/4x3/de.svg" target="_blank" />](https://app.lokalise.com/project/811531676572f985a58773.20133510/?view=single&reference_lang_id=640&single_lang_id=666)
+[<img title="Greek" width="30px" src="wwwroot/lib/flag-icons/flags/4x3/gr.svg" target="_blank" />](https://app.lokalise.com/project/811531676572f985a58773.20133510/?view=single&reference_lang_id=640&single_lang_id=761)
+[<img title="Hungarian" width="30px" src="wwwroot/lib/flag-icons/flags/4x3/hu.svg" target="_blank" />](https://app.lokalise.com/project/811531676572f985a58773.20133510/?view=single&reference_lang_id=640&single_lang_id=773)
+[<img title="Irish" width="30px" src="wwwroot/lib/flag-icons/flags/4x3/ie.svg" target="_blank" />](https://app.lokalise.com/project/811531676572f985a58773.20133510/?view=single&reference_lang_id=640&single_lang_id=949)
+[<img title="Italian" width="30px" src="wwwroot/lib/flag-icons/flags/4x3/it.svg" target="_blank" />](https://app.lokalise.com/project/811531676572f985a58773.20133510/?view=single&reference_lang_id=640&single_lang_id=734)
+[<img title="Latvian" width="30px" src="wwwroot/lib/flag-icons/flags/4x3/lv.svg" target="_blank" />](https://app.lokalise.com/project/811531676572f985a58773.20133510/?view=single&reference_lang_id=640&single_lang_id=10153)
+[<img title="Lithuanian" width="30px" src="wwwroot/lib/flag-icons/flags/4x3/lt.svg" target="_blank" />](https://app.lokalise.com/project/811531676572f985a58773.20133510/?view=single&reference_lang_id=640&single_lang_id=10152)
+[<img title="Maltese" width="30px" src="wwwroot/lib/flag-icons/flags/4x3/mt.svg" target="_blank" />](https://app.lokalise.com/project/811531676572f985a58773.20133510/?view=single&reference_lang_id=640&single_lang_id=882)
+[<img title="Polish" width="30px" src="wwwroot/lib/flag-icons/flags/4x3/pl.svg" target="_blank" />](https://app.lokalise.com/project/811531676572f985a58773.20133510/?view=single&reference_lang_id=640&single_lang_id=748)
+[<img title="Portuguese" width="30px" src="wwwroot/lib/flag-icons/flags/4x3/pt.svg" target="_blank" />](https://app.lokalise.com/project/811531676572f985a58773.20133510/?view=single&reference_lang_id=640&single_lang_id=1057)
+[<img title="Romanian" width="30px" src="wwwroot/lib/flag-icons/flags/4x3/ro.svg" target="_blank" />](https://app.lokalise.com/project/811531676572f985a58773.20133510/?view=single&reference_lang_id=640&single_lang_id=770)
+[<img title="Slovak" width="30px" src="wwwroot/lib/flag-icons/flags/4x3/sk.svg" target="_blank" />](https://app.lokalise.com/project/811531676572f985a58773.20133510/?view=single&reference_lang_id=640&single_lang_id=799)
+[<img title="Slovene" width="30px" src="wwwroot/lib/flag-icons/flags/4x3/si.svg" target="_blank" />](https://app.lokalise.com/project/811531676572f985a58773.20133510/?view=single&reference_lang_id=640&single_lang_id=10159)
+[<img title="Spanish" width="30px" src="wwwroot/lib/flag-icons/flags/4x3/es.svg" target="_blank" />](https://app.lokalise.com/project/811531676572f985a58773.20133510/?view=single&reference_lang_id=640&single_lang_id=1056)
+[<img title="Swedish" width="30px" src="wwwroot/lib/flag-icons/flags/4x3/se.svg" target="_blank" />](https://app.lokalise.com/project/811531676572f985a58773.20133510/?view=single&reference_lang_id=640&single_lang_id=754)
+
 ## Features
 
 - **Electronic Labeling**: Replacing traditional paper labels with electronic labels, promoting sustainability and reducing waste.
