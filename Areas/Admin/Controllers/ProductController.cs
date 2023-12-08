@@ -387,12 +387,12 @@ namespace ELabel.Areas.Admin.Controllers
             var query = await _context.Product
                                       .Include(p => p.Image)
                                       .Include(p => p.ProductIngredients.OrderBy(pi => pi.Order))
-                                        .ThenInclude(pi => pi.Ingredient)
+                                        //.ThenInclude(pi => pi.Ingredient)
                                       .AsNoTracking()
                                       .OrderBy(p => p.Name)
                                       .ToListAsync();
 
-            List<WineProductDetailsDto> products = _mapper.Map<List<WineProductDetailsDto>>(query);
+            List<ProductExcelDto> products = _mapper.Map<List<ProductExcelDto>>(query);
 
             byte[] byteArray;
             var excel = new ExcelMapper();
@@ -429,7 +429,7 @@ namespace ELabel.Areas.Admin.Controllers
                 return View(importFileUpload);
             }
 
-            IEnumerable<WineProductDetailsDto> importedProducts;
+            IEnumerable<ProductExcelDto> importedProducts;
 
             using (var memoryStream = new MemoryStream())
             {
@@ -439,7 +439,7 @@ namespace ELabel.Areas.Admin.Controllers
                 try
                 {
                     ExcelMapper excelMapper = new ExcelMapper(memoryStream);
-                    importedProducts = excelMapper.Fetch<WineProductDetailsDto>("Products");
+                    importedProducts = excelMapper.Fetch<ProductExcelDto>("Products");
                 }
                 catch (Exception e)
                 {
@@ -456,9 +456,11 @@ namespace ELabel.Areas.Admin.Controllers
 
             using (var transaction = _context.Database.BeginTransaction())
             {
-                foreach (WineProductDetailsDto importedProduct in importedProducts)
+                foreach (ProductExcelDto importedProduct in importedProducts)
                 {
                     Product product = _mapper.Map<Product>(importedProduct);
+                    product.Image = null;
+                    product.ProductIngredients.Clear();
 
                     if (product.Id == Guid.Empty)
                     {
@@ -478,10 +480,36 @@ namespace ELabel.Areas.Admin.Controllers
 
                     await _context.SaveChangesAsync();
 
-                    if (importedProduct.Image != null && !string.IsNullOrEmpty(importedProduct.Image.DataUrl))
+                    if(importedProduct.IngredientsWithOrder != null)
+                    {
+                        // Delete existing Product Ingredients
+
+                        await _context.ProductIngredient.Where(i => i.ProductId == product.Id).ExecuteDeleteAsync();
+
+                        short lastOrder = 0;
+                        foreach (IngredientWithOrderExcelDto ingredientWithOrderExcelDto in importedProduct.IngredientsWithOrder)
+                        {
+                            ProductIngredient productIngredient = new ProductIngredient()
+                            {
+                                Id = Guid.NewGuid(),
+                                ProductId = product.Id,
+                                IngredientId = ingredientWithOrderExcelDto.IngredientId,
+                                Order = ingredientWithOrderExcelDto.Order != null ? ingredientWithOrderExcelDto.Order.Value : ++lastOrder
+                            };
+
+                            if (ingredientWithOrderExcelDto.Order != null)
+                                lastOrder = ingredientWithOrderExcelDto.Order.Value;
+
+                            _context.Add(productIngredient);
+                        }
+
+                        await _context.SaveChangesAsync();
+                    }
+
+                    if (importedProduct.ImageDataUrl != null && !string.IsNullOrEmpty(importedProduct.ImageDataUrl))
                     {
                         bool newImage = false;
-                        var image = await _context.Image.FirstOrDefaultAsync(m => m.ProductId == product.Id);
+                        Image? image = await _context.Image.FirstOrDefaultAsync(m => m.ProductId == product.Id);
 
                         if (image == null)
                         {
@@ -495,7 +523,7 @@ namespace ELabel.Areas.Admin.Controllers
                             };
                         }
 
-                        byte[]? imageByteBuffer = ImageHelper.ConvertFromDataUrl(importedProduct.Image.DataUrl);
+                        byte[]? imageByteBuffer = ImageHelper.ConvertFromDataUrl(importedProduct.ImageDataUrl);
 
                         if (imageByteBuffer == null)
                             continue;
