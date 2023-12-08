@@ -16,7 +16,7 @@ namespace ELabel.ViewModels
 
         [Ganss.Excel.Json]
         [Ganss.Excel.Column("Ingredients")]
-        public List<IngredientWithOrderExcelDto> IngredientsWithOrder { get; set; } = new();
+        public List<Guid>? IngredientIdList { get; set; }
 
         public required PackagingGases PackagingGases { get; set; }
 
@@ -31,12 +31,5 @@ namespace ELabel.ViewModels
         public string? Sku { get; set; }
 
         public ulong? Ean { get; set; }
-    }
-
-    public class IngredientWithOrderExcelDto
-    {
-        public required Guid IngredientId { get; set; }
-
-        public short? Order { get; set; }
     }
 }

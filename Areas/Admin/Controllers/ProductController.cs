@@ -480,25 +480,22 @@ namespace ELabel.Areas.Admin.Controllers
 
                     await _context.SaveChangesAsync();
 
-                    if(importedProduct.IngredientsWithOrder != null)
+                    if(importedProduct.IngredientIdList != null)
                     {
                         // Delete existing Product Ingredients
 
                         await _context.ProductIngredient.Where(i => i.ProductId == product.Id).ExecuteDeleteAsync();
 
-                        short lastOrder = 0;
-                        foreach (IngredientWithOrderExcelDto ingredientWithOrderExcelDto in importedProduct.IngredientsWithOrder)
+                        short order = 0;
+                        foreach (Guid ingredientId in importedProduct.IngredientIdList)
                         {
                             ProductIngredient productIngredient = new ProductIngredient()
                             {
                                 Id = Guid.NewGuid(),
                                 ProductId = product.Id,
-                                IngredientId = ingredientWithOrderExcelDto.IngredientId,
-                                Order = ingredientWithOrderExcelDto.Order != null ? ingredientWithOrderExcelDto.Order.Value : ++lastOrder
+                                IngredientId = ingredientId,
+                                Order = ++order
                             };
-
-                            if (ingredientWithOrderExcelDto.Order != null)
-                                lastOrder = ingredientWithOrderExcelDto.Order.Value;
 
                             _context.Add(productIngredient);
                         }
