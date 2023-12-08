@@ -11,7 +11,25 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v4
+        with:
+            fetch-depth: 0
       
+      - name: Install GitVersion
+        uses: gittools/actions/gitversion/setup@v0
+        with:
+            versionSpec: '5.x'
+      
+      - name: Determine Version
+        id:   gitversion # id to later be referenced
+        uses: gittools/actions/gitversion/execute@v0
+
+      - name: Display GitVersion outputs
+        run: |
+            echo "SemVer (steps.gitversion.outputs.semVer): ${{ steps.gitversion.outputs.semVer }}"
+            echo "SemVer (steps.gitversion.outputs.GitVersion_SemVer): ${{ steps.gitversion.outputs.GitVersion_SemVer }}"
+            echo "SemVer (environment variable semVer): ${{ env.semVer }}"
+            echo "SemVer (environment variable GitVersion_SemVer): ${{ env.GitVersion_SemVer }}"
+
       - name: Log in to Docker Hub
         uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a
         with:
