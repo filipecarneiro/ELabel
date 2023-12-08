@@ -44,6 +44,11 @@
     {
       "library": "globalize@1.7.0",
       "destination": "wwwroot/lib/globalize/"
+    },
+    {
+      "provider": "cdnjs",
+      "library": "flag-icons@7.0.3",
+      "destination": "wwwroot/lib/flag-icons/"
     }
   ]
 }
