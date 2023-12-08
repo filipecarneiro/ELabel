@@ -1,308 +1,394 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
-    Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-    
-    Example:
-    
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-                
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-    
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-    
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-      <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-              </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="assembly">
-            <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="data">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="resheader">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:choice>
-      </xsd:complexType>
-    </xsd:element>
-  </xsd:schema>
-  <resheader name="resmimetype">
-    <value>text/microsoft-resx</value>
-  </resheader>
-  <resheader name="version">
-    <value>2.0</value>
-  </resheader>
-  <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <data name="Acidity regulator" xml:space="preserve">
-    <value>Regulador de acidez</value>
-    <comment>IngredientCategory</comment>
-  </data>
-  <data name="Activators for alcoholic and malolactic fermentation" xml:space="preserve">
-    <value>Ativadores de fermentação alcoólica e malolática</value>
-    <comment>IngredientCategory</comment>
-  </data>
-  <data name="Admin Dashboard" xml:space="preserve">
-    <value>Painel de Administração</value>
-    <comment>Home</comment>
-  </data>
-  <data name="Antioxidant" xml:space="preserve">
-    <value>Antioxidante</value>
-    <comment>IngredientCategory</comment>
-  </data>
-  <data name="Bottled in a protective atmosphere" xml:space="preserve">
-    <value>Engarrafado em atmosfera protetora</value>
-    <comment>Packaging gases</comment>
-  </data>
-  <data name="Bottling may happen in a protective atmosphere" xml:space="preserve">
-    <value>O engarrafamento pode ocorrer em atmosfera protetora</value>
-    <comment>Packaging gases</comment>
-  </data>
-  <data name="Carbohydrates" xml:space="preserve">
-    <value>Carboidratos</value>
-    <comment>Nutrition Information</comment>
-  </data>
-  <data name="Certifications" xml:space="preserve">
-    <value>Certificações</value>
-    <comment>Certifications</comment>
-  </data>
-  <data name="Certified organic based on EU-Guidelines" xml:space="preserve">
-    <value>Orgânico certificado com base nas diretrizes da UE</value>
-    <comment>Certifications</comment>
-  </data>
-  <data name="Clarifying agent" xml:space="preserve">
-    <value>Agente clarificante</value>
-    <comment>IngredientCategory</comment>
-  </data>
-  <data name="Correction of defect" xml:space="preserve">
-    <value>Correção de defeito</value>
-    <comment>IngredientCategory</comment>
-  </data>
-  <data name="Don't drink during pregnancy and breastfeeding" xml:space="preserve">
-    <value>Não beba durante a gravidez e amamentação</value>
-    <comment>Responsible Consumption</comment>
-  </data>
-  <data name="Don't drink when below legal drinking age" xml:space="preserve">
-    <value>Não beba quando estiver abaixo da idade legal para beber</value>
-    <comment>Responsible Consumption</comment>
-  </data>
-  <data name="Don't drink when driving a car, motorbike or operating machinery" xml:space="preserve">
-    <value>Não beba a conduzir carro, moto ou operar máquinas</value>
-    <comment>Responsible Consumption</comment>
-  </data>
-  <data name="Dry" xml:space="preserve">
-    <value>Seco</value>
-    <comment>WineStyle</comment>
-  </data>
-  <data name="Electronic label provided by" xml:space="preserve">
-    <value>Etiqueta eletrónica fornecida por</value>
-    <comment>Footer</comment>
-  </data>
-  <data name="Energy" xml:space="preserve">
-    <value>Energia</value>
-    <comment>Nutrition Information</comment>
-  </data>
-  <data name="Enrichment substance" xml:space="preserve">
-    <value>Substâncias de enriquecimento </value>
-    <comment>IngredientCategory</comment>
-  </data>
-  <data name="Enzyme" xml:space="preserve">
-    <value>Enzima </value>
-    <comment>IngredientCategory</comment>
-  </data>
-  <data name="Fats" xml:space="preserve">
-    <value>Gorduras</value>
-    <comment>Nutrition Information</comment>
-  </data>
-  <data name="Fermentation agent" xml:space="preserve">
-    <value>Agente de fermentação</value>
-    <comment>IngredientCategory</comment>
-  </data>
-  <data name="Fortified wine" xml:space="preserve">
-    <value>Vinho fortificado</value>
-    <comment>WineType</comment>
-  </data>
-  <data name="Gases and packaging gas" xml:space="preserve">
-    <value>Gases e gases de embalamento</value>
-    <comment>IngredientCategory</comment>
-  </data>
-  <data name="Home Page" xml:space="preserve">
-    <value>Página Inicial</value>
-    <comment>Home</comment>
-  </data>
-  <data name="Ingredients" xml:space="preserve">
-    <value>Ingredientes</value>
-    <comment>Ingredients</comment>
-  </data>
-  <data name="Medium dry" xml:space="preserve">
-    <value>Meio seco</value>
-    <comment>WineStyle</comment>
-  </data>
-  <data name="Medium sweet" xml:space="preserve">
-    <value>Meio doce</value>
-    <comment>WineStyle</comment>
-  </data>
-  <data name="Nutrition Information" xml:space="preserve">
-    <value>Informação Nutricional</value>
-    <comment>Nutrition Information</comment>
-  </data>
-  <data name="Nutritions per" xml:space="preserve">
-    <value>Nutrientes por</value>
-    <comment>Nutrition Information</comment>
-  </data>
-  <data name="of which Saturates" xml:space="preserve">
-    <value>das quais Saturadas</value>
-    <comment>Nutrition Information</comment>
-  </data>
-  <data name="of which Sugars" xml:space="preserve">
-    <value>dos quais Açúcares</value>
-    <comment>Nutrition Information</comment>
-  </data>
-  <data name="Open-source solution for electronic labels" xml:space="preserve">
-    <value>Solução de código aberto para etiquetas eletrónicas</value>
-    <comment>Home</comment>
-  </data>
-  <data name="Orange wine" xml:space="preserve">
-    <value>Vinho laranja</value>
-    <comment>WineType</comment>
-  </data>
-  <data name="Other ingredient" xml:space="preserve">
-    <value>Outro ingrediente</value>
-    <comment>IngredientCategory</comment>
-  </data>
-  <data name="Preservative" xml:space="preserve">
-    <value>Conservante</value>
-    <comment>IngredientCategory</comment>
-  </data>
-  <data name="Protein" xml:space="preserve">
-    <value>Proteína</value>
-    <comment>Nutrition Information</comment>
-  </data>
-  <data name="Raw material" xml:space="preserve">
-    <value>Matéria-prima</value>
-    <comment>IngredientCategory</comment>
-  </data>
-  <data name="Red wine" xml:space="preserve">
-    <value>Vinho tinto</value>
-    <comment>WineType</comment>
-  </data>
-  <data name="Responsible Consumption" xml:space="preserve">
-    <value>Consumo Responsável</value>
-    <comment>Responsible Consumption</comment>
-  </data>
-  <data name="Rosé wine" xml:space="preserve">
-    <value>Vinho rosé</value>
-    <comment>WineType</comment>
-  </data>
-  <data name="Salt" xml:space="preserve">
-    <value>Sal</value>
-    <comment>Nutrition Information</comment>
-  </data>
-  <data name="Sequestrant" xml:space="preserve">
-    <value>Sequestrante</value>
-    <comment>IngredientCategory</comment>
-  </data>
-  <data name="Sparkling wine" xml:space="preserve">
-    <value>Vinho espumante</value>
-    <comment>WineType</comment>
-  </data>
-  <data name="Stabiliser" xml:space="preserve">
-    <value>Estabilizador</value>
-    <comment>IngredientCategory</comment>
-  </data>
-  <data name="Sweet" xml:space="preserve">
-    <value>Doce</value>
-    <comment>WineStyle</comment>
-  </data>
-  <data name="Sweetener" xml:space="preserve">
-    <value>Edulcorante</value>
-    <comment>IngredientCategory</comment>
-  </data>
-  <data name="White wine" xml:space="preserve">
-    <value>Vinho branco</value>
-    <comment>WineType</comment>
-  </data>
+	<xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0"/>
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string"/>
+							<xsd:attribute name="type" type="xsd:string"/>
+							<xsd:attribute name="mimetype" type="xsd:string"/>
+							<xsd:attribute ref="xml:space"/>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string"/>
+							<xsd:attribute name="name" type="xsd:string"/>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+							<xsd:attribute ref="xml:space"/>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required"/>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="Home Page" xml:space="preserve">
+		<value>Página Inicial</value>
+		<comment>Home</comment>
+	</data>
+	<data name="Acidity regulator" xml:space="preserve">
+		<value>Regulador de acidez</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Activators for alcoholic and malolactic fermentation" xml:space="preserve">
+		<value>Ativadores de fermentação alcoólica e malolática</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Admin Dashboard" xml:space="preserve">
+		<value>Painel de Administração</value>
+		<comment>Home</comment>
+	</data>
+	<data name="Antioxidant" xml:space="preserve">
+		<value>Antioxidante</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Bottled in a protective atmosphere" xml:space="preserve">
+		<value>Engarrafado em atmosfera protetora</value>
+		<comment>Packaging gases</comment>
+	</data>
+	<data name="Bottling may happen in a protective atmosphere" xml:space="preserve">
+		<value>O engarrafamento pode ocorrer em atmosfera protetora</value>
+		<comment>Packaging gases</comment>
+	</data>
+	<data name="Carbohydrates" xml:space="preserve">
+		<value>Carboidratos</value>
+		<comment>Nutrition Information</comment>
+	</data>
+	<data name="Certifications" xml:space="preserve">
+		<value>Certificações</value>
+		<comment>Certifications</comment>
+	</data>
+	<data name="Certified organic based on EU-Guidelines" xml:space="preserve">
+		<value>Orgânico certificado com base nas diretrizes da UE</value>
+		<comment>Certifications</comment>
+	</data>
+	<data name="Clarifying agent" xml:space="preserve">
+		<value>Agente clarificante</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Correction of defect" xml:space="preserve">
+		<value>Correção de defeito</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Don't drink during pregnancy and breastfeeding" xml:space="preserve">
+		<value>Não beba durante a gravidez e amamentação</value>
+		<comment>Responsible Consumption</comment>
+	</data>
+	<data name="Don't drink when below legal drinking age" xml:space="preserve">
+		<value>Não beba quando estiver abaixo da idade legal para beber</value>
+		<comment>Responsible Consumption</comment>
+	</data>
+	<data name="Don't drink when driving a car, motorbike or operating machinery" xml:space="preserve">
+		<value>Não beba a conduzir carro, moto ou operar máquinas</value>
+		<comment>Responsible Consumption</comment>
+	</data>
+	<data name="Dry" xml:space="preserve">
+		<value>Seco</value>
+		<comment>WineStyle</comment>
+	</data>
+	<data name="Electronic label provided by" xml:space="preserve">
+		<value>Etiqueta eletrónica fornecida por</value>
+		<comment>Footer</comment>
+	</data>
+	<data name="Energy" xml:space="preserve">
+		<value>Energia</value>
+		<comment>Nutrition Information</comment>
+	</data>
+	<data name="Enrichment substance" xml:space="preserve">
+		<value>Substâncias de enriquecimento </value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Enzyme" xml:space="preserve">
+		<value>Enzima </value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Fats" xml:space="preserve">
+		<value>Gorduras</value>
+		<comment>Nutrition Information</comment>
+	</data>
+	<data name="Fermentation agent" xml:space="preserve">
+		<value>Agente de fermentação</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Fortified wine" xml:space="preserve">
+		<value>Vinho fortificado</value>
+		<comment>WineType</comment>
+	</data>
+	<data name="Gases and packaging gas" xml:space="preserve">
+		<value>Gases e gases de embalamento</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Ingredients" xml:space="preserve">
+		<value>Ingredientes</value>
+		<comment>Ingredients</comment>
+	</data>
+	<data name="Medium dry" xml:space="preserve">
+		<value>Meio seco</value>
+		<comment>WineStyle</comment>
+	</data>
+	<data name="Medium sweet" xml:space="preserve">
+		<value>Meio doce</value>
+		<comment>WineStyle</comment>
+	</data>
+	<data name="Nutrition Information" xml:space="preserve">
+		<value>Informação Nutricional</value>
+		<comment>Nutrition Information</comment>
+	</data>
+	<data name="Nutritions per" xml:space="preserve">
+		<value>Nutrientes por</value>
+		<comment>Nutrition Information</comment>
+	</data>
+	<data name="of which Saturates" xml:space="preserve">
+		<value>das quais Saturadas</value>
+		<comment>Nutrition Information</comment>
+	</data>
+	<data name="of which Sugars" xml:space="preserve">
+		<value>dos quais Açúcares</value>
+		<comment>Nutrition Information</comment>
+	</data>
+	<data name="Open-source solution for electronic labels" xml:space="preserve">
+		<value>Solução de código aberto para etiquetas eletrónicas</value>
+		<comment>Home</comment>
+	</data>
+	<data name="Orange wine" xml:space="preserve">
+		<value>Vinho laranja</value>
+		<comment>WineType</comment>
+	</data>
+	<data name="Other ingredient" xml:space="preserve">
+		<value>Outro ingrediente</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Preservative" xml:space="preserve">
+		<value>Conservante</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Protein" xml:space="preserve">
+		<value>Proteína</value>
+		<comment>Nutrition Information</comment>
+	</data>
+	<data name="Raw material" xml:space="preserve">
+		<value>Matéria-prima</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Red wine" xml:space="preserve">
+		<value>Vinho tinto</value>
+		<comment>WineType</comment>
+	</data>
+	<data name="Responsible Consumption" xml:space="preserve">
+		<value>Consumo Responsável</value>
+		<comment>Responsible Consumption</comment>
+	</data>
+	<data name="Rosé wine" xml:space="preserve">
+		<value>Vinho rosé</value>
+		<comment>WineType</comment>
+	</data>
+	<data name="Salt" xml:space="preserve">
+		<value>Sal</value>
+		<comment>Nutrition Information</comment>
+	</data>
+	<data name="Sequestrant" xml:space="preserve">
+		<value>Sequestrante</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Sparkling wine" xml:space="preserve">
+		<value>Vinho espumante</value>
+		<comment>WineType</comment>
+	</data>
+	<data name="Stabiliser" xml:space="preserve">
+		<value>Estabilizador</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Sweet" xml:space="preserve">
+		<value>Doce</value>
+		<comment>WineStyle</comment>
+	</data>
+	<data name="Sweetener" xml:space="preserve">
+		<value>Edulcorante</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="White wine" xml:space="preserve">
+		<value>Vinho branco</value>
+		<comment>WineType</comment>
+	</data>
+	<data name="Aleppo pine resin" xml:space="preserve">
+		<value>Resina de pinheiro de Alepo</value>
+		<comment>Other</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Ascorbic acid" xml:space="preserve">
+		<value>Ácido ascórbico</value>
+		<comment>Antioxidant</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Calcium sulphate" xml:space="preserve">
+		<value>Sulfato de cálcio</value>
+		<comment>AcidityRegulator</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Caramel" xml:space="preserve">
+		<value>Caramelo</value>
+		<comment>Other</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Carbon dioxide" xml:space="preserve">
+		<value>Dióxido de carbono</value>
+		<comment>RawMaterial</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Carboxymethylcellulose" xml:space="preserve">
+		<value>Carboximetilcelulose</value>
+		<comment>Stabiliser</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Citric acid" xml:space="preserve">
+		<value>Ácido cítrico</value>
+		<comment>Stabiliser</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Concentrated grape must" xml:space="preserve">
+		<value>Mosto de uva concentrado</value>
+		<comment>EnrichmentSubstance</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Dimethyldicarbonate" xml:space="preserve">
+		<value>Dimetildicarbonato</value>
+		<comment>Preservative</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Egg" xml:space="preserve">
+		<value>Ovo</value>
+		<comment>ClarifyingAgent</comment>
+		<comment>1</comment>
+	</data>
+	<data name="Expedition liqueur" xml:space="preserve">
+		<value>Licor de tiragem</value>
+		<comment>RawMaterial</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Fumaric acid" xml:space="preserve">
+		<value>Ácido fumárico</value>
+		<comment>Stabiliser</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Grapes" xml:space="preserve">
+		<value>Uvas</value>
+		<comment>RawMaterial</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Gum arabic" xml:space="preserve">
+		<value>Goma arábica</value>
+		<comment>Stabiliser</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Lactic acid" xml:space="preserve">
+		<value>Ácido lático</value>
+		<comment>AcidityRegulator</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Malic acid" xml:space="preserve">
+		<value>Ácido málico</value>
+		<comment>AcidityRegulator</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Metatartaric acid" xml:space="preserve">
+		<value>Ácido metatartárico</value>
+		<comment>Stabiliser</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Milk" xml:space="preserve">
+		<value>Leite</value>
+		<comment>ClarifyingAgent</comment>
+		<comment>1</comment>
+	</data>
+	<data name="Milk casein" xml:space="preserve">
+		<value>Caseína de leite</value>
+		<comment>ClarifyingAgent</comment>
+		<comment>1</comment>
+	</data>
+	<data name="Milk products" xml:space="preserve">
+		<value>Derivados do leite</value>
+		<comment>ClarifyingAgent</comment>
+		<comment>1</comment>
+	</data>
+	<data name="Milk protein" xml:space="preserve">
+		<value>Proteína do leite</value>
+		<comment>ClarifyingAgent</comment>
+		<comment>1</comment>
+	</data>
+	<data name="Potassium polyaspartate" xml:space="preserve">
+		<value>Poliaspartato de potássio</value>
+		<comment>Stabiliser</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Potassium sorbate" xml:space="preserve">
+		<value>Sorbato de potássio</value>
+		<comment>Preservative</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Sucrose" xml:space="preserve">
+		<value>Sacarose</value>
+		<comment>EnrichmentSubstance</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Sugar" xml:space="preserve">
+		<value>Açúcar</value>
+		<comment>EnrichmentSubstance</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Sulphites" xml:space="preserve">
+		<value>Sulfitos</value>
+		<comment>Preservative</comment>
+		<comment>1</comment>
+	</data>
+	<data name="Tartaric acid" xml:space="preserve">
+		<value>Ácido tartárico</value>
+		<comment>AcidityRegulator</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Tirage liqueur" xml:space="preserve">
+		<value>Licor de tiragem</value>
+		<comment>RawMaterial</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Yeast mannoproteins" xml:space="preserve">
+		<value>Manoproteínas de levedura</value>
+		<comment>Stabiliser</comment>
+		<comment>[]</comment>
+	</data>
 </root>
