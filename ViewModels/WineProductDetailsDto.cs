@@ -29,26 +29,7 @@ namespace ELabel.ViewModels
          * Ingredients
          */
 
-        [Ganss.Excel.Ignore]
-        public List<ProductIngredientDto> ProductIngredients { get; } = new();
-
-        public string Ingredients
-        {
-            get
-            {
-                if (ProductIngredients == null)
-                    return string.Empty;
-
-                List<string?> ingredients = ProductIngredients.Select(pi => pi.Ingredient?.Name).ToList();
-                return String.Join(", ", ingredients.ToArray());
-            }
-
-            set
-            {
-                // TODO: Import Ingredients
-                return;
-            }
-        }
+        public List<ProductIngredientDto> ProductIngredients { get; set; } = new();
 
         public required PackagingGases PackagingGases { get; set; }
 

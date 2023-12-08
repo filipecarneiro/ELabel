@@ -243,7 +243,7 @@ namespace ELabel.Areas.Admin.Controllers
                                       .ThenBy(i => i.Category)
                                       .ToListAsync();
 
-            List<IngredientDto> ingredients = _mapper.Map<List<IngredientDto>>(query);
+            List<IngredientExcelDto> ingredients = _mapper.Map<List<IngredientExcelDto>>(query);
 
             byte[] byteArray;
             var excelMapper = new ExcelMapper();
@@ -280,7 +280,7 @@ namespace ELabel.Areas.Admin.Controllers
                 return View(importFileUpload);
             }
 
-            IEnumerable<IngredientDto> importedIngredients;
+            IEnumerable<IngredientExcelDto> importedIngredients;
 
             using (var memoryStream = new MemoryStream())
             {
@@ -290,7 +290,7 @@ namespace ELabel.Areas.Admin.Controllers
                 try
                 {
                     ExcelMapper excelMapper = new ExcelMapper(memoryStream);
-                    importedIngredients = excelMapper.Fetch<IngredientDto>("Ingredients");
+                    importedIngredients = excelMapper.Fetch<IngredientExcelDto>("Ingredients");
                 }
                 catch (Exception e)
                 {
@@ -307,7 +307,7 @@ namespace ELabel.Areas.Admin.Controllers
 
             using (var transaction = _context.Database.BeginTransaction())
             {
-                foreach (IngredientDto importedIngredient in importedIngredients)
+                foreach (IngredientExcelDto importedIngredient in importedIngredients)
                 {
                     Ingredient ingredient = _mapper.Map<Ingredient>(importedIngredient);
 

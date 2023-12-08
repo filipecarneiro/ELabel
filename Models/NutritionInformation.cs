@@ -1,5 +1,4 @@
-﻿using Ganss.Excel;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 
 namespace ELabel.Models
@@ -51,7 +50,7 @@ namespace ELabel.Models
 
         [Display(Name = "Kilojoules", Description = "Energy (kJ)")]
         [DisplayFormat(DataFormatString = "{0:G} kj")]
-        [Column("Kilojoule", MappingDirections.ObjectToExcel)]
+        [Ganss.Excel.Column("Kilojoule", Ganss.Excel.MappingDirections.ObjectToExcel)]
         public float Kilojoule {
             get
             {
