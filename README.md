@@ -8,7 +8,7 @@
 [![ASP.NET Core](https://img.shields.io/badge/ASP.NET_Core-8.0-blue)](https://learn.microsoft.com/en-us/aspnet/core/?view=aspnetcore-8.0)
 [![Docker Image](https://img.shields.io/badge/Docker-Image-blue?link=https%3A%2F%2Fhub.docker.com%2Fr%2Ffcarneiro%2Felabel)](https://hub.docker.com/repository/docker/fcarneiro/elabel/general)
 [![Lokalise progress](https://img.shields.io/badge/Lokalise-20%25-FF6336)](https://app.lokalise.com/public/811531676572f985a58773.20133510/)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://makeapullrequest.com)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://makeapullrequest.com)
 
 # Open E-Label
 
