@@ -12,7 +12,7 @@
     IRequestCultureFeature requestCulture = Context.Features.Get<IRequestCultureFeature>()!;
 
     IList<SelectListItem> cultureItems = LocOptions.Value.SupportedUICultures!
-                                                         .Select(c => new SelectListItem { Value = c.TwoLetterISOLanguageName, Text = c.NativeName })
+                                                         .Select(c => new SelectListItem { Value = c.TwoLetterISOLanguageName, Text = StringHelper.FirstCharToUpper(c.NativeName) })
                                                          .ToList();
 
     string returnUrl = string.IsNullOrEmpty(Context.Request.Path) ? "~/" : $"~{Context.Request.Path.Value}";
