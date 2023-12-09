@@ -2,8 +2,9 @@
 <img src="wwwroot/img/icon.svg" width="100" height="100">
 </div>
 
-![GitHub License](https://img.shields.io/github/license/filipecarneiro/ELabel)
-![Static Badge](https://img.shields.io/badge/Docker-Image-brightgreen?link=https%3A%2F%2Fhub.docker.com%2Fr%2Ffcarneiro%2Felabel)
+[![GitHub License](https://img.shields.io/github/license/filipecarneiro/ELabel)](https://github.com/filipecarneiro/ELabel/blob/main/LICENSE.txt)
+[![Static Badge](https://img.shields.io/badge/Docker-Image-brightgreen?link=https%3A%2F%2Fhub.docker.com%2Fr%2Ffcarneiro%2Felabel)](https://hub.docker.com/repository/docker/fcarneiro/elabel/general)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://makeapullrequest.com)
 
 # Open E-Label
 
