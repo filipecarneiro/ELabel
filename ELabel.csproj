@@ -9,6 +9,9 @@
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>.</DockerfileContext>
     <ScopedCssEnabled>false</ScopedCssEnabled>
+    <Title>Open E-Label</Title>
+    <PackageProjectUrl>https://github.com/filipecarneiro/ELabel</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>

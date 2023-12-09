@@ -1,6 +1,8 @@
-﻿<div>
-    <a id="switchTheme" class="text-reset text-decoration-none" href="#" role="button">
-        <svg class="bi" width="16" height="16" fill="currentColor">
+﻿@inject IViewLocalizer Localizer
+
+<div>
+    <a id="switchTheme" class="text-reset text-decoration-none" href="#" role="button" title="@Localizer["Select theme"]" aria-label="@Localizer["Select theme"]">
+        <svg class="bi" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false">
             <use xlink:href="/lib/bootstrap-icons/bootstrap-icons.svg#circle-half" />
         </svg>
     </a>

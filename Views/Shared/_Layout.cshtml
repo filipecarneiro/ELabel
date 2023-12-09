@@ -26,14 +26,20 @@
     </header>
 
     <div class="container">
-        <main role="main" class="py-3">
+        <main class="py-3">
             @RenderBody()
         </main>
     </div>
 
     <footer class="mt-auto text-center border-top text-body-secondary bg-body-tertiary py-3 mt-3">
         <div class="container">
-            <small>@Localizer["Electronic label provided by"] <a href="https://github.com/filipecarneiro/ELabel#readme" target="_blank" rel="noopener">Open E-Label</a>.</small>
+            <small>@Localizer["Electronic label provided by"]&nbsp;
+                <a href="https://github.com/filipecarneiro/ELabel#readme" target="_blank" rel="noopener" class="text-reset text-decoration-none" title="@Localizer["Open E-Label project on GitHub"]">Open E-Label</a>.
+            </small>
+            &nbsp;
+            <small>
+                <a href="https://www.w3.org/TR/WCAG22/" target="_blank" rel="noopener" class="text-reset text-decoration-none" title="@Localizer["Web Content Accessibility Guidelines (WCAG) 2.2"]">@Localizer["Web Accessibility Guidelines"]</a>.
+            </small>
         </div>
     </footer>
 </body>
