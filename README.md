@@ -3,7 +3,8 @@
 </div>
 
 [![GitHub License](https://img.shields.io/github/license/filipecarneiro/ELabel)](https://github.com/filipecarneiro/ELabel/blob/main/LICENSE.txt)
-[![Static Badge](https://img.shields.io/badge/Docker-Image-brightgreen?link=https%3A%2F%2Fhub.docker.com%2Fr%2Ffcarneiro%2Felabel)](https://hub.docker.com/repository/docker/fcarneiro/elabel/general)
+[![ASP.NET Core](https://img.shields.io/badge/ASP.NET_Core-8.0-blue)](https://learn.microsoft.com/en-us/aspnet/core/?view=aspnetcore-8.0)
+[![Docker Image](https://img.shields.io/badge/Docker-Image-brightgreen?link=https%3A%2F%2Fhub.docker.com%2Fr%2Ffcarneiro%2Felabel)](https://hub.docker.com/repository/docker/fcarneiro/elabel/general)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://makeapullrequest.com)
 
 # Open E-Label
