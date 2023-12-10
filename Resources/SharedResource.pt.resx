@@ -80,14 +80,14 @@
 	</data>
 	<data name="Bottled in a protective atmosphere" xml:space="preserve">
 		<value>Engarrafado em atmosfera protetora</value>
-		<comment>Packaging gases</comment>
+		<comment>Packaging gases&#13; Article 48a(6) of Delegated Regulation (EU) 2019/33 clearly states, ‘the indication of additives falling under the&#13; category “packaging gases” in the list of ingredients may be replaced by the specific particular “Bottled in a&#13; protective atmosphere” or “Bottling may happen in a protective atmosphere”’. &#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208</comment>
 	</data>
 	<data name="Bottling may happen in a protective atmosphere" xml:space="preserve">
 		<value>O engarrafamento pode ocorrer em atmosfera protetora</value>
-		<comment>Packaging gases</comment>
+		<comment>Packaging gases&#13; Article 48a(6) of Delegated Regulation (EU) 2019/33 clearly states, ‘the indication of additives falling under the&#13; category “packaging gases” in the list of ingredients may be replaced by the specific particular “Bottled in a&#13; protective atmosphere” or “Bottling may happen in a protective atmosphere”’. &#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208</comment>
 	</data>
-	<data name="Carbohydrates" xml:space="preserve">
-		<value>Carboidratos</value>
+	<data name="Carbohydrate" xml:space="preserve">
+		<value>Hidratos de carbono</value>
 		<comment>Nutrition Information</comment>
 	</data>
 	<data name="Certifications" xml:space="preserve">
@@ -138,8 +138,8 @@
 		<value>Enzima </value>
 		<comment>IngredientCategory</comment>
 	</data>
-	<data name="Fats" xml:space="preserve">
-		<value>Gorduras</value>
+	<data name="Fat" xml:space="preserve">
+		<value>Lípidos</value>
 		<comment>Nutrition Information</comment>
 	</data>
 	<data name="Fermentation agent" xml:space="preserve">
@@ -156,7 +156,8 @@
 	</data>
 	<data name="Ingredients" xml:space="preserve">
 		<value>Ingredientes</value>
-		<comment>Ingredients</comment>
+		<comment>Ingredients&#13; &#13; Table 2 of Part A of Annex I of Delegated Regulation (EU) 2019/934 identifies the full list of additives and processing aids that can be used in wine production.&#13; &#13; https://eur-lex.europa.eu/search.html?scope=EURLEX&amp;text=2019%2F934&amp;lang=en&amp;type=quick&amp;qid=1701362513497</comment>
+		<comment>Table 2 of Part A of Annex I of Delegated Regulation (EU) 2019/934 identifies the full list of additives and processing aids that can be used in wine productionhttps://eur-lex.europa.eu/search.html?scope=EURLEX&amp;text=2019%2F934&amp;lang=en&amp;type=quick&amp;qid=1701362513497</comment>
 	</data>
 	<data name="Medium dry" xml:space="preserve">
 		<value>Meio seco</value>
@@ -167,15 +168,20 @@
 		<comment>WineStyle</comment>
 	</data>
 	<data name="Nutrition Information" xml:space="preserve">
-		<value>Informação Nutricional</value>
-		<comment>Nutrition Information</comment>
+		<value>Declaração Nutricional</value>
+		<comment>Nutrition Information&#13; &#13; The presentation of the nutrition declaration is regulated in Article 34 of the FIC Regulation.&#13; &#13; The order of presentation of the different elements of the nutrition declaration is defined in Annex XV of the FIC Regulation.&#13; &#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02011R1169-20180101&amp;qid=1701362311604</comment>
+		<comment>The presentation of the nutrition declaration is regulated in Article 34 of the FIC Regulation.</comment>
+		<comment>The order of presentation of the different elements of the nutrition declaration is defined in Annex XV of the FIC Regulation.</comment>
+		<comment>https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02011R1169-20180101&amp;qid=1701362311604</comment>
 	</data>
 	<data name="Nutritions per" xml:space="preserve">
 		<value>Nutrientes por</value>
-		<comment>Nutrition Information</comment>
+		<comment>Nutrition Information&#13; &#13; Energy values and nutrition values must be indicated per 100 g or per 100 ml (Article 32(2) of the FIC Regulation).&#13; &#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02011R1169-20180101&amp;qid=1701362311604</comment>
+		<comment>Energy values and nutrition values must be indicated per 100 g or per 100 ml (Article 32(2) of the FIC Regulation).</comment>
+		<comment>https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02011R1169-20180101&amp;qid=1701362311604</comment>
 	</data>
 	<data name="of which Saturates" xml:space="preserve">
-		<value>das quais Saturadas</value>
+		<value>das quais Saturados</value>
 		<comment>Nutrition Information</comment>
 	</data>
 	<data name="of which Sugars" xml:space="preserve">
@@ -199,7 +205,7 @@
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Protein" xml:space="preserve">
-		<value>Proteína</value>
+		<value>Proteínas</value>
 		<comment>Nutrition Information</comment>
 	</data>
 	<data name="Raw material" xml:space="preserve">
@@ -308,8 +314,10 @@
 	</data>
 	<data name="Grapes" xml:space="preserve">
 		<value>Uvas</value>
-		<comment>RawMaterial</comment>
+		<comment>RawMaterial&#13; &#13; Ingredients shall be designated by their specific name, with the exceptions provided for in the FIC Regulation and in Delegated Regulation (EU) 2019/33 (e.g. ‘grapes’ referring to the raw material).&#13; &#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208</comment>
 		<comment>[]</comment>
+		<comment>Ingredients shall be designated by their specific name, with the exceptions provided for in the FIC Regulation and in Delegated Regulation (EU) 2019/33 (e.g. ‘grapes’ referring to the raw material).</comment>
+		<comment>https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208</comment>
 	</data>
 	<data name="Gum arabic" xml:space="preserve">
 		<value>Goma arábica</value>
@@ -387,8 +395,28 @@
 		<comment>[]</comment>
 	</data>
 	<data name="Yeast mannoproteins" xml:space="preserve">
-		<value>Manoproteínas de levedura</value>
+		<value>Manoproteínas de leveduras</value>
 		<comment>Stabiliser</comment>
 		<comment>[]</comment>
+	</data>
+	<data name="Web Accessibility Guidelines" xml:space="preserve">
+		<value>Diretrizes de Acessibilidade na Web</value>
+		<comment>Footer message</comment>
+	</data>
+	<data name="Web Content Accessibility Guidelines (WCAG) 2.2" xml:space="preserve">
+		<value>Diretrizes de Acessibilidade de Conteúdo Web (WCAG) 2.2</value>
+		<comment>Footer message</comment>
+	</data>
+	<data name="Open E-Label project on GitHub" xml:space="preserve">
+		<value>Projeto Open E-Label no GitHub</value>
+		<comment>Footer message</comment>
+	</data>
+	<data name="Select theme" xml:space="preserve">
+		<value>Selecione o tema</value>
+		<comment>Header message</comment>
+	</data>
+	<data name="Select language" xml:space="preserve">
+		<value>Selecione o idioma</value>
+		<comment>Header message</comment>
 	</data>
 </root>

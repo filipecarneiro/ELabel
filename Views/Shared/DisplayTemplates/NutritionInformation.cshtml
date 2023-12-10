@@ -22,7 +22,7 @@
             <td class="text-end">@Html.DisplayFor(model => model.Energy.Kilojoule)</td>
         </tr>
         <tr>
-            <th rowspan="2">@Localizer["Fats"]</th>
+            <th rowspan="2">@Localizer["Fat"]</th>
             <td colspan="2" class="text-end">@(Model.FatTotal < toleratedFatTotal ? String.Format("<{0:G} g", toleratedFatTotal) : Html.DisplayFor(model => model.FatTotal))</td>
         </tr>
         <tr>
@@ -30,7 +30,7 @@
             <td class="text-end">@(Model.FatSaturates < toleratedFatSaturates ? String.Format("<{0:G} g", toleratedFatSaturates) : Html.DisplayFor(model => model.FatSaturates))</td>
         </tr>
         <tr>
-            <th rowspan="2">@Localizer["Carbohydrates"]</th>
+            <th rowspan="2">@Localizer["Carbohydrate"]</th>
             <td colspan="2" class="text-end">@(Model.CarbohydrateTotal < toleratedCarbohydrateTotal ? String.Format("<{0:G} g", toleratedCarbohydrateTotal) : Html.DisplayFor(model => model.CarbohydrateTotal))</td>
         </tr>
         <tr>
