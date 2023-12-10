@@ -1,0 +1,33 @@
+a {
+    text-decoration: none;
+}
+
+.css-tooltip {
+    position: relative;
+    display: block;
+    cursor: pointer;
+}
+
+.css-tooltip .css-tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: #495057;
+    color: #f8f9fa;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -100px;
+  
+    /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.css-tooltip:hover .css-tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}

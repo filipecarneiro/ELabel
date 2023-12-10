@@ -10,6 +10,7 @@
     <link rel="icon" type="image/svg+xml" href="~/favicon.svg" />
     <link rel="icon" type="image/png" href="~/favicon.png" />
     <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/label.css" asp-append-version="true" />
 </head>
 <body class="d-flex flex-column min-vh-100">
     <header class="header">
@@ -33,13 +34,9 @@
 
     <footer class="mt-auto text-center border-top text-body-secondary bg-body-tertiary py-3 mt-3">
         <div class="container">
-            <small>@Localizer["Electronic label provided by"]&nbsp;
-                <a href="https://github.com/filipecarneiro/ELabel#readme" target="_blank" rel="noopener" class="text-reset text-decoration-none" title="@Localizer["Open E-Label project on GitHub"]">Open E-Label</a>.
-            </small>
-            &nbsp;
-            <small>
-                <a href="https://www.w3.org/TR/WCAG22/" target="_blank" rel="noopener" class="text-reset text-decoration-none" title="@Localizer["Web Content Accessibility Guidelines (WCAG) 2.2"]">@Localizer["Web Accessibility Guidelines"]</a>.
-            </small>
+            <small>@Localizer["Electronic label provided by"]&nbsp;<a href="https://github.com/filipecarneiro/ELabel#readme" target="_blank" rel="noopener" class="text-reset text-decoration-none" title="@Localizer["Open E-Label project on GitHub"]">Open E-Label</a>.</small>
+            <span>&nbsp;</span>
+            <small><a href="https://www.w3.org/TR/WCAG22/" target="_blank" rel="noopener" class="text-reset text-decoration-none" title="@Localizer["Web Content Accessibility Guidelines (WCAG) 2.2"]">@Localizer["Web Accessibility Guidelines"]</a>.</small>
         </div>
     </footer>
 </body>

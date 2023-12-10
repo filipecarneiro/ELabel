@@ -5,16 +5,17 @@
     <div class="row align-items-start">
         @if(Model.Organic)
         {
-        <div class="col">
-            <img
-                class="img-fluid m-3"
-                style="max-height: 75px"
-                loading="lazy"
-                src="~/img/certification-organic.svg"
-                alt="@Localizer[ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Organic").FirstOrDefault()?.Description ?? "Certifications"]"
-                title="@Localizer[ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Organic").FirstOrDefault()?.Description ?? "Certifications"]"
-            />
-        </div>
+            <div class="col">
+                <figure class="figure css-tooltip">
+                    <img class="img-fluid m-3"
+                         style="max-height: 50px"
+                         loading="lazy"
+                         src="~/img/certification-organic.svg"
+                         alt="@Localizer[ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Organic").FirstOrDefault()?.Description ?? "Certifications"]"
+                    />
+                    <figcaption class="figure-caption css-tooltip-text">@Localizer[ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Organic").FirstOrDefault()?.Description ?? "Certifications"]</figcaption>
+                </figure>
+            </div>
         }
     </div>
 </div>
