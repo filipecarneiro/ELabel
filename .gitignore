@@ -364,5 +364,7 @@ FodyWeavers.xsd
 
 # macOS
 .DS_Store
+
+# Others
 /.gitattributes
-/elabel.tar
+/*.tar
