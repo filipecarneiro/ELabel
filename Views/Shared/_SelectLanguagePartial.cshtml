@@ -23,9 +23,20 @@
         <svg class="bi" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false">
             <use xlink:href="/lib/bootstrap-icons/bootstrap-icons.svg#translate" />
         </svg>
-        <select name="culture" class="ms-2" title="@Localizer["Select language"]" aria-label="@Localizer["Select language"]"
-          onchange="this.form.submit();"
-          asp-for="@requestCulture.RequestCulture.UICulture.TwoLetterISOLanguageName" asp-items="cultureItems">
+        <select id="languageSelect"
+                name="culture"
+                class="ms-2"
+                title="@Localizer["Select language"]"
+                aria-label="@Localizer["Select language"]"
+                asp-for="@requestCulture.RequestCulture.UICulture.TwoLetterISOLanguageName"
+                asp-items="cultureItems">
         </select>
     </form>
 </div>
+
+@* Note: Update CSP hash on _Layout.cshtml if this code changes! *@
+<script>
+    document.getElementById('languageSelect').onchange = function () {
+        document.getElementById('selectLanguage').submit();
+    };
+</script>
