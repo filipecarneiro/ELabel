@@ -572,6 +572,7 @@ namespace ELabel.Areas.Admin.Controllers
                 ProductId = id
             };
 
+            ViewData["ProductTitle"] = _context.Product.Find(id)?.Name;
             return View(imageFileUpload);
         }
 
@@ -585,14 +586,18 @@ namespace ELabel.Areas.Admin.Controllers
                 return NotFound();
             }
 
+            string? ProductTitle = _context.Product.Find(id)?.Name;
+
             if (!ModelState.IsValid)
             {
+                ViewData["ProductTitle"] = ProductTitle;
                 return View(imageFileUpload);
             }
 
             if (imageFileUpload.File == null || imageFileUpload.File.Length == 0)
             {
                 ModelState.AddModelError("CustomError", "Empty file!");
+                ViewData["ProductTitle"] = ProductTitle;
                 return View(imageFileUpload);
             }
 
@@ -615,12 +620,14 @@ namespace ELabel.Areas.Admin.Controllers
                 if (optimizedImage == null)
                 {
                     ModelState.AddModelError("CustomError", $"Invalid image format! Try another file.");
+                    ViewData["ProductTitle"] = ProductTitle;
                     return View(imageFileUpload);
                 }
 
                 if (optimizedImage.Width < ImageFileUpload.MinWidth || optimizedImage.Height < ImageFileUpload.MinHeight)
                 {
                     ModelState.AddModelError("CustomError", $"Image is too small ({optimizedImage.Width}x{optimizedImage.Height})! Chose an image with, at least, {ImageFileUpload.MinWidth}x{ImageFileUpload.MinHeight} pixels.");
+                    ViewData["ProductTitle"] = ProductTitle;
                     return View(imageFileUpload);
                 }
 
@@ -646,6 +653,7 @@ namespace ELabel.Areas.Admin.Controllers
             catch (Exception e)
             {
                 ModelState.AddModelError("CustomError", e.Message);
+                ViewData["ProductTitle"] = ProductTitle;
                 return View(imageFileUpload);
             }
 

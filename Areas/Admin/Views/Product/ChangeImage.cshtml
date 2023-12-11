@@ -6,7 +6,7 @@
 
 <h2>Change Image</h2>
 
-<h4>Product</h4>
+<h4>@ViewData["ProductTitle"]</h4>
 <hr />
 <div class="row">
     <div class="col-md-6">
@@ -27,16 +27,31 @@
     </div>
 
     <div class="col-md-6 col-md-offset-2">
+
+        <div class="p-3 bg-light rounded-3">
+            <h3>Transparent Background</h3>
+            <p>To ensure your image look stunning in both dark and light modes, we recommend uploading images with a transparent background.</p>
+            <p>If you don't have images with transparent backgrounds, don't worry! You can easily achieve this by using online background removal services. Here are a few recommendations:</p>
+            <ul>
+                <li><a href="https://www.adobe.com/express/feature/image/remove-background" target="_blank" rel="noopener">Adobe Express Free image background remover</a></li>
+                <li><a href="https://www4.lunapic.com/editor/?action=background-removal" target="_blank" rel="noopener">LunaPic Background Removal</a></li>
+            </ul>
+            <small>Take a moment to check and, if necessary, update your images. This small adjustment will go a long way in enhancing the overall aesthetics of your content.</small>
+        </div>
+
+        <br />
+
         <div class="p-3 bg-light rounded-3">
             <h3>Image Optimization</h3>
             <p>For better performance, image will be resized and compressed for web.</p>
-            <p>Please provide a product image, in any format, with the folloing minimum dimensions:</p>
+            <p>Please provide a product image, in any format, with the following minimum dimensions:</p>
             <ul>
                 <li>Minimum width: @ImageFileUpload.MinWidth px</li>
                 <li>Minimum height: @ImageFileUpload.MinHeight px</li>
             </ul>
-            <small>Uploaded images will be scaled down to a maximum size of @ImageFileUpload.MaxWidth x @ImageFileUpload.MaxHeight px and will be stored in <a href="https://en.wikipedia.org/wiki/WebP" target="_blank">WebP format</a>, with @ImageFileUpload.Quality% quality.</small>
+            <small>Uploaded images will be scaled down to a maximum size of @ImageFileUpload.MaxWidth x @ImageFileUpload.MaxHeight px and will be stored in <a href="https://en.wikipedia.org/wiki/WebP" target="_blank" rel="noopener">WebP format</a>, with @ImageFileUpload.Quality% quality.</small>
         </div>
+
     </div>
 
 </div>
