@@ -139,7 +139,7 @@
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Fat" xml:space="preserve">
-		<value>Graisses</value>
+		<value>Graisse</value>
 		<comment>Nutrition Information</comment>
 	</data>
 	<data name="Fermentation agent" xml:space="preserve">
@@ -253,170 +253,170 @@
 		<comment>WineType</comment>
 	</data>
 	<data name="Aleppo pine resin" xml:space="preserve">
-		<value/>
+		<value>Résine de pin d'Alep</value>
 		<comment>Other</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Ascorbic acid" xml:space="preserve">
-		<value/>
+		<value>Acide ascorbique</value>
 		<comment>Antioxidant</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Calcium sulphate" xml:space="preserve">
-		<value/>
+		<value>Sulfate de calcium</value>
 		<comment>AcidityRegulator</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Caramel" xml:space="preserve">
-		<value/>
+		<value>Caramel</value>
 		<comment>Other</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Carbon dioxide" xml:space="preserve">
-		<value/>
+		<value>Dioxyde de carbone</value>
 		<comment>RawMaterial</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Carboxymethylcellulose" xml:space="preserve">
-		<value/>
+		<value>Carboxyméthylcellulose</value>
 		<comment>Stabiliser</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Citric acid" xml:space="preserve">
-		<value/>
+		<value>Acide citrique</value>
 		<comment>Stabiliser</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Concentrated grape must" xml:space="preserve">
-		<value/>
+		<value>Moût de raisin concentré</value>
 		<comment>EnrichmentSubstance</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Dimethyldicarbonate" xml:space="preserve">
-		<value/>
+		<value>Dicarbonate de diméthyle</value>
 		<comment>Preservative</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Egg" xml:space="preserve">
-		<value/>
+		<value>Œuf</value>
 		<comment>ClarifyingAgent</comment>
 		<comment>1</comment>
 	</data>
 	<data name="Expedition liqueur" xml:space="preserve">
-		<value/>
+		<value>Liqueur d'expédition</value>
 		<comment>RawMaterial</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Fumaric acid" xml:space="preserve">
-		<value/>
+		<value>L'acide fumarique</value>
 		<comment>Stabiliser</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Grapes" xml:space="preserve">
-		<value/>
+		<value>Raisins</value>
 		<comment>RawMaterial&#13; &#13; Ingredients shall be designated by their specific name, with the exceptions provided for in the FIC Regulation and in Delegated Regulation (EU) 2019/33 (e.g. ‘grapes’ referring to the raw material).&#13; &#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208</comment>
 		<comment>[]</comment>
 		<comment>Ingredients shall be designated by their specific name, with the exceptions provided for in the FIC Regulation and in Delegated Regulation (EU) 2019/33 (e.g. ‘grapes’ referring to the raw material).</comment>
 		<comment>https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208</comment>
 	</data>
 	<data name="Gum arabic" xml:space="preserve">
-		<value/>
+		<value>Gomme arabique</value>
 		<comment>Stabiliser</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Lactic acid" xml:space="preserve">
-		<value/>
+		<value>Acide lactique</value>
 		<comment>AcidityRegulator</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Malic acid" xml:space="preserve">
-		<value/>
+		<value>L'acide malique</value>
 		<comment>AcidityRegulator</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Metatartaric acid" xml:space="preserve">
-		<value/>
+		<value>Acide métatartrique</value>
 		<comment>Stabiliser</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Milk" xml:space="preserve">
-		<value/>
+		<value>Lait</value>
 		<comment>ClarifyingAgent</comment>
 		<comment>1</comment>
 	</data>
 	<data name="Milk casein" xml:space="preserve">
-		<value/>
+		<value>Caséine du lait</value>
 		<comment>ClarifyingAgent</comment>
 		<comment>1</comment>
 	</data>
 	<data name="Milk products" xml:space="preserve">
-		<value/>
+		<value>Produits laitiers</value>
 		<comment>ClarifyingAgent</comment>
 		<comment>1</comment>
 	</data>
 	<data name="Milk protein" xml:space="preserve">
-		<value/>
+		<value>Protéine de lait</value>
 		<comment>ClarifyingAgent</comment>
 		<comment>1</comment>
 	</data>
 	<data name="Potassium polyaspartate" xml:space="preserve">
-		<value/>
+		<value>Polyaspartate de potassium</value>
 		<comment>Stabiliser</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Potassium sorbate" xml:space="preserve">
-		<value/>
+		<value>Sorbate de potassium</value>
 		<comment>Preservative</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Sucrose" xml:space="preserve">
-		<value/>
+		<value>Saccharose</value>
 		<comment>EnrichmentSubstance</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Sugar" xml:space="preserve">
-		<value/>
+		<value>Sucre</value>
 		<comment>EnrichmentSubstance</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Sulphites" xml:space="preserve">
-		<value/>
+		<value>Sulfites</value>
 		<comment>Preservative</comment>
 		<comment>1</comment>
 	</data>
 	<data name="Tartaric acid" xml:space="preserve">
-		<value/>
+		<value>Acide tartrique</value>
 		<comment>AcidityRegulator</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Tirage liqueur" xml:space="preserve">
-		<value/>
+		<value>Liqueur de tirage</value>
 		<comment>RawMaterial</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Yeast mannoproteins" xml:space="preserve">
-		<value/>
+		<value>Mannoprotéines de levure</value>
 		<comment>Stabiliser</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Web Accessibility Guidelines" xml:space="preserve">
-		<value/>
+		<value>Lignes directrices sur l’accessibilité du Web</value>
 		<comment>Footer message</comment>
 	</data>
 	<data name="Web Content Accessibility Guidelines (WCAG) 2.2" xml:space="preserve">
-		<value/>
+		<value>Lignes directrices pour l'accessibilité des contenus web (WCAG) 2.2</value>
 		<comment>Footer message</comment>
 	</data>
 	<data name="Open E-Label project on GitHub" xml:space="preserve">
-		<value/>
+		<value>Ouvrir le projet E-Label sur GitHub</value>
 		<comment>Footer message</comment>
 	</data>
 	<data name="Select theme" xml:space="preserve">
-		<value/>
+		<value>Sélectionner un thème</value>
 		<comment>Header message</comment>
 	</data>
 	<data name="Select language" xml:space="preserve">
-		<value/>
+		<value>Sélection de la langue</value>
 		<comment>Header message</comment>
 	</data>
 </root>

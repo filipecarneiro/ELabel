@@ -253,170 +253,170 @@
 		<comment>WineType</comment>
 	</data>
 	<data name="Aleppo pine resin" xml:space="preserve">
-		<value/>
+		<value>Resina di pino d'Aleppo</value>
 		<comment>Other</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Ascorbic acid" xml:space="preserve">
-		<value/>
+		<value>Acido ascorbico</value>
 		<comment>Antioxidant</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Calcium sulphate" xml:space="preserve">
-		<value/>
+		<value>Solfato di calcio</value>
 		<comment>AcidityRegulator</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Caramel" xml:space="preserve">
-		<value/>
+		<value>Caramello</value>
 		<comment>Other</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Carbon dioxide" xml:space="preserve">
-		<value/>
+		<value>Diossido di carbonio</value>
 		<comment>RawMaterial</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Carboxymethylcellulose" xml:space="preserve">
-		<value/>
+		<value>Carbossimetilcellulosa</value>
 		<comment>Stabiliser</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Citric acid" xml:space="preserve">
-		<value/>
+		<value>Acido citrico</value>
 		<comment>Stabiliser</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Concentrated grape must" xml:space="preserve">
-		<value/>
+		<value>Mosto d'uva concentrato</value>
 		<comment>EnrichmentSubstance</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Dimethyldicarbonate" xml:space="preserve">
-		<value/>
+		<value>Dimetildicarbonato</value>
 		<comment>Preservative</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Egg" xml:space="preserve">
-		<value/>
+		<value>Uovo</value>
 		<comment>ClarifyingAgent</comment>
 		<comment>1</comment>
 	</data>
 	<data name="Expedition liqueur" xml:space="preserve">
-		<value/>
+		<value>Liquore di spedizione</value>
 		<comment>RawMaterial</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Fumaric acid" xml:space="preserve">
-		<value/>
+		<value>Acido fumarico</value>
 		<comment>Stabiliser</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Grapes" xml:space="preserve">
-		<value/>
+		<value>Uva</value>
 		<comment>RawMaterial&#13; &#13; Ingredients shall be designated by their specific name, with the exceptions provided for in the FIC Regulation and in Delegated Regulation (EU) 2019/33 (e.g. ‘grapes’ referring to the raw material).&#13; &#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208</comment>
 		<comment>[]</comment>
 		<comment>Ingredients shall be designated by their specific name, with the exceptions provided for in the FIC Regulation and in Delegated Regulation (EU) 2019/33 (e.g. ‘grapes’ referring to the raw material).</comment>
 		<comment>https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208</comment>
 	</data>
 	<data name="Gum arabic" xml:space="preserve">
-		<value/>
+		<value>Gomma arabica</value>
 		<comment>Stabiliser</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Lactic acid" xml:space="preserve">
-		<value/>
+		<value>Acido lattico</value>
 		<comment>AcidityRegulator</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Malic acid" xml:space="preserve">
-		<value/>
+		<value>Acido malico</value>
 		<comment>AcidityRegulator</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Metatartaric acid" xml:space="preserve">
-		<value/>
+		<value>Acido metatartarico</value>
 		<comment>Stabiliser</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Milk" xml:space="preserve">
-		<value/>
+		<value>Latte</value>
 		<comment>ClarifyingAgent</comment>
 		<comment>1</comment>
 	</data>
 	<data name="Milk casein" xml:space="preserve">
-		<value/>
+		<value>Caseina del latte</value>
 		<comment>ClarifyingAgent</comment>
 		<comment>1</comment>
 	</data>
 	<data name="Milk products" xml:space="preserve">
-		<value/>
+		<value>Prodotti lattiero-caseari</value>
 		<comment>ClarifyingAgent</comment>
 		<comment>1</comment>
 	</data>
 	<data name="Milk protein" xml:space="preserve">
-		<value/>
+		<value>Proteine del latte</value>
 		<comment>ClarifyingAgent</comment>
 		<comment>1</comment>
 	</data>
 	<data name="Potassium polyaspartate" xml:space="preserve">
-		<value/>
+		<value>Poliaspartato di potassio</value>
 		<comment>Stabiliser</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Potassium sorbate" xml:space="preserve">
-		<value/>
+		<value>Sorbato di potassio</value>
 		<comment>Preservative</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Sucrose" xml:space="preserve">
-		<value/>
+		<value>Saccarosio</value>
 		<comment>EnrichmentSubstance</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Sugar" xml:space="preserve">
-		<value/>
+		<value>Zucchero</value>
 		<comment>EnrichmentSubstance</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Sulphites" xml:space="preserve">
-		<value/>
+		<value>Solfiti</value>
 		<comment>Preservative</comment>
 		<comment>1</comment>
 	</data>
 	<data name="Tartaric acid" xml:space="preserve">
-		<value/>
+		<value>Acido tartarico</value>
 		<comment>AcidityRegulator</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Tirage liqueur" xml:space="preserve">
-		<value/>
+		<value>Liquore Tirage</value>
 		<comment>RawMaterial</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Yeast mannoproteins" xml:space="preserve">
-		<value/>
+		<value>Mannoproteine del lievito</value>
 		<comment>Stabiliser</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Web Accessibility Guidelines" xml:space="preserve">
-		<value/>
+		<value>Linee guida per l'accessibilità del web</value>
 		<comment>Footer message</comment>
 	</data>
 	<data name="Web Content Accessibility Guidelines (WCAG) 2.2" xml:space="preserve">
-		<value/>
+		<value>Linee guida per l'accessibilità dei contenuti web (WCAG) 2.2</value>
 		<comment>Footer message</comment>
 	</data>
 	<data name="Open E-Label project on GitHub" xml:space="preserve">
-		<value/>
+		<value>Aprire il progetto E-Label su GitHub</value>
 		<comment>Footer message</comment>
 	</data>
 	<data name="Select theme" xml:space="preserve">
-		<value/>
+		<value>Seleziona il tema</value>
 		<comment>Header message</comment>
 	</data>
 	<data name="Select language" xml:space="preserve">
-		<value/>
+		<value>Seleziona la lingua</value>
 		<comment>Header message</comment>
 	</data>
 </root>
