@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0"/>
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string"/>
+							<xsd:attribute name="type" type="xsd:string"/>
+							<xsd:attribute name="mimetype" type="xsd:string"/>
+							<xsd:attribute ref="xml:space"/>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string"/>
+							<xsd:attribute name="name" type="xsd:string"/>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+							<xsd:attribute ref="xml:space"/>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required"/>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="Home Page" xml:space="preserve">
+		<value>Начална страница</value>
+		<comment>Home</comment>
+	</data>
+	<data name="Acidity regulator" xml:space="preserve">
+		<value>Регулатор на киселинността</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Activators for alcoholic and malolactic fermentation" xml:space="preserve">
+		<value>Активатори за алкохолна и ябълчно-млечна ферментация</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Admin Dashboard" xml:space="preserve">
+		<value>Администраторско табло</value>
+		<comment>Home</comment>
+	</data>
+	<data name="Antioxidant" xml:space="preserve">
+		<value>Антиоксидант</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Bottled in a protective atmosphere" xml:space="preserve">
+		<value>Бутилиране в защитна атмосфера</value>
+		<comment>Packaging gases&#13; Article 48a(6) of Delegated Regulation (EU) 2019/33 clearly states, ‘the indication of additives falling under the&#13; category “packaging gases” in the list of ingredients may be replaced by the specific particular “Bottled in a&#13; protective atmosphere” or “Bottling may happen in a protective atmosphere”’. &#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208</comment>
+	</data>
+	<data name="Bottling may happen in a protective atmosphere" xml:space="preserve">
+		<value>Бутилирането може да се извършва в защитна атмосфера</value>
+		<comment>Packaging gases&#13; Article 48a(6) of Delegated Regulation (EU) 2019/33 clearly states, ‘the indication of additives falling under the&#13; category “packaging gases” in the list of ingredients may be replaced by the specific particular “Bottled in a&#13; protective atmosphere” or “Bottling may happen in a protective atmosphere”’. &#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208</comment>
+	</data>
+	<data name="Carbohydrate" xml:space="preserve">
+		<value>Въглехидрати</value>
+		<comment>Nutrition Information</comment>
+	</data>
+	<data name="Certifications" xml:space="preserve">
+		<value>Сертификати</value>
+		<comment>Certifications</comment>
+	</data>
+	<data name="Certified organic based on EU-Guidelines" xml:space="preserve">
+		<value>Сертифициран органичен продукт въз основа на насоките на ЕС</value>
+		<comment>Certifications</comment>
+	</data>
+	<data name="Clarifying agent" xml:space="preserve">
+		<value>Изясняващ агент</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Correction of defect" xml:space="preserve">
+		<value>Корекция на дефект</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Don't drink during pregnancy and breastfeeding" xml:space="preserve">
+		<value>Не пийте по време на бременност и кърмене</value>
+		<comment>Responsible Consumption</comment>
+	</data>
+	<data name="Don't drink when below legal drinking age" xml:space="preserve">
+		<value>Не пийте, когато сте под законовата възраст за пиене</value>
+		<comment>Responsible Consumption</comment>
+	</data>
+	<data name="Don't drink when driving a car, motorbike or operating machinery" xml:space="preserve">
+		<value>Не употребявайте алкохол, когато шофирате автомобил, мотоциклет или работите с машини.</value>
+		<comment>Responsible Consumption</comment>
+	</data>
+	<data name="Dry" xml:space="preserve">
+		<value>Сух</value>
+		<comment>WineStyle</comment>
+	</data>
+	<data name="Electronic label provided by" xml:space="preserve">
+		<value>Електронен етикет, предоставен от</value>
+		<comment>Footer</comment>
+	</data>
+	<data name="Energy" xml:space="preserve">
+		<value>Енергия</value>
+		<comment>Nutrition Information</comment>
+	</data>
+	<data name="Enrichment substance" xml:space="preserve">
+		<value>Обогатяващо вещество</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Enzyme" xml:space="preserve">
+		<value>Ензим</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Fat" xml:space="preserve">
+		<value>Дебел</value>
+		<comment>Nutrition Information</comment>
+	</data>
+	<data name="Fermentation agent" xml:space="preserve">
+		<value>Агент за ферментация</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Fortified wine" xml:space="preserve">
+		<value>Бяло вино</value>
+		<comment>WineType</comment>
+	</data>
+	<data name="Gases and packaging gas" xml:space="preserve">
+		<value>Газове и опаковъчен газ</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Ingredients" xml:space="preserve">
+		<value>съставки</value>
+		<comment>Ingredients&#13; &#13; Table 2 of Part A of Annex I of Delegated Regulation (EU) 2019/934 identifies the full list of additives and processing aids that can be used in wine production.&#13; &#13; https://eur-lex.europa.eu/search.html?scope=EURLEX&amp;text=2019%2F934&amp;lang=en&amp;type=quick&amp;qid=1701362513497</comment>
+		<comment>Table 2 of Part A of Annex I of Delegated Regulation (EU) 2019/934 identifies the full list of additives and processing aids that can be used in wine productionhttps://eur-lex.europa.eu/search.html?scope=EURLEX&amp;text=2019%2F934&amp;lang=en&amp;type=quick&amp;qid=1701362513497</comment>
+	</data>
+	<data name="Medium dry" xml:space="preserve">
+		<value>Средно сух</value>
+		<comment>WineStyle</comment>
+	</data>
+	<data name="Medium sweet" xml:space="preserve">
+		<value>Средно сладко</value>
+		<comment>WineStyle</comment>
+	</data>
+	<data name="Nutrition Information" xml:space="preserve">
+		<value>Хранителна декларация</value>
+		<comment>Nutrition Information&#13; &#13; The presentation of the nutrition declaration is regulated in Article 34 of the FIC Regulation.&#13; &#13; The order of presentation of the different elements of the nutrition declaration is defined in Annex XV of the FIC Regulation.&#13; &#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02011R1169-20180101&amp;qid=1701362311604</comment>
+		<comment>The presentation of the nutrition declaration is regulated in Article 34 of the FIC Regulation.</comment>
+		<comment>The order of presentation of the different elements of the nutrition declaration is defined in Annex XV of the FIC Regulation.</comment>
+		<comment>https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02011R1169-20180101&amp;qid=1701362311604</comment>
+	</data>
+	<data name="Nutritions per" xml:space="preserve">
+		<value>Хранителни вещества за</value>
+		<comment>Nutrition Information&#13; &#13; Energy values and nutrition values must be indicated per 100 g or per 100 ml (Article 32(2) of the FIC Regulation).&#13; &#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02011R1169-20180101&amp;qid=1701362311604</comment>
+		<comment>Energy values and nutrition values must be indicated per 100 g or per 100 ml (Article 32(2) of the FIC Regulation).</comment>
+		<comment>https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02011R1169-20180101&amp;qid=1701362311604</comment>
+	</data>
+	<data name="of which Saturates" xml:space="preserve">
+		<value>от които наситени</value>
+		<comment>Nutrition Information</comment>
+	</data>
+	<data name="of which Sugars" xml:space="preserve">
+		<value>от които захари</value>
+		<comment>Nutrition Information</comment>
+	</data>
+	<data name="Open-source solution for electronic labels" xml:space="preserve">
+		<value>Решение с отворен код за електронни етикети</value>
+		<comment>Home</comment>
+	</data>
+	<data name="Orange wine" xml:space="preserve">
+		<value>Пенливо вино</value>
+		<comment>WineType</comment>
+	</data>
+	<data name="Other ingredient" xml:space="preserve">
+		<value>Друга съставка</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Preservative" xml:space="preserve">
+		<value>Консервант</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Protein" xml:space="preserve">
+		<value>Протеин</value>
+		<comment>Nutrition Information</comment>
+	</data>
+	<data name="Raw material" xml:space="preserve">
+		<value>Суровини</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Red wine" xml:space="preserve">
+		<value>Бяло вино</value>
+		<comment>WineType</comment>
+	</data>
+	<data name="Responsible Consumption" xml:space="preserve">
+		<value>Отговорно потребление</value>
+		<comment>Responsible Consumption</comment>
+	</data>
+	<data name="Rosé wine" xml:space="preserve">
+		<value>Вино розе</value>
+		<comment>WineType</comment>
+	</data>
+	<data name="Salt" xml:space="preserve">
+		<value>Сол</value>
+		<comment>Nutrition Information</comment>
+	</data>
+	<data name="Sequestrant" xml:space="preserve">
+		<value>Секвестрант</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Sparkling wine" xml:space="preserve">
+		<value>Пенливо вино</value>
+		<comment>WineType</comment>
+	</data>
+	<data name="Stabiliser" xml:space="preserve">
+		<value>Стабилизатор</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Sweet" xml:space="preserve">
+		<value>Сладка</value>
+		<comment>WineStyle</comment>
+	</data>
+	<data name="Sweetener" xml:space="preserve">
+		<value>Подсладител</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="White wine" xml:space="preserve">
+		<value>Бяло вино</value>
+		<comment>WineType</comment>
+	</data>
+	<data name="Aleppo pine resin" xml:space="preserve">
+		<value>Смола от алепски бор</value>
+		<comment>Other</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Ascorbic acid" xml:space="preserve">
+		<value>Винена киселина</value>
+		<comment>Antioxidant</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Calcium sulphate" xml:space="preserve">
+		<value>Калциев сулфат</value>
+		<comment>AcidityRegulator</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Caramel" xml:space="preserve">
+		<value>Карамел</value>
+		<comment>Other</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Carbon dioxide" xml:space="preserve">
+		<value>Въглероден диоксид</value>
+		<comment>RawMaterial</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Carboxymethylcellulose" xml:space="preserve">
+		<value>Карбоксиметилцелулоза</value>
+		<comment>Stabiliser</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Citric acid" xml:space="preserve">
+		<value>Ябълчена киселина</value>
+		<comment>Stabiliser</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Concentrated grape must" xml:space="preserve">
+		<value>Концентрирана гроздова мъст</value>
+		<comment>EnrichmentSubstance</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Dimethyldicarbonate" xml:space="preserve">
+		<value>Диметилдикарбонат</value>
+		<comment>Preservative</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Egg" xml:space="preserve">
+		<value>Яйца</value>
+		<comment>ClarifyingAgent</comment>
+		<comment>1</comment>
+	</data>
+	<data name="Expedition liqueur" xml:space="preserve">
+		<value>Експедиционен ликьор</value>
+		<comment>RawMaterial</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Fumaric acid" xml:space="preserve">
+		<value>Винена киселина</value>
+		<comment>Stabiliser</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Grapes" xml:space="preserve">
+		<value>Грозде</value>
+		<comment>RawMaterial&#13; &#13; Ingredients shall be designated by their specific name, with the exceptions provided for in the FIC Regulation and in Delegated Regulation (EU) 2019/33 (e.g. ‘grapes’ referring to the raw material).&#13; &#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208</comment>
+		<comment>[]</comment>
+		<comment>Ingredients shall be designated by their specific name, with the exceptions provided for in the FIC Regulation and in Delegated Regulation (EU) 2019/33 (e.g. ‘grapes’ referring to the raw material).</comment>
+		<comment>https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208</comment>
+	</data>
+	<data name="Gum arabic" xml:space="preserve">
+		<value>Арабска гума</value>
+		<comment>Stabiliser</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Lactic acid" xml:space="preserve">
+		<value>Винена киселина</value>
+		<comment>AcidityRegulator</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Malic acid" xml:space="preserve">
+		<value>Ябълчена киселина</value>
+		<comment>AcidityRegulator</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Metatartaric acid" xml:space="preserve">
+		<value>Метаварова киселина</value>
+		<comment>Stabiliser</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Milk" xml:space="preserve">
+		<value>Мляко</value>
+		<comment>ClarifyingAgent</comment>
+		<comment>1</comment>
+	</data>
+	<data name="Milk casein" xml:space="preserve">
+		<value>Млечен казеин</value>
+		<comment>ClarifyingAgent</comment>
+		<comment>1</comment>
+	</data>
+	<data name="Milk products" xml:space="preserve">
+		<value>Млечни продукти</value>
+		<comment>ClarifyingAgent</comment>
+		<comment>1</comment>
+	</data>
+	<data name="Milk protein" xml:space="preserve">
+		<value>Млечен протеин</value>
+		<comment>ClarifyingAgent</comment>
+		<comment>1</comment>
+	</data>
+	<data name="Potassium polyaspartate" xml:space="preserve">
+		<value>Калиев полиаспартат</value>
+		<comment>Stabiliser</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Potassium sorbate" xml:space="preserve">
+		<value>Калиев сорбат</value>
+		<comment>Preservative</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Sucrose" xml:space="preserve">
+		<value>Захароза</value>
+		<comment>EnrichmentSubstance</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Sugar" xml:space="preserve">
+		<value>Захар</value>
+		<comment>EnrichmentSubstance</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Sulphites" xml:space="preserve">
+		<value>Сулфити</value>
+		<comment>Preservative</comment>
+		<comment>1</comment>
+	</data>
+	<data name="Tartaric acid" xml:space="preserve">
+		<value>Винена киселина</value>
+		<comment>AcidityRegulator</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Tirage liqueur" xml:space="preserve">
+		<value>Tirage liqueur</value>
+		<comment>RawMaterial</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Yeast mannoproteins" xml:space="preserve">
+		<value>Манопротеини от дрожди</value>
+		<comment>Stabiliser</comment>
+		<comment>[]</comment>
+	</data>
+	<data name="Web Accessibility Guidelines" xml:space="preserve">
+		<value>Насоки за уеб достъпност</value>
+		<comment>Footer message</comment>
+	</data>
+	<data name="Web Content Accessibility Guidelines (WCAG) 2.2" xml:space="preserve">
+		<value>Насоки за достъпност на уеб съдържанието (WCAG) 2.2</value>
+		<comment>Footer message</comment>
+	</data>
+	<data name="Open E-Label project on GitHub" xml:space="preserve">
+		<value>Отворен проект E-Label в GitHub</value>
+		<comment>Footer message</comment>
+	</data>
+	<data name="Select theme" xml:space="preserve">
+		<value>Изберете тема</value>
+		<comment>Header message</comment>
+	</data>
+	<data name="Select language" xml:space="preserve">
+		<value>Избор на език</value>
+		<comment>Header message</comment>
+	</data>
+</root>

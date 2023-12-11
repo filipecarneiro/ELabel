@@ -54,7 +54,7 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
     // Official languages of the EU (and ISO 639-1 language codes)
     CultureInfo[] supportedCultures = new[]
     {
-//        new CultureInfo("bg"), // Bulgarian (BG)
+        new CultureInfo("bg"), // Bulgarian (BG)
 //        new CultureInfo("hr"), // Croatian (HR)
 //        new CultureInfo("cs"), // Czech (CS)
 //        new CultureInfo("da"), // Danish (DA)
