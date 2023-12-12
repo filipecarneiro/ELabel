@@ -50,7 +50,7 @@ The Open E-Label project aims to provide a standardized and open-source solution
 		- [EU 251/2014](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02014R0251-20231208&qid=1701284265305) on the definition, description, presentation, labelling and the protection of geographical indications of aromatised wine products
 		- [EU 228/2013](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02013R0228-20211207&qid=1701284298071) laying down specific measures for agriculture in the outermost regions of the Union
 	- [EU 1169/2011](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02011R1169-20180101&qid=1701362311604) provision of food information to consumers
-	- [EU 2019/934](https://eur-lex.europa.eu/search.html?scope=EURLEX&text=2019%2F934&lang=en&type=quick&qid=1701362513497) regards wine-growing areas where the alcoholic strength may be increased...
+	- [EU 2019/934](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32019R0934&qid=1701362513497) regards wine-growing areas where the alcoholic strength may be increased...
 	- [EU 2019/33](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208) regards applications for protection of designations of origin, geographical indications and traditional terms in the wine sector
 	- [C/2023/1190](https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:C_202301190) Questions and answers on the implementation of new EU wine labelling provisions
 
