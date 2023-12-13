@@ -49,7 +49,7 @@ namespace ELabel.Models
         public float Kilocalorie { get; set; }
 
         [Display(Name = "Kilojoules", Description = "Energy (kJ)")]
-        [DisplayFormat(DataFormatString = "{0:G} kj")]
+        [DisplayFormat(DataFormatString = "{0:G} kJ")]
         [Ganss.Excel.Column("Kilojoule", Ganss.Excel.MappingDirections.ObjectToExcel)]
         public float Kilojoule {
             get
