@@ -1,29 +1,80 @@
 ﻿@model List<ProductIngredientDto>
 @inject IHtmlLocalizer<SharedResource> Localizer
 
-<div class="d-flex flex-row">
+@{
+    var query = Model.GroupBy(pi => pi.Ingredient?.Category)
+                     .Select(group => new
+                     {
+                         Category = group.Key,
+                         MinOrder = group.Min(pi => pi.Order),
+                         Ingredients = group.OrderBy(pi => pi.Order).Select(pi => pi.Ingredient).ToList()
+                     })
+                     .OrderBy(g => g.MinOrder)
+                     .ToList();
 
-    @foreach (ProductIngredientDto productIngredient in Model.OrderBy(pi => pi.Order))
+    bool parenthesesOpend = false;
+
+    @Html.Raw("<p class='ingredient-list'>");
+
+    @foreach(var group in query)
     {
-        @if (productIngredient.Ingredient != null)
+        @Html.Raw("<span class='category-group'>");
+
+        IngredientCategory? category = group.Category;
+
+        if(category!= null && category != IngredientCategory.RawMaterial && category != IngredientCategory.Other)
         {
-            string? localizedName = productIngredient.Ingredient.LocalizableStrings.GetLocalized(@System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName);
+            string categoryName = EnumHelper.GetDisplayName(category) ?? "";
+            string localizedCategoryName = Localizer[categoryName].Value;
 
-            if(String.IsNullOrEmpty(localizedName))
-            {
-                localizedName = Localizer[productIngredient.Ingredient.Name].Value;
-            }
+            @Html.Raw($"<span class='category'>{localizedCategoryName}</span>");
+            @Html.Raw(" (");
 
-            <p class="@(productIngredient.Ingredient.Allergen ? "fw-bold" : "")">@localizedName</p>
-            @if (productIngredient != Model.Last())
+            parenthesesOpend = true;
+        }
+
+        @foreach (IngredientDto? ingredient in group.Ingredients)
+        {
+            if(ingredient != null)
             {
-                <span>,&nbsp;</span>
+                // Localization with string in database
+                string? localizedName = ingredient.LocalizableStrings.GetLocalized(@System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName);
+
+                if(String.IsNullOrEmpty(localizedName))
+                {
+                    // Localization with shared resources
+                    localizedName = Localizer[ingredient.Name].Value;
+                }
+
+                string ingredientSpan = $"<span class='ingredient{(ingredient.Allergen ? " fw-bold" : "")}'>{localizedName}</span>";
+                    
+                @Html.Raw(ingredientSpan);
+
+                if (ingredient != group.Ingredients.Last())
+                {
+                    @Html.Raw(", ");
+                }
             }
-            else
-            {
-                <span>.</span>
-            }
+        }
+
+        @if(parenthesesOpend)
+        {
+            @Html.Raw(")");
+            parenthesesOpend = false;
+        }
+
+        @Html.Raw("</span>");
+
+        @if (group != query.Last())
+        {
+            @Html.Raw(", ");
+        }
+        else
+        {
+            @Html.Raw(".");
         }
     }
 
-</div>
+    @Html.Raw("</p>");
+
+}

@@ -78,7 +78,9 @@
         </div>
         @if (Model.PackagingGases != null && Model.PackagingGases != PackagingGases.None)
         {
-            <p class="ps-2 mb-2">@Localizer[EnumHelper.GetDisplayName(Model.PackagingGases)!]<span>.</span></p>
+            <div class="ps-2">
+                <p>@Localizer[EnumHelper.GetDisplayName(Model.PackagingGases)!]<span>.</span></p>
+            </div>
         }
     </div>
     <hr/>
