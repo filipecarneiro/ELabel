@@ -39,7 +39,7 @@ namespace ELabel.Areas.Admin.Controllers
             ViewBag.SortParmVolume = sortOrder == "Volume" ? "-Volume" : "Volume";
             ViewBag.SortParmWineVintage = sortOrder == "WineVintage" ? "-WineVintage" : "WineVintage";
             ViewBag.SortParmWineType = sortOrder == "WineType" ? "-WineType" : "WineType";
-            ViewBag.SortParmWineStyle = sortOrder == "WineStyle" ? "-WineStyle" : "WineStyle";
+            ViewBag.SortParmWineSugarContent = sortOrder == "WineSugarContent" ? "-WineSugarContent" : "WineSugarContent";
             ViewBag.SortParmWineAppelation = sortOrder == "WineAppelation" ? "-WineAppelation" : "WineAppelation";
             ViewBag.SortParmSku = sortOrder == "Sku" ? "-Sku" : "Sku";
 
@@ -63,7 +63,7 @@ namespace ELabel.Areas.Admin.Controllers
                                           p.Volume != null && float.TryParse(filterText, out filterFloat) && p.Volume == filterFloat ||
                                           p.WineInformation.Vintage != null && ushort.TryParse(filterText, out filterUShort) && p.WineInformation.Vintage == filterUShort ||
                                           p.WineInformation.Type != null && EnumHelper.GetDisplayName(p.WineInformation.Type)?.ToLower() == filterText ||
-                                          p.WineInformation.Style != null && EnumHelper.GetDisplayName(p.WineInformation.Style)?.ToLower() == filterText ||
+                                          p.WineInformation.SugarContent != null && EnumHelper.GetDisplayName(p.WineInformation.SugarContent)?.ToLower() == filterText ||
                                           p.WineInformation.Appellation != null && p.WineInformation.Appellation.Contains(filterText, StringComparison.InvariantCultureIgnoreCase) ||
                                           p.Sku != null && p.Sku.Contains(filterText, StringComparison.InvariantCultureIgnoreCase)
                                          
@@ -98,11 +98,11 @@ namespace ELabel.Areas.Admin.Controllers
                 case "-WineType":
                     query = query.OrderByDescending(p => p.WineInformation.Type).ThenBy(p => p.Name).ThenBy(p => p.Volume).ThenBy(p => p.WineInformation.Vintage);
                     break;
-                case "WineStyle":
-                    query = query.OrderBy(p => p.WineInformation.Style).ThenBy(p => p.Name).ThenBy(p => p.Volume).ThenBy(p => p.WineInformation.Vintage);
+                case "WineSugarContent":
+                    query = query.OrderBy(p => p.WineInformation.SugarContent).ThenBy(p => p.Name).ThenBy(p => p.Volume).ThenBy(p => p.WineInformation.Vintage);
                     break;
-                case "-WineStyle":
-                    query = query.OrderByDescending(p => p.WineInformation.Style).ThenBy(p => p.Name).ThenBy(p => p.Volume).ThenBy(p => p.WineInformation.Vintage);
+                case "-WineSugarContent":
+                    query = query.OrderByDescending(p => p.WineInformation.SugarContent).ThenBy(p => p.Name).ThenBy(p => p.Volume).ThenBy(p => p.WineInformation.Vintage);
                     break;
                 case "WineAppelation":
                     query = query.OrderBy(p => p.WineInformation.Appellation).ThenBy(p => p.Name).ThenBy(p => p.Volume).ThenBy(p => p.WineInformation.Vintage);

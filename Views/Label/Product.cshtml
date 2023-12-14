@@ -43,10 +43,10 @@
             </div>
         }
 
-        @if (Model.WineInformation is not null && Model.WineInformation.Style is not null)
+        @if (Model.WineInformation is not null && Model.WineInformation.SugarContent is not null)
         {
             <div class="p-2">
-                @Localizer[EnumHelper.GetDisplayName(Model.WineInformation.Style)!]
+                @Localizer[EnumHelper.GetDisplayName(Model.WineInformation.SugarContent)!]
             </div>
         }
 

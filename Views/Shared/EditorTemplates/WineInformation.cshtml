@@ -15,12 +15,12 @@
     <span asp-validation-for="Type" class="text-danger"></span>
 </div>
 <div class="mb-3">
-    <label asp-for="Style" class="form-label"></label>
-    <select asp-for="Style" asp-items="Html.GetEnumSelectList<WineStyle>()" class="form-select" aria-describedby="WineStyleHelp">
+    <label asp-for="SugarContent" class="form-label"></label>
+    <select asp-for="SugarContent" asp-items="Html.GetEnumSelectList<WineSugarContent>()" class="form-select" aria-describedby="WineSugarContentHelp">
         <option value="">(none)</option>
     </select>
-    <div id="WineStyleHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Style").FirstOrDefault()?.Description</div>
-    <span asp-validation-for="Style" class="text-danger"></span>
+    <div id="WineSugarContentHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "SugarContent").FirstOrDefault()?.Description</div>
+    <span asp-validation-for="SugarContent" class="text-danger"></span>
 </div>
 <div class="mb-3">
     <label asp-for="Appellation" class="form-label"></label>

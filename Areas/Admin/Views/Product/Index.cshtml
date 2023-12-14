@@ -25,7 +25,7 @@
         <div class="input-group-prepend">
             <span class="input-group-text"><i class="bi bi-search"></i></span>
         </div>
-        <input id="FilterText" name="FilterText" class="form-control" type="search" placeholder="Search by name, volume, wine vintage, wine type, wine style, wine appellation or SKU." value="@ViewBag.FilterText" />
+        <input id="FilterText" name="FilterText" class="form-control" type="search" placeholder="Search by name, volume, wine vintage, wine type, wine suger content, wine appellation or SKU." value="@ViewBag.FilterText" />
         <div class="input-group-append">
             <input type="submit" value="Search" class="btn btn-outline-secondary" />
         </div>
@@ -48,7 +48,7 @@
                 <a asp-action="Index" asp-route-sortOrder="@ViewBag.SortParmWineType">@Html.DisplayNameFor(model => model.WineInformation.Type)</a>
             </th>
             <th scope="col">
-                <a asp-action="Index" asp-route-sortOrder="@ViewBag.SortParmWineStyle">@Html.DisplayNameFor(model => model.WineInformation.Style)</a>
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.SortParmWineSugarContent">@Html.DisplayNameFor(model => model.WineInformation.SugarContent)</a>
             </th>
             <th scope="col">
                 <a asp-action="Index" asp-route-sortOrder="@ViewBag.SortParmWineAppelation">@Html.DisplayNameFor(model => model.WineInformation.Appellation)</a>
@@ -80,10 +80,10 @@
                 }
             </td>
             <td>
-                @if(item.WineInformation.Style != null)
+                @if(item.WineInformation.SugarContent != null)
                 {
-                    <a class="btn btn-light btn-sm" asp-action="Index" asp-route-filterText="@EnumHelper.GetDisplayName(item.WineInformation.Style)" role="button" title="@EnumHelper.GetDisplayDescription(item.WineInformation.Style)">
-                            @EnumHelper.GetDisplayName(item.WineInformation.Style)
+                    <a class="btn btn-light btn-sm" asp-action="Index" asp-route-filterText="@EnumHelper.GetDisplayName(item.WineInformation.SugarContent)" role="button" title="@EnumHelper.GetDisplayDescription(item.WineInformation.SugarContent)">
+                            @EnumHelper.GetDisplayName(item.WineInformation.SugarContent)
                     </a>
                 }
             </td>

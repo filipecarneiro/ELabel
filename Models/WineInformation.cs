@@ -18,10 +18,10 @@ namespace ELabel.Models
         [EnumDataType(typeof(WineType))]
         public WineType? Type { get; set; }
 
-        [Column("WineStyle")]
-        [Display(Name = "Style", Description = "Wine style, sweetness of wine or 'product type', according to EU Commission Regulation.")]
-        [EnumDataType(typeof(WineStyle))]
-        public WineStyle? Style { get; set; }
+        [Column("WineSugarContent")]
+        [Display(Name = "Sugar content", Description = "Sugar content of the aromatised wine product, according to EU Regulation No 251/2014, Article 6.")]
+        [EnumDataType(typeof(WineSugarContent))]
+        public WineSugarContent? SugarContent { get; set; }
 
         [Column("WineAppellation")]
         [Display(Name = "Appellation", Description = "Wine legally defined and protected geographical indication.")]

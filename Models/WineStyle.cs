@@ -7,6 +7,7 @@ namespace ELabel.Models
      *  Article 16 (Indication of product type)
      *  https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32002R0753
      */
+    [Obsolete("Use WineSugarContent")]
     public enum WineStyle
     {
         [Display(Name = "Dry")]
