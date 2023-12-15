@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
+// TODO: Review with this (Part C of ANNEX VII) https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02011R1169-20180101#tocId396
 namespace ELabel.Models
 {
     public enum IngredientCategory
