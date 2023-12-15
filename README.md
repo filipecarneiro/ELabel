@@ -44,15 +44,26 @@ The Open E-Label project aims to provide a standardized and open-source solution
 - **Electronic Labeling**: Replacing traditional paper labels with electronic labels, promoting sustainability and reducing waste.
 - **Multilingual Support**: Ensuring labels can be displayed in multiple languages to accommodate diverse consumers within the EU.
 - **Regulatory Compliance**: Adhering to EU regulations regarding wine labeling, providing a platform that streamlines compliance for wineries.
-	- [EU 2021/2117](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02021R2117-20211206) amending Regulations:
-		- [EU 1308/2013](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02013R1308-20231208&qid=1701283989850) establishing a common organisation of the markets in agricultural products
-		- [EU 1151/2012](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02012R1151-20220608&qid=1701284230571) on quality schemes for agricultural products and foodstuffs
-		- [EU 251/2014](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02014R0251-20231208&qid=1701284265305) on the definition, description, presentation, labelling and the protection of geographical indications of aromatised wine products
-		- [EU 228/2013](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02013R0228-20211207&qid=1701284298071) laying down specific measures for agriculture in the outermost regions of the Union
-	- [EU 1169/2011](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02011R1169-20180101&qid=1701362311604) provision of food information to consumers
-	- [EU 2019/934](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32019R0934&qid=1701362513497) regards wine-growing areas where the alcoholic strength may be increased...
-	- [EU 2019/33](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208) regards applications for protection of designations of origin, geographical indications and traditional terms in the wine sector
-	- [C/2023/1190](https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:C_202301190) Questions and answers on the implementation of new EU wine labelling provisions
+
+## EU Regulations
+
+Regulations (EU) of the European Parliament and of the Council:
+
+- [EU 2021/2117](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02021R2117-20211206) amending Regulations:
+	- [EU 1308/2013](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02013R1308-20231208&qid=1701283989850) establishing a common organisation of the markets in agricultural products
+	- [EU 1151/2012](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02012R1151-20220608&qid=1701284230571) on quality schemes for agricultural products and foodstuffs
+	- [EU 251/2014](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02014R0251-20231208&qid=1701284265305) on the definition, description, presentation, labelling and the protection of geographical indications of aromatised wine products (**aromatised wine labelling**)
+	- [EU 228/2013](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02013R0228-20211207&qid=1701284298071) laying down specific measures for agriculture in the outermost regions of the Union
+- [EU 1169/2011](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02011R1169-20180101&qid=1701362311604) provision of food information to consumers (**food labelling**)
+- [EU 2019/934](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32019R0934&qid=1701362513497) regards wine-growing areas where the alcoholic strength may be increased...
+- [EU 2019/33](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208) regards applications for protection of designations of origin, geographical indications and traditional terms in the wine sector
+- [EU 1308/2013](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02013R1308-20231208) establishing a common organisation of the markets in agricultural products
+
+### Notes
+
+- [C/2023/1190](https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:C_202301190) Questions and answers on the implementation of new EU wine labelling provisions
+- [Guidance document](https://food.ec.europa.eu/system/files/2016-10/labelling_nutrition-vitamins_minerals-guidance_tolerances_1212_en.pdf) Guidance document on the tolerances for nutrition labelling purposes
+- [Guidance table](https://food.ec.europa.eu/system/files/2016-10/labelling_nutrition-vitamins_minerals-guidance_tolerances_summary_table_012013_en.pdf) Guidance document tolerances: Simplified summary table
 
 ## How to Use
 
