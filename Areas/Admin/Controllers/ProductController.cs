@@ -669,7 +669,7 @@ namespace ELabel.Areas.Admin.Controllers
                 Id = Guid.Empty,
                 ProductId = wineProductEditDto.Id,
                 IngredientId = Guid.Empty,
-                Order = 99
+                Order = (short)(wineProductEditDto.ProductIngredients.Count() + 1)
             });
 
             ViewBag.Ingredients = GetAvailableIngredientsList();
