@@ -120,7 +120,7 @@
 	</data>
 	<data name="Dry" xml:space="preserve">
 		<value>Sec</value>
-		<comment>WineStyle</comment>
+		<comment>Check glossary with tag "Wine sugar content"</comment>
 	</data>
 	<data name="Electronic label provided by" xml:space="preserve">
 		<value>Étiquette électronique fournie par</value>
@@ -158,14 +158,6 @@
 		<value>Ingredientes</value>
 		<comment>Ingredients&#13; &#13; Table 2 of Part A of Annex I of Delegated Regulation (EU) 2019/934 identifies the full list of additives and processing aids that can be used in wine production.&#13; &#13; https://eur-lex.europa.eu/search.html?scope=EURLEX&amp;text=2019%2F934&amp;lang=en&amp;type=quick&amp;qid=1701362513497</comment>
 		<comment>Table 2 of Part A of Annex I of Delegated Regulation (EU) 2019/934 identifies the full list of additives and processing aids that can be used in wine productionhttps://eur-lex.europa.eu/search.html?scope=EURLEX&amp;text=2019%2F934&amp;lang=en&amp;type=quick&amp;qid=1701362513497</comment>
-	</data>
-	<data name="Medium dry" xml:space="preserve">
-		<value>Demi-sec</value>
-		<comment>WineStyle</comment>
-	</data>
-	<data name="Medium sweet" xml:space="preserve">
-		<value>Demi-doux</value>
-		<comment>WineStyle</comment>
 	</data>
 	<data name="Nutrition Information" xml:space="preserve">
 		<value>Information nutritionnelle</value>
@@ -242,7 +234,7 @@
 	</data>
 	<data name="Sweet" xml:space="preserve">
 		<value>Doux</value>
-		<comment>WineStyle</comment>
+		<comment>Check glossary with tag "Wine sugar content"</comment>
 	</data>
 	<data name="Sweetener" xml:space="preserve">
 		<value>Édulcorant</value>
@@ -418,5 +410,29 @@
 	<data name="Select language" xml:space="preserve">
 		<value>Sélection de la langue</value>
 		<comment>Header message</comment>
+	</data>
+	<data name="Extra dry" xml:space="preserve">
+		<value/>
+		<comment>Check glossary with tag "Wine sugar content"</comment>
+	</data>
+	<data name="Brut nature" xml:space="preserve">
+		<value/>
+		<comment>Check glossary with tag "Wine sugar content"</comment>
+	</data>
+	<data name="Extra brut" xml:space="preserve">
+		<value/>
+		<comment>Check glossary with tag "Wine sugar content"</comment>
+	</data>
+	<data name="Brut" xml:space="preserve">
+		<value/>
+		<comment>Check glossary with tag "Wine sugar content"</comment>
+	</data>
+	<data name="Medium dry" xml:space="preserve">
+		<value>Demi-sec</value>
+		<comment>Check glossary with tag "Wine sugar content"</comment>
+	</data>
+	<data name="Medium sweet" xml:space="preserve">
+		<value>Demi-doux</value>
+		<comment>Check glossary with tag "Wine sugar content"</comment>
 	</data>
 </root>
