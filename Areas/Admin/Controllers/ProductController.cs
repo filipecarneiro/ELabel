@@ -253,6 +253,15 @@ namespace ELabel.Areas.Admin.Controllers
                     short order = 0;
                     foreach (ProductIngredientDto productIngredientDto in wineProductEditDto.ProductIngredients.OrderBy(pi => pi.Order))
                     {
+                        bool duplicated = wineProductEditDto.ProductIngredients.Where(pi => pi.ToDelete == false && pi.IngredientId == productIngredientDto.IngredientId).Count() > 1;
+                        if (duplicated)
+                        {
+                            ModelState.AddModelError("CustomError", "Duplicated ingredient! Please remove the repeated ingredient from the list.");
+
+                            ViewBag.Ingredients = GetAvailableIngredientsList();
+                            return View(wineProductEditDto);
+                        }
+
                         ProductIngredient? auxProductIngredient = productIngredients
                                                                     .Where(pi => pi.Id == productIngredientDto.Id && pi.ProductId == product.Id).FirstOrDefault();
 
@@ -312,7 +321,7 @@ namespace ELabel.Areas.Admin.Controllers
             }
 
             ViewBag.Ingredients = GetAvailableIngredientsList();
-            return View(product);
+            return View(wineProductEditDto);
         }
 
         // GET: Product/Delete/5
