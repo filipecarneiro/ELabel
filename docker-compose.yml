@@ -11,9 +11,9 @@ services:
       - 80:8080
     environment:
       ASPNETCORE_ENVIRONMENT: Production
-      ConnectionStrings__DefaultConnection: 'Server=elabel_db;Database=elabel;User id=sa;Password=yourStrong(!)Password;Trust Server Certificate=true;MultipleActiveResultSets=true'
+      ConnectionStrings__DefaultConnection: 'Server=elabel_db;Database=elabel;User id=sa;Password=${MSSQL_SA_PASSWORD};Trust Server Certificate=true;MultipleActiveResultSets=true'
       Producer__Name: 'My Winery'
-      ELABEL_ADMIN_PASSWORD: 'Admin123!'
+      ELABEL_ADMIN_PASSWORD: ${ADMIN_PASSWORD}
     depends_on:
       - db
 
@@ -31,7 +31,7 @@ services:
     environment:
       ACCEPT_EULA: Y
       MSSQL_PID: Express
-      MSSQL_SA_PASSWORD: yourStrong(!)Password
+      MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD}
 
 volumes:
   data:
