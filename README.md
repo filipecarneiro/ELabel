@@ -39,13 +39,13 @@ The Open E-Label project aims to provide a standardized and open-source solution
 [<img title="Spanish" width="30px" src="https://raw.githubusercontent.com/filipecarneiro/ELabel/main/wwwroot/lib/flag-icons/flags/4x3/es.svg" target="_blank" />](https://app.lokalise.com/project/811531676572f985a58773.20133510/?view=single&reference_lang_id=640&single_lang_id=1056)
 [<img title="Swedish" width="30px" src="https://raw.githubusercontent.com/filipecarneiro/ELabel/main/wwwroot/lib/flag-icons/flags/4x3/se.svg" target="_blank" />](https://app.lokalise.com/project/811531676572f985a58773.20133510/?view=single&reference_lang_id=640&single_lang_id=754)
 
-## Features
+## 🧾 Features
 
 - **Electronic Labeling**: Replacing traditional paper labels with electronic labels, promoting sustainability and reducing waste.
 - **Multilingual Support**: Ensuring labels can be displayed in multiple languages to accommodate diverse consumers within the EU.
 - **Regulatory Compliance**: Adhering to EU regulations regarding wine labeling, providing a platform that streamlines compliance for wineries.
 
-## EU Regulations
+## 📖 EU Regulations
 
 Regulations (EU) of the European Parliament and of the Council:
 
@@ -65,13 +65,13 @@ Regulations (EU) of the European Parliament and of the Council:
 - [Guidance document](https://food.ec.europa.eu/system/files/2016-10/labelling_nutrition-vitamins_minerals-guidance_tolerances_1212_en.pdf) Guidance document on the tolerances for nutrition labelling purposes
 - [Guidance table](https://food.ec.europa.eu/system/files/2016-10/labelling_nutrition-vitamins_minerals-guidance_tolerances_summary_table_012013_en.pdf) Guidance document tolerances: Simplified summary table
 
-## How to Use
+## 📱How to Use
 
 1. Scan the QR code on the wine bottle with a QR code scanner.
 2. The E-label for the wine will be displayed on your device.
 3. You can switch between languages using the language selection option on the E-label.
 
-## Build & Run locally
+## 🏃 Build & Run locally
 
 To build the Open E-Label project using Visual Studio, follow these steps:
 
@@ -79,7 +79,7 @@ To build the Open E-Label project using Visual Studio, follow these steps:
 1. Open `ELabel.sln` solution with Visual Studio
 1. Build and start the project
 
-## Deployment
+## 🚀 Deployment
 
 The web app can be deployed using the [published Docker image](https://hub.docker.com/r/fcarneiro/elabel). Here are the steps to run it with Docker compose:
 
@@ -105,7 +105,7 @@ docker-compose up -d
 docker-compose logs -f
 ```
 
-## Contributing
+## 🙋 Contributing
 
 Contributions are welcome! Please read our [contributing guidelines](CONTRIBUTING.md) before getting started.
 
@@ -122,6 +122,6 @@ For more information about the translation editor and tools, please see the [Lok
 Translations are downloaded from Lokalise on every release.
 Check the current [localization statistics](https://app.lokalise.com/statistics/811531676572f985a58773.20133510/).
 
-## License
+## ⚖️ License
 
 Open E-Label is open-source under the MIT license. See the [LICENSE file](LICENSE.txt) for more information.
