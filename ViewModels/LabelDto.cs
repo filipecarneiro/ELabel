@@ -56,7 +56,7 @@ namespace ELabel.ViewModels
          * Logistics
          */
 
-        [Display(Name = "Country of origin", Description = "Enter the ISO 3166-1 two-letter contry code.", Prompt = "PT")]
+        [Display(Name = "Country of origin", Description = "Enter the ISO 3166-1 two-letter contry code.")]
         public string? Country { get; set; }
 
         [Display(Name = "SKU Code", Description = "Enter your internal Stock Keeping Unit (SKU) text code.")]

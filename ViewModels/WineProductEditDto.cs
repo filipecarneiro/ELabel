@@ -51,7 +51,7 @@ namespace ELabel.ViewModels
          * Logistics
          */
 
-        [Display(Name = "Country of origin", Description = "Enter the ISO 3166-1 two-letter contry code.", Prompt = "PT")]
+        [Display(Name = "Country of origin", Description = "Enter the ISO 3166-1 two-letter contry code.")]
         [RegularExpression("^[A-Z]{2}$", ErrorMessage = "Please use, exactly, 2 capital letters (A-Z)")]
         [StringLength(2)]
         [DataType(DataType.Text)]

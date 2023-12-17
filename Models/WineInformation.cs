@@ -19,7 +19,7 @@ namespace ELabel.Models
         public WineType? Type { get; set; }
 
         [Column("WineSugarContent")]
-        [Display(Name = "Sugar content", Description = "Sugar content of the aromatised wine product, according to EU Regulation No 251/2014, Article 6.")]
+        [Display(Name = "Sugar content", Description = "Sugar content of the wine product, according to EU Regulation No 2019/33, ANNEX III.")]
         [EnumDataType(typeof(WineSugarContent))]
         public WineSugarContent? SugarContent { get; set; }
 
