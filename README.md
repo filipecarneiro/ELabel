@@ -12,7 +12,7 @@
 
 # Open E-Label
 
-The Open E-Label project aims to provide a standardized and open-source solution for electronic labels on table wine bottles selled within the European Union. This initiative seeks to enhance transparency, efficiency, and information accessibility in the wine industry.
+The Open E-Label project aims to provide a standardized and open-source solution for **electronic labels** for **wine** bottles selled within the European Union. This initiative seeks to enhance transparency, efficiency, and information accessibility in the wine industry.
 
 [<img title="Bulgarian" width="32" height="18" src="https://raw.githubusercontent.com/filipecarneiro/ELabel/main/wwwroot/lib/flag-icons/flags/4x3/bg.svg" target="_blank" />](https://app.lokalise.com/project/811531676572f985a58773.20133510/?view=single&reference_lang_id=640&single_lang_id=781)
 [<img title="Croatian" width="32" height="18" src="https://raw.githubusercontent.com/filipecarneiro/ELabel/main/wwwroot/lib/flag-icons/flags/4x3/hr.svg" target="_blank" />](https://app.lokalise.com/project/811531676572f985a58773.20133510/?view=single&reference_lang_id=640&single_lang_id=793)
