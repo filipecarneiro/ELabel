@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://raw.githubusercontent.com/filipecarneiro/ELabel/main/wwwroot/img/icon.svg" width="100" height="100">
+<img src="https://raw.githubusercontent.com/filipecarneiro/ELabel/main/wwwroot/img/icon.svg" width="100" height="100" alt="Open E-Label icon">
 </div>
 
 <br/>
