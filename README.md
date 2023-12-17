@@ -2,6 +2,8 @@
 <img src="https://raw.githubusercontent.com/filipecarneiro/ELabel/main/wwwroot/img/icon.svg" width="100" height="100">
 </div>
 
+<meta name="google-site-verification" content="w0ANOaljTE97RT3b2Fhf2LaNLRYZ-eO6zEVGtWV1Jho" />
+
 </br>
 
 [![GitHub License](https://img.shields.io/github/license/filipecarneiro/ELabel)](https://github.com/filipecarneiro/ELabel/blob/main/LICENSE.txt)
