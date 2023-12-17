@@ -16,7 +16,7 @@
 </div>
 <div class="mb-3">
     <label asp-for="SugarContent" class="form-label"></label>
-    <select asp-for="SugarContent" asp-items="Html.GetEnumSelectList<WineSugarContent>()" class="form-select" aria-describedby="WineSugarContentHelp">
+    <select asp-for="SugarContent" asp-items="Html.GetEnumSelectList<WineSugarContent>().OrderBy(e => int.Parse(e.Value))" class="form-select" aria-describedby="WineSugarContentHelp">
         <option value="">(none)</option>
     </select>
     <div id="WineSugarContentHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "SugarContent").FirstOrDefault()?.Description</div>
