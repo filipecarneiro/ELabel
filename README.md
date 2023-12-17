@@ -2,9 +2,7 @@
 <img src="https://raw.githubusercontent.com/filipecarneiro/ELabel/main/wwwroot/img/icon.svg" width="100" height="100">
 </div>
 
-<meta name="google-site-verification" content="w0ANOaljTE97RT3b2Fhf2LaNLRYZ-eO6zEVGtWV1Jho" />
-
-</br>
+<br/>
 
 [![GitHub License](https://img.shields.io/github/license/filipecarneiro/ELabel)](https://github.com/filipecarneiro/ELabel/blob/main/LICENSE.txt)
 [![ASP.NET Core](https://img.shields.io/badge/ASP.NET_Core-8.0-blue)](https://learn.microsoft.com/en-us/aspnet/core/?view=aspnetcore-8.0)
