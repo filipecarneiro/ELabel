@@ -15,7 +15,7 @@
             @Html.ValidationMessage("CustomError", new { @class = "text-danger" })
             <div class="mb-3">
                 <label asp-for="File" class="form-label"></label>
-                <input asp-for="File" class="form-control" accept=".xlsx" aria-describedby="FileHelp" />
+                <input asp-for="File" class="form-control" accept=".xlsx" aria-describedby="FileHelp" placeholder="elabel-ingredients.xlsx" />
                 <div id="FileHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "File").FirstOrDefault()?.Description</div>
                 <span asp-validation-for="File" class="text-danger"></span>
             </div>
@@ -26,12 +26,25 @@
     </div>
 
     <div class="col-md-6 col-md-offset-2">
+
+        <div class="p-3 bg-light rounded-3">
+            <h3>Common Ingredients</h3>
+            <p>There's a list of common ingredients in the wine industry available here:</p>
+            <ul>
+                <li><a href="/elabel-ingredients.xlsx" target="_blank">elabel-ingredients.xlsx</a></li>
+            </ul>
+            <p>Use this list to get you started.</p>
+        </div>
+
+        <br/>
+
         <div class="p-3 bg-light rounded-3">
             <h3>Excel file</h3>
             <p>This expects the Excel file to contain a header row with the column names.</p>
             <p>Objects are read from the first worksheet. If the column names equal the property names (ignoring case) no other configuration is necessary.
             <p>The format of the Excel file (xlsx or xls) is autodetected.</p>
         </div>
+
     </div>
 
 </div>

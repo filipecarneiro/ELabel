@@ -1,0 +1,37 @@
+﻿@inject ELabel.Data.ApplicationDbContext _context
+@using Microsoft.EntityFrameworkCore;
+@using System.Globalization;
+
+@if(EmptyIngredients || EmptyProducts)
+{
+    <div class="alert alert-primary alert-dismissible fade show p-4 my-3" role="alert" style="background-image: url('/img/get-started.svg'); height: 100%; background-position: right bottom; background-repeat: no-repeat; background-size: contain;">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <h2 class="alert-heading fs-5">Get started</h2>
+        <p class="fs-2">Hi, ready to set up your labels?</p>
+        <p class="">Complete these activities to get you quickly started.</p>
+
+        <div class="d-grid gap-2 col-4">
+            @if(EmptyIngredients)
+            {
+                <a href="/Admin/Ingredient/Import" type="button" class="btn btn-outline-primary" role="button">Import an ingredient list</a>
+            }
+            @if(EmptyProducts)
+            {
+                <a href="/Admin/Product/Create" type="button" class="btn btn-outline-primary" role="button">Create your first label</a>
+            }
+        </div>
+
+    </div>
+}
+
+@code{
+
+    private bool EmptyIngredients;
+    private bool EmptyProducts;
+
+    protected override void OnInitialized()
+    {
+        EmptyIngredients = !_context.Ingredient.Any();
+        EmptyProducts = !_context.Product.Any();
+    }
+}

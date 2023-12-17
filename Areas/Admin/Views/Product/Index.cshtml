@@ -1,4 +1,5 @@
 ﻿@using ELabel.Extensions
+@using ELabel.Areas.Admin.Components
 @model IEnumerable<ELabel.ViewModels.WineProductDetailsDto>
 
 @{
@@ -31,6 +32,8 @@
         </div>
     </div>
 </form>
+
+<component type="typeof(GetStarted)" render-mode="ServerPrerendered" />
 
 <table class="table">
     <thead>
