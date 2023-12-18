@@ -1,0 +1,27 @@
+baseURL = 'https://filipecarneiro.github.io/ELabel/'
+title = 'Open E-Label'
+author = "Filipe Carneiro"
+copyright = "Open-source <a class=\"text-muted text-decoration-none\" href=\"https://github.com/filipecarneiro/ELabel/blob/main/LICENSE\">MIT</a> Licensed."
+
+theme = 'hugo-bootstrap-theme'
+languageCode = 'en-us'
+
+enableRobotsTXT = true
+enableGitInfo = true
+enableEmoji = true
+
+[menus]
+[[menus.main]]
+  name = "Home"
+  url = ""
+  weight = 10
+
+[[menus.main]]
+  name = "GitHub"
+  url = "https://github.com/filipecarneiro/ELabel"
+  weight = 20
+
+[[menus.main]]
+  name = "Docker Hub"
+  url = "https://hub.docker.com/r/fcarneiro/elabel"
+  weight = 30
