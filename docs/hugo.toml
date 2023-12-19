@@ -6,22 +6,65 @@ copyright = "Open-source <a class=\"text-muted text-decoration-none\" href=\"htt
 theme = 'hugo-bootstrap-theme'
 languageCode = 'en-us'
 
+disableKinds = ['taxonomy', 'term']
+
 enableRobotsTXT = true
 enableGitInfo = true
 enableEmoji = true
 
 [menus]
-[[menus.main]]
-  name = "Home"
-  url = ""
-  weight = 10
+#[[menus.main]]
+#  name = "Code"
+#  url = "https://github.com/filipecarneiro/ELabel"
+#  pos = "<svg xmlns='http://www.w3.org/2000/svg' class='feather feather-github'><use href='/ELabel/images/feather/feather-sprite.svg#github'/></svg>"
+#  weight = 20
 
-[[menus.main]]
+#[[menus.main]]
+#  name = "Docker"
+#  url = "https://hub.docker.com/r/fcarneiro/elabel"
+#  weight = 30
+
+[[menus.social]]
+  name = "GitHub"
+  pre = "<svg xmlns='http://www.w3.org/2000/svg' class='feather feather-github'><use href='/ELabel/images/feather/feather-sprite.svg#github'/></svg>"
+  url = "https://github.com/filipecarneiro/ELabel"
+  weight = 10
+  title = "GitHub"
+
+[[menus.social]]
+  name = "Docker Hub"
+  pre = "<svg xmlns='http://www.w3.org/2000/svg' class='feather feather-package'><use href='/ELabel/images/feather/feather-sprite.svg#package'/></svg>"
+  url = "https://hub.docker.com/r/fcarneiro/elabel"
+  weight = 20
+  title = "Docker Hub"
+
+[[menus.footer]]
   name = "GitHub"
   url = "https://github.com/filipecarneiro/ELabel"
-  weight = 20
+  weight = 10
+  title = "GitHub"
 
-[[menus.main]]
+[[menus.footer]]
   name = "Docker Hub"
   url = "https://hub.docker.com/r/fcarneiro/elabel"
-  weight = 30
+  weight = 1
+  title = "Docker Hub"
+
+[params]
+description = "Open-source solution for <strong>electronic labels</strong> on <strong>wine</strong> bottles."
+images = ['images/icon.svg','images/screenshot.png']
+mainMenuLogo = "images/icon.svg"
+
+[params.options]
+bootStrapJs = true
+breadCrumb = false
+listCategoryFilter = false
+listTagFilter = false
+
+[module]
+  [[module.mounts]]
+  source = "assets"
+  target = "assets"
+[[module.mounts]]
+  source = "static"
+  target = "static"
