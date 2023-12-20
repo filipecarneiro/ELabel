@@ -1,7 +1,7 @@
 baseURL = 'https://filipecarneiro.github.io/ELabel/'
 title = 'Open E-Label'
 author = "Filipe Carneiro"
-copyright = "Open-source <a class=\"text-muted text-decoration-none\" href=\"https://github.com/filipecarneiro/ELabel/blob/main/LICENSE\">MIT</a> Licensed."
+copyright = "Open-source <a class=\"text-muted text-decoration-none\" href=\"https://github.com/filipecarneiro/ELabel/blob/main/LICENSE.txt\">MIT Licensed</a>."
 
 theme = 'hugo-bootstrap-theme'
 languageCode = 'en-us'
@@ -29,26 +29,26 @@ enableEmoji = true
   pre = "<svg xmlns='http://www.w3.org/2000/svg' class='feather feather-github'><use href='/ELabel/images/feather/feather-sprite.svg#github'/></svg>"
   url = "https://github.com/filipecarneiro/ELabel"
   weight = 10
-  title = "GitHub"
+  title = "See project on GitHub"
 
 [[menus.social]]
   name = "Docker Hub"
   pre = "<svg xmlns='http://www.w3.org/2000/svg' class='feather feather-package'><use href='/ELabel/images/feather/feather-sprite.svg#package'/></svg>"
   url = "https://hub.docker.com/r/fcarneiro/elabel"
   weight = 20
-  title = "Docker Hub"
+  title = "See project on Docker Hub"
 
 [[menus.footer]]
   name = "GitHub"
   url = "https://github.com/filipecarneiro/ELabel"
   weight = 10
-  title = "GitHub"
+  title = "See project on GitHub"
 
 [[menus.footer]]
   name = "Docker Hub"
   url = "https://hub.docker.com/r/fcarneiro/elabel"
   weight = 1
-  title = "Docker Hub"
+  title = "See project on Docker Hub"
 
 [params]
 description = "Open-source solution for <strong>electronic labels</strong> on <strong>wine</strong> bottles."
