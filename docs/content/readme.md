@@ -1,5 +1,5 @@
 ---
-title: "Open E-Label"
+title: "Open E-Label - GitHub project"
 ---
 
 # Open E-Label
