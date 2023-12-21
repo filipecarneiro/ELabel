@@ -47,9 +47,12 @@ namespace ELabel.ViewModels
 
         public required Certifications Certifications { get; set; } = new();
 
+        public required FoodBusinessOperator FoodBusinessOperator { get; set; } = new();
+
         /*
          * Logistics
          */
+
 
         [Display(Name = "Country of origin", Description = "Enter the ISO 3166-1 two-letter contry code.")]
         [RegularExpression("^[A-Z]{2}$", ErrorMessage = "Please use, exactly, 2 capital letters (A-Z)")]

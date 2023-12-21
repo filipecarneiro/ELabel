@@ -11,7 +11,16 @@
 
 <div class="text-center py-3">
     <h1 class="fs-1 text-uppercase">@ViewData["Title"]</h1>
-    <h2 class="fs-1">@ViewData["ProducerName"]</h2>
+    <h2 class="fs-1">
+        @if(Model.FoodBusinessOperator?.Name is not null)
+        {
+            @Model.FoodBusinessOperator.Name
+        }
+        else
+        {
+            @ViewData["ProducerName"]
+        }
+    </h2>
     <p class="fs-3">@Model.WineInformation?.Appellation</p>
 </div>
 
@@ -119,6 +128,33 @@
         <div>
 
             @Html.DisplayFor(model => model.Certifications)
+
+        </div>
+    </div>
+}
+
+@if (Model.FoodBusinessOperator is not null || Model.Ean is not null || Model.Country is not null)
+{
+    <div class="pb-3">
+        <div class="text-center text-body-secondary">
+
+            <p>
+                @if (Model.Ean is not null)
+                {
+                    <span>EAN</span>
+                    Html.Raw("&nbsp;");
+                    <span class="font-monospace">@Model.Ean</span>
+                }
+                @if (Model.Country is not null)
+                {
+                    <span>@Model.Country</span>
+                }
+            </p>
+
+            @if(Model.FoodBusinessOperator is not null)
+            {
+                <p>@Model.FoodBusinessOperator.ToText()</p>
+            }
 
         </div>
     </div>

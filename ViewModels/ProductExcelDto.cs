@@ -26,6 +26,8 @@ namespace ELabel.ViewModels
 
         public required Certifications Certifications { get; set; } = new();
 
+        public required FoodBusinessOperator FoodBusinessOperator { get; set; } = new();
+
         public string? Country { get; set; }
 
         public string? Sku { get; set; }

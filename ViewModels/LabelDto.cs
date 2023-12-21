@@ -52,6 +52,8 @@ namespace ELabel.ViewModels
 
         public Certifications? Certifications { get; set; }
 
+        public FoodBusinessOperator? FoodBusinessOperator { get; set; }
+
         /*
          * Logistics
          */

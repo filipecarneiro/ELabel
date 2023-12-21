@@ -29,8 +29,6 @@ namespace ELabel.Models
 
         // TODO: Packaging & Recycling (Mandatory in Italy)
 
-        // TODO: Food business operators
-
         /*
          * Nutrition declaration
          */
@@ -44,6 +42,8 @@ namespace ELabel.Models
         public required ResponsibleConsumption ResponsibleConsumption { get; set; } = new();
 
         public required Certifications Certifications { get; set; } = new();
+
+        public required FoodBusinessOperator FoodBusinessOperator { get; set; } = new();
 
         /*
          * Logistics

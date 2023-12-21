@@ -4,14 +4,15 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<h1 class="mb-3">Edit</h1>
 
 <form asp-action="Edit" id="form">
 
-    <div class="row">
+    <div class="row mb-5">
         <div class="col-lg-6">
 
             <h4>Product</h4>
+            <p class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Product").FirstOrDefault()?.Description</p>
             <hr />
 
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -34,10 +35,11 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row mb-5">
         <div class="col-lg-6">
 
             <h4>Wine Details</h4>
+            <p class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "WineInformation").FirstOrDefault()?.Description</p>
             <hr />
 
             @Html.EditorFor(model => model.WineInformation)
@@ -45,9 +47,10 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row mb-5">
         <div class="col-lg-6">
             <h4>Ingredients</h4>
+            <p class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "ProductIngredients").FirstOrDefault()?.Description</p>
             <hr />
 
             <div id="productIngredientsContainer">
@@ -64,7 +67,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row mb-5">
         <div class="col-lg-6">
             <div class="mb-3">
                 <label asp-for="PackagingGases" class="form-label"></label>
@@ -76,9 +79,10 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row mb-5">
         <div class="col-lg-6">
             <h4>Nutrition information</h4>
+            <p class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "NutritionInformation").FirstOrDefault()?.Description</p>
             <hr />
 
             @Html.EditorFor(model => model.NutritionInformation)
@@ -86,9 +90,10 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row mb-5">
         <div class="col-lg-6">
             <h4>Responsible consumption</h4>
+            <p class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "ResponsibleConsumption").FirstOrDefault()?.Description</p>
             <hr />
 
             @Html.EditorFor(model => model.ResponsibleConsumption)
@@ -96,9 +101,10 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row mb-5">
         <div class="col-lg-6">
             <h4>Certifications</h4>
+            <p class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Certifications").FirstOrDefault()?.Description</p>
             <hr />
 
             @Html.EditorFor(model => model.Certifications)
@@ -106,10 +112,22 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row mb-5">
+        <div class="col-lg-6">
+            <h4>Food Business Operator</h4>
+            <p class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "FoodBusinessOperator").FirstOrDefault()?.Description</p>
+            <hr />
+
+            @Html.EditorFor(model => model.FoodBusinessOperator)
+
+        </div>
+    </div>
+
+    <div class="row mb-5">
         <div class="col-lg-6">
 
             <h4>Logistics</h4>
+            <p class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Logistics").FirstOrDefault()?.Description</p>
             <hr />
 
             <div class="mb-3">
