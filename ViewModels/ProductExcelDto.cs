@@ -33,5 +33,7 @@ namespace ELabel.ViewModels
         public string? Sku { get; set; }
 
         public ulong? Ean { get; set; }
+
+        public required string ShortUrl { get; set; } = string.Empty;
     }
 }

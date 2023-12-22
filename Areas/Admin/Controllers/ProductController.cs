@@ -150,9 +150,25 @@ namespace ELabel.Areas.Admin.Controllers
 
         // GET: Product/Preview/5
         [AllowAnonymous]
-        public IActionResult Preview(Guid? id)
+        public async Task<IActionResult> Preview(Guid? id)
         {
-            return RedirectToAction("Product", "Label", new { area = "", id });
+            if (id == null || _context.Product == null)
+            {
+                return NotFound();
+            }
+
+            var product = await _context.Product
+                                        .AsNoTracking()
+                                        .FirstOrDefaultAsync(m => m.Id == id);
+
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            string code = product.GetCode();
+
+            return Redirect($"~/l/{code}");
         }
 
         // GET: Product/Create
@@ -402,6 +418,14 @@ namespace ELabel.Areas.Admin.Controllers
                                       .ToListAsync();
 
             List<ProductExcelDto> products = _mapper.Map<List<ProductExcelDto>>(query);
+
+
+            // TODO: Use UrlResolver, with Dependency Injection, to add the current Url
+            String currentUrl = $"{Request.Scheme}://{Request.Host}{Request.PathBase}";
+            foreach (ProductExcelDto product in products)
+            {
+                product.ShortUrl = $"{currentUrl}/l/{product.ShortUrl}";
+            }
 
             byte[] byteArray;
             var excel = new ExcelMapper();

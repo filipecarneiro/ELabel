@@ -43,6 +43,7 @@ builder.Services.AddSingleton<IStringLocalizerFactory, ResourceManagerStringLoca
 
 builder.Services.AddRazorPages();
 
+//builder.Services.AddTransient<UrlResolver>();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddTransient<DatabaseInitializationController>();

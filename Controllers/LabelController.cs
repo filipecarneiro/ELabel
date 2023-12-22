@@ -24,6 +24,7 @@ namespace ELabel.Controllers
         }
 
         // GET: Label/Product/5
+        [Route("Label/Product/{id?}")]
         public async Task<IActionResult> Product(Guid? id)
         {
             if (id == null || _context.Product == null)
@@ -31,22 +32,81 @@ namespace ELabel.Controllers
                 return NotFound();
             }
 
-            var product = await _context.Product
-                                        .Include(p => p.Image)
-                                        .Include(p => p.ProductIngredients.OrderBy(pi => pi.Order))
-                                        .ThenInclude(pi => pi.Ingredient)
-                                        .AsNoTracking()
-                                        .FirstOrDefaultAsync(m => m.Id == id);
+            LabelDto? labelDto = await GetLabelAsync(id.Value);
 
-            if (product == null)
+            ViewData["ProducerName"] = _producer.Name;
+            return View(labelDto);
+        }
+
+        // GET: l/code
+        [Route("l/{code?}")]
+        [Route("Label/ProductCode/{code?}")]
+        public async Task<IActionResult> ProductCode(string code)
+        {
+            if (code == null || _context.Product == null)
             {
                 return NotFound();
             }
 
-            LabelDto labelDto = _mapper.Map<LabelDto>(product);
+            Guid? id = FindProductId(code);
+
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            LabelDto? labelDto = await GetLabelAsync(id.Value);
 
             ViewData["ProducerName"] = _producer.Name;
-            return View(labelDto);
+            return View("Product", labelDto);
+        }
+
+
+        private Guid? FindProductId(string? code)
+        {
+            Guid? id = _context.Product.Where(p => p.Sku == code).AsNoTracking().FirstOrDefault()?.Id;
+
+            if (id is not null)
+                return id;
+
+            ulong ean;
+            if (ulong.TryParse(code, out ean))
+            { 
+                id = _context.Product.Where(p => p.Ean == ean).AsNoTracking().FirstOrDefault()?.Id;
+
+                if (id is not null)
+                    return id;
+            }
+
+            Guid guid;
+            if (Guid.TryParse(code, out guid))
+            {
+                id = _context.Product.Where(p => p.Id == guid).AsNoTracking().FirstOrDefault()?.Id;
+
+                if (id is not null)
+                    return id;
+            }
+
+            return null;
+        }
+
+        private async Task<LabelDto?> GetLabelAsync(Guid id)
+        {
+            var product = await _context.Product
+                            .Include(p => p.Image)
+                            .Include(p => p.ProductIngredients.OrderBy(pi => pi.Order))
+                            .ThenInclude(pi => pi.Ingredient)
+                            .AsNoTracking()
+                            .FirstOrDefaultAsync(m => m.Id == id);
+
+            if (product == null)
+            {
+                return null;
+            }
+
+            LabelDto labelDto = _mapper.Map<LabelDto>(product);
+
+            return labelDto;
         }
 
     }

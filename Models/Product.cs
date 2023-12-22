@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ELabel.Models
@@ -56,6 +55,19 @@ namespace ELabel.Models
         public string? Sku { get; set; }
 
         public ulong? Ean { get; set; }
+
+        // Auxiliary methods
+
+        public string GetCode()
+        {
+            if (Sku is not null && !string.IsNullOrWhiteSpace(Sku))
+                return Sku;
+
+            if (Ean is not null && Ean > 0)
+                return Ean.Value.ToString();
+
+            return Id.ToString();
+        }
 
         // Navigation properties
         // https://docs.microsoft.com/en-us/ef/core/modeling/relationships
