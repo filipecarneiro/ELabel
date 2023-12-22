@@ -123,7 +123,7 @@ namespace ELabel.Areas.Admin.Controllers
         public async Task<IActionResult> Create([Bind("Name,Category,Allergen")] Ingredient ingredient)
         {
             ingredient.Id = Guid.NewGuid();
-            // ingredient.Custom = true; TODO: Uncomment in release
+            ingredient.Custom = true;
 
             if (ModelState.IsValid)
             {
@@ -166,7 +166,7 @@ namespace ELabel.Areas.Admin.Controllers
             {
                 try
                 {
-                    // ingredient.Custom = true; TODO: Uncomment in release
+                    // ingredient.Custom = true;
 
                     _context.Update(ingredient);
                     await _context.SaveChangesAsync();
