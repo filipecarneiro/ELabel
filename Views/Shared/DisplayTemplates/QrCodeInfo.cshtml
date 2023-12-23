@@ -12,8 +12,8 @@
 
 <div>
     <a class="btn btn-light btn-sm" href="@Model.QRCodeDownloadUrl" target="_blank" title="@(ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "QRCodeDownloadUrl").FirstOrDefault()?.Description)">@Html.DisplayNameFor(model => model.QRCodeDownloadUrl)</a>
-    <a class="btn btn-light btn-sm" href="@Model.QRCodeDownloadUrl" target="_blank" title="@(ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "QRCodeDownloadUrlForPng").FirstOrDefault()?.Description)">@Html.DisplayNameFor(model => model.QRCodeDownloadUrlForPng)</a>
-    <a class="btn btn-light btn-sm" href="@Model.QRCodeDownloadUrl" target="_blank" title="@(ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "QRCodeDownloadUrlForJpeg").FirstOrDefault()?.Description)">@Html.DisplayNameFor(model => model.QRCodeDownloadUrlForJpeg)</a>
+    <a class="btn btn-light btn-sm" href="@Model.QRCodeDownloadUrlForPng" target="_blank" title="@(ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "QRCodeDownloadUrlForPng").FirstOrDefault()?.Description)">@Html.DisplayNameFor(model => model.QRCodeDownloadUrlForPng)</a>
+    <a class="btn btn-light btn-sm" href="@Model.QRCodeDownloadUrlForJpeg" target="_blank" title="@(ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "QRCodeDownloadUrlForJpeg").FirstOrDefault()?.Description)">@Html.DisplayNameFor(model => model.QRCodeDownloadUrlForJpeg)</a>
 </div>
 
 <script src="~/lib/jquery/jquery.min.js"></script>
