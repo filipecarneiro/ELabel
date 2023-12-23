@@ -1,0 +1,58 @@
+﻿@{
+    ViewData["Title"] = "System Info";
+}
+<h1 class="display-4 text-center">@ViewData["Title"]</h1>
+
+<h4 class="mt-5">System Info</h4>
+<hr />
+<dl class="row">
+    <dt class="col-sm-3">
+        Culture
+    </dt>
+    <dd class="col-sm-9">
+        @System.Globalization.CultureInfo.CurrentCulture
+    </dd>
+    <dt class="col-sm-3">
+        UI Culture
+    </dt>
+    <dd class="col-sm-9">
+        @System.Globalization.CultureInfo.CurrentUICulture
+    </dd>
+    <dt class="col-sm-3">
+        Current Region
+    </dt>
+    <dd class="col-sm-9">
+        @System.Globalization.RegionInfo.CurrentRegion
+    </dd>
+    <dt class="col-sm-3">
+        TimeZone
+    </dt>
+    <dd class="col-sm-9">
+        <div>
+            UTC Time: @DateTime.UtcNow.ToString()
+        </div>
+        <div>
+            System Time (@System.TimeZoneInfo.Local): @DateTime.UtcNow.ToLocalTime().ToString()
+        </div>
+    </dd>
+    <dt class="col-sm-3">
+        App Settings
+    </dt>
+    <dd class="col-sm-9">
+        <div>
+            KnownProxy: @ViewData["KnownProxy"]
+        </div>
+    </dd>
+    <dt class="col-sm-3">
+        Remote IP Address
+    </dt>
+    <dd class="col-sm-9">
+        @ViewData["RemoteIpAddress"] <a href="https://iplocation.io/ip-whois-lookup/@(ViewData["RemoteIpAddress"])" target="_blank">iplocation.io <i class="bi bi-box-arrow-up-right"></i></a>
+    </dd>
+    <dt class="col-sm-3">
+        Headers
+    </dt>
+    <dd class="col-sm-9">
+        <pre>@ViewData["Headers"]</pre>
+    </dd>
+</dl>
