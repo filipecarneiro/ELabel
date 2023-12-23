@@ -37,6 +37,11 @@ namespace ELabel.Controllers
 
             LabelDto? labelDto = await GetLabelAsync(id.Value);
 
+            if (labelDto == null)
+            {
+                return NotFound();
+            }
+
             ViewData["ProducerName"] = _producer.Name;
             return View(labelDto);
         }
