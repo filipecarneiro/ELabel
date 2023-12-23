@@ -54,18 +54,7 @@ namespace ELabel.ViewModels
 
         public FoodBusinessOperator? FoodBusinessOperator { get; set; }
 
-        /*
-         * Logistics
-         */
+        public Logistics? Logistics { get; set; }
 
-        [Display(Name = "Country of origin", Description = "Enter the ISO 3166-1 two-letter contry code.")]
-        public string? Country { get; set; }
-
-        [Display(Name = "SKU Code", Description = "Enter your internal Stock Keeping Unit (SKU) text code.")]
-        public string? Sku { get; set; }
-
-        [Display(Name = "EAN/GTIN", Description = "Enter your European Article Number (EAN) or Global Trade Item Number (GTIN) of your product.")]
-        [DisplayFormat(DataFormatString = "{0:G0}")]
-        public ulong? Ean { get; set; }
     }
 }

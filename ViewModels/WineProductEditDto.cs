@@ -49,26 +49,6 @@ namespace ELabel.ViewModels
 
         public required FoodBusinessOperator FoodBusinessOperator { get; set; } = new();
 
-        /*
-         * Logistics
-         */
-
-
-        [Display(Name = "Country of origin", Description = "Enter the ISO 3166-1 two-letter contry code.")]
-        [RegularExpression("^[A-Z]{2}$", ErrorMessage = "Please use, exactly, 2 capital letters (A-Z)")]
-        [StringLength(2)]
-        [DataType(DataType.Text)]
-        public string? Country { get; set; }
-
-        [Display(Name = "SKU Code", Description = "Enter your internal Stock Keeping Unit (SKU) text code.")]
-        [RegularExpression("^[A-Z0-9/-]{3,}$", ErrorMessage = "Please use only capital letters (A-Z), numbers (0-9) and hyphen")]
-        [StringLength(20)]
-        [DataType(DataType.Text)]
-        public string? Sku { get; set; }
-
-        [Display(Name = "EAN/GTIN", Description = "Enter your European Article Number (EAN) or Global Trade Item Number (GTIN) of your product.")]
-        [DisplayFormat(DataFormatString = "{0:G0}")]
-        [RegularExpression("^(\\d{12,14})$", ErrorMessage = "Invalid GTIN (12, 13 or 14 digits)")]
-        public ulong? Ean { get; set; }
+        public required Logistics Logistics { get; set; } = new();
     }
 }

@@ -79,7 +79,7 @@ namespace ELabel.Controllers
             }
 
             string baseUrl = UrlHelper.GetBaseUrl(Request);
-            var content = UrlHelper.GetQrCodeUrl(baseUrl, code, format);
+            var content = $"{baseUrl}/l/{code}";
 
             // Generate QrCode
             var qr = QrCode.EncodeText(content, QrCode.Ecc.Medium);
@@ -95,6 +95,15 @@ namespace ELabel.Controllers
                 return File(byteArray, "image/png", $"qrcode-{code}.png");
             }
 
+            // JPEG
+
+            if (format.ToLower() == "jpeg" || format.ToLower() == "jpg")
+            {
+                byteArray = qr.ToJpeg(10, 4);
+
+                return File(byteArray, "image/jpeg", $"qrcode-{code}.jpeg");
+            }
+
             // SVG
 
             byteArray = Encoding.UTF8.GetBytes(qr.ToSvgString(4));
@@ -104,7 +113,7 @@ namespace ELabel.Controllers
 
         private Guid? FindProductId(string? code)
         {
-            Guid? id = _context.Product.Where(p => p.Sku == code).AsNoTracking().FirstOrDefault()?.Id;
+            Guid? id = _context.Product.Where(p => p.Logistics.Sku == code).AsNoTracking().FirstOrDefault()?.Id;
 
             if (id is not null)
                 return id;
@@ -112,7 +121,7 @@ namespace ELabel.Controllers
             ulong ean;
             if (ulong.TryParse(code, out ean))
             { 
-                id = _context.Product.Where(p => p.Ean == ean).AsNoTracking().FirstOrDefault()?.Id;
+                id = _context.Product.Where(p => p.Logistics.Ean == ean).AsNoTracking().FirstOrDefault()?.Id;
 
                 if (id is not null)
                     return id;

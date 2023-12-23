@@ -24,7 +24,7 @@ namespace ELabel.Data
                 .ForMember(dest => dest.IngredientIdList, opt => opt.MapFrom(
                     src => src.ProductIngredients.OrderBy(p => p.Order).Select(pi => pi.IngredientId).ToList()))
                 //.ForMember(dest => dest.ShortUrl, opt => opt.MapFrom<UrlResolver>())
-                .ForMember(dest => dest.Code, opt => opt.MapFrom(src => src.GetCode()))
+                .ForMember(dest => dest.Code, opt => opt.MapFrom(src => src.Logistics.GetCode()))
                 .ReverseMap()
                 .ForPath(p => p.Image, opt => opt.Ignore())
                 .ForPath(p => p.Ingredients, opt => opt.Ignore())

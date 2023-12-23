@@ -44,30 +44,8 @@ namespace ELabel.Models
 
         public required FoodBusinessOperator FoodBusinessOperator { get; set; } = new();
 
-        /*
-         * Logistics
-         */
+        public required Logistics Logistics { get; set; } = new();
 
-        [MaxLength(2)]
-        public string? Country { get; set; }
-
-        [MaxLength(20)]
-        public string? Sku { get; set; }
-
-        public ulong? Ean { get; set; }
-
-        // Auxiliary methods
-
-        public string GetCode()
-        {
-            if (Sku is not null && !string.IsNullOrWhiteSpace(Sku))
-                return Sku;
-
-            if (Ean is not null && Ean > 0)
-                return Ean.Value.ToString();
-
-            return Id.ToString();
-        }
 
         // Navigation properties
         // https://docs.microsoft.com/en-us/ef/core/modeling/relationships

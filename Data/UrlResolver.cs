@@ -24,7 +24,7 @@ namespace ELabel.Data
 
         public string Resolve(Product source, ProductExcelDto target, string destMember, ResolutionContext context)
         {
-            return $"{_address}/l/{source.GetCode()}";
+            return $"{_address}/l/{source.Logistics.GetCode()}";
         }
     }
 }

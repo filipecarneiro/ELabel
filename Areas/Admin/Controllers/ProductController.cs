@@ -65,7 +65,7 @@ namespace ELabel.Areas.Admin.Controllers
                                           p.WineInformation.Type != null && EnumHelper.GetDisplayName(p.WineInformation.Type)?.ToLower() == filterText ||
                                           p.WineInformation.SugarContent != null && EnumHelper.GetDisplayName(p.WineInformation.SugarContent)?.ToLower() == filterText ||
                                           p.WineInformation.Appellation != null && p.WineInformation.Appellation.Contains(filterText, StringComparison.InvariantCultureIgnoreCase) ||
-                                          p.Sku != null && p.Sku.Contains(filterText, StringComparison.InvariantCultureIgnoreCase)
+                                          p.Logistics.Sku != null && p.Logistics.Sku.Contains(filterText, StringComparison.InvariantCultureIgnoreCase)
                                          
                                    );
             }
@@ -111,10 +111,10 @@ namespace ELabel.Areas.Admin.Controllers
                     query = query.OrderByDescending(p => p.WineInformation.Appellation).ThenBy(p => p.Name).ThenBy(p => p.Volume).ThenBy(p => p.WineInformation.Vintage);
                     break;
                 case "Sku":
-                    query = query.OrderBy(p => p.Sku).ThenBy(p => p.Name).ThenBy(p => p.Volume).ThenBy(p => p.WineInformation.Vintage);
+                    query = query.OrderBy(p => p.Logistics.Sku).ThenBy(p => p.Name).ThenBy(p => p.Volume).ThenBy(p => p.WineInformation.Vintage);
                     break;
                 case "-Sku":
-                    query = query.OrderByDescending(p => p.Sku).ThenBy(p => p.Name).ThenBy(p => p.Volume).ThenBy(p => p.WineInformation.Vintage);
+                    query = query.OrderByDescending(p => p.Logistics.Sku).ThenBy(p => p.Name).ThenBy(p => p.Volume).ThenBy(p => p.WineInformation.Vintage);
                     break;
             }
 
@@ -146,9 +146,7 @@ namespace ELabel.Areas.Admin.Controllers
             WineProductDetailsDto wineProductDetailsDto = _mapper.Map<WineProductDetailsDto>(product);
 
             string baseUrl = UrlHelper.GetBaseUrl(Request);
-            ViewData["ShortUrl"] = UrlHelper.GetShortUrl(baseUrl,product.GetCode());
-            ViewData["QrCodeUrl"] = UrlHelper.GetQrCodeUrl(baseUrl, product.GetCode());
-            ViewData["QrCodeUrlPng"] = UrlHelper.GetQrCodeUrl(baseUrl, product.GetCode(), "png");
+            wineProductDetailsDto.QrCode = new QrCodeDto(baseUrl, product.Logistics.GetCode() ?? product.Id.ToString());
 
             return View(wineProductDetailsDto);
         }
@@ -171,7 +169,7 @@ namespace ELabel.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            string code = product.GetCode();
+            string code = product.Logistics.GetCode() ?? product.Id.ToString();
 
             return Redirect($"~/l/{code}");
         }
@@ -187,7 +185,7 @@ namespace ELabel.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Name,Volume,WineInformation")] WineProductCreateDto wineProductCreateDto)
+        public async Task<IActionResult> Create([Bind("Name,Volume,Weight,Kind,WineInformation")] WineProductCreateDto wineProductCreateDto)
         {
             if (ModelState.IsValid)
             {
@@ -233,7 +231,7 @@ namespace ELabel.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Name,Volume,WineInformation,ProductIngredients,PackagingGases,NutritionInformation,ResponsibleConsumption,Certifications,FoodBusinessOperator,Country,Sku,Ean")] WineProductEditDto wineProductEditDto)
+        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Name,Volume,Weight,Kind,WineInformation,ProductIngredients,PackagingGases,NutritionInformation,ResponsibleConsumption,Certifications,FoodBusinessOperator,Logistics")] WineProductEditDto wineProductEditDto)
         {
             if (id != wineProductEditDto.Id)
             {
@@ -429,9 +427,7 @@ namespace ELabel.Areas.Admin.Controllers
             string baseUrl = UrlHelper.GetBaseUrl(Request);
             foreach (ProductExcelDto product in products)
             {
-                product.ShortUrl = "HYPERLINK(\"" + UrlHelper.GetShortUrl(baseUrl, product.Code) + "\")";
-                product.QRCode = "HYPERLINK(\"" + UrlHelper.GetQrCodeUrl(baseUrl, product.Code) + "\")";
-                product.QRCodePNG = "HYPERLINK(\"" + UrlHelper.GetQrCodeUrl(baseUrl, product.Code, "png") + "\")";
+                product.QrCode = new QrCodeDto(baseUrl, product.Logistics.GetCode() ?? product.Id.ToString(), true);
             }
 
             byte[] byteArray;

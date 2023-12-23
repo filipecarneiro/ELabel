@@ -133,21 +133,21 @@
     </div>
 }
 
-@if (Model.FoodBusinessOperator is not null || Model.Ean is not null || Model.Country is not null)
+@if (Model.FoodBusinessOperator is not null || Model.Logistics?.Ean is not null || Model.Logistics?.Country is not null)
 {
     <div class="pb-3">
         <div class="text-center text-body-secondary">
 
             <p>
-                @if (Model.Ean is not null)
+                @if (Model.Logistics?.Ean is not null)
                 {
                     <span>EAN</span>
                     Html.Raw("&nbsp;");
-                    <span class="font-monospace">@Model.Ean</span>
+                    <span class="font-monospace">@Model.Logistics?.Ean</span>
                 }
-                @if (Model.Country is not null)
+                @if (Model.Logistics?.Country is not null)
                 {
-                    <span>@Model.Country</span>
+                    <span>@Model.Logistics?.Country</span>
                 }
             </p>
 

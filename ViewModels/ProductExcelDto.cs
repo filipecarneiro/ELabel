@@ -29,22 +29,12 @@ namespace ELabel.ViewModels
 
         public required FoodBusinessOperator FoodBusinessOperator { get; set; } = new();
 
-        public string? Country { get; set; }
-
-        public string? Sku { get; set; }
-
-        [Ganss.Excel.DataFormat("0")]
-        public ulong? Ean { get; set; }
+        public required Logistics Logistics { get; set; } = new();
 
         // Export only properties
 
-        public string Code { get; set; } = String.Empty;
+        public string? Code { get; set; }
 
-        [Ganss.Excel.Formula]
-        public string? ShortUrl { get; set; }
-        [Ganss.Excel.Formula]
-        public string? QRCode { get; set; }
-        [Ganss.Excel.Formula]
-        public string? QRCodePNG { get; set; }
+        public QrCodeDto? QrCode { get; set; }
     }
 }

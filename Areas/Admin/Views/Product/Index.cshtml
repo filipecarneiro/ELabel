@@ -57,7 +57,7 @@
                 <a asp-action="Index" asp-route-sortOrder="@ViewBag.SortParmWineAppelation">@Html.DisplayNameFor(model => model.WineInformation.Appellation)</a>
             </th>
             <th scope="col">
-                <a asp-action="Index" asp-route-sortOrder="@ViewBag.SortParmSku">@Html.DisplayNameFor(model => model.Sku)</a>
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.SortParmSku">@Html.DisplayNameFor(model => model.Logistics.Sku)</a>
             </th>
             <th scope="col"></th>
         </tr>
@@ -94,7 +94,7 @@
                 @Html.DisplayFor(modelItem => item.WineInformation.Appellation)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Sku)
+                @Html.DisplayFor(modelItem => item.Logistics.Sku)
             </td>
             <td>
                 <div class="d-flex justify-content-end align-items-center">

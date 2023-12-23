@@ -47,17 +47,7 @@
     <h4>QR Code</h4>
     <hr />
 
-    <dl class="row">
-        <dt class="col-sm-2 mb-2">Short URL</dt>
-        <dd class="col-sm-10">
-            <a href="@ViewData["ShortUrl"]" target="_blank">@ViewData["ShortUrl"]</a>
-        </dd>
-    </dl>
-
-    <div>
-        <a href="@ViewData["QrCodeUrl"]" target="_blank">Download SVG</a> |
-        <a href="@ViewData["QrCodeUrlPng"]" target="_blank">Download PNG</a>
-    </div>
+    @Html.DisplayFor(model => model.QrCode, "QrCodeInfo")
 
 </div>
 

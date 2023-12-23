@@ -1,0 +1,34 @@
+﻿@model Logistics
+
+<div class="mb-3">
+    <label asp-for="Country" class="form-label"></label>
+    <input asp-for="Country" class="form-control" aria-describedby="CountryHelp" autocomplete="country" />
+    <div id="CountryHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Country").FirstOrDefault()?.Description</div>
+    <span asp-validation-for="Country" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="Sku" class="form-label"></label>
+    <input asp-for="Sku" class="form-control" aria-describedby="SkuHelp" />
+    <div id="SkuHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Sku").FirstOrDefault()?.Description</div>
+    <span asp-validation-for="Sku" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="Ean" class="form-label"></label>
+    <input asp-for="Ean" class="form-control" aria-describedby="EanHelp" />
+    <div id="EanHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Ean").FirstOrDefault()?.Description</div>
+    <span asp-validation-for="Ean" class="text-danger"></span>
+</div>
+@{/*
+<div class="mb-3">
+    <label asp-for="ExternalShortUrl" class="form-label"></label>
+    <input asp-for="ExternalShortUrl" class="form-control" aria-describedby="ExternalShortUrlHelp" />
+    <div id="ExternalShortUrlHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "ExternalShortUrl").FirstOrDefault()?.Description</div>
+    <span asp-validation-for="ExternalShortUrl" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="RedirectUrl" class="form-label"></label>
+    <input asp-for="RedirectUrl" class="form-control" aria-describedby="RedirectUrlHelp" />
+    <div id="RedirectUrlHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "RedirectUrl").FirstOrDefault()?.Description</div>
+    <span asp-validation-for="RedirectUrl" class="text-danger"></span>
+</div>
+*/}
