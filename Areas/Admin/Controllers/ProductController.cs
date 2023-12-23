@@ -145,6 +145,11 @@ namespace ELabel.Areas.Admin.Controllers
 
             WineProductDetailsDto wineProductDetailsDto = _mapper.Map<WineProductDetailsDto>(product);
 
+            string baseUrl = UrlHelper.GetBaseUrl(Request);
+            ViewData["ShortUrl"] = UrlHelper.GetShortUrl(baseUrl,product.GetCode());
+            ViewData["QrCodeUrl"] = UrlHelper.GetQrCodeUrl(baseUrl, product.GetCode());
+            ViewData["QrCodeUrlPng"] = UrlHelper.GetQrCodeUrl(baseUrl, product.GetCode(), "png");
+
             return View(wineProductDetailsDto);
         }
 
@@ -421,10 +426,12 @@ namespace ELabel.Areas.Admin.Controllers
 
 
             // TODO: Use UrlResolver, with Dependency Injection, to add the current Url
-            String currentUrl = $"{Request.Scheme}://{Request.Host}{Request.PathBase}";
+            string baseUrl = UrlHelper.GetBaseUrl(Request);
             foreach (ProductExcelDto product in products)
             {
-                product.ShortUrl = $"{currentUrl}/l/{product.ShortUrl}";
+                product.ShortUrl = "HYPERLINK(\"" + UrlHelper.GetShortUrl(baseUrl, product.Code) + "\")";
+                product.QRCode = "HYPERLINK(\"" + UrlHelper.GetQrCodeUrl(baseUrl, product.Code) + "\")";
+                product.QRCodePNG = "HYPERLINK(\"" + UrlHelper.GetQrCodeUrl(baseUrl, product.Code, "png") + "\")";
             }
 
             byte[] byteArray;

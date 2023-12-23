@@ -1,11 +1,14 @@
 ﻿using AutoMapper;
 using ELabel.Data;
+using ELabel.Extensions;
 using ELabel.Models;
 using ELabel.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using Net.Codecrete.QrCodeGenerator;
+using System.Text;
 
 namespace ELabel.Controllers
 {
@@ -61,6 +64,38 @@ namespace ELabel.Controllers
             return View("Product", labelDto);
         }
 
+        // GET: Label/QRCode/5
+        [Route("Label/QRCode/{code?}")]
+        public IActionResult QRCode([FromRoute] string code, [FromQuery] string format = "svg")
+        {
+            if (code == null || _context.Product == null)
+            {
+                return NotFound();
+            }
+
+            string baseUrl = UrlHelper.GetBaseUrl(Request);
+            var content = UrlHelper.GetQrCodeUrl(baseUrl, code, format);
+
+            // Generate QrCode
+            var qr = QrCode.EncodeText(content, QrCode.Ecc.Medium);
+
+            byte[] byteArray;
+
+            // PNG
+
+            if (format.ToLower() == "png")
+            {
+                byteArray = qr.ToPng(10, 4);
+
+                return File(byteArray, "image/png", $"qrcode-{code}.png");
+            }
+
+            // SVG
+
+            byteArray = Encoding.UTF8.GetBytes(qr.ToSvgString(4));
+
+            return File(byteArray, "text/svg", $"qrcode-{code}.svg");
+        }
 
         private Guid? FindProductId(string? code)
         {

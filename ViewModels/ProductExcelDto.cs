@@ -1,4 +1,5 @@
 ﻿using ELabel.Models;
+using Ganss.Excel;
 
 namespace ELabel.ViewModels
 {
@@ -32,8 +33,18 @@ namespace ELabel.ViewModels
 
         public string? Sku { get; set; }
 
+        [Ganss.Excel.DataFormat("0")]
         public ulong? Ean { get; set; }
 
-        public required string ShortUrl { get; set; } = string.Empty;
+        // Export only properties
+
+        public string Code { get; set; } = String.Empty;
+
+        [Ganss.Excel.Formula]
+        public string? ShortUrl { get; set; }
+        [Ganss.Excel.Formula]
+        public string? QRCode { get; set; }
+        [Ganss.Excel.Formula]
+        public string? QRCodePNG { get; set; }
     }
 }
