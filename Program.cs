@@ -2,12 +2,14 @@ using ELabel.Controllers;
 using ELabel.Data;
 using ELabel.Middleware;
 using ELabel.Models;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Options;
 using System.Globalization;
+using System.Net;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,13 +27,13 @@ builder.Services.Configure<Producer>(builder.Configuration.GetSection("Producer"
 builder.Configuration.AddEnvironmentVariables(prefix: "ELABEL_");
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
-{
-    options.SignIn.RequireConfirmedAccount = false;
-    options.User.RequireUniqueEmail = false;
-    options.Password.RequiredLength = 4;
-    options.Password.RequireNonAlphanumeric = false;
-    options.Password.RequireDigit = false;
-})
+    {
+        options.SignIn.RequireConfirmedAccount = false;
+        options.User.RequireUniqueEmail = false;
+        options.Password.RequiredLength = 4;
+        options.Password.RequireNonAlphanumeric = false;
+        options.Password.RequireDigit = false;
+    })
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultUI()
     .AddDefaultTokenProviders();
@@ -42,6 +44,14 @@ builder.Services.AddControllersWithViews().AddViewLocalization();
 builder.Services.AddSingleton<IStringLocalizerFactory, ResourceManagerStringLocalizerFactory>();
 
 builder.Services.AddRazorPages();
+
+builder.Services.Configure<ForwardedHeadersOptions>(options =>
+{
+    options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+    string? knownProxy = builder.Configuration.GetValue<string>("KnownProxy");
+    if (!String.IsNullOrWhiteSpace(knownProxy))
+        options.KnownProxies.Add(IPAddress.Parse(knownProxy));
+});
 
 //builder.Services.AddTransient<UrlResolver>();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
@@ -116,6 +126,7 @@ else
     app.UseHsts();
 }
 
+app.UseForwardedHeaders();
 app.UseHttpsRedirection();
 
 var cacheMaxAgeOneWeek = (60 * 60 * 24 * 7).ToString();
