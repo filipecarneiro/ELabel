@@ -1,5 +1,4 @@
 ﻿using ELabel.Models;
-using Ganss.Excel;
 
 namespace ELabel.ViewModels
 {
@@ -35,6 +34,6 @@ namespace ELabel.ViewModels
 
         public string? Code { get; set; }
 
-        public string? ShortUrl { get; set; }
+        public string? LabelUrl { get; set; }
     }
 }

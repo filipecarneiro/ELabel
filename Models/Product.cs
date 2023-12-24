@@ -55,5 +55,66 @@ namespace ELabel.Models
 
         public List<Ingredient> Ingredients { get; } = new();
         public List<ProductIngredient> ProductIngredients { get; } = new();
+
+        // Auxiliary methods
+
+        /// <summary>
+        /// Gets the product title, based on it's name.
+        /// </summary>
+        /// <remarks>The contents of the title depends on product kind.</remarks>
+        /// <returns>A string with the product title.7</returns>
+        public string GetTitle()
+        {
+            if (Kind == ProductKind.Wine && WineInformation.Vintage is not null && WineInformation.Vintage > 0)
+                return $"{Name} {WineInformation.Vintage}";
+
+            return Name;
+        }
+
+        /// <summary>
+        /// Gets the product code, based on SKU or EAN.
+        /// </summary>
+        /// <remarks>If both SKU and EAN are not provided, the product code is based on it's internal Id.</remarks>
+        /// <returns>A string with the product code.</returns>
+        public string GetCode()
+        {
+            if (Logistics is not null && !string.IsNullOrWhiteSpace(Logistics.Sku))
+                return Logistics.Sku;
+
+            if (Logistics is not null && Logistics.Ean is not null && Logistics.Ean > 0)
+                return Logistics.Ean.ToString() ?? Id.ToString();
+
+            return Id.ToString();
+        }
+
+        /// <summary>
+        /// Gets the label relative link.
+        /// </summary>
+        /// <returns>A string with the link.</returns>
+        public string GetRelativeLabelUrl()
+        {
+            return $"~/l/{GetCode()}";
+        }
+
+        /// <summary>
+        /// Gets the public label link.
+        /// </summary>
+        /// <param name="baseUrl">The current app base link.</param>
+        /// <returns>A string with the link.</returns>
+        public string GetAbsoluteLabelUrl(string baseUrl)
+        {
+            return $"{baseUrl}/l/{GetCode()}";
+        }
+
+        /// <summary>
+        /// Gets the public label link.
+        /// </summary>
+        /// <param name="baseUrl">The current app base link.</param>
+        /// <param name="code">The product code.</param>
+        /// <returns>A string with the link.</returns>
+        public static string GetAbsoluteLabelUrl(string baseUrl, string code)
+        {
+            return $"{baseUrl}/l/{code}";
+        }
     }
 }

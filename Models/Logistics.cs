@@ -47,18 +47,5 @@ namespace ELabel.Models
         [MaxLength(100)]
         public string? RedirectUrl { get; set; }
         */
-
-        // Auxiliary methods
-
-        public string? GetCode()
-        {
-            if (Sku is not null && !string.IsNullOrWhiteSpace(Sku))
-                return Sku;
-
-            if (Ean is not null && Ean > 0)
-                return Ean.Value.ToString();
-
-            return null;
-        }
     }
 }

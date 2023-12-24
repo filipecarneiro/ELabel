@@ -47,7 +47,12 @@ namespace ELabel.ViewModels
 
         public required Logistics Logistics { get; set; } = new();
 
-        [Display(Name = "Short link", Description = "This is the link that is encoded in the QR code.")]
-        public string? ShortUrl { get; set; }
+        // Auxiliary properties
+
+        public string? Title { get; set; }
+
+        public string? Code { get; set; }
+
+        public QrCodeInfo? QrCodeInfo { get; set; }
     }
 }

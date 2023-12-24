@@ -146,7 +146,11 @@ namespace ELabel.Areas.Admin.Controllers
             WineProductDetailsDto wineProductDetailsDto = _mapper.Map<WineProductDetailsDto>(product);
 
             string baseUrl = UrlHelper.GetBaseUrl(Request);
-            wineProductDetailsDto.ShortUrl = ShortUrlHelper.AbsoluteUrl(baseUrl, product.Logistics.GetCode() ?? product.Id.ToString());
+            string labelUrl = product.GetAbsoluteLabelUrl(baseUrl);
+            string filename = "QR Code " + product.GetTitle();
+
+            QrCodeInfo qrCodeInfo = new QrCodeInfo( labelUrl, filename);
+            wineProductDetailsDto.QrCodeInfo = qrCodeInfo;
 
             return View(wineProductDetailsDto);
         }
@@ -169,7 +173,14 @@ namespace ELabel.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            return Redirect(ShortUrlHelper.RelativeUrl(product.Logistics.GetCode() ?? product.Id.ToString()));
+            string? url = product.GetRelativeLabelUrl();
+
+            if (string.IsNullOrWhiteSpace(url))
+            {
+                return NotFound();
+            }
+
+            return Redirect(url);
         }
 
         // GET: Product/Create
@@ -425,7 +436,8 @@ namespace ELabel.Areas.Admin.Controllers
             string baseUrl = UrlHelper.GetBaseUrl(Request);
             foreach (ProductExcelDto product in products)
             {
-                product.ShortUrl = ShortUrlHelper.AbsoluteUrl(baseUrl, product.Logistics.GetCode() ?? product.Id.ToString());
+                if(product.Code is not null)
+                    product.LabelUrl = Product.GetAbsoluteLabelUrl(baseUrl, product.Code);
             }
 
             byte[] byteArray;
@@ -606,7 +618,7 @@ namespace ELabel.Areas.Admin.Controllers
                 ProductId = id
             };
 
-            ViewData["ProductTitle"] = _context.Product.Find(id)?.Name;
+            ViewData["ProductTitle"] = _context.Product.Find(id)?.GetTitle();
             return View(imageFileUpload);
         }
 
@@ -620,7 +632,7 @@ namespace ELabel.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            string? ProductTitle = _context.Product.Find(id)?.Name;
+            string? ProductTitle = _context.Product.Find(id)?.GetTitle();
 
             if (!ModelState.IsValid)
             {

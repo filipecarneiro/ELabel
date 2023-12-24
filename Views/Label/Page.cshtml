@@ -2,15 +2,11 @@
 @inject IHtmlLocalizer<SharedResource> Localizer
 
 @{
-    ViewData["Title"] = @Model.Name;
-    if (Model.WineInformation?.Vintage != null)
-    {
-        ViewData["Title"] += " " + Model.WineInformation.Vintage.ToString();
-    }
+    ViewData["Title"] = @Model.Title;
 }
 
 <div class="text-center py-3">
-    <h1 class="fs-1 text-uppercase">@ViewData["Title"]</h1>
+    <h1 class="fs-1 text-uppercase">@Model.Title</h1>
     <h2 class="fs-1">
         @if(Model.FoodBusinessOperator?.Name is not null)
         {

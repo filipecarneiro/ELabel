@@ -3,8 +3,6 @@ using ELabel.Models;
 using ELabel.ViewModels;
 using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.AspNetCore.Hosting.Server.Features;
-using Microsoft.Extensions.Configuration;
-using NPOI.SS.Formula.Functions;
 
 namespace ELabel.Data
 {
@@ -24,7 +22,7 @@ namespace ELabel.Data
 
         public string Resolve(Product source, ProductExcelDto target, string destMember, ResolutionContext context)
         {
-            return $"{_address}/l/{source.Logistics.GetCode()}";
+            return $"{_address}/l/{source.GetCode()}";
         }
     }
 }
