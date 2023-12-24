@@ -26,30 +26,9 @@ namespace ELabel.Controllers
             _producer = producerConfiguration.Value;
         }
 
-        // GET: Label/Product/5
-        [Route("Label/Product/{id?}")]
-        public async Task<IActionResult> Product(Guid? id)
-        {
-            if (id == null || _context.Product == null)
-            {
-                return NotFound();
-            }
-
-            LabelDto? labelDto = await GetLabelAsync(id.Value);
-
-            if (labelDto == null)
-            {
-                return NotFound();
-            }
-
-            ViewData["ProducerName"] = _producer.Name;
-            return View(labelDto);
-        }
-
         // GET: l/code
         [Route("l/{code?}")]
-        [Route("Label/ProductCode/{code?}")]
-        public async Task<IActionResult> ProductCode(string code)
+        public async Task<IActionResult> Page(string code)
         {
             if (code == null || _context.Product == null)
             {
@@ -66,49 +45,7 @@ namespace ELabel.Controllers
             LabelDto? labelDto = await GetLabelAsync(id.Value);
 
             ViewData["ProducerName"] = _producer.Name;
-            return View("Product", labelDto);
-        }
-
-        // GET: Label/QRCode/5
-        [Route("Label/QRCode/{code?}")]
-        public IActionResult QRCode([FromRoute] string code, [FromQuery] string format = "svg")
-        {
-            if (code == null || _context.Product == null)
-            {
-                return NotFound();
-            }
-
-            string baseUrl = UrlHelper.GetBaseUrl(Request);
-            var content = $"{baseUrl}/l/{code}";
-
-            // Generate QrCode
-            var qr = QrCode.EncodeText(content, QrCode.Ecc.Medium);
-
-            byte[] byteArray;
-
-            // PNG
-
-            if (format.ToLower() == "png")
-            {
-                byteArray = qr.ToPng(10, 4);
-
-                return File(byteArray, "image/png", $"qrcode-{code}.png");
-            }
-
-            // JPEG
-
-            if (format.ToLower() == "jpeg" || format.ToLower() == "jpg")
-            {
-                byteArray = qr.ToJpeg(10, 4);
-
-                return File(byteArray, "image/jpeg", $"qrcode-{code}.jpeg");
-            }
-
-            // SVG
-
-            byteArray = Encoding.UTF8.GetBytes(qr.ToSvgString(4));
-
-            return File(byteArray, "text/svg", $"qrcode-{code}.svg");
+            return View(labelDto);
         }
 
         private Guid? FindProductId(string? code)

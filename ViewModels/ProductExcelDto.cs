@@ -35,6 +35,6 @@ namespace ELabel.ViewModels
 
         public string? Code { get; set; }
 
-        public QrCodeDto? QrCode { get; set; }
+        public string? ShortUrl { get; set; }
     }
 }

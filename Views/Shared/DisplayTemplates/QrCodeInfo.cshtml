@@ -1,19 +1,19 @@
-﻿@model QrCodeDto
+﻿@model string
 
 <dl class="row">
     <dt class="col-sm-2 mb-2">
-        @Html.DisplayNameFor(model => model.ShortUrl)
+        Short link
     </dt>
     <dd class="col-sm-10">
-        <a id="short-url" href="@Model.ShortUrl" target="_blank">@Model.ShortUrl</a>
+        <a id="short-url" href="@Model" target="_blank">@Model</a>
         <button id="short-url-button" type="button" class="btn btn-light btn-sm ms-2" title="Copy link"><i class="bi bi-link"></i></button>
     </dd>
 </dl>
 
 <div>
-    <a class="btn btn-light btn-sm" href="@Model.QRCodeDownloadUrl" target="_blank" title="@(ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "QRCodeDownloadUrl").FirstOrDefault()?.Description)">@Html.DisplayNameFor(model => model.QRCodeDownloadUrl)</a>
-    <a class="btn btn-light btn-sm" href="@Model.QRCodeDownloadUrlForPng" target="_blank" title="@(ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "QRCodeDownloadUrlForPng").FirstOrDefault()?.Description)">@Html.DisplayNameFor(model => model.QRCodeDownloadUrlForPng)</a>
-    <a class="btn btn-light btn-sm" href="@Model.QRCodeDownloadUrlForJpeg" target="_blank" title="@(ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "QRCodeDownloadUrlForJpeg").FirstOrDefault()?.Description)">@Html.DisplayNameFor(model => model.QRCodeDownloadUrlForJpeg)</a>
+    <a class="btn btn-light btn-sm" asp-controller="QrCode" asp-action="Download" asp-route-content="@Model" target="_blank">Download SVG</a>
+    <a class="btn btn-light btn-sm" asp-controller="QrCode" asp-action="Download" asp-route-content="@Model" asp-route-format="png" target="_blank">Download PNG</a>
+    <a class="btn btn-light btn-sm" asp-controller="QrCode" asp-action="Download" asp-route-content="@Model" asp-route-format="jpeg" target="_blank">Download JPEG</a>
 </div>
 
 <script src="~/lib/jquery/jquery.min.js"></script>

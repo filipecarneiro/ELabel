@@ -146,7 +146,7 @@ namespace ELabel.Areas.Admin.Controllers
             WineProductDetailsDto wineProductDetailsDto = _mapper.Map<WineProductDetailsDto>(product);
 
             string baseUrl = UrlHelper.GetBaseUrl(Request);
-            wineProductDetailsDto.QrCode = new QrCodeDto(baseUrl, product.Logistics.GetCode() ?? product.Id.ToString());
+            wineProductDetailsDto.ShortUrl = ShortUrlHelper.AbsoluteUrl(baseUrl, product.Logistics.GetCode() ?? product.Id.ToString());
 
             return View(wineProductDetailsDto);
         }
@@ -169,9 +169,7 @@ namespace ELabel.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            string code = product.Logistics.GetCode() ?? product.Id.ToString();
-
-            return Redirect($"~/l/{code}");
+            return Redirect(ShortUrlHelper.RelativeUrl(product.Logistics.GetCode() ?? product.Id.ToString()));
         }
 
         // GET: Product/Create
@@ -427,7 +425,7 @@ namespace ELabel.Areas.Admin.Controllers
             string baseUrl = UrlHelper.GetBaseUrl(Request);
             foreach (ProductExcelDto product in products)
             {
-                product.QrCode = new QrCodeDto(baseUrl, product.Logistics.GetCode() ?? product.Id.ToString(), true);
+                product.ShortUrl = ShortUrlHelper.AbsoluteUrl(baseUrl, product.Logistics.GetCode() ?? product.Id.ToString());
             }
 
             byte[] byteArray;
