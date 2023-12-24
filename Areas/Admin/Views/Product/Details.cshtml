@@ -26,23 +26,6 @@
 
 <partial name="_DetailsPartial" />
 
-@if (Model.ProductIngredients != null && Model.ProductIngredients.Count > 0)
-{
-    <div class="mb-3">
-        <h4>Ingredients</h4>
-        <hr />
-        <div class="row col-12 col-md-5 mb-2">
-
-            @Html.DisplayFor(model => model.ProductIngredients, "ProductIngredients")
-
-        </div>
-        @if(Model.PackagingGases != PackagingGases.None)
-        {
-            <p class="ps-1 mb-2">@EnumHelper.GetDisplayName(Model.PackagingGases)<span>.</span></p>
-        }
-    </div>
-}
-
 <div class="mb-3">
     <h4>QR Code</h4>
     <hr />
