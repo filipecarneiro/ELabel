@@ -44,6 +44,16 @@ namespace ELabel.Controllers
 
             LabelDto? labelDto = await GetLabelAsync(id.Value);
 
+            if (labelDto == null)
+            {
+                return NotFound();
+            }
+
+            if (labelDto.Portability != null && !string.IsNullOrWhiteSpace(labelDto.Portability.RedirectUrl))
+            {
+                return Redirect(labelDto.Portability.RedirectUrl);
+            }
+
             ViewData["ProducerName"] = _producer.Name;
             return View(labelDto);
         }

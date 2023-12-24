@@ -30,6 +30,8 @@ namespace ELabel.ViewModels
 
         public required Logistics Logistics { get; set; } = new();
 
+        public required Portability Portability { get; set; } = new();
+
         // Export only properties
 
         public string? Code { get; set; }

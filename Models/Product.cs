@@ -46,6 +46,7 @@ namespace ELabel.Models
 
         public required Logistics Logistics { get; set; } = new();
 
+        public required Portability Portability { get; set; } = new();
 
         // Navigation properties
         // https://docs.microsoft.com/en-us/ef/core/modeling/relationships
@@ -100,9 +101,17 @@ namespace ELabel.Models
         /// Gets the public label link.
         /// </summary>
         /// <param name="baseUrl">The current app base link.</param>
+        /// <param name="useExternalShortUrl">If RedirectUrl is configured, returns RedirectUrl.</param>
+        /// <param name="useExternalShortUrl">If ExternalShortUrl is configured, returns ExternalShortUrl.</param>
         /// <returns>A string with the link.</returns>
-        public string GetAbsoluteLabelUrl(string baseUrl)
+        public string GetAbsoluteLabelUrl(string baseUrl, bool useRedirectUrl = false, bool useExternalShortUrl = false)
         {
+            if (useRedirectUrl && !string.IsNullOrWhiteSpace(Portability.RedirectUrl))
+                return Portability.RedirectUrl;
+
+            if (useExternalShortUrl && !string.IsNullOrWhiteSpace(Portability.ExternalShortUrl))
+                return Portability.ExternalShortUrl;
+
             return $"{baseUrl}/l/{GetCode()}";
         }
 

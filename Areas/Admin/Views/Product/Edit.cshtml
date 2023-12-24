@@ -138,6 +138,18 @@
     <div class="row mb-5">
         <div class="col-lg-6">
 
+            <h4>Portability</h4>
+            <p class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Portability").FirstOrDefault()?.Description</p>
+            <hr />
+
+            @Html.EditorFor(model => model.Portability)
+
+        </div>
+    </div>
+    
+    <div class="row mb-5">
+        <div class="col-lg-6">
+
             <div class="mb-3">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>

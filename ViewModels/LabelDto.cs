@@ -56,6 +56,8 @@ namespace ELabel.ViewModels
 
         public Logistics? Logistics { get; set; }
 
+        public Portability? Portability { get; set; }
+
         // Auxiliary properties
 
         public string? Title { get; set; }

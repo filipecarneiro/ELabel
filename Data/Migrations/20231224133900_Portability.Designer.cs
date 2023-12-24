@@ -4,6 +4,7 @@ using ELabel.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ELabel.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231224133900_Portability")]
+    partial class Portability
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,7 +53,7 @@ namespace ELabel.Data.Migrations
                     b.HasIndex("ProductId")
                         .IsUnique();
 
-                    b.ToTable("Image", (string)null);
+                    b.ToTable("Image");
                 });
 
             modelBuilder.Entity("ELabel.Models.Ingredient", b =>
@@ -77,7 +80,7 @@ namespace ELabel.Data.Migrations
                     b.HasIndex("Name", "Category")
                         .IsUnique();
 
-                    b.ToTable("Ingredient", (string)null);
+                    b.ToTable("Ingredient");
                 });
 
             modelBuilder.Entity("ELabel.Models.Product", b =>
@@ -120,7 +123,7 @@ namespace ELabel.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Product", (string)null);
+                    b.ToTable("Product");
                 });
 
             modelBuilder.Entity("ELabel.Models.ProductIngredient", b =>
@@ -144,7 +147,7 @@ namespace ELabel.Data.Migrations
                     b.HasIndex("ProductId", "IngredientId")
                         .IsUnique();
 
-                    b.ToTable("ProductIngredient", (string)null);
+                    b.ToTable("ProductIngredient");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -358,7 +361,7 @@ namespace ELabel.Data.Migrations
 
             modelBuilder.Entity("ELabel.Models.Ingredient", b =>
                 {
-                    b.OwnsOne("ELabel.Models.Ingredient.LocalizableStrings#ELabel.Models.LocalizableStrings", "LocalizableStrings", b1 =>
+                    b.OwnsOne("ELabel.Models.LocalizableStrings", "LocalizableStrings", b1 =>
                         {
                             b1.Property<Guid>("IngredientId")
                                 .HasColumnType("uniqueidentifier");
@@ -485,7 +488,7 @@ namespace ELabel.Data.Migrations
 
                             b1.HasKey("IngredientId");
 
-                            b1.ToTable("Ingredient", (string)null);
+                            b1.ToTable("Ingredient");
 
                             b1.ToJson("LocalizableStrings");
 
@@ -499,7 +502,7 @@ namespace ELabel.Data.Migrations
 
             modelBuilder.Entity("ELabel.Models.Product", b =>
                 {
-                    b.OwnsOne("ELabel.Models.Product.Certifications#ELabel.Models.Certifications", "Certifications", b1 =>
+                    b.OwnsOne("ELabel.Models.Certifications", "Certifications", b1 =>
                         {
                             b1.Property<Guid>("ProductId")
                                 .HasColumnType("uniqueidentifier");
@@ -509,13 +512,13 @@ namespace ELabel.Data.Migrations
 
                             b1.HasKey("ProductId");
 
-                            b1.ToTable("Product", (string)null);
+                            b1.ToTable("Product");
 
                             b1.WithOwner()
                                 .HasForeignKey("ProductId");
                         });
 
-                    b.OwnsOne("ELabel.Models.Product.FoodBusinessOperator#ELabel.Models.FoodBusinessOperator", "FoodBusinessOperator", b1 =>
+                    b.OwnsOne("ELabel.Models.FoodBusinessOperator", "FoodBusinessOperator", b1 =>
                         {
                             b1.Property<Guid>("ProductId")
                                 .HasColumnType("uniqueidentifier");
@@ -537,13 +540,13 @@ namespace ELabel.Data.Migrations
 
                             b1.HasKey("ProductId");
 
-                            b1.ToTable("Product", (string)null);
+                            b1.ToTable("Product");
 
                             b1.WithOwner()
                                 .HasForeignKey("ProductId");
                         });
 
-                    b.OwnsOne("ELabel.Models.Product.Logistics#ELabel.Models.Logistics", "Logistics", b1 =>
+                    b.OwnsOne("ELabel.Models.Logistics", "Logistics", b1 =>
                         {
                             b1.Property<Guid>("ProductId")
                                 .HasColumnType("uniqueidentifier");
@@ -564,13 +567,13 @@ namespace ELabel.Data.Migrations
 
                             b1.HasKey("ProductId");
 
-                            b1.ToTable("Product", (string)null);
+                            b1.ToTable("Product");
 
                             b1.WithOwner()
                                 .HasForeignKey("ProductId");
                         });
 
-                    b.OwnsOne("ELabel.Models.Product.NutritionInformation#ELabel.Models.NutritionInformation", "NutritionInformation", b1 =>
+                    b.OwnsOne("ELabel.Models.NutritionInformation", "NutritionInformation", b1 =>
                         {
                             b1.Property<Guid>("ProductId")
                                 .HasColumnType("uniqueidentifier");
@@ -598,12 +601,12 @@ namespace ELabel.Data.Migrations
 
                             b1.HasKey("ProductId");
 
-                            b1.ToTable("Product", (string)null);
+                            b1.ToTable("Product");
 
                             b1.WithOwner()
                                 .HasForeignKey("ProductId");
 
-                            b1.OwnsOne("ELabel.Models.Product.NutritionInformation#ELabel.Models.NutritionInformation.Energy#ELabel.Models.Energy", "Energy", b2 =>
+                            b1.OwnsOne("ELabel.Models.Energy", "Energy", b2 =>
                                 {
                                     b2.Property<Guid>("NutritionInformationProductId")
                                         .HasColumnType("uniqueidentifier");
@@ -613,7 +616,7 @@ namespace ELabel.Data.Migrations
 
                                     b2.HasKey("NutritionInformationProductId");
 
-                                    b2.ToTable("Product", (string)null);
+                                    b2.ToTable("Product");
 
                                     b2.WithOwner()
                                         .HasForeignKey("NutritionInformationProductId");
@@ -623,7 +626,7 @@ namespace ELabel.Data.Migrations
                                 .IsRequired();
                         });
 
-                    b.OwnsOne("ELabel.Models.Product.Portability#ELabel.Models.Portability", "Portability", b1 =>
+                    b.OwnsOne("ELabel.Models.Portability", "Portability", b1 =>
                         {
                             b1.Property<Guid>("ProductId")
                                 .HasColumnType("uniqueidentifier");
@@ -640,13 +643,13 @@ namespace ELabel.Data.Migrations
 
                             b1.HasKey("ProductId");
 
-                            b1.ToTable("Product", (string)null);
+                            b1.ToTable("Product");
 
                             b1.WithOwner()
                                 .HasForeignKey("ProductId");
                         });
 
-                    b.OwnsOne("ELabel.Models.Product.ResponsibleConsumption#ELabel.Models.ResponsibleConsumption", "ResponsibleConsumption", b1 =>
+                    b.OwnsOne("ELabel.Models.ResponsibleConsumption", "ResponsibleConsumption", b1 =>
                         {
                             b1.Property<Guid>("ProductId")
                                 .HasColumnType("uniqueidentifier");
@@ -662,13 +665,13 @@ namespace ELabel.Data.Migrations
 
                             b1.HasKey("ProductId");
 
-                            b1.ToTable("Product", (string)null);
+                            b1.ToTable("Product");
 
                             b1.WithOwner()
                                 .HasForeignKey("ProductId");
                         });
 
-                    b.OwnsOne("ELabel.Models.Product.WineInformation#ELabel.Models.WineInformation", "WineInformation", b1 =>
+                    b.OwnsOne("ELabel.Models.WineInformation", "WineInformation", b1 =>
                         {
                             b1.Property<Guid>("ProductId")
                                 .HasColumnType("uniqueidentifier");
@@ -696,7 +699,7 @@ namespace ELabel.Data.Migrations
 
                             b1.HasKey("ProductId");
 
-                            b1.ToTable("Product", (string)null);
+                            b1.ToTable("Product");
 
                             b1.WithOwner()
                                 .HasForeignKey("ProductId");

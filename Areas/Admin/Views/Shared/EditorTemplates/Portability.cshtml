@@ -1,0 +1,14 @@
+﻿@model Portability
+
+<div class="mb-3">
+    <label asp-for="ExternalShortUrl" class="form-label"></label>
+    <input asp-for="ExternalShortUrl" class="form-control" aria-describedby="ExternalShortUrlHelp" />
+    <div id="ExternalShortUrlHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "ExternalShortUrl").FirstOrDefault()?.Description</div>
+    <span asp-validation-for="ExternalShortUrl" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="RedirectUrl" class="form-label"></label>
+    <input asp-for="RedirectUrl" class="form-control" aria-describedby="RedirectUrlHelp" />
+    <div id="RedirectUrlHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "RedirectUrl").FirstOrDefault()?.Description</div>
+    <span asp-validation-for="RedirectUrl" class="text-danger"></span>
+</div>

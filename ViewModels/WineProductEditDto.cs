@@ -50,5 +50,7 @@ namespace ELabel.ViewModels
         public required FoodBusinessOperator FoodBusinessOperator { get; set; } = new();
 
         public required Logistics Logistics { get; set; } = new();
+
+        public required Portability Portability { get; set; } = new();
     }
 }

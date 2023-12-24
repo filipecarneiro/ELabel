@@ -146,7 +146,7 @@ namespace ELabel.Areas.Admin.Controllers
             WineProductDetailsDto wineProductDetailsDto = _mapper.Map<WineProductDetailsDto>(product);
 
             string baseUrl = UrlHelper.GetBaseUrl(Request);
-            string labelUrl = product.GetAbsoluteLabelUrl(baseUrl);
+            string labelUrl = product.GetAbsoluteLabelUrl(baseUrl, useRedirectUrl: true, useExternalShortUrl: true);
             string filename = "QR Code " + product.GetTitle();
 
             QrCodeInfo qrCodeInfo = new QrCodeInfo( labelUrl, filename);
@@ -240,7 +240,7 @@ namespace ELabel.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Name,Volume,Weight,Kind,WineInformation,ProductIngredients,PackagingGases,NutritionInformation,ResponsibleConsumption,Certifications,FoodBusinessOperator,Logistics")] WineProductEditDto wineProductEditDto)
+        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Name,Volume,Weight,Kind,WineInformation,ProductIngredients,PackagingGases,NutritionInformation,ResponsibleConsumption,Certifications,FoodBusinessOperator,Logistics,Portability")] WineProductEditDto wineProductEditDto)
         {
             if (id != wineProductEditDto.Id)
             {
@@ -251,6 +251,16 @@ namespace ELabel.Areas.Admin.Controllers
             if (product == null)
             {
                 return NotFound();
+            }
+
+            if (wineProductEditDto.Portability.ExternalShortUrl != null && !Uri.IsWellFormedUriString(wineProductEditDto.Portability.ExternalShortUrl, UriKind.Absolute))
+            {
+                ModelState.AddModelError("CustomError", "External short link is not an absolute url! Write a link with 'https://...'");
+            }
+
+            if (wineProductEditDto.Portability.RedirectUrl != null && !Uri.IsWellFormedUriString(wineProductEditDto.Portability.RedirectUrl, UriKind.Absolute))
+            {
+                ModelState.AddModelError("CustomError", "Redirect link is not an absolute url! Write a link with 'https://...'");
             }
 
             if (ModelState.IsValid)
