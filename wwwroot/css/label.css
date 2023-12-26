@@ -31,3 +31,7 @@ a {
     visibility: visible;
     opacity: 1;
 }
+
+.sign {
+    max-height: 50px;
+}
