@@ -1,5 +1,7 @@
-﻿using ELabel.Models;
+﻿using ELabel.Extensions;
+using ELabel.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -48,9 +50,19 @@ namespace ELabel.Controllers
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult Error([FromRoute] int? id)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            if(id != null && id == 404)
+            {
+                StatusCodeReExecuteFeature? statusCodeReExecuteFeature = (StatusCodeReExecuteFeature?)HttpContext.Features.Get<IStatusCodeReExecuteFeature>();
+
+                string baseUrl = UrlHelper.GetBaseUrl(Request);
+                string url = baseUrl + statusCodeReExecuteFeature?.OriginalPath;
+                ViewBag.Url = url;
+                return View("404");
+            }
+
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier, StatusCode = id });
         }
 
         [HttpPost]

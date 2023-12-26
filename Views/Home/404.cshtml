@@ -1,0 +1,23 @@
+﻿@inject IHtmlLocalizer<SharedResource> Localizer
+
+@{
+    ViewData["Title"] = Localizer["Page not found"];
+}
+
+<section class="hero text-center pt-5">
+
+    <!-- Large header banner -->
+
+    <div class="mb-4">
+        <svg class="bi" width="64" height="64" fill="currentColor">
+            <use xlink:href="/lib/bootstrap-icons/bootstrap-icons.svg#qr-code-scan" />
+        </svg>
+        <svg class="bi ms-2" width="64" height="64" fill="currentColor">
+            <use xlink:href="/lib/bootstrap-icons/bootstrap-icons.svg#search" />
+        </svg>
+    </div>
+    <p class="mb-4"><code>@ViewBag.Url</code></p>
+    <p class="text-gray-soft text-regular mb-4">@Localizer["This label isn't available. Sorry about that."]</p>
+    <a class="btn btn-light btn-lg mb-5" href="/Admin">@Localizer["Admin Dashboard"]</a>
+
+</section>
