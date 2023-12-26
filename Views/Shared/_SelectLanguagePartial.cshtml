@@ -15,15 +15,15 @@
                                                          .Select(c => new SelectListItem { Value = c.TwoLetterISOLanguageName, Text = StringHelper.FirstCharToUpper(c.NativeName) })
                                                          .ToList();
 
-    string returnUrl = string.IsNullOrEmpty(Context.Request.Path) ? "~/" : $"~{Context.Request.Path.Value}";
+    string urlPath = string.IsNullOrEmpty(Context.Request.Path) ? "~/" : $"~{Context.Request.Path.Value}";
 }
 
 <div>
-    <form id="selectLanguage" asp-controller="Home" asp-action="SetLanguage" asp-route-returnUrl="@returnUrl" method="post">
+    <form id="formLanguage" asp-controller="Home" asp-action="SetLanguage" asp-route-urlPath="@urlPath" asp-antiforgery="false" method="post">
         <svg class="bi" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false">
             <use xlink:href="/lib/bootstrap-icons/bootstrap-icons.svg#translate" />
         </svg>
-        <select id="languageSelect"
+        <select id="selectlanguage"
                 name="culture"
                 class="ms-2"
                 title="@Localizer["Select language"]"

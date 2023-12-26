@@ -24,9 +24,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Select Language
 document.addEventListener('DOMContentLoaded', function () {
-    var languageSelect = document.getElementById('languageSelect');
-    var selectLanguage = document.getElementById('selectLanguage');
-    languageSelect.onchange = function () {
-        selectLanguage.submit();
+    var formLanguage = document.getElementById('formLanguage');
+    var selectlanguage = document.getElementById('selectlanguage');
+    selectlanguage.onchange = function () {
+        formLanguage.submit();
     };
 });

@@ -1,14 +1,11 @@
 ﻿using AutoMapper;
 using ELabel.Data;
-using ELabel.Extensions;
 using ELabel.Models;
 using ELabel.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
-using Net.Codecrete.QrCodeGenerator;
-using System.Text;
 
 namespace ELabel.Controllers
 {
