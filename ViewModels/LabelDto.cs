@@ -61,5 +61,9 @@ namespace ELabel.ViewModels
         // Auxiliary properties
 
         public string? Title { get; set; }
+
+        public string? LabelUrl { get; set; }
+
+        public string? ShareImageUrl { get; set; }
     }
 }

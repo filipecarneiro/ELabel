@@ -7,16 +7,7 @@
 
 <div class="text-center py-3">
     <h1 class="fs-1 text-uppercase">@Model.Title</h1>
-    <h2 class="fs-1">
-        @if(Model.FoodBusinessOperator?.Name is not null)
-        {
-            @Model.FoodBusinessOperator.Name
-        }
-        else
-        {
-            @ViewData["ProducerName"]
-        }
-    </h2>
+    <h2 class="fs-1">@Model.FoodBusinessOperator?.Name</h2>
     <p class="fs-3">@Model.WineInformation?.Appellation</p>
 </div>
 
@@ -154,4 +145,12 @@
 
         </div>
     </div>
+}
+
+@section MetaTags {
+    <meta property="og:title" content="@Model.Title" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="@Model.LabelUrl" />
+    <meta property="og:image" content="@Model.ShareImageUrl" />
+    <meta property="og:description" content="@Localizer["Ingredients and nutrition information"]." />
 }

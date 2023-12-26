@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using ELabel.Data;
+using ELabel.Extensions;
 using ELabel.Models;
 using ELabel.ViewModels;
 using Microsoft.AspNetCore.Authorization;
@@ -51,7 +52,6 @@ namespace ELabel.Controllers
                 return Redirect(labelDto.Portability.RedirectUrl);
             }
 
-            ViewData["ProducerName"] = _producer.Name;
             return View(labelDto);
         }
 
@@ -98,6 +98,15 @@ namespace ELabel.Controllers
             }
 
             LabelDto labelDto = _mapper.Map<LabelDto>(product);
+
+            if(labelDto.FoodBusinessOperator != null && String.IsNullOrWhiteSpace(labelDto.FoodBusinessOperator.Name))
+            {
+                labelDto.FoodBusinessOperator.Name = _producer.Name;
+            }
+
+            string baseUrl = UrlHelper.GetBaseUrl(Request);
+            labelDto.LabelUrl = product.GetAbsoluteLabelUrl(baseUrl, false, false);
+            labelDto.ShareImageUrl = baseUrl + "/img/icon.png";
 
             return labelDto;
         }

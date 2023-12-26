@@ -12,6 +12,7 @@
     <link rel="icon" type="image/png" href="~/favicon.png" />
     <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/label.css" asp-append-version="true" />
+    @await RenderSectionAsync("MetaTags", required: false)
 </head>
 <body class="d-flex flex-column min-vh-100">
     <header class="header">
