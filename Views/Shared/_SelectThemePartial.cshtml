@@ -1,24 +1,41 @@
 ﻿@inject IViewLocalizer Localizer
 
-<div>
-    <a id="switchTheme" class="text-reset text-decoration-none" href="#" role="button" title="@Localizer["Select theme"]" aria-label="@Localizer["Select theme"]">
-        <svg class="bi" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false">
-            <use xlink:href="/lib/bootstrap-icons/bootstrap-icons.svg#circle-half" />
-        </svg>
-    </a>
+<div class="d-inline-flex align-items-center">
+    <svg id="btnDarkTheme" class="bi" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false">
+        <use xlink:href="/lib/bootstrap-icons/bootstrap-icons.svg#moon-stars-fill" />
+    </svg>
+
+    <div class="form-check form-switch form-check-inline m-0 ms-2">
+        <input id="checkSwitchTheme" class="form-check-input" type="checkbox" role="switch" title="@Localizer["Select theme"]" aria-label="@Localizer["Select theme"]">
+    </div>
+
+    <svg id="btnLightTheme" class="bi" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false">
+        <use xlink:href="/lib/bootstrap-icons/bootstrap-icons.svg#brightness-high-fill" />
+    </svg>
 </div>
 
 @* Note: Update CSP hash on _Layout.cshtml if this code changes! *@
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        var btnSwitchTheme = document.getElementById('switchTheme');
-        btnSwitchTheme.addEventListener('click', function () {
-            if (document.documentElement.getAttribute('data-bs-theme') === 'dark' ) {
-                document.documentElement.setAttribute('data-bs-theme', 'light')
+        var htmlElement = document.documentElement;
+        var checkSwitchTheme = document.getElementById('checkSwitchTheme');
+        var btnDarkTheme = document.getElementById('btnDarkTheme');
+        var btnLightTheme = document.getElementById('btnLightTheme');
+        checkSwitchTheme.addEventListener('click', function () {
+            if (checkSwitchTheme.checked) {
+                htmlElement.setAttribute('data-bs-theme', 'light');
             }
             else {
-                document.documentElement.setAttribute('data-bs-theme', 'dark')
+                htmlElement.setAttribute('data-bs-theme', 'dark');
             }
+        });
+        btnDarkTheme.addEventListener('click', function () {
+            checkSwitchTheme.checked = false;
+            htmlElement.setAttribute('data-bs-theme', 'dark');
+        });
+        btnLightTheme.addEventListener('click', function () {
+            checkSwitchTheme.checked = true;
+            htmlElement.setAttribute('data-bs-theme', 'light');
         });
     });
 </script>
