@@ -30,5 +30,10 @@ namespace ELabel.Models
         [RegularExpression("^(\\d{12,14})$", ErrorMessage = "Invalid GTIN (12, 13 or 14 digits)")]
         [Ganss.Excel.DataFormat(1)] // Formats the Excel column as number without decimals ("0")
         public ulong? Ean { get; set; }
+
+        public Logistics DeepCopy()
+        {
+            return (Logistics)this.MemberwiseClone();
+        }
     }
 }

@@ -38,5 +38,10 @@ namespace ELabel.Models
         // TODO: Grape varieties
 
         // TODO: Production method (Traditional method, Barrel aged, Stainless steel fermented, Cask aged, etc.)
+
+        public WineInformation DeepCopy()
+        {
+            return (WineInformation)this.MemberwiseClone();
+        }
     }
 }

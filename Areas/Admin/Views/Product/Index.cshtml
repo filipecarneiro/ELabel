@@ -111,8 +111,9 @@
                                 <li><a class="dropdown-item" asp-action="DeleteImage" asp-route-id="@item.Id">Delete image</a></li>
                             }
                             <li><a class="dropdown-item" asp-action="ChangeImage" asp-route-id="@item?.Id">Change image</a></li>
-                            <li><a class="dropdown-item" asp-action="Details" asp-route-id="@item?.Id">Details</a></li>
                             <li><a class="dropdown-item" asp-action="Delete" asp-route-id="@item?.Id">Delete</a></li>
+                            <li><a class="dropdown-item" asp-action="Duplicate" asp-route-id="@item?.Id">Duplicate</a></li>
+                            <li><a class="dropdown-item" asp-action="Details" asp-route-id="@item?.Id">Details</a></li>
                         </ul>
                     </div>
                 </div>

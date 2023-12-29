@@ -92,5 +92,14 @@ namespace ELabel.Models
         [Display(Name = "Salt", Description = "Salt (g)")]
         [DisplayFormat(DataFormatString = "{0:G} g")]
         public float Salt { get; set; } = 0;
+
+        public NutritionInformation DeepCopy()
+        {
+            NutritionInformation other = (NutritionInformation)this.MemberwiseClone();
+            
+            other.Energy = new Energy(this.Energy.Kilocalorie);
+
+            return other;
+        }
     }
 }

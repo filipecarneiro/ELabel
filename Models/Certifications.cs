@@ -11,5 +11,10 @@ namespace ELabel.Models
     {
         [Display(Name = "Organic", Description = "Certified organic based on EU-Guidelines")]
         public bool Organic { get; set; } = false;
+
+        public Certifications DeepCopy()
+        {
+            return (Certifications)this.MemberwiseClone();
+        }
     }
 }

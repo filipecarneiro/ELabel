@@ -32,6 +32,11 @@ namespace ELabel.Models
         [MaxLength(100)]
         public string? Address { get; set; }
 
+        public FoodBusinessOperator DeepCopy()
+        {
+            return (FoodBusinessOperator)this.MemberwiseClone();
+        }
+
         public string? ToText()
         {
             if (string.IsNullOrWhiteSpace(BusinessName) || string.IsNullOrWhiteSpace(Address))

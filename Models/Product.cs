@@ -55,9 +55,53 @@ namespace ELabel.Models
         public virtual Image? Image { get; set; }
 
         public List<Ingredient> Ingredients { get; } = new();
-        public List<ProductIngredient> ProductIngredients { get; } = new();
+        public List<ProductIngredient> ProductIngredients { get; private set; } = new();
 
         // Auxiliary methods
+
+        public Product DeepCopy()
+        {
+            Product other = (Product)this.MemberwiseClone();
+            other.Id = Guid.NewGuid();
+
+            other.WineInformation = this.WineInformation.DeepCopy();
+            other.NutritionInformation = this.NutritionInformation.DeepCopy();
+            other.ResponsibleConsumption = this.ResponsibleConsumption.DeepCopy();
+            other.Certifications = this.Certifications.DeepCopy();
+            other.FoodBusinessOperator = this.FoodBusinessOperator.DeepCopy();
+            other.Logistics = this.Logistics.DeepCopy();
+            other.Portability = this.Portability.DeepCopy();
+
+            if(this.Image != null)
+            { 
+                other.Image = new Image() {
+                    Id = Guid.NewGuid(),
+                    ProductId = other.Id,
+                    ContentType = this.Image.ContentType,
+                    Content = this.Image.Content,
+                    Width = this.Image.Width,
+                    Height = this.Image.Height
+                };
+            }
+            else
+                other.Image = null;
+
+            other.ProductIngredients = new List<ProductIngredient>();
+            foreach (ProductIngredient productIngredient in this.ProductIngredients.OrderBy(p => p.Order).ToList())
+            {
+                ProductIngredient otherProductIngredient = new ProductIngredient()
+                {
+                    Id = Guid.NewGuid(),
+                    ProductId = other.Id,
+                    IngredientId = productIngredient.IngredientId,
+                    Order = productIngredient.Order,
+                };
+
+                other.ProductIngredients.Add(otherProductIngredient);
+            }
+
+            return other;
+        }
 
         /// <summary>
         /// Gets the product title, based on it's name.

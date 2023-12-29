@@ -362,6 +362,36 @@ namespace ELabel.Areas.Admin.Controllers
             return View(wineProductEditDto);
         }
 
+        // GET: Product/Duplicate
+        public async Task<IActionResult> Duplicate(Guid? id)
+        {
+            if (id == null || _context.Product == null)
+            {
+                return NotFound();
+            }
+
+            var product = await _context.Product
+                                        .Include(p => p.Image)
+                                        .Include(p => p.ProductIngredients.OrderBy(pi => pi.Order))
+                                        //.ThenInclude(pi => pi.Ingredient)
+                                        .FirstOrDefaultAsync(m => m.Id == id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            Product newProduct = product.DeepCopy();
+            newProduct.Name = "Copy of " + product.Name;
+            newProduct.Logistics.Sku = null;
+            //newProduct.Logistics.Ean = null;
+            newProduct.Portability.ExternalShortUrl = null;
+
+            _context.Add(newProduct);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Edit), new { id = newProduct.Id });
+        }
+
         // GET: Product/Delete/5
         public async Task<IActionResult> Delete(Guid? id)
         {

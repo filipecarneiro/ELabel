@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ELabel.Models
 {
@@ -17,5 +16,10 @@ namespace ELabel.Models
 
         [Display(Name = "Warning against drinking when driving", Description = "Don't drink when driving a car, motorbike or operating machinery")]
         public bool WarningDrinkingWhenDriving { get; set; } = false;
+
+        public ResponsibleConsumption DeepCopy()
+        {
+            return (ResponsibleConsumption)this.MemberwiseClone();
+        }
     }
 }

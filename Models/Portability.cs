@@ -21,5 +21,10 @@ namespace ELabel.Models
         [DataType(DataType.Url)]
         [MaxLength(100)]
         public string? RedirectUrl { get; set; }
+
+        public Portability DeepCopy()
+        {
+            return (Portability)this.MemberwiseClone();
+        }
     }
 }
