@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "wwwroot/css/label.css",
+    "inputFile": "wwwroot/css/label.scss"
+  },
+  {
+    "outputFile": "wwwroot/js/label.es5.js",
+    "inputFile": "wwwroot/js/label.js"
+  }
+]

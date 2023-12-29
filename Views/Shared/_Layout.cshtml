@@ -10,8 +10,7 @@
     <meta name="description" content="Open E-Label - @Localizer["Open-source solution for electronic labels"]" />
     <link rel="icon" type="image/svg+xml" href="~/favicon.svg" />
     <link rel="icon" type="image/png" href="~/favicon.png" />
-    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/label.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/label.min.css" asp-append-version="true" />
     @await RenderSectionAsync("MetaTags", required: false)
 </head>
 <body class="d-flex flex-column min-vh-100">
@@ -39,6 +38,6 @@
             <small><a href="https://www.w3.org/TR/WCAG22/" target="_blank" rel="noopener" class="text-reset text-decoration-none" title="@Localizer["Web Content Accessibility Guidelines (WCAG) 2.2"]">@Localizer["Web Accessibility Guidelines"]</a>.</small>
         </div>
     </footer>
-    <script src="~/js/label.js" asp-append-version="true"></script>
+    <script src="~/js/label.es5.min.js" asp-append-version="true"></script>
 </body>
 </html>
