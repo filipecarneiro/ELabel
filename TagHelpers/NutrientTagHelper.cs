@@ -91,7 +91,7 @@ namespace ELabel.TagHelpers
                     break;
             }
 
-            string nutrientHtml = $"<span class='display' value='{Value}' value-range='{valueRange.ToString().ToLower()}'>{HttpUtility.HtmlEncode(valueText)}</span>&nbsp;<span class='unit'>{Unit}</span>";
+            string nutrientHtml = $"<span class='display' data-value='{Value}' data-value-range='{valueRange.ToString().ToLower()}'>{HttpUtility.HtmlEncode(valueText)}</span>&nbsp;<span class='unit'>{Unit}</span>";
 
             output.Attributes.SetAttribute("class", "nutrient");
             output.Content.SetHtmlContent(nutrientHtml);

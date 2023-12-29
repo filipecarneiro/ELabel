@@ -60,7 +60,7 @@
             </div>
         }
     </div>
-    <hr />
+    <hr>
 }
 
 @if (Model.ProductIngredients is not null && Model.ProductIngredients.Count > 0)
@@ -79,7 +79,7 @@
             </div>
         }
     </div>
-    <hr/>
+    <hr>
 }
 
 @if (Model.NutritionInformation is not null && Model.NutritionInformation.Energy is not null)
@@ -92,7 +92,7 @@
 
         </div>
     </div>
-    <hr />
+    <hr>
 }
 
 @if (Model.ResponsibleConsumption is not null && Model.ResponsibleConsumption.WarningDrinkingDuringPregnancy)
@@ -105,7 +105,7 @@
 
         </div>
     </div>
-    <hr />
+    <hr>
 }
 
 @if (Model.Certifications is not null && Model.Certifications.Organic)
@@ -148,9 +148,9 @@
 }
 
 @section MetaTags {
-    <meta property="og:title" content="@Model.Title" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="@Model.LabelUrl" />
-    <meta property="og:image" content="@Model.ShareImageUrl" />
-    <meta property="og:description" content="@Localizer["Ingredients and nutrition information"]." />
+    <meta property="og:title" content="@Model.Title">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="@Model.LabelUrl">
+    <meta property="og:image" content="@Model.ShareImageUrl">
+    <meta property="og:description" content="@Localizer["Ingredients and nutrition information"].">
 }

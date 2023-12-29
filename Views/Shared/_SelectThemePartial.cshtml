@@ -1,15 +1,15 @@
 ﻿@inject IViewLocalizer Localizer
 
 <div class="d-inline-flex align-items-center">
-    <svg id="btnDarkTheme" class="bi" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false">
+    <svg id="btnDarkTheme" class="bi" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false" role="button">
         <use xlink:href="/lib/bootstrap-icons/bootstrap-icons.svg#moon-stars-fill" />
     </svg>
 
     <div class="form-check form-switch form-check-inline m-0 ms-2">
-        <input id="checkSwitchTheme" class="form-check-input" type="checkbox" role="switch" title="@Localizer["Select theme"]" aria-label="@Localizer["Select theme"]">
+        <input id="checkSwitchTheme" class="form-check-input pointer" type="checkbox" role="switch" title="@Localizer["Select theme"]" aria-label="@Localizer["Select theme"]">
     </div>
 
-    <svg id="btnLightTheme" class="bi" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false">
+    <svg id="btnLightTheme" class="bi" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false" role="button">
         <use xlink:href="/lib/bootstrap-icons/bootstrap-icons.svg#brightness-high-fill" />
     </svg>
 </div>

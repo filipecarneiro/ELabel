@@ -1,16 +1,15 @@
 ﻿@inject IHtmlLocalizer<SharedResource> Localizer
-
 <!DOCTYPE html>
 <html lang="@System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName" data-bs-theme="dark">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv='Content-Security-Policy' content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src data:;">
     <title>@ViewData["Title"] - E-Label</title>
-    <meta name="description" content="Open E-Label - @Localizer["Open-source solution for electronic labels"]" />
-    <link rel="icon" type="image/svg+xml" href="~/favicon.svg" />
-    <link rel="icon" type="image/png" href="~/favicon.png" />
-    <link rel="stylesheet" href="~/css/label.min.css" asp-append-version="true" />
+    <meta name="description" content="Open E-Label - @Localizer["Open-source solution for electronic labels"]">
+    <link rel="icon" type="image/svg+xml" href="~/favicon.svg">
+    <link rel="icon" type="image/png" href="~/favicon.png">
+    <link rel="stylesheet" href="~/css/label.min.css" asp-append-version="true">
     @await RenderSectionAsync("MetaTags", required: false)
 </head>
 <body class="d-flex flex-column min-vh-100">

@@ -27,7 +27,7 @@ namespace ELabel.TagHelpers
             // Allways zero decimal digits. Rounding to the nearest 1 kJ/kcal
             string valueText = Value.ToString("N0");
             
-            string energyHtml = $"<span class='display' value='{Value}'>{HttpUtility.HtmlEncode(valueText)}</span>&nbsp;<span class='unit'>{Unit}</span>";
+            string energyHtml = $"<span class='display' data-value='{Value}'>{HttpUtility.HtmlEncode(valueText)}</span>&nbsp;<span class='unit'>{Unit}</span>";
             
             output.Attributes.SetAttribute("class", "energy");
             output.Content.SetHtmlContent(energyHtml);
