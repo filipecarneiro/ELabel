@@ -1,37 +1,96 @@
 ﻿@model ELabel.ViewModels.WineProductDetailsDto
 
-<div>
-    <dl class="row">
-        <dt class="col-sm-2 mb-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt class="col-sm-2 mb-2">
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt class="col-sm-2 mb-2">
-            @Html.DisplayNameFor(model => model.Volume)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Volume)
-        </dd>
-    </dl>
-</div>
+<div class="row">
 
-<div>
-    <h4>Wine</h4>
-    <hr />
+    @if (Model.Images != null && Model.Images.Count > 0)
+    {
+        <div class="col-3 order-last text-center">
+
+            @{
+                ImageDto? defaultImage = Model.Images.SingleOrDefault(i => i.PixelDensity == Image.StandardPixelDensity);
+                if (defaultImage == null)
+                    defaultImage = Model.Images.First();
+            }
+
+            <figure class="figure ms-2">
+                @if (defaultImage != null)
+                {
+                    <img id="image-preview" class="figure-img img-fluid m-1 bg-dark"
+                         src="@defaultImage.Url"
+                         width="@defaultImage.Width"
+                         height="@defaultImage.Height"
+                         alt="@Model.Name">
+                }
+                <figcaption class="figure-caption d-flex flex-column text-center">
+                    <div class="d-inline-flex align-items-center justify-content-center m-2">
+                        <svg class="bi" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false">
+                            <use xlink:href="/lib/bootstrap-icons/bootstrap-icons.svg#moon-stars-fill" />
+                        </svg>
+                        <div class="form-check form-switch form-check-inline m-0 ms-2">
+                            <input id="checkSwitchImageBackground" class="form-check-input" type="checkbox" role="switch" title="Select image background">
+                        </div>
+                        <svg class="bi" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false">
+                            <use xlink:href="/lib/bootstrap-icons/bootstrap-icons.svg#brightness-high-fill" />
+                        </svg>
+                    </div>
+                    <small>Dimensions</small>
+                    @foreach (ImageDto image in Model.Images)
+                    {
+                        <a class="text-reset small" href="@image.Url" target="_blank">@String.Format("{0} x {1} ({2})", image.Width, image.Height, image.PixelDensity)</a>
+                    }
+                    <a asp-action="ChangeImage" asp-route-id="@Model?.Id">Change image</a>
+                </figcaption>
+            </figure>
+
+        </div>
+    }
+
+    <div class="col">
+
+        <div>
+            <dl class="row">
+                <dt class="col-sm-2 mb-2">
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+                <dt class="col-sm-2 mb-2">
+                    @Html.DisplayNameFor(model => model.Title)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Title)
+                </dd>
+                <dt class="col-sm-2 mb-2">
+                    @Html.DisplayNameFor(model => model.Volume)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Volume)
+                </dd>
+            </dl>
+        </div>
+
+        <div>
+            <h4>Wine</h4>
+            <hr />
     
-    @Html.DisplayFor(model => model.WineInformation)
+            @Html.DisplayFor(model => model.WineInformation)
+
+        </div>
+
+        <div>
+            <h4>Food Business Operator</h4>
+            <hr />
+
+            @Html.DisplayFor(model => model.FoodBusinessOperator)
+
+        </div>
+
+    </div>
 
 </div>
 
-@if (Model.ProductIngredients != null && Model.ProductIngredients.Count > 0)
+@if (Model != null && Model.ProductIngredients != null && Model.ProductIngredients.Count > 0)
 {
     <h4>Ingredients</h4>
     <hr />
@@ -50,50 +109,59 @@
     }
 }
 
-<div>
-    <h4>Nutrition information</h4>
-    <hr />
- 
-    @Html.DisplayFor(model => model.NutritionInformation)
+@if (Model != null && Model.NutritionInformation != null)
+{
+    <div>
+        <h4>Nutrition information</h4>
+        <hr />
 
-</div>
+        @Html.DisplayFor(model => model.NutritionInformation)
 
-<div>
-    <h4>Responsible consumption</h4>
-    <hr />
+    </div>
+}
 
-    @Html.DisplayFor(model => model.ResponsibleConsumption)
+@if (Model != null && Model.ResponsibleConsumption != null && (Model.ResponsibleConsumption.WarningDrinkingBelowLegalAge ||
+                                                               Model.ResponsibleConsumption.WarningDrinkingDuringPregnancy ||
+                                                               Model.ResponsibleConsumption.WarningDrinkingWhenDriving))
+{
+    <div>
+        <h4>Responsible consumption</h4>
+        <hr />
 
-</div>
+        @Html.DisplayFor(model => model.ResponsibleConsumption)
 
-<div>
-    <h4>Certifications</h4>
-    <hr />
+    </div>
+}
 
-    @Html.DisplayFor(model => model.Certifications)
+@if (Model != null && Model.Certifications != null && Model.Certifications.Organic)
+{
+    <div>
+        <h4>Certifications</h4>
+        <hr />
 
-</div>
+        @Html.DisplayFor(model => model.Certifications)
 
-<div>
-    <h4>Food Business Operator</h4>
-    <hr />
+    </div>
+}
 
-    @Html.DisplayFor(model => model.FoodBusinessOperator)
+@if (Model != null && Model.Logistics != null)
+{
+    <div>
+        <h4>Logistics</h4>
+        <hr />
 
-</div>
+        @Html.DisplayFor(model => model.Logistics)
 
-<div>
-    <h4>Logistics</h4>
-    <hr />
-    
-    @Html.DisplayFor(model => model.Logistics)
+    </div>
+}
 
-</div>
+@if (Model != null && Model.Portability != null)
+{
+    <div>
+        <h4>Portability</h4>
+        <hr />
 
-<div>
-    <h4>Portability</h4>
-    <hr />
+        @Html.DisplayFor(model => model.Portability)
 
-    @Html.DisplayFor(model => model.Portability)
-
-</div>
+    </div>
+}

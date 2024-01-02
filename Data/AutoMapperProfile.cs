@@ -15,18 +15,18 @@ namespace ELabel.Data
 
             CreateMap<Product, WineProductDetailsDto>()
                 .ReverseMap()
-                .ForPath(p => p.Image, opt => opt.Ignore())
+                .ForPath(p => p.Images, opt => opt.Ignore())
                 .ForPath(p => p.Ingredients, opt => opt.Ignore())
                 .ForPath(p => p.ProductIngredients, opt => opt.Ignore());
 
             CreateMap<Product, ProductExcelDto>()
-                .ForMember(dest => dest.ImageDataUrl, opt => opt.MapFrom(src => src.Image != null ? src.Image.DataUrl : null))
+                .ForMember(dest => dest.ImageDataUrl, opt => opt.MapFrom(src => src.Images == null || src.Images.Count == 0 ? null : src.Images.OrderByDescending(i => i.Width).First().DataUrl))
                 .ForMember(dest => dest.IngredientIdList, opt => opt.MapFrom(
                     src => src.ProductIngredients.OrderBy(p => p.Order).Select(pi => pi.IngredientId).ToList()))
                 //.ForMember(dest => dest.LabelUrl, opt => opt.MapFrom<UrlResolver>())
                 .ForMember(dest => dest.Code, opt => opt.MapFrom(src => src.GetCode()))
                 .ReverseMap()
-                .ForPath(p => p.Image, opt => opt.Ignore())
+                .ForPath(p => p.Images, opt => opt.Ignore())
                 .ForPath(p => p.Ingredients, opt => opt.Ignore())
                 .ForPath(p => p.ProductIngredients, opt => opt.Ignore());
 
@@ -34,7 +34,7 @@ namespace ELabel.Data
 
             CreateMap<Product, WineProductEditDto>()
                 .ReverseMap()
-                .ForPath(p => p.Image, opt => opt.Ignore())
+                .ForPath(p => p.Images, opt => opt.Ignore())
                 .ForPath(p => p.Ingredients, opt => opt.Ignore())
                 .ForPath(p => p.ProductIngredients, opt => opt.Ignore());
 

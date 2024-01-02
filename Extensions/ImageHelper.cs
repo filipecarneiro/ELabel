@@ -5,21 +5,31 @@ namespace ELabel.Extensions
 {
     public class OptimizedImage
     {
-        public OptimizedImage(string contentType, byte[] content, int? width, int? height)
+        public OptimizedImage(string contentType, byte[] content, int width, int height,string? pixelDensity)
         {
             ContentType = contentType;
             Content = content;
             Width = width;
             Height = height;
+            PixelDensity = pixelDensity;
         }
 
         public string ContentType { get; }
 
         public byte[] Content { get; }
 
-        public int? Width { get; }
+        public int Width { get; }
 
-        public int? Height { get; }
+        public int Height { get; }
+
+        public string? PixelDensity { get; }
+
+        public int BiggerSideLenght {
+            get
+            {
+                return Width >= Height ? Width : Height;
+            }
+        }
     }
 
     public static class ImageHelper
@@ -51,7 +61,7 @@ namespace ELabel.Extensions
             return content;
         }
 
-        public static OptimizedImage? Optimize(byte[] content, int maxWidth = int.MaxValue, int maxHeight = int.MaxValue, int quality = 75)
+        public static OptimizedImage? Optimize(byte[] content, int maxWidth = int.MaxValue, int maxHeight = int.MaxValue, string? pixelDensity = null, int quality = 75)
         {
             int width, height;
             bool resize = false;
@@ -89,10 +99,50 @@ namespace ELabel.Extensions
             SKData data = bitmap.Encode(SKEncodedImageFormat.Webp, quality);
             bitmap.Dispose();
 
-            OptimizedImage image = new OptimizedImage("image/webp", data.ToArray(), width, height);
+            OptimizedImage image = new OptimizedImage("image/webp", data.ToArray(), width, height, pixelDensity);
             data.Dispose();
 
             return image;
+        }
+
+        public static OptimizedImage?[] OptimizedSet(byte[] content, List<(int SideLenght, string PixelDensity)> sizes, int quality)
+        {
+            List<OptimizedImage?> images = new List<OptimizedImage?>();
+
+            foreach(var size in sizes)
+            {
+                OptimizedImage? optimizedImage = Optimize(content, size.SideLenght, size.SideLenght, size.PixelDensity, quality);
+
+                if (optimizedImage == null || optimizedImage.BiggerSideLenght != size.SideLenght)
+                    continue;
+
+                images.Add(optimizedImage);
+            }
+
+            return images.ToArray();
+        }
+
+        public static int? GetBiggerSideLenght(byte[] content)
+        {
+            SKBitmap bitmap = SKBitmap.Decode(content);
+
+            if (bitmap == null)
+            {
+                return null;
+            }
+
+            if (bitmap.IsEmpty)
+            {
+                bitmap.Dispose();
+                return null;
+            }
+
+            int width = bitmap.Width;
+            int height = bitmap.Height;
+
+            bitmap.Dispose();
+
+            return width >= height ? width : height;
         }
     }
 }

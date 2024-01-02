@@ -106,7 +106,7 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" asp-action="Edit" asp-route-id="@item?.Id">Edit</a></li>
-                            @if (item != null && item.Image != null)
+                            @if (item != null && item.Images != null && item.Images.Count > 0)
                             {
                                 <li><a class="dropdown-item" asp-action="DeleteImage" asp-route-id="@item.Id">Delete image</a></li>
                             }

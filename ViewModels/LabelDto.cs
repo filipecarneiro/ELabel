@@ -18,7 +18,7 @@ namespace ELabel.ViewModels
          * Details
          */
 
-        public ImageDto? Image { get; set; }
+        public List<ImageDto>? Images { get; set; }
 
         public WineInformation? WineInformation { get; set; }
 

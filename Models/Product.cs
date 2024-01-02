@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace ELabel.Models
 {
     //[Index(nameof(Name), nameof(Volume), "WineInformation_Vintage", IsUnique = true)] // TODO: Protect UI for this constraint on Create, Edit and Import
+    //[Index(nameof(Sku), IsUnique = true)] // TODO: Protect UI for this constraint on Create, Edit and Import
     public class Product : AuditableEntity
     {
         [MaxLength(100)]
@@ -51,8 +52,7 @@ namespace ELabel.Models
         // Navigation properties
         // https://docs.microsoft.com/en-us/ef/core/modeling/relationships
 
-        [InverseProperty("Product")]
-        public virtual Image? Image { get; set; }
+        public List<Image> Images { get; private set; } = new();
 
         public List<Ingredient> Ingredients { get; } = new();
         public List<ProductIngredient> ProductIngredients { get; private set; } = new();
@@ -72,19 +72,26 @@ namespace ELabel.Models
             other.Logistics = this.Logistics.DeepCopy();
             other.Portability = this.Portability.DeepCopy();
 
-            if(this.Image != null)
-            { 
-                other.Image = new Image() {
+            // Copy related images
+
+            other.Images = new List<Image>();
+            foreach (Image image in this.Images.OrderBy(i => i.Width).ToList())
+            {
+                Image otherImage = new Image()
+                {
                     Id = Guid.NewGuid(),
                     ProductId = other.Id,
-                    ContentType = this.Image.ContentType,
-                    Content = this.Image.Content,
-                    Width = this.Image.Width,
-                    Height = this.Image.Height
+                    ContentType = image.ContentType,
+                    Content = image.Content,
+                    Width = image.Width,
+                    Height = image.Height,
+                    PixelDensity = image.PixelDensity
                 };
+
+                other.Images.Add(otherImage);
             }
-            else
-                other.Image = null;
+
+            // Copy related Product Ingredients
 
             other.ProductIngredients = new List<ProductIngredient>();
             foreach (ProductIngredient productIngredient in this.ProductIngredients.OrderBy(p => p.Order).ToList())

@@ -86,7 +86,7 @@ namespace ELabel.Controllers
         private async Task<LabelDto?> GetLabelAsync(Guid id)
         {
             var product = await _context.Product
-                            .Include(p => p.Image)
+                            .Include(p => p.Images.OrderBy(i => i.Width))
                             .Include(p => p.ProductIngredients.OrderBy(pi => pi.Order))
                             .ThenInclude(pi => pi.Ingredient)
                             .AsNoTracking()

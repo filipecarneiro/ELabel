@@ -6,9 +6,25 @@ using System.Text.RegularExpressions;
 
 namespace ELabel.Models
 {
-    [Index(nameof(ProductId), IsUnique = true)]
+    [Index(nameof(ProductId), nameof(PixelDensity), IsUnique = true)]
     public class Image : BaseEntity
     {
+        public static int MinBiggerSideLenght = 500;
+        public static int MaxBiggerSideLenght = MinBiggerSideLenght* 4;
+        public static readonly List<(int SideLenght, string PixelDensity)> DefaultSizes = new()
+        {
+            (MinBiggerSideLenght / 4, "0.25x"),
+            (MinBiggerSideLenght / 2, "0.5x"),
+            (MinBiggerSideLenght, "1x"),
+            (MinBiggerSideLenght * 2, "2x"),
+            (MinBiggerSideLenght * 3, "3x"),
+            (MinBiggerSideLenght * 4, "4x")
+        };
+        public static string DefaultMimeType = "image/webp";
+        public static int DefaultQuality = 90;
+        public static string StandardPixelDensity = "1x";
+        public static string ExportPixelDensity = "1x";
+
         [Required]
         [MaxLength(20)]
         public required string ContentType { get; set; }
@@ -16,10 +32,14 @@ namespace ELabel.Models
         [Required]
         public required byte[] Content { get; set; }
 
-        public int? Width { get; set; }
+        [Required]
+        public required int Width { get; set; }
 
-        public int? Height { get; set; }
+        [Required]
+        public required int Height { get; set; }
 
+        [MaxLength(5)]
+        public string? PixelDensity { get; set; }
 
         // Auxiliary read-only properties
 

@@ -11,20 +11,22 @@
     <p class="fs-3">@Model.WineInformation?.Appellation</p>
 </div>
 
-@if (Model.Image != null)
+@if (Model.Images != null && Model.Images.Count > 0)
 {
+    ImageDto? defaultImage = Model.Images.SingleOrDefault(i => i.PixelDensity == Image.StandardPixelDensity);
+    if (defaultImage == null)
+        defaultImage = Model.Images.First();
+
     <div class="d-flex justify-content-center mb-3">
         <img class="img-fluid"
-             src="@Model.Image.DataUrl"
-             @if(Model.Image.Width != null)
-             {
-                 @:width='@Model.Image.Width'
-             }
-             @if(Model.Image.Height != null)
-             {
-                 @:height='@Model.Image.Height'
-             }
+             src="@defaultImage.Url"
+             width="@defaultImage.Width"
+             height="@defaultImage.Height"
              alt="@Model.Name"
+             @if(Model.Images.Count > 1)
+             {
+                <text>srcset="@foreach(ImageDto image in Model.Images){<text>@image.Url @(String.IsNullOrWhiteSpace(image.PixelDensity) ? image.Width + "w" : image.PixelDensity)</text>@if(image != Model.Images.Last()){<text>, </text>}}"</text>
+             }
         >
     </div>
 }

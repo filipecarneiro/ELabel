@@ -132,7 +132,7 @@ namespace ELabel.Areas.Admin.Controllers
             }
 
             var product = await _context.Product
-                                        .Include(p => p.Image)
+                                        .Include(p => p.Images.OrderBy(i => i.Width))
                                         .Include(p => p.ProductIngredients.OrderBy(pi => pi.Order))
                                         .ThenInclude(pi => pi.Ingredient)
                                         .AsNoTracking()
@@ -220,7 +220,7 @@ namespace ELabel.Areas.Admin.Controllers
             }
 
             var product = await _context.Product
-                                        .Include(p => p.Image)
+                                        .Include(p => p.Images)
                                         .Include(p => p.ProductIngredients.OrderBy(pi => pi.Order))
                                         //.ThenInclude(pi => pi.Ingredient)
                                         .FirstOrDefaultAsync(m => m.Id == id);
@@ -371,7 +371,7 @@ namespace ELabel.Areas.Admin.Controllers
             }
 
             var product = await _context.Product
-                                        .Include(p => p.Image)
+                                        .Include(p => p.Images)
                                         .Include(p => p.ProductIngredients.OrderBy(pi => pi.Order))
                                         //.ThenInclude(pi => pi.Ingredient)
                                         .FirstOrDefaultAsync(m => m.Id == id);
@@ -419,6 +419,7 @@ namespace ELabel.Areas.Admin.Controllers
             {
                 return Problem("Entity set 'ApplicationDbContext.Product'  is null.");
             }
+
             var product = await _context.Product.FindAsync(id);
             if (product != null)
             {
@@ -462,7 +463,7 @@ namespace ELabel.Areas.Admin.Controllers
         public async Task<IActionResult> Export()
         {
             var query = await _context.Product
-                                      .Include(p => p.Image)
+                                      .Include(p => p.Images.Where(i => i.PixelDensity == Image.ExportPixelDensity))
                                       .Include(p => p.ProductIngredients.OrderBy(pi => pi.Order))
                                         //.ThenInclude(pi => pi.Ingredient)
                                       .AsNoTracking()
@@ -470,7 +471,6 @@ namespace ELabel.Areas.Admin.Controllers
                                       .ToListAsync();
 
             List<ProductExcelDto> products = _mapper.Map<List<ProductExcelDto>>(query);
-
 
             // TODO: Use UrlResolver, with Dependency Injection, to add the current Url
             string baseUrl = UrlHelper.GetBaseUrl(Request);
@@ -545,7 +545,7 @@ namespace ELabel.Areas.Admin.Controllers
                 foreach (ProductExcelDto importedProduct in importedProducts)
                 {
                     Product product = _mapper.Map<Product>(importedProduct);
-                    product.Image = null;
+                    product.Images.Clear();
                     product.ProductIngredients.Clear();
 
                     if (product.Id == Guid.Empty)
@@ -572,6 +572,8 @@ namespace ELabel.Areas.Admin.Controllers
 
                         await _context.ProductIngredient.Where(i => i.ProductId == product.Id).ExecuteDeleteAsync();
 
+                        // Add Product Ingredients to database
+
                         short order = 0;
                         foreach (Guid ingredientId in importedProduct.IngredientIdList)
                         {
@@ -591,40 +593,46 @@ namespace ELabel.Areas.Admin.Controllers
 
                     if (importedProduct.ImageDataUrl != null && !string.IsNullOrEmpty(importedProduct.ImageDataUrl))
                     {
-                        bool newImage = false;
-                        Image? image = await _context.Image.FirstOrDefaultAsync(m => m.ProductId == product.Id);
-
-                        if (image == null)
-                        {
-                            newImage = true;
-                            image = new Image()
-                            {
-                                Id = Guid.NewGuid(),
-                                ProductId = product.Id,
-                                ContentType = string.Empty,
-                                Content = new byte[0]
-                            };
-                        }
-
                         byte[]? imageByteBuffer = ImageHelper.ConvertFromDataUrl(importedProduct.ImageDataUrl);
 
                         if (imageByteBuffer == null)
                             continue;
 
-                        OptimizedImage? optimizedImage = ImageHelper.Optimize(imageByteBuffer, ImageFileUpload.MaxWidth, ImageFileUpload.MaxHeight, ImageFileUpload.Quality);
+                        int? biggerSideLenght = ImageHelper.GetBiggerSideLenght(imageByteBuffer);
 
-                        if (optimizedImage == null || optimizedImage.Width < ImageFileUpload.MinWidth || optimizedImage.Height < ImageFileUpload.MinHeight)
+                        if (biggerSideLenght == null || biggerSideLenght < Image.MinBiggerSideLenght)
                             continue;
 
-                        image.ContentType = optimizedImage.ContentType;
-                        image.Content = optimizedImage.Content;
-                        image.Width = optimizedImage.Width;
-                        image.Height = optimizedImage.Height;
+                        OptimizedImage?[] optimizedImages = ImageHelper.OptimizedSet(imageByteBuffer, Image.DefaultSizes, Image.DefaultQuality);
 
-                        if (newImage)
+                        if (optimizedImages == null)
+                            continue;
+
+                        // Delete existing images
+
+                        await _context.Image.Where(i => i.ProductId == product.Id).ExecuteDeleteAsync();
+
+                        // Add images to database
+
+                        foreach(OptimizedImage? optimizedImage in optimizedImages)
+                        {
+                            if (optimizedImage == null)
+                                continue;
+
+                            Image image = new Image()
+                            {
+                                Id = Guid.NewGuid(),
+                                ProductId = product.Id,
+                                Content = optimizedImage.Content,
+                                ContentType = optimizedImage.ContentType,
+                                Width = optimizedImage.Width,
+                                Height = optimizedImage.Height,
+                                PixelDensity = optimizedImage.PixelDensity
+                            };
+
                             _context.Add(image);
-                        else
-                            _context.Update(image);
+                        }
+
                         await _context.SaveChangesAsync();
                     }
                 }
@@ -699,41 +707,53 @@ namespace ELabel.Areas.Admin.Controllers
 
             try
             {
-                // Resize image
+                // Test image
 
-                OptimizedImage? optimizedImage = ImageHelper.Optimize(byteArray, ImageFileUpload.MaxWidth, ImageFileUpload.MaxHeight, ImageFileUpload.Quality);
+                int? biggerSideLenght = ImageHelper.GetBiggerSideLenght(byteArray);
 
-                if (optimizedImage == null)
+                if (biggerSideLenght == null)
                 {
                     ModelState.AddModelError("CustomError", $"Invalid image format! Try another file.");
                     ViewData["ProductTitle"] = ProductTitle;
                     return View(imageFileUpload);
                 }
 
-                if (optimizedImage.Width < ImageFileUpload.MinWidth || optimizedImage.Height < ImageFileUpload.MinHeight)
+                if (biggerSideLenght < Image.MinBiggerSideLenght)
                 {
-                    ModelState.AddModelError("CustomError", $"Image is too small ({optimizedImage.Width}x{optimizedImage.Height})! Chose an image with, at least, {ImageFileUpload.MinWidth}x{ImageFileUpload.MinHeight} pixels.");
+                    ModelState.AddModelError("CustomError", $"Image is too small (The bigger side has {biggerSideLenght}px)! Chose an image with, at least, {Image.MinBiggerSideLenght} pixels in width or height.");
                     ViewData["ProductTitle"] = ProductTitle;
                     return View(imageFileUpload);
                 }
 
-                // Delete existing image
+                // Resize image
+
+                OptimizedImage?[] optimizedImages = ImageHelper.OptimizedSet(byteArray, Image.DefaultSizes, Image.DefaultQuality);
+
+                // Delete existing images
 
                 await _context.Image.Where(i => i.ProductId == id).ExecuteDeleteAsync();
 
-                // Add new image to database
+                // Add images to database
 
-                Image image = new Image()
+                foreach(OptimizedImage? optimizedImage in optimizedImages)
                 {
-                    Id = Guid.NewGuid(),
-                    Content = optimizedImage.Content,
-                    ContentType = optimizedImage.ContentType,
-                    Width = optimizedImage.Width,
-                    Height = optimizedImage.Height,
-                    ProductId = id
-                };
+                    if (optimizedImage == null)
+                        continue;
 
-                _context.Add(image);
+                    Image image = new Image()
+                    {
+                        Id = Guid.NewGuid(),
+                        ProductId = id,
+                        Content = optimizedImage.Content,
+                        ContentType = optimizedImage.ContentType,
+                        Width = optimizedImage.Width,
+                        Height = optimizedImage.Height,
+                        PixelDensity = optimizedImage.PixelDensity
+                    };
+
+                    _context.Add(image);
+                }
+
                 await _context.SaveChangesAsync();
             }
             catch (Exception e)

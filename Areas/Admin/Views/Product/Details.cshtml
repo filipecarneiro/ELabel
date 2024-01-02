@@ -6,24 +6,6 @@
 
 <h1>Product</h1>
 
-@if (Model.Image != null)
-{
-    <div class="float-end">
-        <img class="img-fluid float-end ms-5"
-             style="max-width: 100px"
-             src="@Model.Image.DataUrl"
-             @if(Model.Image.Width != null)
-             {
-                 @:width='@Model.Image.Width'
-             }
-             @if(Model.Image.Height != null)
-             {
-                 @:height='@Model.Image.Height'
-             }
-             alt="@Model.Name">
-    </div>
-}
-
 <partial name="_DetailsPartial" />
 
 <div class="mb-3">
@@ -38,7 +20,7 @@
 
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    @if (Model != null && Model.Image != null)
+    @if (Model != null && Model.Images != null && Model.Images.Count > 0)
     {
         <a asp-action="DeleteImage" asp-route-id="@Model?.Id">Delete image</a> <span>|</span>
     }
@@ -47,3 +29,23 @@
     <a asp-action="Duplicate" asp-route-id="@Model?.Id">Duplicate</a> |
     <a asp-action="Index">Back to List</a>
 </div>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var imgElement = document.getElementById('image-preview');
+            var checkSwitchImageBackground = document.getElementById('checkSwitchImageBackground');
+
+            checkSwitchImageBackground.addEventListener('click', function () {
+                if (checkSwitchImageBackground.checked) {
+                    imgElement.classList.remove('bg-dark');
+                    imgElement.classList.add('bg-light');
+                }
+                else {
+                    imgElement.classList.remove('bg-light');
+                    imgElement.classList.add('bg-dark');
+                }
+            });
+        });
+    </script>
+}

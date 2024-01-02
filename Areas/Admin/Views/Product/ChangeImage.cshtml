@@ -44,12 +44,8 @@
         <div class="p-3 bg-light rounded-3">
             <h3>Image Optimization</h3>
             <p>For better performance, image will be resized and compressed for web.</p>
-            <p>Please provide a product image, in any format, with the following minimum dimensions:</p>
-            <ul>
-                <li>Minimum width: @ImageFileUpload.MinWidth px</li>
-                <li>Minimum height: @ImageFileUpload.MinHeight px</li>
-            </ul>
-            <small>Uploaded images will be scaled down to a maximum size of @ImageFileUpload.MaxWidth x @ImageFileUpload.MaxHeight px and will be stored in <a href="https://en.wikipedia.org/wiki/WebP" target="_blank" rel="noopener">WebP format</a>, with @ImageFileUpload.Quality% quality.</small>
+            <p>Please provide a product image, in any format, with one of it's with <code>@Image.MinBiggerSideLenght px</code>.</p>
+            <small>Uploaded images will be scaled down to a maximum size of @Image.MaxBiggerSideLenght x @Image.MaxBiggerSideLenght px and will be stored in <a href="https://en.wikipedia.org/wiki/WebP" target="_blank" rel="noopener">WebP format</a>, with @Image.DefaultQuality% quality.</small>
         </div>
 
     </div>
