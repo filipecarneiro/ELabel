@@ -59,37 +59,37 @@
 		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
 	</resheader>
 	<data name="Acidity regulator" xml:space="preserve">
-		<value>Acidity regulator</value>
+		<value>Ρυθμιστής οξύτητας</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Activators for alcoholic and malolactic fermentation" xml:space="preserve">
-		<value>Activators for alcoholic and malolactic fermentation</value>
+		<value>Ενεργοποιητές για αλκοολική και μηλογαλακτική ζύμωση</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Admin Dashboard" xml:space="preserve">
-		<value>Administration Dashboard</value>
+		<value>Πίνακας ελέγχου διαχείρισης</value>
 		<comment>Home</comment>
 	</data>
 	<data name="Aleppo pine resin" xml:space="preserve">
-		<value>Aleppo pine resin</value>
+		<value>Ρητίνη χαλεπίου πεύκης</value>
 		<comment>Other</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Antioxidant" xml:space="preserve">
-		<value>Antioxidant</value>
+		<value>Αντιοξειδωτικό</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Ascorbic acid" xml:space="preserve">
-		<value>Ascorbic acid</value>
+		<value>Ασκορβικό οξύ</value>
 		<comment>Antioxidant</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Bottled in a protective atmosphere" xml:space="preserve">
-		<value>Bottled in a protective atmosphere</value>
+		<value>Εμφιαλώνεται σε προστατευτική ατμόσφαιρα</value>
 		<comment>Packaging gases&#13; Article 48a(6) of Delegated Regulation (EU) 2019/33 clearly states, ‘the indication of additives falling under the&#13; category “packaging gases” in the list of ingredients may be replaced by the specific particular “Bottled in a&#13; protective atmosphere” or “Bottling may happen in a protective atmosphere”’. &#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208</comment>
 	</data>
 	<data name="Bottling may happen in a protective atmosphere" xml:space="preserve">
-		<value>Bottling may happen in a protective atmosphere</value>
+		<value>Η εμφιάλωση μπορεί να γίνει σε προστατευτική ατμόσφαιρα</value>
 		<comment>Packaging gases&#13; Article 48a(6) of Delegated Regulation (EU) 2019/33 clearly states, ‘the indication of additives falling under the&#13; category “packaging gases” in the list of ingredients may be replaced by the specific particular “Bottled in a&#13; protective atmosphere” or “Bottling may happen in a protective atmosphere”’. &#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208</comment>
 	</data>
 	<data name="Brut" xml:space="preserve">
@@ -97,103 +97,103 @@
 		<comment>Check glossary with tag "Wine sugar content"</comment>
 	</data>
 	<data name="Brut nature" xml:space="preserve">
-		<value>Brut nature</value>
+		<value>Brut φύση</value>
 		<comment>Check glossary with tag "Wine sugar content"</comment>
 	</data>
 	<data name="Calcium sulphate" xml:space="preserve">
-		<value>Calcium sulphate</value>
+		<value>Θειικό ασβέστιο</value>
 		<comment>AcidityRegulator</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Caramel" xml:space="preserve">
-		<value>Caramel</value>
+		<value>Καραμέλα</value>
 		<comment>Other</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Carbohydrate" xml:space="preserve">
-		<value>Carbohydrate</value>
+		<value>Υδατάνθρακας</value>
 		<comment>Nutrition Information</comment>
 	</data>
 	<data name="Carbon dioxide" xml:space="preserve">
-		<value>Carbon dioxide</value>
+		<value>Διοξείδιο του άνθρακα</value>
 		<comment>RawMaterial</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Carboxymethylcellulose" xml:space="preserve">
-		<value>Carboxymethylcellulose</value>
+		<value>Καρβοξυμεθυλοκυτταρίνη</value>
 		<comment>Stabiliser</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Certifications" xml:space="preserve">
-		<value>Certifications</value>
+		<value>Πιστοποιήσεις</value>
 		<comment>Certifications</comment>
 	</data>
 	<data name="Certified organic based on EU-Guidelines" xml:space="preserve">
-		<value>Certified organic based on EU-Guidelines</value>
+		<value>Πιστοποιημένα βιολογικά με βάση τις κατευθυντήριες γραμμές της ΕΕ</value>
 		<comment>Certifications</comment>
 	</data>
 	<data name="Citric acid" xml:space="preserve">
-		<value>Citric acid</value>
+		<value>Κιτρικό οξύ</value>
 		<comment>Stabiliser</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Clarifying agent" xml:space="preserve">
-		<value>Clarifying agent</value>
+		<value>Διευκρινιστικός παράγοντας</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Concentrated grape must" xml:space="preserve">
-		<value>Concentrated grape must</value>
+		<value>Συμπυκνωμένο γλεύκος σταφυλιών</value>
 		<comment>EnrichmentSubstance</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Correction of defect" xml:space="preserve">
-		<value>Correction of defect</value>
+		<value>Διόρθωση ελαττώματος</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Dimethyldicarbonate" xml:space="preserve">
-		<value>Dimethyldicarbonate</value>
+		<value>Διμεθυλοδικαρβονικό</value>
 		<comment>Preservative</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Don't drink during pregnancy and breastfeeding" xml:space="preserve">
-		<value>Don't drink during pregnancy and breastfeeding</value>
+		<value>Μην πίνετε κατά τη διάρκεια της εγκυμοσύνης και του θηλασμού</value>
 		<comment>Responsible Consumption</comment>
 	</data>
 	<data name="Don't drink when below legal drinking age" xml:space="preserve">
-		<value>Don't drink when below legal drinking age</value>
+		<value>Μην πίνετε όταν είστε κάτω από τη νόμιμη ηλικία κατανάλωσης αλκοόλ</value>
 		<comment>Responsible Consumption</comment>
 	</data>
 	<data name="Don't drink when driving a car, motorbike or operating machinery" xml:space="preserve">
-		<value>Don't drink when driving a car, motorbike or operating machinery</value>
+		<value>Μην πίνετε όταν οδηγείτε αυτοκίνητο, μοτοσικλέτα ή χειρίζεστε μηχανήματα</value>
 		<comment>Responsible Consumption</comment>
 	</data>
 	<data name="Dry" xml:space="preserve">
-		<value>Dry</value>
+		<value>Στεγνός</value>
 		<comment>Check glossary with tag "Wine sugar content"</comment>
 	</data>
 	<data name="Egg" xml:space="preserve">
-		<value>Egg</value>
+		<value>Αυγό</value>
 		<comment>ClarifyingAgent</comment>
 		<comment>1</comment>
 	</data>
 	<data name="Electronic label provided by" xml:space="preserve">
-		<value>Electronic label provided by</value>
+		<value>Ηλεκτρονική ετικέτα που παρέχεται από</value>
 		<comment>Footer</comment>
 	</data>
 	<data name="Energy" xml:space="preserve">
-		<value>Energy</value>
+		<value>Ενέργεια</value>
 		<comment>Nutrition Information</comment>
 	</data>
 	<data name="Enrichment substance" xml:space="preserve">
-		<value>Enrichment substance</value>
+		<value>Ουσία εμπλουτισμού</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Enzyme" xml:space="preserve">
-		<value>Enzyme</value>
+		<value>Ένζυμο</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Expedition liqueur" xml:space="preserve">
-		<value>Expedition liqueur</value>
+		<value>Λικέρ Expedition</value>
 		<comment>RawMaterial</comment>
 		<comment>[]</comment>
 	</data>
@@ -202,249 +202,249 @@
 		<comment>Check glossary with tag "Wine sugar content"</comment>
 	</data>
 	<data name="Extra dry" xml:space="preserve">
-		<value>Extra dry</value>
+		<value>Εξαιρετικά ξηρό</value>
 		<comment>Check glossary with tag "Wine sugar content"</comment>
 	</data>
 	<data name="Fat" xml:space="preserve">
-		<value>Fat</value>
+		<value>Λίπος</value>
 		<comment>Nutrition Information</comment>
 	</data>
 	<data name="Fermentation agent" xml:space="preserve">
-		<value>Fermentation agent</value>
+		<value>Παράγοντας ζύμωσης</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Fortified wine" xml:space="preserve">
-		<value>Fortified wine</value>
+		<value>Ενισχυμένος οίνος</value>
 		<comment>WineType</comment>
 	</data>
 	<data name="Fumaric acid" xml:space="preserve">
-		<value>Fumaric acid</value>
+		<value>Φουμαρικό οξύ</value>
 		<comment>Stabiliser</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Gases and packaging gas" xml:space="preserve">
-		<value>Gases and packaging gas</value>
+		<value>Αέρια και αέριο συσκευασίας</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Grapes" xml:space="preserve">
-		<value>Grapes</value>
+		<value>Σταφύλια</value>
 		<comment>RawMaterial&#13; &#13; Ingredients shall be designated by their specific name, with the exceptions provided for in the FIC Regulation and in Delegated Regulation (EU) 2019/33 (e.g. ‘grapes’ referring to the raw material).&#13; &#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208</comment>
 		<comment>[]</comment>
 		<comment>Ingredients shall be designated by their specific name, with the exceptions provided for in the FIC Regulation and in Delegated Regulation (EU) 2019/33 (e.g. ‘grapes’ referring to the raw material).</comment>
 		<comment>https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208</comment>
 	</data>
 	<data name="Gum arabic" xml:space="preserve">
-		<value>Gum arabic</value>
+		<value>Αραβικό κόμμι</value>
 		<comment>Stabiliser</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Home Page" xml:space="preserve">
-		<value>Home Page</value>
+		<value>Αρχική σελίδα</value>
 		<comment>Home</comment>
 	</data>
 	<data name="Ingredients" xml:space="preserve">
-		<value>Ingredients</value>
+		<value>Συστατικά</value>
 		<comment>Ingredients&#13; &#13; Table 2 of Part A of Annex I of Delegated Regulation (EU) 2019/934 identifies the full list of additives and processing aids that can be used in wine production.&#13; &#13; https://eur-lex.europa.eu/search.html?scope=EURLEX&amp;text=2019%2F934&amp;lang=en&amp;type=quick&amp;qid=1701362513497</comment>
 		<comment>Table 2 of Part A of Annex I of Delegated Regulation (EU) 2019/934 identifies the full list of additives and processing aids that can be used in wine productionhttps://eur-lex.europa.eu/search.html?scope=EURLEX&amp;text=2019%2F934&amp;lang=en&amp;type=quick&amp;qid=1701362513497</comment>
 	</data>
 	<data name="Ingredients and nutrition information" xml:space="preserve">
-		<value>Ingredients and nutrition information</value>
+		<value>Πληροφορίες για συστατικά και διατροφή</value>
 		<comment>Open graph meta description.</comment>
 	</data>
 	<data name="Lactic acid" xml:space="preserve">
-		<value>Lactic acid</value>
+		<value>Γαλακτικό οξύ</value>
 		<comment>AcidityRegulator</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Malic acid" xml:space="preserve">
-		<value>Malic acid</value>
+		<value>Μηλικό οξύ</value>
 		<comment>AcidityRegulator</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Medium dry" xml:space="preserve">
-		<value>Medium dry</value>
+		<value>Μέτριο ξηρό</value>
 		<comment>Check glossary with tag "Wine sugar content"</comment>
 	</data>
 	<data name="Medium sweet" xml:space="preserve">
-		<value>Medium sweet</value>
+		<value>Μέτριο γλυκό</value>
 		<comment>Check glossary with tag "Wine sugar content"</comment>
 	</data>
 	<data name="Metatartaric acid" xml:space="preserve">
-		<value>Metatartaric acid</value>
+		<value>Μετατρυγικό οξύ</value>
 		<comment>Stabiliser</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Milk" xml:space="preserve">
-		<value>Milk</value>
+		<value>Γάλα</value>
 		<comment>ClarifyingAgent</comment>
 		<comment>1</comment>
 	</data>
 	<data name="Milk casein" xml:space="preserve">
-		<value>Milk casein</value>
+		<value>Καζεΐνη γάλακτος</value>
 		<comment>ClarifyingAgent</comment>
 		<comment>1</comment>
 	</data>
 	<data name="Milk products" xml:space="preserve">
-		<value>Milk products</value>
+		<value>Γαλακτοκομικά προϊόντα</value>
 		<comment>ClarifyingAgent</comment>
 		<comment>1</comment>
 	</data>
 	<data name="Milk protein" xml:space="preserve">
-		<value>Milk protein</value>
+		<value>Πρωτεΐνη γάλακτος</value>
 		<comment>ClarifyingAgent</comment>
 		<comment>1</comment>
 	</data>
 	<data name="Nutrition Information" xml:space="preserve">
-		<value>Nutrition Declaration</value>
+		<value>Διατροφική Δήλωση</value>
 		<comment>Nutrition Information&#13; &#13; The presentation of the nutrition declaration is regulated in Article 34 of the FIC Regulation.&#13; &#13; The order of presentation of the different elements of the nutrition declaration is defined in Annex XV of the FIC Regulation.&#13; &#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02011R1169-20180101&amp;qid=1701362311604</comment>
 		<comment>The presentation of the nutrition declaration is regulated in Article 34 of the FIC Regulation.</comment>
 		<comment>The order of presentation of the different elements of the nutrition declaration is defined in Annex XV of the FIC Regulation.</comment>
 		<comment>https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02011R1169-20180101&amp;qid=1701362311604</comment>
 	</data>
 	<data name="Nutritions per" xml:space="preserve">
-		<value>Nutritions per</value>
+		<value>Διατροφή ανά</value>
 		<comment>Nutrition Information&#13; &#13; Energy values and nutrition values must be indicated per 100 g or per 100 ml (Article 32(2) of the FIC Regulation).&#13; &#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02011R1169-20180101&amp;qid=1701362311604</comment>
 		<comment>Energy values and nutrition values must be indicated per 100 g or per 100 ml (Article 32(2) of the FIC Regulation).</comment>
 		<comment>https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02011R1169-20180101&amp;qid=1701362311604</comment>
 	</data>
 	<data name="Open E-Label project on GitHub" xml:space="preserve">
-		<value>Open E-Label project on GitHub</value>
+		<value>Ανοίξτε το έργο E-Label στο GitHub</value>
 		<comment>Footer message</comment>
 	</data>
 	<data name="Open-source solution for electronic labels" xml:space="preserve">
-		<value>Open-source solution for electronic labels</value>
+		<value>Λύση ανοιχτού κώδικα για ηλεκτρονικές ετικέτες</value>
 		<comment>Home</comment>
 	</data>
 	<data name="Orange wine" xml:space="preserve">
-		<value>Orange wine</value>
+		<value>Πορτοκαλί κρασί</value>
 		<comment>WineType</comment>
 	</data>
 	<data name="Other ingredient" xml:space="preserve">
-		<value>Other ingredient</value>
+		<value>Άλλο συστατικό</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Page not found" xml:space="preserve">
-		<value>Page not found</value>
+		<value>Η σελίδα δεν βρέθηκε</value>
 		<comment>404 page title</comment>
 	</data>
 	<data name="Potassium polyaspartate" xml:space="preserve">
-		<value>Potassium polyaspartate</value>
+		<value>Πολυασπαρτικό κάλιο</value>
 		<comment>Stabiliser</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Potassium sorbate" xml:space="preserve">
-		<value>Potassium sorbate</value>
+		<value>Σορβικό κάλιο</value>
 		<comment>Preservative</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Preservative" xml:space="preserve">
-		<value>Preservative</value>
+		<value>Συντηρητικό</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Protein" xml:space="preserve">
-		<value>Protein</value>
+		<value>Πρωτεΐνη</value>
 		<comment>Nutrition Information</comment>
 	</data>
 	<data name="Raw material" xml:space="preserve">
-		<value>Raw material</value>
+		<value>Πρώτη ύλη</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Red wine" xml:space="preserve">
-		<value>Red wine</value>
+		<value>Κόκκινο κρασί</value>
 		<comment>WineType</comment>
 	</data>
 	<data name="Responsible Consumption" xml:space="preserve">
-		<value>Responsible Consumption</value>
+		<value>Υπεύθυνη κατανάλωση</value>
 		<comment>Responsible Consumption</comment>
 	</data>
 	<data name="Rosé wine" xml:space="preserve">
-		<value>Rosé wine</value>
+		<value>Ροζέ κρασί</value>
 		<comment>WineType</comment>
 	</data>
 	<data name="Salt" xml:space="preserve">
-		<value>Salt</value>
+		<value>Αλάτι</value>
 		<comment>Nutrition Information</comment>
 	</data>
 	<data name="Select language" xml:space="preserve">
-		<value>Select language</value>
+		<value>Επιλέξτε γλώσσα</value>
 		<comment>Header message</comment>
 	</data>
 	<data name="Select theme" xml:space="preserve">
-		<value>Select theme</value>
+		<value>Επέλεξε θέμα</value>
 		<comment>Header message</comment>
 	</data>
 	<data name="Sequestrant" xml:space="preserve">
-		<value>Sequestrant</value>
+		<value>Μεσεγγύηση</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Sparkling wine" xml:space="preserve">
-		<value>Sparkling wine</value>
+		<value>Αφρώδης οίνος</value>
 		<comment>WineType</comment>
 	</data>
 	<data name="Stabiliser" xml:space="preserve">
-		<value>Stabiliser</value>
+		<value>Σταθεροποιητή</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Sucrose" xml:space="preserve">
-		<value>Sucrose</value>
+		<value>Σακχαρόζη</value>
 		<comment>EnrichmentSubstance</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Sugar" xml:space="preserve">
-		<value>Sugar</value>
+		<value>Ζάχαρη</value>
 		<comment>EnrichmentSubstance</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Sulphites" xml:space="preserve">
-		<value>Sulphites</value>
+		<value>Θειώδη</value>
 		<comment>Preservative</comment>
 		<comment>1</comment>
 	</data>
 	<data name="Sweet" xml:space="preserve">
-		<value>Sweet</value>
+		<value>Γλυκό</value>
 		<comment>Check glossary with tag "Wine sugar content"</comment>
 	</data>
 	<data name="Sweetener" xml:space="preserve">
-		<value>Sweetener</value>
+		<value>Γλυκαντικό</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Tartaric acid" xml:space="preserve">
-		<value>Tartaric acid</value>
+		<value>Τρυγικό οξύ</value>
 		<comment>AcidityRegulator</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="This label isn't available. Sorry about that." xml:space="preserve">
-		<value>This label isn't available. Sorry about that.</value>
+		<value>Αυτή η ετικέτα δεν είναι διαθέσιμη. Συγνώμη για αυτό.</value>
 		<comment>404 page content</comment>
 	</data>
 	<data name="Tirage liqueur" xml:space="preserve">
-		<value>Tirage liqueur</value>
+		<value>Λικέρ Tirage</value>
 		<comment>RawMaterial</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Web Accessibility Guidelines" xml:space="preserve">
-		<value>Web Accessibility Guidelines</value>
+		<value>Οδηγίες προσβασιμότητας στο Web</value>
 		<comment>Footer message</comment>
 	</data>
 	<data name="Web Content Accessibility Guidelines (WCAG) 2.2" xml:space="preserve">
-		<value>Web Content Accessibility Guidelines (WCAG) 2.2</value>
+		<value>Οδηγίες προσβασιμότητας περιεχομένου Ιστού (WCAG) 2.2</value>
 		<comment>Footer message</comment>
 	</data>
 	<data name="White wine" xml:space="preserve">
-		<value>White wine</value>
+		<value>Λευκό κρασί</value>
 		<comment>WineType</comment>
 	</data>
 	<data name="Yeast mannoproteins" xml:space="preserve">
-		<value>Yeast mannoproteins</value>
+		<value>Μαννοπρωτεΐνες ζύμης</value>
 		<comment>Stabiliser</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="of which Saturates" xml:space="preserve">
-		<value>of which Saturates</value>
+		<value>εκ των οποίων κορεσμένα</value>
 		<comment>Nutrition Information</comment>
 	</data>
 	<data name="of which Sugars" xml:space="preserve">
-		<value>of which Sugars</value>
+		<value>εκ των οποίων σάκχαρα</value>
 		<comment>Nutrition Information</comment>
 	</data>
 </root>

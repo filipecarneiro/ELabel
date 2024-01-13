@@ -59,37 +59,37 @@
 		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
 	</resheader>
 	<data name="Acidity regulator" xml:space="preserve">
-		<value>Acidity regulator</value>
+		<value>Rialtóir aigéadachta</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Activators for alcoholic and malolactic fermentation" xml:space="preserve">
-		<value>Activators for alcoholic and malolactic fermentation</value>
+		<value>Activators le haghaidh coipeadh alcólach agus malolactic</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Admin Dashboard" xml:space="preserve">
-		<value>Administration Dashboard</value>
+		<value>Painéal Riaracháin</value>
 		<comment>Home</comment>
 	</data>
 	<data name="Aleppo pine resin" xml:space="preserve">
-		<value>Aleppo pine resin</value>
+		<value>Roisín péine Aleppo</value>
 		<comment>Other</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Antioxidant" xml:space="preserve">
-		<value>Antioxidant</value>
+		<value>Frithocsaídeoir</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Ascorbic acid" xml:space="preserve">
-		<value>Ascorbic acid</value>
+		<value>Aigéad ascorbic</value>
 		<comment>Antioxidant</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Bottled in a protective atmosphere" xml:space="preserve">
-		<value>Bottled in a protective atmosphere</value>
+		<value>Buidéalaithe in atmaisféar cosanta</value>
 		<comment>Packaging gases&#13; Article 48a(6) of Delegated Regulation (EU) 2019/33 clearly states, ‘the indication of additives falling under the&#13; category “packaging gases” in the list of ingredients may be replaced by the specific particular “Bottled in a&#13; protective atmosphere” or “Bottling may happen in a protective atmosphere”’. &#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208</comment>
 	</data>
 	<data name="Bottling may happen in a protective atmosphere" xml:space="preserve">
-		<value>Bottling may happen in a protective atmosphere</value>
+		<value>D'fhéadfadh buidéalú tarlú in atmaisféar cosanta</value>
 		<comment>Packaging gases&#13; Article 48a(6) of Delegated Regulation (EU) 2019/33 clearly states, ‘the indication of additives falling under the&#13; category “packaging gases” in the list of ingredients may be replaced by the specific particular “Bottled in a&#13; protective atmosphere” or “Bottling may happen in a protective atmosphere”’. &#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208</comment>
 	</data>
 	<data name="Brut" xml:space="preserve">
@@ -97,25 +97,25 @@
 		<comment>Check glossary with tag "Wine sugar content"</comment>
 	</data>
 	<data name="Brut nature" xml:space="preserve">
-		<value>Brut nature</value>
+		<value>Nádúr brut</value>
 		<comment>Check glossary with tag "Wine sugar content"</comment>
 	</data>
 	<data name="Calcium sulphate" xml:space="preserve">
-		<value>Calcium sulphate</value>
+		<value>Sulfáit chailciam</value>
 		<comment>AcidityRegulator</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Caramel" xml:space="preserve">
-		<value>Caramel</value>
+		<value>Caramal</value>
 		<comment>Other</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Carbohydrate" xml:space="preserve">
-		<value>Carbohydrate</value>
+		<value>Carbaihiodráit</value>
 		<comment>Nutrition Information</comment>
 	</data>
 	<data name="Carbon dioxide" xml:space="preserve">
-		<value>Carbon dioxide</value>
+		<value>Dé-ocsaíd charbóin</value>
 		<comment>RawMaterial</comment>
 		<comment>[]</comment>
 	</data>
@@ -125,252 +125,252 @@
 		<comment>[]</comment>
 	</data>
 	<data name="Certifications" xml:space="preserve">
-		<value>Certifications</value>
+		<value>Deimhniúcháin</value>
 		<comment>Certifications</comment>
 	</data>
 	<data name="Certified organic based on EU-Guidelines" xml:space="preserve">
-		<value>Certified organic based on EU-Guidelines</value>
+		<value>Orgánach deimhnithe bunaithe ar Threoirlínte an Aontais Eorpaigh</value>
 		<comment>Certifications</comment>
 	</data>
 	<data name="Citric acid" xml:space="preserve">
-		<value>Citric acid</value>
+		<value>Aigéad citreach</value>
 		<comment>Stabiliser</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Clarifying agent" xml:space="preserve">
-		<value>Clarifying agent</value>
+		<value>Gníomhaire a shoiléiriú</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Concentrated grape must" xml:space="preserve">
-		<value>Concentrated grape must</value>
+		<value>Úrfhíon fíonchaor tiubhaithe</value>
 		<comment>EnrichmentSubstance</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Correction of defect" xml:space="preserve">
-		<value>Correction of defect</value>
+		<value>Fabht a cheartú</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Dimethyldicarbonate" xml:space="preserve">
-		<value>Dimethyldicarbonate</value>
+		<value>Démheitildécharbónáit</value>
 		<comment>Preservative</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Don't drink during pregnancy and breastfeeding" xml:space="preserve">
-		<value>Don't drink during pregnancy and breastfeeding</value>
+		<value>Ná hól le linn toirchis agus beathú cíche</value>
 		<comment>Responsible Consumption</comment>
 	</data>
 	<data name="Don't drink when below legal drinking age" xml:space="preserve">
-		<value>Don't drink when below legal drinking age</value>
+		<value>Ná hól nuair atá tú faoi bhun aois óil dleathach</value>
 		<comment>Responsible Consumption</comment>
 	</data>
 	<data name="Don't drink when driving a car, motorbike or operating machinery" xml:space="preserve">
-		<value>Don't drink when driving a car, motorbike or operating machinery</value>
+		<value>Ná hól agus tú ag tiomáint gluaisteáin, gluaisrothair nó innealra oibriúcháin</value>
 		<comment>Responsible Consumption</comment>
 	</data>
 	<data name="Dry" xml:space="preserve">
-		<value>Dry</value>
+		<value>Tirim</value>
 		<comment>Check glossary with tag "Wine sugar content"</comment>
 	</data>
 	<data name="Egg" xml:space="preserve">
-		<value>Egg</value>
+		<value>Ubh</value>
 		<comment>ClarifyingAgent</comment>
 		<comment>1</comment>
 	</data>
 	<data name="Electronic label provided by" xml:space="preserve">
-		<value>Electronic label provided by</value>
+		<value>Lipéad leictreonach arna sholáthar ag</value>
 		<comment>Footer</comment>
 	</data>
 	<data name="Energy" xml:space="preserve">
-		<value>Energy</value>
+		<value>Fuinneamh</value>
 		<comment>Nutrition Information</comment>
 	</data>
 	<data name="Enrichment substance" xml:space="preserve">
-		<value>Enrichment substance</value>
+		<value>Substaint saibhrithe</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Enzyme" xml:space="preserve">
-		<value>Enzyme</value>
+		<value>Einsím</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Expedition liqueur" xml:space="preserve">
-		<value>Expedition liqueur</value>
+		<value>Licéar expedition</value>
 		<comment>RawMaterial</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Extra brut" xml:space="preserve">
-		<value>Extra brut</value>
+		<value>Brut breise</value>
 		<comment>Check glossary with tag "Wine sugar content"</comment>
 	</data>
 	<data name="Extra dry" xml:space="preserve">
-		<value>Extra dry</value>
+		<value>Tirim breise</value>
 		<comment>Check glossary with tag "Wine sugar content"</comment>
 	</data>
 	<data name="Fat" xml:space="preserve">
-		<value>Fat</value>
+		<value>Saill</value>
 		<comment>Nutrition Information</comment>
 	</data>
 	<data name="Fermentation agent" xml:space="preserve">
-		<value>Fermentation agent</value>
+		<value>Gníomhaire coipeadh</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Fortified wine" xml:space="preserve">
-		<value>Fortified wine</value>
+		<value>Fíon daingnithe</value>
 		<comment>WineType</comment>
 	</data>
 	<data name="Fumaric acid" xml:space="preserve">
-		<value>Fumaric acid</value>
+		<value>Aigéad fumaric</value>
 		<comment>Stabiliser</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Gases and packaging gas" xml:space="preserve">
-		<value>Gases and packaging gas</value>
+		<value>Gáis agus gás pacáistithe</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Grapes" xml:space="preserve">
-		<value>Grapes</value>
+		<value>Fíonchaora</value>
 		<comment>RawMaterial&#13; &#13; Ingredients shall be designated by their specific name, with the exceptions provided for in the FIC Regulation and in Delegated Regulation (EU) 2019/33 (e.g. ‘grapes’ referring to the raw material).&#13; &#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208</comment>
 		<comment>[]</comment>
 		<comment>Ingredients shall be designated by their specific name, with the exceptions provided for in the FIC Regulation and in Delegated Regulation (EU) 2019/33 (e.g. ‘grapes’ referring to the raw material).</comment>
 		<comment>https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208</comment>
 	</data>
 	<data name="Gum arabic" xml:space="preserve">
-		<value>Gum arabic</value>
+		<value>Guma araibis</value>
 		<comment>Stabiliser</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Home Page" xml:space="preserve">
-		<value>Home Page</value>
+		<value>Leathanach Baile</value>
 		<comment>Home</comment>
 	</data>
 	<data name="Ingredients" xml:space="preserve">
-		<value>Ingredients</value>
+		<value>Comhábhair</value>
 		<comment>Ingredients&#13; &#13; Table 2 of Part A of Annex I of Delegated Regulation (EU) 2019/934 identifies the full list of additives and processing aids that can be used in wine production.&#13; &#13; https://eur-lex.europa.eu/search.html?scope=EURLEX&amp;text=2019%2F934&amp;lang=en&amp;type=quick&amp;qid=1701362513497</comment>
 		<comment>Table 2 of Part A of Annex I of Delegated Regulation (EU) 2019/934 identifies the full list of additives and processing aids that can be used in wine productionhttps://eur-lex.europa.eu/search.html?scope=EURLEX&amp;text=2019%2F934&amp;lang=en&amp;type=quick&amp;qid=1701362513497</comment>
 	</data>
 	<data name="Ingredients and nutrition information" xml:space="preserve">
-		<value>Ingredients and nutrition information</value>
+		<value>Comhábhair agus faisnéis chothaithe</value>
 		<comment>Open graph meta description.</comment>
 	</data>
 	<data name="Lactic acid" xml:space="preserve">
-		<value>Lactic acid</value>
+		<value>Aigéad lachtach</value>
 		<comment>AcidityRegulator</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Malic acid" xml:space="preserve">
-		<value>Malic acid</value>
+		<value>Aigéad malic</value>
 		<comment>AcidityRegulator</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Medium dry" xml:space="preserve">
-		<value>Medium dry</value>
+		<value>Meánach tirim</value>
 		<comment>Check glossary with tag "Wine sugar content"</comment>
 	</data>
 	<data name="Medium sweet" xml:space="preserve">
-		<value>Medium sweet</value>
+		<value>Meánach milis</value>
 		<comment>Check glossary with tag "Wine sugar content"</comment>
 	</data>
 	<data name="Metatartaric acid" xml:space="preserve">
-		<value>Metatartaric acid</value>
+		<value>Aigéad meattarach</value>
 		<comment>Stabiliser</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Milk" xml:space="preserve">
-		<value>Milk</value>
+		<value>Bainne</value>
 		<comment>ClarifyingAgent</comment>
 		<comment>1</comment>
 	</data>
 	<data name="Milk casein" xml:space="preserve">
-		<value>Milk casein</value>
+		<value>Cáiséin bhainne</value>
 		<comment>ClarifyingAgent</comment>
 		<comment>1</comment>
 	</data>
 	<data name="Milk products" xml:space="preserve">
-		<value>Milk products</value>
+		<value>Táirgí bainne</value>
 		<comment>ClarifyingAgent</comment>
 		<comment>1</comment>
 	</data>
 	<data name="Milk protein" xml:space="preserve">
-		<value>Milk protein</value>
+		<value>Próitéin bhainne</value>
 		<comment>ClarifyingAgent</comment>
 		<comment>1</comment>
 	</data>
 	<data name="Nutrition Information" xml:space="preserve">
-		<value>Nutrition Declaration</value>
+		<value>Dearbhú Cothúcháin</value>
 		<comment>Nutrition Information&#13; &#13; The presentation of the nutrition declaration is regulated in Article 34 of the FIC Regulation.&#13; &#13; The order of presentation of the different elements of the nutrition declaration is defined in Annex XV of the FIC Regulation.&#13; &#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02011R1169-20180101&amp;qid=1701362311604</comment>
 		<comment>The presentation of the nutrition declaration is regulated in Article 34 of the FIC Regulation.</comment>
 		<comment>The order of presentation of the different elements of the nutrition declaration is defined in Annex XV of the FIC Regulation.</comment>
 		<comment>https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02011R1169-20180101&amp;qid=1701362311604</comment>
 	</data>
 	<data name="Nutritions per" xml:space="preserve">
-		<value>Nutritions per</value>
+		<value>Cothú in aghaidh</value>
 		<comment>Nutrition Information&#13; &#13; Energy values and nutrition values must be indicated per 100 g or per 100 ml (Article 32(2) of the FIC Regulation).&#13; &#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02011R1169-20180101&amp;qid=1701362311604</comment>
 		<comment>Energy values and nutrition values must be indicated per 100 g or per 100 ml (Article 32(2) of the FIC Regulation).</comment>
 		<comment>https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02011R1169-20180101&amp;qid=1701362311604</comment>
 	</data>
 	<data name="Open E-Label project on GitHub" xml:space="preserve">
-		<value>Open E-Label project on GitHub</value>
+		<value>Oscail tionscadal E-Label ar GitHub</value>
 		<comment>Footer message</comment>
 	</data>
 	<data name="Open-source solution for electronic labels" xml:space="preserve">
-		<value>Open-source solution for electronic labels</value>
+		<value>Réiteach foinse oscailte do lipéid leictreonacha</value>
 		<comment>Home</comment>
 	</data>
 	<data name="Orange wine" xml:space="preserve">
-		<value>Orange wine</value>
+		<value>Fíon oráiste</value>
 		<comment>WineType</comment>
 	</data>
 	<data name="Other ingredient" xml:space="preserve">
-		<value>Other ingredient</value>
+		<value>Comhábhar eile</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Page not found" xml:space="preserve">
-		<value>Page not found</value>
+		<value>Níor aimsíodh an leathanach</value>
 		<comment>404 page title</comment>
 	</data>
 	<data name="Potassium polyaspartate" xml:space="preserve">
-		<value>Potassium polyaspartate</value>
+		<value>Polyaspartate potaisiam</value>
 		<comment>Stabiliser</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Potassium sorbate" xml:space="preserve">
-		<value>Potassium sorbate</value>
+		<value>Sorbáit photaisiam</value>
 		<comment>Preservative</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Preservative" xml:space="preserve">
-		<value>Preservative</value>
+		<value>Leasaitheach</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Protein" xml:space="preserve">
-		<value>Protein</value>
+		<value>Próitéin</value>
 		<comment>Nutrition Information</comment>
 	</data>
 	<data name="Raw material" xml:space="preserve">
-		<value>Raw material</value>
+		<value>Amhábhar</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Red wine" xml:space="preserve">
-		<value>Red wine</value>
+		<value>Fíon dearg</value>
 		<comment>WineType</comment>
 	</data>
 	<data name="Responsible Consumption" xml:space="preserve">
-		<value>Responsible Consumption</value>
+		<value>Tomhaltas Freagrach</value>
 		<comment>Responsible Consumption</comment>
 	</data>
 	<data name="Rosé wine" xml:space="preserve">
-		<value>Rosé wine</value>
+		<value>Fíon Rosé</value>
 		<comment>WineType</comment>
 	</data>
 	<data name="Salt" xml:space="preserve">
-		<value>Salt</value>
+		<value>Salann</value>
 		<comment>Nutrition Information</comment>
 	</data>
 	<data name="Select language" xml:space="preserve">
-		<value>Select language</value>
+		<value>Roghnaigh teanga</value>
 		<comment>Header message</comment>
 	</data>
 	<data name="Select theme" xml:space="preserve">
-		<value>Select theme</value>
+		<value>Roghnaigh téama</value>
 		<comment>Header message</comment>
 	</data>
 	<data name="Sequestrant" xml:space="preserve">
@@ -378,73 +378,73 @@
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Sparkling wine" xml:space="preserve">
-		<value>Sparkling wine</value>
+		<value>Fíon súilíneach</value>
 		<comment>WineType</comment>
 	</data>
 	<data name="Stabiliser" xml:space="preserve">
-		<value>Stabiliser</value>
+		<value>Cobhsaitheoir</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Sucrose" xml:space="preserve">
-		<value>Sucrose</value>
+		<value>Siúcrós</value>
 		<comment>EnrichmentSubstance</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Sugar" xml:space="preserve">
-		<value>Sugar</value>
+		<value>Siúcra</value>
 		<comment>EnrichmentSubstance</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Sulphites" xml:space="preserve">
-		<value>Sulphites</value>
+		<value>Suilfítí</value>
 		<comment>Preservative</comment>
 		<comment>1</comment>
 	</data>
 	<data name="Sweet" xml:space="preserve">
-		<value>Sweet</value>
+		<value>Milis</value>
 		<comment>Check glossary with tag "Wine sugar content"</comment>
 	</data>
 	<data name="Sweetener" xml:space="preserve">
-		<value>Sweetener</value>
+		<value>Milseoir</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Tartaric acid" xml:space="preserve">
-		<value>Tartaric acid</value>
+		<value>Aigéad tartarach</value>
 		<comment>AcidityRegulator</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="This label isn't available. Sorry about that." xml:space="preserve">
-		<value>This label isn't available. Sorry about that.</value>
+		<value>Níl an lipéad seo ar fáil. Tá brón orm faoi sin.</value>
 		<comment>404 page content</comment>
 	</data>
 	<data name="Tirage liqueur" xml:space="preserve">
-		<value>Tirage liqueur</value>
+		<value>Licéar tirage</value>
 		<comment>RawMaterial</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Web Accessibility Guidelines" xml:space="preserve">
-		<value>Web Accessibility Guidelines</value>
+		<value>Treoirlínte maidir le hInrochtaineacht Gréasáin</value>
 		<comment>Footer message</comment>
 	</data>
 	<data name="Web Content Accessibility Guidelines (WCAG) 2.2" xml:space="preserve">
-		<value>Web Content Accessibility Guidelines (WCAG) 2.2</value>
+		<value>Treoirlínte maidir le hInrochtaineacht Ábhair ar an nGréasán (WCAG) 2.2</value>
 		<comment>Footer message</comment>
 	</data>
 	<data name="White wine" xml:space="preserve">
-		<value>White wine</value>
+		<value>Fíon bán</value>
 		<comment>WineType</comment>
 	</data>
 	<data name="Yeast mannoproteins" xml:space="preserve">
-		<value>Yeast mannoproteins</value>
+		<value>Mannoproteins giosta</value>
 		<comment>Stabiliser</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="of which Saturates" xml:space="preserve">
-		<value>of which Saturates</value>
+		<value>a bhfuil Saturates</value>
 		<comment>Nutrition Information</comment>
 	</data>
 	<data name="of which Sugars" xml:space="preserve">
-		<value>of which Sugars</value>
+		<value>a bhfuil Siúcraí</value>
 		<comment>Nutrition Information</comment>
 	</data>
 </root>

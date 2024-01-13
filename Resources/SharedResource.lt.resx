@@ -59,37 +59,37 @@
 		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
 	</resheader>
 	<data name="Acidity regulator" xml:space="preserve">
-		<value>Acidity regulator</value>
+		<value>Rūgštingumą reguliuojanti medžiaga</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Activators for alcoholic and malolactic fermentation" xml:space="preserve">
-		<value>Activators for alcoholic and malolactic fermentation</value>
+		<value>Alkoholinės ir malolaktinės fermentacijos aktyvatoriai</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Admin Dashboard" xml:space="preserve">
-		<value>Administration Dashboard</value>
+		<value>Administravimo prietaisų skydelis</value>
 		<comment>Home</comment>
 	</data>
 	<data name="Aleppo pine resin" xml:space="preserve">
-		<value>Aleppo pine resin</value>
+		<value>Alepo pušies sakai</value>
 		<comment>Other</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Antioxidant" xml:space="preserve">
-		<value>Antioxidant</value>
+		<value>Antioksidantas</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Ascorbic acid" xml:space="preserve">
-		<value>Ascorbic acid</value>
+		<value>Askorbo rūgštis</value>
 		<comment>Antioxidant</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Bottled in a protective atmosphere" xml:space="preserve">
-		<value>Bottled in a protective atmosphere</value>
+		<value>Išpilstytas į butelius apsauginėje atmosferoje</value>
 		<comment>Packaging gases&#13; Article 48a(6) of Delegated Regulation (EU) 2019/33 clearly states, ‘the indication of additives falling under the&#13; category “packaging gases” in the list of ingredients may be replaced by the specific particular “Bottled in a&#13; protective atmosphere” or “Bottling may happen in a protective atmosphere”’. &#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208</comment>
 	</data>
 	<data name="Bottling may happen in a protective atmosphere" xml:space="preserve">
-		<value>Bottling may happen in a protective atmosphere</value>
+		<value>Išpilstymas gali vykti apsauginėje atmosferoje</value>
 		<comment>Packaging gases&#13; Article 48a(6) of Delegated Regulation (EU) 2019/33 clearly states, ‘the indication of additives falling under the&#13; category “packaging gases” in the list of ingredients may be replaced by the specific particular “Bottled in a&#13; protective atmosphere” or “Bottling may happen in a protective atmosphere”’. &#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208</comment>
 	</data>
 	<data name="Brut" xml:space="preserve">
@@ -97,103 +97,103 @@
 		<comment>Check glossary with tag "Wine sugar content"</comment>
 	</data>
 	<data name="Brut nature" xml:space="preserve">
-		<value>Brut nature</value>
+		<value>Žiauri gamta</value>
 		<comment>Check glossary with tag "Wine sugar content"</comment>
 	</data>
 	<data name="Calcium sulphate" xml:space="preserve">
-		<value>Calcium sulphate</value>
+		<value>Kalcio sulfatas</value>
 		<comment>AcidityRegulator</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Caramel" xml:space="preserve">
-		<value>Caramel</value>
+		<value>Karamelė</value>
 		<comment>Other</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Carbohydrate" xml:space="preserve">
-		<value>Carbohydrate</value>
+		<value>Angliavandeniai</value>
 		<comment>Nutrition Information</comment>
 	</data>
 	<data name="Carbon dioxide" xml:space="preserve">
-		<value>Carbon dioxide</value>
+		<value>Anglies dioksidas</value>
 		<comment>RawMaterial</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Carboxymethylcellulose" xml:space="preserve">
-		<value>Carboxymethylcellulose</value>
+		<value>Karboksimetilceliuliozė</value>
 		<comment>Stabiliser</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Certifications" xml:space="preserve">
-		<value>Certifications</value>
+		<value>Sertifikatai</value>
 		<comment>Certifications</comment>
 	</data>
 	<data name="Certified organic based on EU-Guidelines" xml:space="preserve">
-		<value>Certified organic based on EU-Guidelines</value>
+		<value>Sertifikuota ekologiška pagal ES gaires</value>
 		<comment>Certifications</comment>
 	</data>
 	<data name="Citric acid" xml:space="preserve">
-		<value>Citric acid</value>
+		<value>Citrinos rūgštis</value>
 		<comment>Stabiliser</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Clarifying agent" xml:space="preserve">
-		<value>Clarifying agent</value>
+		<value>Skaidrinimo agentas</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Concentrated grape must" xml:space="preserve">
-		<value>Concentrated grape must</value>
+		<value>Koncentruota vynuogių misa</value>
 		<comment>EnrichmentSubstance</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Correction of defect" xml:space="preserve">
-		<value>Correction of defect</value>
+		<value>Defekto taisymas</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Dimethyldicarbonate" xml:space="preserve">
-		<value>Dimethyldicarbonate</value>
+		<value>Dimetildikarbonatas</value>
 		<comment>Preservative</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Don't drink during pregnancy and breastfeeding" xml:space="preserve">
-		<value>Don't drink during pregnancy and breastfeeding</value>
+		<value>Negerkite nėštumo ir žindymo laikotarpiu</value>
 		<comment>Responsible Consumption</comment>
 	</data>
 	<data name="Don't drink when below legal drinking age" xml:space="preserve">
-		<value>Don't drink when below legal drinking age</value>
+		<value>Negerkite, kai jaunesnis nei teisėtas alkoholio vartojimo amžius</value>
 		<comment>Responsible Consumption</comment>
 	</data>
 	<data name="Don't drink when driving a car, motorbike or operating machinery" xml:space="preserve">
-		<value>Don't drink when driving a car, motorbike or operating machinery</value>
+		<value>Negerkite vairuodami automobilį, motociklą ar valdydami mechanizmus</value>
 		<comment>Responsible Consumption</comment>
 	</data>
 	<data name="Dry" xml:space="preserve">
-		<value>Dry</value>
+		<value>Sausas</value>
 		<comment>Check glossary with tag "Wine sugar content"</comment>
 	</data>
 	<data name="Egg" xml:space="preserve">
-		<value>Egg</value>
+		<value>Kiaušinis</value>
 		<comment>ClarifyingAgent</comment>
 		<comment>1</comment>
 	</data>
 	<data name="Electronic label provided by" xml:space="preserve">
-		<value>Electronic label provided by</value>
+		<value>Pateikta elektroninė etiketė</value>
 		<comment>Footer</comment>
 	</data>
 	<data name="Energy" xml:space="preserve">
-		<value>Energy</value>
+		<value>Energija</value>
 		<comment>Nutrition Information</comment>
 	</data>
 	<data name="Enrichment substance" xml:space="preserve">
-		<value>Enrichment substance</value>
+		<value>Sodrinimo medžiaga</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Enzyme" xml:space="preserve">
-		<value>Enzyme</value>
+		<value>Fermentas</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Expedition liqueur" xml:space="preserve">
-		<value>Expedition liqueur</value>
+		<value>Ekspedicijos likeris</value>
 		<comment>RawMaterial</comment>
 		<comment>[]</comment>
 	</data>
@@ -202,249 +202,249 @@
 		<comment>Check glossary with tag "Wine sugar content"</comment>
 	</data>
 	<data name="Extra dry" xml:space="preserve">
-		<value>Extra dry</value>
+		<value>Ypač sausas</value>
 		<comment>Check glossary with tag "Wine sugar content"</comment>
 	</data>
 	<data name="Fat" xml:space="preserve">
-		<value>Fat</value>
+		<value>Riebalai</value>
 		<comment>Nutrition Information</comment>
 	</data>
 	<data name="Fermentation agent" xml:space="preserve">
-		<value>Fermentation agent</value>
+		<value>Fermentacijos agentas</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Fortified wine" xml:space="preserve">
-		<value>Fortified wine</value>
+		<value>Stiprintas vynas</value>
 		<comment>WineType</comment>
 	</data>
 	<data name="Fumaric acid" xml:space="preserve">
-		<value>Fumaric acid</value>
+		<value>Fumaro rūgštis</value>
 		<comment>Stabiliser</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Gases and packaging gas" xml:space="preserve">
-		<value>Gases and packaging gas</value>
+		<value>Dujos ir pakavimo dujos</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Grapes" xml:space="preserve">
-		<value>Grapes</value>
+		<value>Vynuogių</value>
 		<comment>RawMaterial&#13; &#13; Ingredients shall be designated by their specific name, with the exceptions provided for in the FIC Regulation and in Delegated Regulation (EU) 2019/33 (e.g. ‘grapes’ referring to the raw material).&#13; &#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208</comment>
 		<comment>[]</comment>
 		<comment>Ingredients shall be designated by their specific name, with the exceptions provided for in the FIC Regulation and in Delegated Regulation (EU) 2019/33 (e.g. ‘grapes’ referring to the raw material).</comment>
 		<comment>https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208</comment>
 	</data>
 	<data name="Gum arabic" xml:space="preserve">
-		<value>Gum arabic</value>
+		<value>Guminis arabikas</value>
 		<comment>Stabiliser</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Home Page" xml:space="preserve">
-		<value>Home Page</value>
+		<value>Pagrindinis puslapis</value>
 		<comment>Home</comment>
 	</data>
 	<data name="Ingredients" xml:space="preserve">
-		<value>Ingredients</value>
+		<value>Ingridientai</value>
 		<comment>Ingredients&#13; &#13; Table 2 of Part A of Annex I of Delegated Regulation (EU) 2019/934 identifies the full list of additives and processing aids that can be used in wine production.&#13; &#13; https://eur-lex.europa.eu/search.html?scope=EURLEX&amp;text=2019%2F934&amp;lang=en&amp;type=quick&amp;qid=1701362513497</comment>
 		<comment>Table 2 of Part A of Annex I of Delegated Regulation (EU) 2019/934 identifies the full list of additives and processing aids that can be used in wine productionhttps://eur-lex.europa.eu/search.html?scope=EURLEX&amp;text=2019%2F934&amp;lang=en&amp;type=quick&amp;qid=1701362513497</comment>
 	</data>
 	<data name="Ingredients and nutrition information" xml:space="preserve">
-		<value>Ingredients and nutrition information</value>
+		<value>Informacija apie sudedamąsias dalis ir maistingumą</value>
 		<comment>Open graph meta description.</comment>
 	</data>
 	<data name="Lactic acid" xml:space="preserve">
-		<value>Lactic acid</value>
+		<value>Pieno rūgštis</value>
 		<comment>AcidityRegulator</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Malic acid" xml:space="preserve">
-		<value>Malic acid</value>
+		<value>Obuolių rūgštis</value>
 		<comment>AcidityRegulator</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Medium dry" xml:space="preserve">
-		<value>Medium dry</value>
+		<value>Vidutiniškai sausas</value>
 		<comment>Check glossary with tag "Wine sugar content"</comment>
 	</data>
 	<data name="Medium sweet" xml:space="preserve">
-		<value>Medium sweet</value>
+		<value>Vidutinio saldumo</value>
 		<comment>Check glossary with tag "Wine sugar content"</comment>
 	</data>
 	<data name="Metatartaric acid" xml:space="preserve">
-		<value>Metatartaric acid</value>
+		<value>Metavyno rūgštis</value>
 		<comment>Stabiliser</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Milk" xml:space="preserve">
-		<value>Milk</value>
+		<value>Pienas</value>
 		<comment>ClarifyingAgent</comment>
 		<comment>1</comment>
 	</data>
 	<data name="Milk casein" xml:space="preserve">
-		<value>Milk casein</value>
+		<value>Pieno kazeinas</value>
 		<comment>ClarifyingAgent</comment>
 		<comment>1</comment>
 	</data>
 	<data name="Milk products" xml:space="preserve">
-		<value>Milk products</value>
+		<value>Pieno produktai</value>
 		<comment>ClarifyingAgent</comment>
 		<comment>1</comment>
 	</data>
 	<data name="Milk protein" xml:space="preserve">
-		<value>Milk protein</value>
+		<value>Pieno baltymai</value>
 		<comment>ClarifyingAgent</comment>
 		<comment>1</comment>
 	</data>
 	<data name="Nutrition Information" xml:space="preserve">
-		<value>Nutrition Declaration</value>
+		<value>Mitybos deklaracija</value>
 		<comment>Nutrition Information&#13; &#13; The presentation of the nutrition declaration is regulated in Article 34 of the FIC Regulation.&#13; &#13; The order of presentation of the different elements of the nutrition declaration is defined in Annex XV of the FIC Regulation.&#13; &#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02011R1169-20180101&amp;qid=1701362311604</comment>
 		<comment>The presentation of the nutrition declaration is regulated in Article 34 of the FIC Regulation.</comment>
 		<comment>The order of presentation of the different elements of the nutrition declaration is defined in Annex XV of the FIC Regulation.</comment>
 		<comment>https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02011R1169-20180101&amp;qid=1701362311604</comment>
 	</data>
 	<data name="Nutritions per" xml:space="preserve">
-		<value>Nutritions per</value>
+		<value>Mityba per</value>
 		<comment>Nutrition Information&#13; &#13; Energy values and nutrition values must be indicated per 100 g or per 100 ml (Article 32(2) of the FIC Regulation).&#13; &#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02011R1169-20180101&amp;qid=1701362311604</comment>
 		<comment>Energy values and nutrition values must be indicated per 100 g or per 100 ml (Article 32(2) of the FIC Regulation).</comment>
 		<comment>https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02011R1169-20180101&amp;qid=1701362311604</comment>
 	</data>
 	<data name="Open E-Label project on GitHub" xml:space="preserve">
-		<value>Open E-Label project on GitHub</value>
+		<value>Atidarykite „E-Label“ projektą „GitHub“.</value>
 		<comment>Footer message</comment>
 	</data>
 	<data name="Open-source solution for electronic labels" xml:space="preserve">
-		<value>Open-source solution for electronic labels</value>
+		<value>Atvirojo kodo sprendimas elektroninėms etiketėms</value>
 		<comment>Home</comment>
 	</data>
 	<data name="Orange wine" xml:space="preserve">
-		<value>Orange wine</value>
+		<value>Apelsinų vynas</value>
 		<comment>WineType</comment>
 	</data>
 	<data name="Other ingredient" xml:space="preserve">
-		<value>Other ingredient</value>
+		<value>Kitas ingredientas</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Page not found" xml:space="preserve">
-		<value>Page not found</value>
+		<value>Puslapis nerastas</value>
 		<comment>404 page title</comment>
 	</data>
 	<data name="Potassium polyaspartate" xml:space="preserve">
-		<value>Potassium polyaspartate</value>
+		<value>Kalio poliaspartatas</value>
 		<comment>Stabiliser</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Potassium sorbate" xml:space="preserve">
-		<value>Potassium sorbate</value>
+		<value>Kalio sorbatas</value>
 		<comment>Preservative</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Preservative" xml:space="preserve">
-		<value>Preservative</value>
+		<value>Konservantas</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Protein" xml:space="preserve">
-		<value>Protein</value>
+		<value>Baltymas</value>
 		<comment>Nutrition Information</comment>
 	</data>
 	<data name="Raw material" xml:space="preserve">
-		<value>Raw material</value>
+		<value>Žaliava</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Red wine" xml:space="preserve">
-		<value>Red wine</value>
+		<value>Raudonasis vynas</value>
 		<comment>WineType</comment>
 	</data>
 	<data name="Responsible Consumption" xml:space="preserve">
-		<value>Responsible Consumption</value>
+		<value>Atsakingas vartojimas</value>
 		<comment>Responsible Consumption</comment>
 	</data>
 	<data name="Rosé wine" xml:space="preserve">
-		<value>Rosé wine</value>
+		<value>Rožinis vynas</value>
 		<comment>WineType</comment>
 	</data>
 	<data name="Salt" xml:space="preserve">
-		<value>Salt</value>
+		<value>Druska</value>
 		<comment>Nutrition Information</comment>
 	</data>
 	<data name="Select language" xml:space="preserve">
-		<value>Select language</value>
+		<value>Pasirinkite kalbą</value>
 		<comment>Header message</comment>
 	</data>
 	<data name="Select theme" xml:space="preserve">
-		<value>Select theme</value>
+		<value>Pasirinkite temą</value>
 		<comment>Header message</comment>
 	</data>
 	<data name="Sequestrant" xml:space="preserve">
-		<value>Sequestrant</value>
+		<value>Sekvestrantas</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Sparkling wine" xml:space="preserve">
-		<value>Sparkling wine</value>
+		<value>Putojantis vynas</value>
 		<comment>WineType</comment>
 	</data>
 	<data name="Stabiliser" xml:space="preserve">
-		<value>Stabiliser</value>
+		<value>Stabilizatorius</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Sucrose" xml:space="preserve">
-		<value>Sucrose</value>
+		<value>Sacharozė</value>
 		<comment>EnrichmentSubstance</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Sugar" xml:space="preserve">
-		<value>Sugar</value>
+		<value>Cukrus</value>
 		<comment>EnrichmentSubstance</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Sulphites" xml:space="preserve">
-		<value>Sulphites</value>
+		<value>Sulfitai</value>
 		<comment>Preservative</comment>
 		<comment>1</comment>
 	</data>
 	<data name="Sweet" xml:space="preserve">
-		<value>Sweet</value>
+		<value>Saldus</value>
 		<comment>Check glossary with tag "Wine sugar content"</comment>
 	</data>
 	<data name="Sweetener" xml:space="preserve">
-		<value>Sweetener</value>
+		<value>Saldiklis</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Tartaric acid" xml:space="preserve">
-		<value>Tartaric acid</value>
+		<value>Vyno rūgštis</value>
 		<comment>AcidityRegulator</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="This label isn't available. Sorry about that." xml:space="preserve">
-		<value>This label isn't available. Sorry about that.</value>
+		<value>Ši etiketė nepasiekiama. Atsiprašau dėl to.</value>
 		<comment>404 page content</comment>
 	</data>
 	<data name="Tirage liqueur" xml:space="preserve">
-		<value>Tirage liqueur</value>
+		<value>Tiražo likeris</value>
 		<comment>RawMaterial</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="Web Accessibility Guidelines" xml:space="preserve">
-		<value>Web Accessibility Guidelines</value>
+		<value>Žiniatinklio prieinamumo gairės</value>
 		<comment>Footer message</comment>
 	</data>
 	<data name="Web Content Accessibility Guidelines (WCAG) 2.2" xml:space="preserve">
-		<value>Web Content Accessibility Guidelines (WCAG) 2.2</value>
+		<value>Žiniatinklio turinio prieinamumo gairės (WCAG) 2.2</value>
 		<comment>Footer message</comment>
 	</data>
 	<data name="White wine" xml:space="preserve">
-		<value>White wine</value>
+		<value>baltas vynas</value>
 		<comment>WineType</comment>
 	</data>
 	<data name="Yeast mannoproteins" xml:space="preserve">
-		<value>Yeast mannoproteins</value>
+		<value>Mielių manoproteinai</value>
 		<comment>Stabiliser</comment>
 		<comment>[]</comment>
 	</data>
 	<data name="of which Saturates" xml:space="preserve">
-		<value>of which Saturates</value>
+		<value>iš jų sočiųjų riebalų rūgščių</value>
 		<comment>Nutrition Information</comment>
 	</data>
 	<data name="of which Sugars" xml:space="preserve">
-		<value>of which Sugars</value>
+		<value>iš kurių cukrus</value>
 		<comment>Nutrition Information</comment>
 	</data>
 </root>
