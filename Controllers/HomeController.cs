@@ -33,6 +33,7 @@ namespace ELabel.Controllers
         public IActionResult Info()
         {
             ViewData["KnownProxy"] = _configuration.GetValue<string>("KnownProxy");
+            ViewData["KnownNetworks"] = _configuration.GetValue<string>("KnownNetworks");
 
             ViewData["RemoteIpAddress"] = HttpContext.Connection.RemoteIpAddress?.ToString();
 

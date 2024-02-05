@@ -10,6 +10,7 @@ using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Options;
 using System.Globalization;
 using System.Net;
+using IPNetwork = Microsoft.AspNetCore.HttpOverrides.IPNetwork;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -48,9 +49,19 @@ builder.Services.AddRazorPages();
 builder.Services.Configure<ForwardedHeadersOptions>(options =>
 {
     options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+
     string? knownProxy = builder.Configuration.GetValue<string>("KnownProxy");
     if (!String.IsNullOrWhiteSpace(knownProxy))
         options.KnownProxies.Add(IPAddress.Parse(knownProxy));
+
+    string? knownNetworks = builder.Configuration.GetValue<string>("KnownNetworks");
+    if (!String.IsNullOrWhiteSpace(knownNetworks))
+    { 
+        foreach (string knownNetwork in knownNetworks.Split(','))
+        {
+            options.KnownNetworks.Add(IPNetwork.Parse(knownNetwork));
+        }
+    }
 });
 
 //builder.Services.AddTransient<UrlResolver>();
