@@ -14,9 +14,18 @@
     <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#calculateEnergyModal">
         Calculate
     </button>
-    <input asp-for="Energy.Kilocalorie" class="form-control" aria-describedby="EnergyHelp" />
-    <div id="EnergyHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Energy").FirstOrDefault()?.Description</div>
-    <span asp-validation-for="Energy" class="text-danger"></span>
+    <div class="row">
+        <div class="col">
+            <input asp-for="Energy.Kilocalorie" class="form-control" aria-describedby="EnergyKilocalorieHelp" />
+            <div id="EnergyKilocalorieHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Energy").FirstOrDefault()?.Properties.Where(m => m.PropertyName == "Kilocalorie").FirstOrDefault()?.Description</div>
+            <span asp-validation-for="Energy.Kilocalorie" class="text-danger"></span>
+        </div>
+        <div class="col">
+            <input asp-for="Energy.Kilojoule" placeholder="@(Model.Energy.KilojouleValue == 0 ? "(automatically calculated)" : Model.Energy.KilojouleValue)" class="form-control" aria-describedby="EnergyKilojouleHelp" />
+            <div id="EnergyKilojouleHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Energy").FirstOrDefault()?.Properties.Where(m => m.PropertyName == "Kilojoule").FirstOrDefault()?.Description</div>
+            <span asp-validation-for="Energy.Kilojoule" class="text-danger"></span>
+        </div>
+    </div>
 </div>
 
 <!-- Calculate Energy Modal -->

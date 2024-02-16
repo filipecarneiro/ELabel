@@ -37,11 +37,19 @@ namespace ELabel.Models
         public Energy()
         {
             Kilocalorie = 0;
+            Kilojoule = null;
         }
 
         public Energy(float kilocalorie)
         {
             Kilocalorie = kilocalorie;
+            Kilojoule = null;
+        }
+
+        public Energy(float kilocalorie, float? kilojoule)
+        {
+            Kilocalorie = kilocalorie;
+            Kilojoule = kilojoule;
         }
 
         [Display(Name = "Kilocalories", Description = "Energy (kcal)")]
@@ -50,11 +58,20 @@ namespace ELabel.Models
 
         [Display(Name = "Kilojoules", Description = "Energy (kJ)")]
         [DisplayFormat(DataFormatString = "{0:G} kJ")]
-        [Ganss.Excel.Column("Kilojoule", Ganss.Excel.MappingDirections.ObjectToExcel)]
-        public float Kilojoule {
+        public float? Kilojoule { get; set; }
+
+
+        [Display(Name = "Kilojoules", Description = "Energy (kJ)")]
+        [DisplayFormat(DataFormatString = "{0:G} kJ")]
+        [Ganss.Excel.Ignore]
+        public float KilojouleValue
+        {
             get
             {
-                return MathF.Round( 4.184f * Kilocalorie, 1);
+                if (Kilojoule != null)
+                    return Kilojoule.Value;
+
+                return MathF.Round(4.184f * Kilocalorie, 1);
             }
         }
     }
@@ -66,7 +83,7 @@ namespace ELabel.Models
         [DisplayFormat(DataFormatString = "{0:G} ml")]
         public float PortionVolume { get; set; } = 100f;
 
-        [Display(Name = "Energy", Description = "Energy (kcal)")]
+        [Display(Name = "Energy", Description = "Energy (kcal/kJ)")]
         public Energy Energy { get; set; } = new();
 
         [Display(Name = "Fat", Description = "Fat (g)")]
