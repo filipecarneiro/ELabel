@@ -88,6 +88,9 @@ namespace ELabel.Areas.Admin.Controllers
             }
 
             ViewBag.FilterText = filterText;
+
+            ViewBag.TopFiveCategories = _context.Ingredient.GroupBy(x => x.Category).Select(group => new { Category = group.Key, Count = group.Count() }).OrderByDescending(x => x.Count).Take(5).Select(g => g.Category).ToList();
+
             return View(query.ToList());
         }
 

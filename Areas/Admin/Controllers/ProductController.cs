@@ -119,8 +119,13 @@ namespace ELabel.Areas.Admin.Controllers
             }
 
             ViewBag.FilterText = filterText;
-            return View(_mapper.Map<IEnumerable<WineProductDetailsDto>>(query.ToList()));
 
+            ViewBag.UniqueWineVintages = _context.Product.AsNoTracking().Select(p => p.WineInformation.Vintage).Where(i => i.HasValue).Distinct().OrderByDescending(i => i).ToList();
+            ViewBag.UniqueWineTypes = _context.Product.AsNoTracking().Select(p => p.WineInformation.Type).Where(i => i.HasValue).Distinct().OrderBy(i => i).ToList();
+            ViewBag.UniqueWineSugarContents = _context.Product.AsNoTracking().Select(p => p.WineInformation.SugarContent).Where(i => i.HasValue).Distinct().OrderBy(i => i).ToList();
+            ViewBag.UniqueWineAppellations = _context.Product.AsNoTracking().Select(p => p.WineInformation.Appellation).Where(i => !string.IsNullOrWhiteSpace(i)).Distinct().OrderBy(i => i).ToList();
+
+            return View(_mapper.Map<IEnumerable<WineProductDetailsDto>>(query.ToList()));
         }
 
         // GET: Product/Details/5

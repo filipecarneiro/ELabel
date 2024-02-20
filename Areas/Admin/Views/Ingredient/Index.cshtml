@@ -33,6 +33,15 @@
     </div>
 </form>
 
+<div id="smart-filters" class="mt-1 mb-3">
+    @foreach (var category in ViewBag.TopFiveCategories)
+    {
+        <a class="btn btn-light btn-sm" asp-action="Index" asp-route-filterText="@EnumHelper.GetDisplayName(category)" role="button" title="Filter for category @EnumHelper.GetDisplayName(category)">@EnumHelper.GetDisplayName(category)</a>
+    }
+    <a class="btn btn-light btn-sm text-warning" asp-action="Index" asp-route-filterText="Allergen" role="button" title="Filter with Allergen">Allergen</a>
+    <a class="btn btn-light btn-sm text-secondary" asp-action="Index" asp-route-filterText="" role="button" title="Remove filter">All</a>
+</div>
+
 <component type="typeof(GetStarted)" render-mode="ServerPrerendered" />
 
 <table class="table">

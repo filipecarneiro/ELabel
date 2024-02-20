@@ -33,6 +33,26 @@
     </div>
 </form>
 
+<div id="smart-filters" class="mt-1 mb-3">
+    @foreach (var wineVintage in ViewBag.UniqueWineVintages)
+    {
+        <a class="btn btn-light btn-sm" asp-action="Index" asp-route-filterText="@wineVintage" role="button" title="Filter for wine vintage @wineVintage">@wineVintage</a>
+    }
+    @foreach (var wineType in ViewBag.UniqueWineTypes)
+    {
+        <a class="btn btn-light btn-sm" asp-action="Index" asp-route-filterText="@EnumHelper.GetDisplayName(wineType)" role="button" title="Filter for wine appelation @EnumHelper.GetDisplayName(wineType)">@EnumHelper.GetDisplayName(wineType)</a>
+    }
+    @foreach (var wineSugerContent in ViewBag.UniqueWineSugarContents)
+    {
+        <a class="btn btn-light btn-sm" asp-action="Index" asp-route-filterText="@EnumHelper.GetDisplayName(wineSugerContent)" role="button" title="Filter for wine sugar content @EnumHelper.GetDisplayName(wineSugerContent)">@EnumHelper.GetDisplayName(wineSugerContent)</a>
+    }
+    @foreach (var wineAppelation in ViewBag.UniqueWineAppellations)
+    {
+        <a class="btn btn-light btn-sm" asp-action="Index" asp-route-filterText="@wineAppelation" role="button" title="Filter for wine appelation @wineAppelation">@wineAppelation</a>
+    }
+    <a class="btn btn-light btn-sm text-secondary" asp-action="Index" asp-route-filterText="" role="button" title="Remove filter">All</a>
+</div>
+
 <component type="typeof(GetStarted)" render-mode="ServerPrerendered" />
 
 <table class="table">
