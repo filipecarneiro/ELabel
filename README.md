@@ -63,7 +63,6 @@ Regulations (EU) of the European Parliament and of the Council:
 - [EU 1169/2011](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02011R1169-20180101&qid=1701362311604) provision of food information to consumers (**food labelling**)
 - [EU 2019/934](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32019R0934&qid=1701362513497) regards wine-growing areas where the alcoholic strength may be increased...
 - [EU 2019/33](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208) regards applications for protection of designations of origin, geographical indications and traditional terms in the wine sector
-- [EU 1308/2013](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02013R1308-20231208) establishing a common organisation of the markets in agricultural products
 
 ### Notes
 
