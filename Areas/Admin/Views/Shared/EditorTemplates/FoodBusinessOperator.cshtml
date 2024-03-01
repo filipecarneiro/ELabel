@@ -1,20 +1,26 @@
 ﻿@model FoodBusinessOperator
 
 <div class="mb-3">
+    <label asp-for="Type" class="form-label"></label>
+    <select asp-for="Type" asp-items="Html.GetEnumSelectList<FoodBusinessOperatorType>()" class="form-select" aria-describedby="FoodBusinessOperatorTypeHelp"></select>
+    <div id="FoodBusinessOperatorTypeHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Type").FirstOrDefault()?.Description</div>
+    <span asp-validation-for="Type" class="text-danger"></span>
+</div>
+<div class="mb-3">
     <label asp-for="Name" class="form-label"></label>
-    <input asp-for="Name" class="form-control" aria-describedby="FoodBusinessOperatorNameHelp" />
+    <input asp-for="Name" class="form-control" aria-describedby="FoodBusinessOperatorNameHelp" autocomplete="organization" placeholder="@ViewBag.ProducerName" />
     <div id="FoodBusinessOperatorNameHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Name").FirstOrDefault()?.Description</div>
     <span asp-validation-for="Name" class="text-danger"></span>
 </div>
 <div class="mb-3">
-    <label asp-for="BusinessName" class="form-label"></label>
-    <input asp-for="BusinessName" class="form-control" aria-describedby="FoodBusinessOperatorBusinessNameHelp" />
-    <div id="FoodBusinessOperatorBusinessNameHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "BusinessName").FirstOrDefault()?.Description</div>
-    <span asp-validation-for="BusinessName" class="text-danger"></span>
-</div>
-<div class="mb-3">
     <label asp-for="Address" class="form-label"></label>
-    <input asp-for="Address" class="form-control" aria-describedby="FoodBusinessOperatorAddressHelp" />
+    <input asp-for="Address" class="form-control" aria-describedby="FoodBusinessOperatorAddressHelp" autocomplete="street-address" />
     <div id="FoodBusinessOperatorAddressHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Address").FirstOrDefault()?.Description</div>
     <span asp-validation-for="Address" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="AdditionalInfo" class="form-label"></label>
+    <input asp-for="AdditionalInfo" class="form-control" aria-describedby="FoodBusinessOperatorAdditionalInfoHelp" autocomplete="off" />
+    <div id="FoodBusinessOperatorAdditionalInfoHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "AdditionalInfo").FirstOrDefault()?.Description</div>
+    <span asp-validation-for="AdditionalInfo" class="text-danger"></span>
 </div>

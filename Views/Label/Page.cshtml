@@ -122,7 +122,46 @@
     </div>
 }
 
-@if (Model.FoodBusinessOperator is not null || Model.Logistics?.Ean is not null || Model.Logistics?.Country is not null)
+@if (Model.FoodBusinessOperator is not null)
+{
+    <div class="pb-3">
+        <div class="text-center text-body-secondary">
+
+            @if (Model.FoodBusinessOperator.Type != 0)
+            {
+                <h3 class="fs-4">@Localizer[EnumHelper.GetDisplayDescription(Model.FoodBusinessOperator.Type)!]</h3>
+            }
+
+            <p>
+                @if (!String.IsNullOrWhiteSpace(Model.FoodBusinessOperator.Name) || !String.IsNullOrWhiteSpace(Model.FoodBusinessOperator.BusinessName))
+                {
+                    @if (!String.IsNullOrWhiteSpace(Model.FoodBusinessOperator.Name))
+                    {
+                        <span>@Model.FoodBusinessOperator.Name</span>
+                    }
+                    else
+                    {
+                        // TODO: Remove FoodBusinessOperator BusinessName
+                        <span>@Model.FoodBusinessOperator.BusinessName</span>
+                    }
+                    <br>
+                }
+                @if (!String.IsNullOrWhiteSpace(Model.FoodBusinessOperator.Address))
+                {
+                    <span>@Model.FoodBusinessOperator.Address</span>
+                    <br>
+                }
+                @if (!String.IsNullOrWhiteSpace(Model.FoodBusinessOperator.AdditionalInfo))
+                {
+                    <span>@Model.FoodBusinessOperator.AdditionalInfo</span>
+                }
+            </p>
+
+        </div>
+    </div>
+}
+
+@if (Model.Logistics?.Ean is not null || Model.Logistics?.Country is not null)
 {
     <div class="pb-3">
         <div class="text-center text-body-secondary">
@@ -139,11 +178,6 @@
                     <span>@Model.Logistics?.Country</span>
                 }
             </p>
-
-            @if(Model.FoodBusinessOperator is not null)
-            {
-                <p>@Model.FoodBusinessOperator.ToText()</p>
-            }
 
         </div>
     </div>

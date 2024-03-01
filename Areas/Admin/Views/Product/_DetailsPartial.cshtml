@@ -78,14 +78,6 @@
 
         </div>
 
-        <div>
-            <h4>Food Business Operator</h4>
-            <hr />
-
-            @Html.DisplayFor(model => model.FoodBusinessOperator)
-
-        </div>
-
     </div>
 
 </div>
@@ -140,6 +132,17 @@
         <hr />
 
         @Html.DisplayFor(model => model.Certifications)
+
+    </div>
+}
+
+@if (Model != null && Model.FoodBusinessOperator != null)
+{
+    <div>
+        <h4>Food Business Operator</h4>
+        <hr />
+
+        @Html.DisplayFor(model => model.FoodBusinessOperator)
 
     </div>
 }

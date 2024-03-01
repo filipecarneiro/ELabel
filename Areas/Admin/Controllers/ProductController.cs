@@ -157,6 +157,8 @@ namespace ELabel.Areas.Admin.Controllers
             QrCodeInfo qrCodeInfo = new QrCodeInfo( labelUrl, filename);
             wineProductDetailsDto.QrCodeInfo = qrCodeInfo;
 
+            ViewBag.ProducerName = _producer.Name;
+
             return View(wineProductDetailsDto);
         }
 
@@ -237,6 +239,7 @@ namespace ELabel.Areas.Admin.Controllers
             WineProductEditDto wineProductEditDto = _mapper.Map<WineProductEditDto>(product);
 
             ViewBag.Ingredients = GetAvailableIngredientsList();
+            ViewBag.ProducerName = _producer.Name;
             return View(wineProductEditDto);
         }
 
