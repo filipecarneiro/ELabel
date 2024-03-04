@@ -97,7 +97,7 @@
     <hr>
 }
 
-@if (Model.ResponsibleConsumption is not null && Model.ResponsibleConsumption.WarningDrinkingDuringPregnancy)
+@if (Model.ResponsibleConsumption is not null && Model.ResponsibleConsumption.HasAny())
 {
     <div class="pb-3">
         <h3>@Localizer["Responsible Consumption"]</h3>
@@ -110,7 +110,7 @@
     <hr>
 }
 
-@if (Model.Certifications is not null && Model.Certifications.Organic)
+@if (Model.Certifications is not null && Model.Certifications.HasAny())
 {
     <div class="pb-3">
         <h3>@Localizer["Certifications"]</h3>

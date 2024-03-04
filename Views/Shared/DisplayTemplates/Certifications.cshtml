@@ -1,7 +1,7 @@
 ﻿@model Certifications
 @inject IHtmlLocalizer<SharedResource> Localizer
 
-<div class="text-center">
+<div class="text-center mx-5">
     <div class="row align-items-start">
         @if(Model.Organic)
         {
@@ -14,6 +14,32 @@
                          alt="@Localizer[ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Organic").FirstOrDefault()?.Description ?? "Certifications"]"
                     >
                     <figcaption class="figure-caption css-tooltip-text">@Localizer[ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Organic").FirstOrDefault()?.Description ?? "Certifications"]</figcaption>
+                </figure>
+            </div>
+        }
+        @if (Model.Vegetarian)
+        {
+            <div class="col">
+                <figure class="figure css-tooltip">
+                    <img class="sign img-fluid m-3"
+                         width="85" height="100"
+                         loading="lazy"
+                         src="~/img/certification-v-label-vegetarian.svg"
+                         alt="@Localizer[ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Vegetarian").FirstOrDefault()?.Description ?? "Certifications"]">
+                    <figcaption class="figure-caption css-tooltip-text">@Localizer[ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Vegetarian").FirstOrDefault()?.Description ?? "Certifications"]</figcaption>
+                </figure>
+            </div>
+        }
+        @if (Model.Vegan)
+        {
+            <div class="col">
+                <figure class="figure css-tooltip">
+                    <img class="sign img-fluid m-3"
+                         width="85" height="100"
+                         loading="lazy"
+                         src="~/img/certification-v-label-vegan.svg"
+                         alt="@Localizer[ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Vegan").FirstOrDefault()?.Description ?? "Certifications"]">
+                    <figcaption class="figure-caption css-tooltip-text">@Localizer[ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Vegan").FirstOrDefault()?.Description ?? "Certifications"]</figcaption>
                 </figure>
             </div>
         }

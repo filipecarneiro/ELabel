@@ -112,9 +112,7 @@
     </div>
 }
 
-@if (Model != null && Model.ResponsibleConsumption != null && (Model.ResponsibleConsumption.WarningDrinkingBelowLegalAge ||
-                                                               Model.ResponsibleConsumption.WarningDrinkingDuringPregnancy ||
-                                                               Model.ResponsibleConsumption.WarningDrinkingWhenDriving))
+@if (Model != null && Model.ResponsibleConsumption != null && Model.ResponsibleConsumption.HasAny())
 {
     <div>
         <h4>Responsible consumption</h4>
@@ -125,7 +123,7 @@
     </div>
 }
 
-@if (Model != null && Model.Certifications != null && Model.Certifications.Organic)
+@if (Model != null && Model.Certifications != null && Model.Certifications.HasAny())
 {
     <div>
         <h4>Certifications</h4>

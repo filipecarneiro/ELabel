@@ -1,17 +1,36 @@
 ﻿@model Certifications
 
 <div class="form-check">
-
     <img class="img-fluid float-end ms-5"
          style="max-height: 50px"
          loading="lazy"
          src="~/img/certification-organic.svg"
          alt="logo"
     >
-
     <input asp-for="Organic" class="form-check-input" type="checkbox" aria-describedby="OrganicHelp" />
     <label asp-for="Organic" class="form-check-label"></label>
     <div id="OrganicHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Organic").FirstOrDefault()?.Description</div>
     <span asp-validation-for="Organic" class="text-danger"></span>
-
+</div>
+<div class="form-check">
+    <img class="img-fluid float-end ms-5"
+         style="max-height: 50px"
+         loading="lazy"
+         src="~/img/certification-v-label-vegetarian.svg"
+         alt="logo">
+    <input asp-for="Vegetarian" class="form-check-input" type="checkbox" aria-describedby="VegetarianHelp" />
+    <label asp-for="Vegetarian" class="form-check-label"></label>
+    <div id="VegetarianHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Vegetarian").FirstOrDefault()?.Description</div>
+    <span asp-validation-for="Vegetarian" class="text-danger"></span>
+</div>
+<div class="form-check">
+    <img class="img-fluid float-end ms-5"
+         style="max-height: 50px"
+         loading="lazy"
+         src="~/img/certification-v-label-vegan.svg"
+         alt="logo">
+    <input asp-for="Vegan" class="form-check-input" type="checkbox" aria-describedby="VeganHelp" />
+    <label asp-for="Vegan" class="form-check-label"></label>
+    <div id="VeganHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Vegan").FirstOrDefault()?.Description</div>
+    <span asp-validation-for="Vegan" class="text-danger"></span>
 </div>

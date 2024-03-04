@@ -17,6 +17,14 @@ namespace ELabel.Models
         [Display(Name = "Warning against drinking when driving", Description = "Don't drink when driving a car, motorbike or operating machinery")]
         public bool WarningDrinkingWhenDriving { get; set; } = false;
 
+        public bool HasAny()
+        {
+            if (WarningDrinkingDuringPregnancy || WarningDrinkingBelowLegalAge || WarningDrinkingWhenDriving)
+                return true;
+
+            return false;
+        }
+
         public ResponsibleConsumption DeepCopy()
         {
             return (ResponsibleConsumption)this.MemberwiseClone();
