@@ -4,10 +4,11 @@
 <svg
    version="1.1"
    id="svg2"
-   width="377.94666"
-   height="377.94666"
-   viewBox="0 0 377.94666 377.94666"
-   sodipodi:docname="v-label-vegetarian-color.eps"
+   width="248.97519"
+   height="292.87997"
+   viewBox="0 0 248.97519 292.87998"
+   sodipodi:docname="certification-v-label-vegetarian.svg"
+   inkscape:version="1.2.2 (b0a84865, 2022-12-01)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -22,15 +23,28 @@
      inkscape:showpageshadow="2"
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1" />
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="0.62442675"
+     inkscape:cx="189.77406"
+     inkscape:cy="188.97333"
+     inkscape:window-width="1440"
+     inkscape:window-height="876"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g8" />
   <g
      id="g8"
      inkscape:groupmode="layer"
      inkscape:label="ink_ext_XXXXXX"
-     transform="matrix(1.3333333,0,0,-1.3333333,0,377.94667)">
+     transform="matrix(1.3333333,0,0,-1.3333333,-64.490134,338.45599)">
     <g
        id="g10"
-       transform="scale(0.1)">
+       transform="scale(0.1)"
+       inkscape:export-filename="certification-v-label-vegetarian.svg"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
       <path
          d="m 524.625,2538.42 c -22.609,0 -40.949,-18.33 -40.949,-40.95 V 382.77 c 0,-22.61 18.34,-40.95 40.949,-40.95 H 2310.05 c 22.6,0 40.94,18.34 40.94,40.95 v 2114.7 c 0,22.62 -18.34,40.95 -40.94,40.95 H 524.625"
          style="fill:#008940;fill-opacity:1;fill-rule:nonzero;stroke:none"
