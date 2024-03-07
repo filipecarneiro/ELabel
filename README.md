@@ -88,27 +88,36 @@ To build the Open E-Label project using Visual Studio, follow these steps:
 
 The web app can be deployed using the [published Docker image](https://hub.docker.com/r/fcarneiro/elabel). Here are the steps to run it with Docker compose:
 
-1 Copy `docker-compose.yml` to your server. Change server details as needed:
+1 Create a new directory and download `docker-compose.yml` sample:
 
 ```shell
-scp docker-compose.yml user@server:~/elabel/
+mkdir elabel && cd elabel
+wget https://raw.githubusercontent.com/filipecarneiro/ELabel/main/docker-compose.yml
 ```
 
-2 Start containers on server:
+2 Write your passwords to an .env file (change to your own passwords!):
 
 ```shell
-ssh user@server
+echo "MSSQL_SA_PASSWORD=MyStrongPassword" >> .env
+echo "ADMIN_PASSWORD=MyAdminPassword" >> .env
+```
 
-cd elabel/
+3 Start all containers:
+
+```shell
 docker-compose pull
 docker-compose up -d
 ```
 
-3 View Logs:
+4 View Logs:
 
 ```shell
 docker-compose logs -f
 ```
+
+`db` will take some time in the first start, so the app will restart a couple of times. Be patient!
+
+When you see something like `Now listening on: http://[::]:8080` on the log, open your browser with the server name or IP address.
 
 ## 🙋 Contributing
 
