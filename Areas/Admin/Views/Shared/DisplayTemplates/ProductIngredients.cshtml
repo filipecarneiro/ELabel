@@ -6,8 +6,14 @@
     {
         @if (productIngredient.Ingredient != null)
         {
-            <li class="list-group-item d-flex justify-content-between align-items-center" title="@productIngredient.Order">
-                @productIngredient.Ingredient.Name
+            <li class="list-group-item d-flex justify-content-between" title="@productIngredient.Order">
+                <div>
+                    @productIngredient.Ingredient.Name
+                    @if (productIngredient.Ingredient.ENumber != null)
+                    {
+                        <span class="text-secondary ms-3">@Html.DisplayFor(pi => productIngredient.Ingredient.ENumber)</span>
+                    }
+                </div>
                 <div>
                     @if (productIngredient.Ingredient.Allergen)
                     {

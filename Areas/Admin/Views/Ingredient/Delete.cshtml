@@ -1,4 +1,4 @@
-﻿@model ELabel.Models.Ingredient
+﻿@model ELabel.ViewModels.IngredientDto
 
 @{
     ViewData["Title"] = "Delete";
@@ -23,7 +23,13 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Category)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ENumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ENumber)
+        </dd>
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Allergen)
         </dt>
         <dd class = "col-sm-10">

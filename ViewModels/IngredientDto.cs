@@ -17,6 +17,11 @@ namespace ELabel.ViewModels
         [EnumDataType(typeof(IngredientCategory))]
         public required IngredientCategory Category { get; set; }
 
+        [Display(Name = "E number", Description = "Europe number for substances used as food additives.")]
+        [DisplayFormat(DataFormatString = "E{0:D}")]
+        [Range(100, 1599)]
+        public ushort? ENumber { get; set; }
+
         [Required]
         public required bool Allergen { get; set; }
 

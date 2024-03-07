@@ -10,6 +10,8 @@ namespace ELabel.ViewModels
 
         public required IngredientCategory Category { get; set; }
 
+        public ushort? ENumber { get; set; }
+
         public required bool Allergen { get; set; }
 
         public required bool Custom { get; set; }

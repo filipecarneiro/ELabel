@@ -1,6 +1,6 @@
 ﻿@using ELabel.Areas.Admin.Components
 @using ELabel.Extensions;
-@model IEnumerable<ELabel.Models.Ingredient>
+@model IEnumerable<ELabel.ViewModels.IngredientDto>
 
 @{
     ViewData["Title"] = "Ingredients";
@@ -54,6 +54,9 @@
                 <a asp-action="Index" asp-route-sortOrder="@ViewBag.SortParmCategory">@Html.DisplayNameFor(model => model.Category)</a>
             </th>
             <th scope="col">
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.SortParmENumber">@Html.DisplayNameFor(model => model.ENumber)</a>
+            </th>
+            <th scope="col">
                 <a asp-action="Index" asp-route-sortOrder="@ViewBag.SortParmAllergen">@Html.DisplayNameFor(model => model.Allergen)</a>
             </th>
             @*
@@ -74,6 +77,9 @@
                 <a class="btn btn-light btn-sm" asp-action="Index" asp-route-filterText="@EnumHelper.GetDisplayName(item.Category)" role="button" title="@EnumHelper.GetDisplayDescription(item.Category)">
                         @EnumHelper.GetDisplayName(item.Category)
                 </a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ENumber)
             </td>
             <td>
                 @if(item.Allergen)

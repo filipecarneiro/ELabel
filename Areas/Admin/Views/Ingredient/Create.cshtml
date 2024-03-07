@@ -1,4 +1,4 @@
-﻿@model ELabel.Models.Ingredient
+﻿@model ELabel.ViewModels.IngredientDto
 
 @{
     ViewData["Title"] = "Create";
@@ -21,6 +21,11 @@
                 <label asp-for="Category" class="form-label"></label>
                 <select asp-for="Category" asp-items="Html.GetEnumSelectList<IngredientCategory>()" class="form-select"></select>
                 <span asp-validation-for="Category" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="ENumber" class="form-label"></label>
+                <input asp-for="ENumber" class="form-control" />
+                <span asp-validation-for="ENumber" class="text-danger"></span>
             </div>
             <div class="mb-3 form-check">
                 <label class="form-check-label">

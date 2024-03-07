@@ -1,7 +1,32 @@
 ﻿@model List<ProductIngredientDto>
+@using Microsoft.Extensions.Options
 @inject IHtmlLocalizer<SharedResource> Localizer
+@inject IOptions<Producer> Producer
 
 @{
+    IngredientListForCategoryFormat ingredientListForCategoryFormat = Producer.Value.IngredientListFormat;
+    string ingredientListForCategoryFormatStart, ingredientListForCategoryFormatSeparator, ingredientListForCategoryFormatEnd;
+
+    switch (ingredientListForCategoryFormat)
+    {
+        default:
+        case IngredientListForCategoryFormat.Parentheses:
+            ingredientListForCategoryFormatStart = " (";
+            ingredientListForCategoryFormatSeparator = ", ";
+            ingredientListForCategoryFormatEnd = ")";
+            break;
+        case IngredientListForCategoryFormat.Colon:
+            ingredientListForCategoryFormatStart = ": ";
+            ingredientListForCategoryFormatSeparator = ", ";
+            ingredientListForCategoryFormatEnd = "";
+            break;
+        case IngredientListForCategoryFormat.ENumber:
+            ingredientListForCategoryFormatStart = " ";
+            ingredientListForCategoryFormatSeparator = " ";
+            ingredientListForCategoryFormatEnd = "";
+            break;
+    }
+
     var query = Model.GroupBy(pi => pi.Ingredient?.Category)
                      .Select(group => new
                      {
@@ -27,9 +52,11 @@
             string categoryName = EnumHelper.GetDisplayName(category) ?? "";
             string localizedCategoryName = Localizer[categoryName].Value;
 
+            // Start category item
             @Html.Raw($"<span class='category'>{localizedCategoryName}</span>");
-            @Html.Raw(" (");
 
+            // Start ingredients in category list
+            @Html.Raw(ingredientListForCategoryFormatStart);
             parenthesesOpend = true;
         }
 
@@ -37,32 +64,47 @@
         {
             if(ingredient != null)
             {
-                // Localization with string in database
-                string? localizedName = ingredient.LocalizableStrings.GetLocalized(@System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName);
+                string ingredientText;
 
-                if(String.IsNullOrEmpty(localizedName))
+                if (ingredientListForCategoryFormat == IngredientListForCategoryFormat.ENumber && ingredient.ENumber != null)
                 {
-                    // Localization with shared resources
-                    localizedName = Localizer[ingredient.Name].Value;
+                    ingredientText = $"E{ingredient.ENumber}";
+                }
+                else
+                {
+                    // Localization with string in database
+                    string? localizedName = ingredient.LocalizableStrings.GetLocalized(@System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName);
+
+                    if (String.IsNullOrEmpty(localizedName))
+                    {
+                        // Localization with shared resources
+                        ingredientText = Localizer[ingredient.Name].Value;
+                    }
+                    else
+                    {
+                        ingredientText = localizedName;
+                    }
                 }
 
-                string ingredientSpan = $"<span class='ingredient{(ingredient.Allergen ? " fw-bold" : "")}'>{localizedName}</span>";
+                string ingredientSpan = $"<span class='ingredient{(ingredient.Allergen ? " fw-bold" : "")}'>{ingredientText}</span>";
                     
                 @Html.Raw(ingredientSpan);
 
                 if (ingredient != group.Ingredients.Last())
                 {
-                    @Html.Raw(", ");
+                    @Html.Raw(ingredientListForCategoryFormatSeparator);
                 }
             }
         }
 
-        @if(parenthesesOpend)
+        // End ingredients in category list
+        @if (parenthesesOpend)
         {
-            @Html.Raw(")");
+            @Html.Raw(ingredientListForCategoryFormatEnd);
             parenthesesOpend = false;
         }
 
+        // End category item
         @Html.Raw("</span>");
 
         @if (group != query.Last())

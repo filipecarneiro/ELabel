@@ -33,6 +33,7 @@ namespace ELabel.Areas.Admin.Controllers
 
             ViewBag.SortParmName = string.IsNullOrEmpty(sortOrder) ? "-Name" : "";
             ViewBag.SortParmCategory = sortOrder == "Category" ? "-Category" : "Category";
+            ViewBag.SortParmENumber = sortOrder == "ENumber" ? "-ENumber" : "ENumber";
             ViewBag.SortParmAllergen = sortOrder == "Allergen" ? "-Allergen" : "Allergen";
             ViewBag.SortParmCustom = sortOrder == "Custom" ? "-Custom" : "Custom";
 
@@ -47,12 +48,14 @@ namespace ELabel.Areas.Admin.Controllers
 
             if (!string.IsNullOrWhiteSpace(filterText))
             {
-                filterText = filterText.Trim();
+                filterText = filterText.Trim().ToLower();
+                ushort filterUShort;
 
                 query = query.Where(t => t.Name.Contains(filterText, StringComparison.InvariantCultureIgnoreCase) ||
-                                          EnumHelper.GetDisplayName(t.Category)?.ToLower() == filterText.ToLower() ||
-                                          "allergen" == filterText.ToLower() && t.Allergen == true ||
-                                          "custom" == filterText.ToLower() && t.Custom == true
+                                          EnumHelper.GetDisplayName(t.Category)?.ToLower() == filterText ||
+                                          t.ENumber != null && ushort.TryParse(filterText, out filterUShort) && t.ENumber == filterUShort ||
+                                          "allergen" == filterText && t.Allergen == true ||
+                                          "custom" == filterText && t.Custom == true
                                          
                                    );
             }
@@ -73,6 +76,12 @@ namespace ELabel.Areas.Admin.Controllers
                 case "-Category":
                     query = query.OrderByDescending(t => t.Category).ThenByDescending(t => t.Name).ThenByDescending(t => t.Id);
                     break;
+                case "ENumber":
+                    query = query.OrderBy(t => t.ENumber).ThenBy(t => t.Name).ThenBy(t => t.Id);
+                    break;
+                case "-ENumber":
+                    query = query.OrderByDescending(t => t.ENumber).ThenByDescending(t => t.Name).ThenByDescending(t => t.Id);
+                    break;
                 case "Allergen":
                     query = query.OrderBy(t => t.Allergen).ThenBy(t => t.Name).ThenBy(t => t.Id);
                     break;
@@ -91,7 +100,7 @@ namespace ELabel.Areas.Admin.Controllers
 
             ViewBag.TopFiveCategories = _context.Ingredient.GroupBy(x => x.Category).Select(group => new { Category = group.Key, Count = group.Count() }).OrderByDescending(x => x.Count).Take(5).Select(g => g.Category).ToList();
 
-            return View(query.ToList());
+            return View(_mapper.Map<IEnumerable<IngredientDto>>(query.ToList()));
         }
 
         // GET: Ingredient/Details/5
@@ -109,7 +118,9 @@ namespace ELabel.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            return View(ingredient);
+            IngredientDto ingredientDto = _mapper.Map<IngredientDto>(ingredient);
+
+            return View(ingredientDto);
         }
 
         // GET: Ingredient/Create
@@ -123,18 +134,20 @@ namespace ELabel.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Name,Category,Allergen")] Ingredient ingredient)
+        public async Task<IActionResult> Create([Bind("Name,Category,ENumber,Allergen")] IngredientDto ingredientDto)
         {
-            ingredient.Id = Guid.NewGuid();
-            ingredient.Custom = true;
+            ingredientDto.Id = Guid.NewGuid();
 
             if (ModelState.IsValid)
             {
+                Ingredient ingredient = _mapper.Map<Ingredient>(ingredientDto);
+                ingredientDto.Custom = true;
+
                 _context.Add(ingredient);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(ingredient);
+            return View(ingredientDto);
         }
 
         // GET: Ingredient/Edit/5
@@ -150,7 +163,10 @@ namespace ELabel.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            return View(ingredient);
+
+            IngredientDto ingredientDto = _mapper.Map<IngredientDto>(ingredient);
+
+            return View(ingredientDto);
         }
 
         // POST: Ingredient/Edit/5
@@ -158,9 +174,9 @@ namespace ELabel.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("Name,Category,Allergen,Custom,LocalizableStrings,Id")] Ingredient ingredient)
+        public async Task<IActionResult> Edit(Guid id, [Bind("Name,Category,ENumber,Allergen,Custom,LocalizableStrings,Id")] IngredientDto ingredientDto)
         {
-            if (id != ingredient.Id)
+            if (id != ingredientDto.Id)
             {
                 return NotFound();
             }
@@ -169,6 +185,7 @@ namespace ELabel.Areas.Admin.Controllers
             {
                 try
                 {
+                    Ingredient ingredient = _mapper.Map<Ingredient>(ingredientDto);
                     // ingredient.Custom = true;
 
                     _context.Update(ingredient);
@@ -176,7 +193,7 @@ namespace ELabel.Areas.Admin.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!IngredientExists(ingredient.Id))
+                    if (!IngredientExists(ingredientDto.Id))
                     {
                         return NotFound();
                     }
@@ -187,7 +204,7 @@ namespace ELabel.Areas.Admin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(ingredient);
+            return View(ingredientDto);
         }
 
         // GET: Ingredient/Delete/5
@@ -205,7 +222,7 @@ namespace ELabel.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            return View(ingredient);
+            return View(_mapper.Map<IngredientDto>(ingredient));
         }
 
         // POST: Ingredient/Delete/5
