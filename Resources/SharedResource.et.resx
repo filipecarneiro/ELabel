@@ -73,7 +73,6 @@
 	<data name="Aleppo pine resin" xml:space="preserve">
 		<value>Aleppo männi vaik</value>
 		<comment>Other</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Antioxidant" xml:space="preserve">
 		<value>Antioksüdant</value>
@@ -82,7 +81,14 @@
 	<data name="Ascorbic acid" xml:space="preserve">
 		<value>Askorbiinhape</value>
 		<comment>Antioxidant</comment>
-		<comment>[]</comment>
+	</data>
+	<data name="Bottled and produced by" xml:space="preserve">
+		<value>Villitud ja tootja poolt</value>
+		<comment>Indication of the bottler and producer (if they concern the same natural or legal person).&#13; Regulated by Article 46 of Commission Delegated Regulation (EU) 2019/33.&#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02019R0033-20231208#art_46</comment>
+	</data>
+	<data name="Bottled by" xml:space="preserve">
+		<value>Villitud</value>
+		<comment>Indication of the bottler.&#13; Regulated by Article 46 of Commission Delegated Regulation (EU) 2019/33.&#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02019R0033-20231208#art_46</comment>
 	</data>
 	<data name="Bottled in a protective atmosphere" xml:space="preserve">
 		<value>Villitud kaitsvas atmosfääris</value>
@@ -103,12 +109,10 @@
 	<data name="Calcium sulphate" xml:space="preserve">
 		<value>Kaltsiumsulfaat</value>
 		<comment>AcidityRegulator</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Caramel" xml:space="preserve">
 		<value>Karamell</value>
 		<comment>Other</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Carbohydrate" xml:space="preserve">
 		<value>Süsivesikute</value>
@@ -117,16 +121,22 @@
 	<data name="Carbon dioxide" xml:space="preserve">
 		<value>Süsinikdioksiid</value>
 		<comment>RawMaterial</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Carboxymethylcellulose" xml:space="preserve">
 		<value>Karboksümetüültselluloos</value>
 		<comment>Stabiliser</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Certifications" xml:space="preserve">
 		<value>Sertifikaadid</value>
 		<comment>Certifications</comment>
+	</data>
+	<data name="Certified Vegan by V-Label" xml:space="preserve">
+		<value>Sertifitseeritud vegan V-Labeli järgi</value>
+		<comment>https://www.v-label.com/</comment>
+	</data>
+	<data name="Certified Vegetarian by V-Label" xml:space="preserve">
+		<value>V-Labeli poolt sertifitseeritud taimetoitlane</value>
+		<comment>https://www.v-label.com/</comment>
 	</data>
 	<data name="Certified organic based on EU-Guidelines" xml:space="preserve">
 		<value>Sertifitseeritud mahepõllumajanduslik toode ELi suuniste alusel</value>
@@ -135,7 +145,6 @@
 	<data name="Citric acid" xml:space="preserve">
 		<value>Sidrunhappe</value>
 		<comment>Stabiliser</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Clarifying agent" xml:space="preserve">
 		<value>Selitaja</value>
@@ -144,7 +153,10 @@
 	<data name="Concentrated grape must" xml:space="preserve">
 		<value>Kontsentreeritud viinamarjavirre</value>
 		<comment>EnrichmentSubstance</comment>
-		<comment>[]</comment>
+	</data>
+	<data name="Contains negligible amounts of" xml:space="preserve">
+		<value>Sisaldab tühistes kogustes</value>
+		<comment>REGULATION (EU) No 1169/2011 Article 34 Section 5:&#13; https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02011R1169-20180101#tocId242</comment>
 	</data>
 	<data name="Correction of defect" xml:space="preserve">
 		<value>Defekti parandamine</value>
@@ -153,7 +165,6 @@
 	<data name="Dimethyldicarbonate" xml:space="preserve">
 		<value>Dimetüüldikarbonaat</value>
 		<comment>Preservative</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Don't drink during pregnancy and breastfeeding" xml:space="preserve">
 		<value>Ärge jooge raseduse ja imetamise ajal</value>
@@ -195,7 +206,6 @@
 	<data name="Expedition liqueur" xml:space="preserve">
 		<value>Ekspeditsiooni liköör</value>
 		<comment>RawMaterial</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Extra brut" xml:space="preserve">
 		<value>Extra brut</value>
@@ -220,7 +230,6 @@
 	<data name="Fumaric acid" xml:space="preserve">
 		<value>Fumaarhape</value>
 		<comment>Stabiliser</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Gases and packaging gas" xml:space="preserve">
 		<value>Gaasid ja pakendgaas</value>
@@ -229,18 +238,20 @@
 	<data name="Grapes" xml:space="preserve">
 		<value>Viinamarjad</value>
 		<comment>RawMaterial&#13; &#13; Ingredients shall be designated by their specific name, with the exceptions provided for in the FIC Regulation and in Delegated Regulation (EU) 2019/33 (e.g. ‘grapes’ referring to the raw material).&#13; &#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208</comment>
-		<comment>[]</comment>
 		<comment>Ingredients shall be designated by their specific name, with the exceptions provided for in the FIC Regulation and in Delegated Regulation (EU) 2019/33 (e.g. ‘grapes’ referring to the raw material).</comment>
 		<comment>https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208</comment>
 	</data>
 	<data name="Gum arabic" xml:space="preserve">
 		<value>Kummiaraabik</value>
 		<comment>Stabiliser</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Home Page" xml:space="preserve">
 		<value>Koduleht</value>
 		<comment>Home</comment>
+	</data>
+	<data name="Imported by" xml:space="preserve">
+		<value>Importija</value>
+		<comment>Indication of the importer.&#13; Regulated by Article 46 of Commission Delegated Regulation (EU) 2019/33.&#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02019R0033-20231208#art_46</comment>
 	</data>
 	<data name="Ingredients" xml:space="preserve">
 		<value>Koostisosi</value>
@@ -254,12 +265,10 @@
 	<data name="Lactic acid" xml:space="preserve">
 		<value>Piimhape</value>
 		<comment>AcidityRegulator</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Malic acid" xml:space="preserve">
 		<value>Õunhape</value>
 		<comment>AcidityRegulator</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Medium dry" xml:space="preserve">
 		<value>Keskmiselt kuiv</value>
@@ -272,7 +281,6 @@
 	<data name="Metatartaric acid" xml:space="preserve">
 		<value>Metatartaarhape</value>
 		<comment>Stabiliser</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Milk" xml:space="preserve">
 		<value>Piim</value>
@@ -323,6 +331,10 @@
 		<value>Muu koostisosa</value>
 		<comment>IngredientCategory</comment>
 	</data>
+	<data name="Packaged by" xml:space="preserve">
+		<value>Pakendanud</value>
+		<comment>In case of containers other than bottles, the words ‘packager’ and ‘packaged by (…)’ shall replace the words ‘bottler’ and ‘bottled by (…)’ respectively&#13; Regulated by Article 46 of Commission Delegated Regulation (EU) 2019/33.&#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02019R0033-20231208#art_46</comment>
+	</data>
 	<data name="Page not found" xml:space="preserve">
 		<value>Lehte ei leitud</value>
 		<comment>404 page title</comment>
@@ -330,16 +342,18 @@
 	<data name="Potassium polyaspartate" xml:space="preserve">
 		<value>Kaaliumpolüaspartaat</value>
 		<comment>Stabiliser</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Potassium sorbate" xml:space="preserve">
 		<value>Kaaliumsorbaat</value>
 		<comment>Preservative</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Preservative" xml:space="preserve">
 		<value>Säilitusaine</value>
 		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Produced by" xml:space="preserve">
+		<value>Tootja</value>
+		<comment>Indication of the producer.&#13; Regulated by Article 46 of Commission Delegated Regulation (EU) 2019/33.&#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02019R0033-20231208#art_46</comment>
 	</data>
 	<data name="Protein" xml:space="preserve">
 		<value>Proteiin</value>
@@ -377,6 +391,10 @@
 		<value>Sekvestrant</value>
 		<comment>IngredientCategory</comment>
 	</data>
+	<data name="Sold by" xml:space="preserve">
+		<value>Müüs</value>
+		<comment>Indication of the vendor (if not the producer).&#13; Regulated by Article 46 of Commission Delegated Regulation (EU) 2019/33.&#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02019R0033-20231208#art_46</comment>
+	</data>
 	<data name="Sparkling wine" xml:space="preserve">
 		<value>Vahuvein</value>
 		<comment>WineType</comment>
@@ -388,12 +406,10 @@
 	<data name="Sucrose" xml:space="preserve">
 		<value>Sahharoos</value>
 		<comment>EnrichmentSubstance</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Sugar" xml:space="preserve">
 		<value>Suhkur</value>
 		<comment>EnrichmentSubstance</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Sulphites" xml:space="preserve">
 		<value>Sulfitid</value>
@@ -411,7 +427,6 @@
 	<data name="Tartaric acid" xml:space="preserve">
 		<value>Viinhape</value>
 		<comment>AcidityRegulator</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="This label isn't available. Sorry about that." xml:space="preserve">
 		<value>See silt pole saadaval. Kahju sellest.</value>
@@ -420,7 +435,6 @@
 	<data name="Tirage liqueur" xml:space="preserve">
 		<value>Tirage liqueur</value>
 		<comment>RawMaterial</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Web Accessibility Guidelines" xml:space="preserve">
 		<value>Veebi juurdepääsetavuse juhised</value>
@@ -437,7 +451,6 @@
 	<data name="Yeast mannoproteins" xml:space="preserve">
 		<value>Pärmi mannoproteiinid</value>
 		<comment>Stabiliser</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="of which Saturates" xml:space="preserve">
 		<value>millest küllastunud</value>

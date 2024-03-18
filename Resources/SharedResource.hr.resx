@@ -73,7 +73,6 @@
 	<data name="Aleppo pine resin" xml:space="preserve">
 		<value>Smola alepskog bora</value>
 		<comment>Other</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Antioxidant" xml:space="preserve">
 		<value>Antioksidativni</value>
@@ -82,7 +81,14 @@
 	<data name="Ascorbic acid" xml:space="preserve">
 		<value>Askorbinska kiselina</value>
 		<comment>Antioxidant</comment>
-		<comment>[]</comment>
+	</data>
+	<data name="Bottled and produced by" xml:space="preserve">
+		<value>Puni u boce i proizvodi</value>
+		<comment>Indication of the bottler and producer (if they concern the same natural or legal person).&#13; Regulated by Article 46 of Commission Delegated Regulation (EU) 2019/33.&#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02019R0033-20231208#art_46</comment>
+	</data>
+	<data name="Bottled by" xml:space="preserve">
+		<value>Punio u boce</value>
+		<comment>Indication of the bottler.&#13; Regulated by Article 46 of Commission Delegated Regulation (EU) 2019/33.&#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02019R0033-20231208#art_46</comment>
 	</data>
 	<data name="Bottled in a protective atmosphere" xml:space="preserve">
 		<value>Flaširan u zaštitnoj atmosferi</value>
@@ -103,12 +109,10 @@
 	<data name="Calcium sulphate" xml:space="preserve">
 		<value>Kalcijev sulfat</value>
 		<comment>AcidityRegulator</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Caramel" xml:space="preserve">
 		<value>Karamela</value>
 		<comment>Other</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Carbohydrate" xml:space="preserve">
 		<value>Ugljikohidrat</value>
@@ -117,16 +121,22 @@
 	<data name="Carbon dioxide" xml:space="preserve">
 		<value>Ugljični dioksid</value>
 		<comment>RawMaterial</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Carboxymethylcellulose" xml:space="preserve">
 		<value>Karboksimetilceluloza</value>
 		<comment>Stabiliser</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Certifications" xml:space="preserve">
 		<value>Certifikate</value>
 		<comment>Certifications</comment>
+	</data>
+	<data name="Certified Vegan by V-Label" xml:space="preserve">
+		<value>Veganski certificirani od V-Label</value>
+		<comment>https://www.v-label.com/</comment>
+	</data>
+	<data name="Certified Vegetarian by V-Label" xml:space="preserve">
+		<value>Certificirani vegetarijanac po V-etiketi</value>
+		<comment>https://www.v-label.com/</comment>
 	</data>
 	<data name="Certified organic based on EU-Guidelines" xml:space="preserve">
 		<value>Certificirana ekološka tehnologija na temelju smjernica EU-a</value>
@@ -135,7 +145,6 @@
 	<data name="Citric acid" xml:space="preserve">
 		<value>Limunska kiselina</value>
 		<comment>Stabiliser</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Clarifying agent" xml:space="preserve">
 		<value>Sredstvo za pojašnjenje</value>
@@ -144,7 +153,10 @@
 	<data name="Concentrated grape must" xml:space="preserve">
 		<value>Koncentrirani mošt</value>
 		<comment>EnrichmentSubstance</comment>
-		<comment>[]</comment>
+	</data>
+	<data name="Contains negligible amounts of" xml:space="preserve">
+		<value>Sadrži zanemarive količine od</value>
+		<comment>REGULATION (EU) No 1169/2011 Article 34 Section 5:&#13; https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02011R1169-20180101#tocId242</comment>
 	</data>
 	<data name="Correction of defect" xml:space="preserve">
 		<value>Ispravljanje nedostatka</value>
@@ -153,7 +165,6 @@
 	<data name="Dimethyldicarbonate" xml:space="preserve">
 		<value>Dimetildikarbonat</value>
 		<comment>Preservative</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Don't drink during pregnancy and breastfeeding" xml:space="preserve">
 		<value>Ne pijte tijekom trudnoće i dojenja</value>
@@ -195,7 +206,6 @@
 	<data name="Expedition liqueur" xml:space="preserve">
 		<value>Ekspedicijski liker</value>
 		<comment>RawMaterial</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Extra brut" xml:space="preserve">
 		<value>Ekstra brut</value>
@@ -220,7 +230,6 @@
 	<data name="Fumaric acid" xml:space="preserve">
 		<value>Fumarna kiselina</value>
 		<comment>Stabiliser</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Gases and packaging gas" xml:space="preserve">
 		<value>Plinovi i plin za pakiranje</value>
@@ -229,18 +238,20 @@
 	<data name="Grapes" xml:space="preserve">
 		<value>Grožđe</value>
 		<comment>RawMaterial&#13; &#13; Ingredients shall be designated by their specific name, with the exceptions provided for in the FIC Regulation and in Delegated Regulation (EU) 2019/33 (e.g. ‘grapes’ referring to the raw material).&#13; &#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208</comment>
-		<comment>[]</comment>
 		<comment>Ingredients shall be designated by their specific name, with the exceptions provided for in the FIC Regulation and in Delegated Regulation (EU) 2019/33 (e.g. ‘grapes’ referring to the raw material).</comment>
 		<comment>https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208</comment>
 	</data>
 	<data name="Gum arabic" xml:space="preserve">
 		<value>Guma arapski</value>
 		<comment>Stabiliser</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Home Page" xml:space="preserve">
 		<value>Početna stranica</value>
 		<comment>Home</comment>
+	</data>
+	<data name="Imported by" xml:space="preserve">
+		<value>Uvezeno od strane</value>
+		<comment>Indication of the importer.&#13; Regulated by Article 46 of Commission Delegated Regulation (EU) 2019/33.&#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02019R0033-20231208#art_46</comment>
 	</data>
 	<data name="Ingredients" xml:space="preserve">
 		<value>Sastojci</value>
@@ -254,12 +265,10 @@
 	<data name="Lactic acid" xml:space="preserve">
 		<value>Mliječna kiselina</value>
 		<comment>AcidityRegulator</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Malic acid" xml:space="preserve">
 		<value>Jabučna kiselina</value>
 		<comment>AcidityRegulator</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Medium dry" xml:space="preserve">
 		<value>Srednje suha</value>
@@ -272,7 +281,6 @@
 	<data name="Metatartaric acid" xml:space="preserve">
 		<value>Metatarinska kiselina</value>
 		<comment>Stabiliser</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Milk" xml:space="preserve">
 		<value>Mlijeko</value>
@@ -323,6 +331,10 @@
 		<value>Ostali sastojak</value>
 		<comment>IngredientCategory</comment>
 	</data>
+	<data name="Packaged by" xml:space="preserve">
+		<value>Pakirano od</value>
+		<comment>In case of containers other than bottles, the words ‘packager’ and ‘packaged by (…)’ shall replace the words ‘bottler’ and ‘bottled by (…)’ respectively&#13; Regulated by Article 46 of Commission Delegated Regulation (EU) 2019/33.&#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02019R0033-20231208#art_46</comment>
+	</data>
 	<data name="Page not found" xml:space="preserve">
 		<value>Stranica nije pronađena</value>
 		<comment>404 page title</comment>
@@ -330,16 +342,18 @@
 	<data name="Potassium polyaspartate" xml:space="preserve">
 		<value>Kalijev poliaspartat</value>
 		<comment>Stabiliser</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Potassium sorbate" xml:space="preserve">
 		<value>Kalijev sorbat</value>
 		<comment>Preservative</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Preservative" xml:space="preserve">
 		<value>Konzervans</value>
 		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Produced by" xml:space="preserve">
+		<value>Proizvodi</value>
+		<comment>Indication of the producer.&#13; Regulated by Article 46 of Commission Delegated Regulation (EU) 2019/33.&#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02019R0033-20231208#art_46</comment>
 	</data>
 	<data name="Protein" xml:space="preserve">
 		<value>Bjelančevina</value>
@@ -377,6 +391,10 @@
 		<value>Sekvestrant</value>
 		<comment>IngredientCategory</comment>
 	</data>
+	<data name="Sold by" xml:space="preserve">
+		<value>Prodao</value>
+		<comment>Indication of the vendor (if not the producer).&#13; Regulated by Article 46 of Commission Delegated Regulation (EU) 2019/33.&#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02019R0033-20231208#art_46</comment>
+	</data>
 	<data name="Sparkling wine" xml:space="preserve">
 		<value>Pjenušac</value>
 		<comment>WineType</comment>
@@ -388,12 +406,10 @@
 	<data name="Sucrose" xml:space="preserve">
 		<value>Saharoza</value>
 		<comment>EnrichmentSubstance</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Sugar" xml:space="preserve">
 		<value>Šećer</value>
 		<comment>EnrichmentSubstance</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Sulphites" xml:space="preserve">
 		<value>Sulfiti</value>
@@ -411,7 +427,6 @@
 	<data name="Tartaric acid" xml:space="preserve">
 		<value>Vinska kiselina</value>
 		<comment>AcidityRegulator</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="This label isn't available. Sorry about that." xml:space="preserve">
 		<value>Ova oznaka nije dostupna. Žao mi je zbog toga.</value>
@@ -420,7 +435,6 @@
 	<data name="Tirage liqueur" xml:space="preserve">
 		<value>Tirage liker</value>
 		<comment>RawMaterial</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Web Accessibility Guidelines" xml:space="preserve">
 		<value>Smjernice za web pristupačnost</value>
@@ -437,7 +451,6 @@
 	<data name="Yeast mannoproteins" xml:space="preserve">
 		<value>Manoproteini kvasca</value>
 		<comment>Stabiliser</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="of which Saturates" xml:space="preserve">
 		<value>od kojih su zasićene</value>

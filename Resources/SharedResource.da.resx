@@ -73,7 +73,6 @@
 	<data name="Aleppo pine resin" xml:space="preserve">
 		<value>Aleppo fyrharpiks</value>
 		<comment>Other</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Antioxidant" xml:space="preserve">
 		<value>Antioxidant</value>
@@ -82,7 +81,14 @@
 	<data name="Ascorbic acid" xml:space="preserve">
 		<value>Ascorbinsyre</value>
 		<comment>Antioxidant</comment>
-		<comment>[]</comment>
+	</data>
+	<data name="Bottled and produced by" xml:space="preserve">
+		<value>Aftappet og produceret af</value>
+		<comment>Indication of the bottler and producer (if they concern the same natural or legal person).&#13; Regulated by Article 46 of Commission Delegated Regulation (EU) 2019/33.&#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02019R0033-20231208#art_46</comment>
+	</data>
+	<data name="Bottled by" xml:space="preserve">
+		<value>Aftappet af</value>
+		<comment>Indication of the bottler.&#13; Regulated by Article 46 of Commission Delegated Regulation (EU) 2019/33.&#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02019R0033-20231208#art_46</comment>
 	</data>
 	<data name="Bottled in a protective atmosphere" xml:space="preserve">
 		<value>Aftappet i en beskyttende atmosfære</value>
@@ -103,12 +109,10 @@
 	<data name="Calcium sulphate" xml:space="preserve">
 		<value>Calciumsulfat</value>
 		<comment>AcidityRegulator</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Caramel" xml:space="preserve">
 		<value>Karamel</value>
 		<comment>Other</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Carbohydrate" xml:space="preserve">
 		<value>Kulhydrat</value>
@@ -117,16 +121,22 @@
 	<data name="Carbon dioxide" xml:space="preserve">
 		<value>Carbondioxid</value>
 		<comment>RawMaterial</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Carboxymethylcellulose" xml:space="preserve">
 		<value>Carboxymethylcellulose</value>
 		<comment>Stabiliser</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Certifications" xml:space="preserve">
 		<value>Certificeringer</value>
 		<comment>Certifications</comment>
+	</data>
+	<data name="Certified Vegan by V-Label" xml:space="preserve">
+		<value>Certificeret vegansk af V-Label</value>
+		<comment>https://www.v-label.com/</comment>
+	</data>
+	<data name="Certified Vegetarian by V-Label" xml:space="preserve">
+		<value>Certificeret vegetar af V-Label</value>
+		<comment>https://www.v-label.com/</comment>
 	</data>
 	<data name="Certified organic based on EU-Guidelines" xml:space="preserve">
 		<value>Certificeret økologisk baseret på EU-retningslinjer</value>
@@ -135,7 +145,6 @@
 	<data name="Citric acid" xml:space="preserve">
 		<value>Citronsyre</value>
 		<comment>Stabiliser</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Clarifying agent" xml:space="preserve">
 		<value>Klargørende middel</value>
@@ -144,7 +153,10 @@
 	<data name="Concentrated grape must" xml:space="preserve">
 		<value>Koncentreret druemost</value>
 		<comment>EnrichmentSubstance</comment>
-		<comment>[]</comment>
+	</data>
+	<data name="Contains negligible amounts of" xml:space="preserve">
+		<value>Indeholder ubetydelige mængder af</value>
+		<comment>REGULATION (EU) No 1169/2011 Article 34 Section 5:&#13; https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02011R1169-20180101#tocId242</comment>
 	</data>
 	<data name="Correction of defect" xml:space="preserve">
 		<value>Korrektion af defekt</value>
@@ -153,7 +165,6 @@
 	<data name="Dimethyldicarbonate" xml:space="preserve">
 		<value>Dimethyldicarbonat</value>
 		<comment>Preservative</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Don't drink during pregnancy and breastfeeding" xml:space="preserve">
 		<value>Drik ikke under graviditet og amning</value>
@@ -195,7 +206,6 @@
 	<data name="Expedition liqueur" xml:space="preserve">
 		<value>Ekspedition likør</value>
 		<comment>RawMaterial</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Extra brut" xml:space="preserve">
 		<value>Ekstra brut</value>
@@ -220,7 +230,6 @@
 	<data name="Fumaric acid" xml:space="preserve">
 		<value>Fumarsyre</value>
 		<comment>Stabiliser</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Gases and packaging gas" xml:space="preserve">
 		<value>Gasser og emballagegas</value>
@@ -229,18 +238,20 @@
 	<data name="Grapes" xml:space="preserve">
 		<value>Druer</value>
 		<comment>RawMaterial&#13; &#13; Ingredients shall be designated by their specific name, with the exceptions provided for in the FIC Regulation and in Delegated Regulation (EU) 2019/33 (e.g. ‘grapes’ referring to the raw material).&#13; &#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208</comment>
-		<comment>[]</comment>
 		<comment>Ingredients shall be designated by their specific name, with the exceptions provided for in the FIC Regulation and in Delegated Regulation (EU) 2019/33 (e.g. ‘grapes’ referring to the raw material).</comment>
 		<comment>https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208</comment>
 	</data>
 	<data name="Gum arabic" xml:space="preserve">
 		<value>Gummi arabisk</value>
 		<comment>Stabiliser</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Home Page" xml:space="preserve">
 		<value>Hjemmeside</value>
 		<comment>Home</comment>
+	</data>
+	<data name="Imported by" xml:space="preserve">
+		<value>Importeret af</value>
+		<comment>Indication of the importer.&#13; Regulated by Article 46 of Commission Delegated Regulation (EU) 2019/33.&#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02019R0033-20231208#art_46</comment>
 	</data>
 	<data name="Ingredients" xml:space="preserve">
 		<value>Ingredienser</value>
@@ -254,12 +265,10 @@
 	<data name="Lactic acid" xml:space="preserve">
 		<value>Mælkesyre</value>
 		<comment>AcidityRegulator</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Malic acid" xml:space="preserve">
 		<value>Æblesyre</value>
 		<comment>AcidityRegulator</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Medium dry" xml:space="preserve">
 		<value>Middel tør</value>
@@ -272,7 +281,6 @@
 	<data name="Metatartaric acid" xml:space="preserve">
 		<value>Metatartarsyre</value>
 		<comment>Stabiliser</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Milk" xml:space="preserve">
 		<value>Mælk</value>
@@ -323,6 +331,10 @@
 		<value>Anden ingrediens</value>
 		<comment>IngredientCategory</comment>
 	</data>
+	<data name="Packaged by" xml:space="preserve">
+		<value>Pakket af</value>
+		<comment>In case of containers other than bottles, the words ‘packager’ and ‘packaged by (…)’ shall replace the words ‘bottler’ and ‘bottled by (…)’ respectively&#13; Regulated by Article 46 of Commission Delegated Regulation (EU) 2019/33.&#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02019R0033-20231208#art_46</comment>
+	</data>
 	<data name="Page not found" xml:space="preserve">
 		<value>Siden blev ikke fundet</value>
 		<comment>404 page title</comment>
@@ -330,16 +342,18 @@
 	<data name="Potassium polyaspartate" xml:space="preserve">
 		<value>Kaliumpolyaspartat</value>
 		<comment>Stabiliser</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Potassium sorbate" xml:space="preserve">
 		<value>Kaliumsorbat</value>
 		<comment>Preservative</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Preservative" xml:space="preserve">
 		<value>Konserveringsmiddel</value>
 		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Produced by" xml:space="preserve">
+		<value>Produceret af</value>
+		<comment>Indication of the producer.&#13; Regulated by Article 46 of Commission Delegated Regulation (EU) 2019/33.&#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02019R0033-20231208#art_46</comment>
 	</data>
 	<data name="Protein" xml:space="preserve">
 		<value>Protein</value>
@@ -377,6 +391,10 @@
 		<value>Beslaglæggelse</value>
 		<comment>IngredientCategory</comment>
 	</data>
+	<data name="Sold by" xml:space="preserve">
+		<value>Solgt af</value>
+		<comment>Indication of the vendor (if not the producer).&#13; Regulated by Article 46 of Commission Delegated Regulation (EU) 2019/33.&#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02019R0033-20231208#art_46</comment>
+	</data>
 	<data name="Sparkling wine" xml:space="preserve">
 		<value>Mousserende vin</value>
 		<comment>WineType</comment>
@@ -388,12 +406,10 @@
 	<data name="Sucrose" xml:space="preserve">
 		<value>Saccharose</value>
 		<comment>EnrichmentSubstance</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Sugar" xml:space="preserve">
 		<value>Sukker</value>
 		<comment>EnrichmentSubstance</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Sulphites" xml:space="preserve">
 		<value>Sulfitter</value>
@@ -411,7 +427,6 @@
 	<data name="Tartaric acid" xml:space="preserve">
 		<value>Vinsyre</value>
 		<comment>AcidityRegulator</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="This label isn't available. Sorry about that." xml:space="preserve">
 		<value>Denne etiket er ikke tilgængelig. Det er jeg ked af.</value>
@@ -420,7 +435,6 @@
 	<data name="Tirage liqueur" xml:space="preserve">
 		<value>Tirage likør</value>
 		<comment>RawMaterial</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="Web Accessibility Guidelines" xml:space="preserve">
 		<value>Retningslinjer for webtilgængelighed</value>
@@ -437,7 +451,6 @@
 	<data name="Yeast mannoproteins" xml:space="preserve">
 		<value>Gær mannoproteiner</value>
 		<comment>Stabiliser</comment>
-		<comment>[]</comment>
 	</data>
 	<data name="of which Saturates" xml:space="preserve">
 		<value>heraf mættede stoffer</value>
