@@ -5,8 +5,8 @@
    version="1.1"
    id="svg2"
    width="248.97519"
-   height="292.87997"
-   viewBox="0 0 248.97519 292.87998"
+   height="292.88"
+   viewBox="0 0 248.97519 292.88001"
    sodipodi:docname="certification-v-label-vegetarian.svg"
    inkscape:version="1.2.2 (b0a84865, 2022-12-01)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -38,7 +38,7 @@
      id="g8"
      inkscape:groupmode="layer"
      inkscape:label="ink_ext_XXXXXX"
-     transform="matrix(1.3333333,0,0,-1.3333333,-64.490134,338.45599)">
+     transform="matrix(1.3333333,0,0,-1.3333333,-66.762792,336.18334)">
     <g
        id="g10"
        transform="scale(0.1)"
@@ -46,9 +46,12 @@
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96">
       <path
-         d="m 524.625,2538.42 c -22.609,0 -40.949,-18.33 -40.949,-40.95 V 382.77 c 0,-22.61 18.34,-40.95 40.949,-40.95 H 2310.05 c 22.6,0 40.94,18.34 40.94,40.95 v 2114.7 c 0,22.62 -18.34,40.95 -40.94,40.95 H 524.625"
+         d="m 541.66995,2521.3751 c -22.609,0 -40.949,-18.33 -40.949,-40.95 V 365.72505 c 0,-22.61 18.34,-40.95 40.949,-40.95 H 2327.0949 c 22.6,0 40.94,18.34 40.94,40.95 V 2480.4251 c 0,22.62 -18.34,40.95 -40.94,40.95 H 541.66995"
          style="fill:#008940;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="path12" />
+         id="path12"
+         inkscape:export-filename="path12.svg"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
       <path
          d="m 1417.33,781.43 c 453.54,0 823.32,370 823.32,823.33 0,453.54 -369.78,823.33 -823.32,823.33 -453.326,0 -823.318,-369.79 -823.318,-823.33 0,-453.33 369.992,-823.33 823.318,-823.33"
          style="fill:#fff200;fill-opacity:1;fill-rule:nonzero;stroke:none"
