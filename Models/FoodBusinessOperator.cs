@@ -42,7 +42,7 @@ namespace ELabel.Models
         [Ganss.Excel.Column("FBOAdditionalInfo")]
         [Display(Name = "Additional information", Description = "Optional indications, like a code, VAT number or additional Impressum information.")]
         [StringLength(100)]
-        [DataType(DataType.Text)]
+        [DataType(DataType.MultilineText)]
         [MaxLength(100)]
         public string? AdditionalInfo { get; set; }
 

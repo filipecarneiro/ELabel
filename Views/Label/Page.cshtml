@@ -151,11 +151,11 @@
                     <span>@Model.FoodBusinessOperator.Address</span>
                     <br>
                 }
-                @if (!String.IsNullOrWhiteSpace(Model.FoodBusinessOperator.AdditionalInfo))
-                {
-                    <span>@Model.FoodBusinessOperator.AdditionalInfo</span>
-                }
             </p>
+            @if (!String.IsNullOrWhiteSpace(Model.FoodBusinessOperator.AdditionalInfo))
+            {
+                <pre>@Model.FoodBusinessOperator.AdditionalInfo</pre>
+            }
 
         </div>
     </div>

@@ -20,7 +20,7 @@
 </div>
 <div class="mb-3">
     <label asp-for="AdditionalInfo" class="form-label"></label>
-    <input asp-for="AdditionalInfo" class="form-control" aria-describedby="FoodBusinessOperatorAdditionalInfoHelp" autocomplete="off" />
+    <textarea asp-for="AdditionalInfo" class="form-control" aria-describedby="FoodBusinessOperatorAdditionalInfoHelp" autocomplete="off"></textarea>
     <div id="FoodBusinessOperatorAdditionalInfoHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "AdditionalInfo").FirstOrDefault()?.Description</div>
     <span asp-validation-for="AdditionalInfo" class="text-danger"></span>
 </div>
