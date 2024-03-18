@@ -1,6 +1,6 @@
 ﻿@model Certifications
 
-<div class="form-check">
+<div class="form-check mb-3">
     <img class="img-fluid float-end ms-5"
          style="max-height: 50px"
          loading="lazy"
@@ -12,7 +12,7 @@
     <div id="OrganicHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Organic").FirstOrDefault()?.Description</div>
     <span asp-validation-for="Organic" class="text-danger"></span>
 </div>
-<div class="form-check">
+<div class="form-check mb-3">
     <img class="img-fluid float-end ms-5"
          style="max-height: 50px"
          loading="lazy"
@@ -23,7 +23,7 @@
     <div id="VegetarianHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Vegetarian").FirstOrDefault()?.Description</div>
     <span asp-validation-for="Vegetarian" class="text-danger"></span>
 </div>
-<div class="form-check">
+<div class="form-check mb-3">
     <img class="img-fluid float-end ms-5"
          style="max-height: 50px"
          loading="lazy"
