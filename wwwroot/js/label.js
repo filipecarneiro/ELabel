@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
         switchTheme('dark');
     });
     btnLightTheme.addEventListener('click', function () {
-        switchTheme('light')
+        switchTheme('light');
     });
 });
 
