@@ -1,24 +1,36 @@
-﻿// Select Theme
+﻿// Function to switch theme
+function switchTheme(theme) {
+    var checkSwitchTheme = document.getElementById('checkSwitchTheme');
+
+    document.documentElement.setAttribute('data-bs-theme', theme);
+    switch (theme) {
+        case 'light':
+            checkSwitchTheme.checked = true;
+            break;
+        case 'dark':
+            checkSwitchTheme.checked = false;
+            break;
+    }
+}
+
+// Select Theme
 document.addEventListener('DOMContentLoaded', function () {
-    var htmlElement = document.documentElement;
     var checkSwitchTheme = document.getElementById('checkSwitchTheme');
     var btnDarkTheme = document.getElementById('btnDarkTheme');
     var btnLightTheme = document.getElementById('btnLightTheme');
     checkSwitchTheme.addEventListener('click', function () {
         if (checkSwitchTheme.checked) {
-            htmlElement.setAttribute('data-bs-theme', 'light');
+            switchTheme('light');
         }
         else {
-            htmlElement.setAttribute('data-bs-theme', 'dark');
+            switchTheme('dark');
         }
     });
     btnDarkTheme.addEventListener('click', function () {
-        checkSwitchTheme.checked = false;
-        htmlElement.setAttribute('data-bs-theme', 'dark');
+        switchTheme('dark');
     });
     btnLightTheme.addEventListener('click', function () {
-        checkSwitchTheme.checked = true;
-        htmlElement.setAttribute('data-bs-theme', 'light');
+        switchTheme('light');
     });
 });
 
@@ -30,3 +42,28 @@ document.addEventListener('DOMContentLoaded', function () {
         formLanguage.submit();
     };
 });
+
+
+//Auto Theme Selection
+(function () {
+  // Select the <html> element
+  const htmlElement = document.querySelector("html");
+
+  // Check if the data-bs-theme attribute is set to 'auto'
+  if (htmlElement.getAttribute("data-bs-theme") === 'auto') {
+    // Check user's color scheme preference
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        // Switch to dark theme
+        switchTheme('dark');
+    }
+    // Check user's color scheme preference
+    else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        // Switch to light theme
+        switchTheme('light');
+    }
+    else {
+        //deafaults to dark as previously
+        switchTheme('dark');
+    }
+ }
+})();
