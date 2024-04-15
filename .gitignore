@@ -375,3 +375,9 @@ FodyWeavers.xsd
 # Others
 /.gitattributes
 /*.tar
+
+# Output from WebCompiler
+/wwwroot/css/label.css
+/wwwroot/css/label.min.css
+/wwwroot/js/label.es5.min.js
+/wwwroot/js/label.es5.js
