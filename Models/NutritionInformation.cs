@@ -114,7 +114,7 @@ namespace ELabel.Models
         {
             NutritionInformation other = (NutritionInformation)this.MemberwiseClone();
             
-            other.Energy = new Energy(this.Energy.Kilocalorie);
+            other.Energy = new Energy(this.Energy.Kilocalorie, this.Energy.Kilojoule);
 
             return other;
         }
