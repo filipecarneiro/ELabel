@@ -3,7 +3,7 @@
   "defaultProvider": "cdnjs",
   "libraries": [
     {
-      "library": "bootstrap@5.3.2",
+      "library": "bootstrap@5.3.3",
       "destination": "wwwroot/lib/bootstrap/"
     },
     {
@@ -11,7 +11,7 @@
       "destination": "wwwroot/lib/jquery/"
     },
     {
-      "library": "jquery-validate@1.20.0",
+      "library": "jquery-validate@1.21.0",
       "destination": "wwwroot/lib/jquery-validate/"
     },
     {
@@ -19,7 +19,7 @@
       "destination": "wwwroot/lib/jquery-validation-unobtrusive/"
     },
     {
-      "library": "bootstrap-icons@1.11.2",
+      "library": "bootstrap-icons@1.11.3",
       "destination": "wwwroot/lib/bootstrap-icons/",
       "files": [
         "bootstrap-icons.svg",
@@ -47,7 +47,7 @@
     },
     {
       "provider": "cdnjs",
-      "library": "flag-icons@7.0.3",
+      "library": "flag-icons@7.2.3",
       "destination": "wwwroot/lib/flag-icons/"
     }
   ]
