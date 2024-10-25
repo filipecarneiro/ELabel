@@ -115,7 +115,7 @@
 		<comment>Other</comment>
 	</data>
 	<data name="Carbohydrate" xml:space="preserve">
-		<value>Carboidratos</value>
+		<value>Hidratos de carbono</value>
 		<comment>Nutrition Information</comment>
 	</data>
 	<data name="Carbon dioxide" xml:space="preserve">
@@ -216,7 +216,7 @@
 		<comment>Check glossary with tag "Wine sugar content"</comment>
 	</data>
 	<data name="Fat" xml:space="preserve">
-		<value>Gordura</value>
+		<value>Lípidos</value>
 		<comment>Nutrition Information</comment>
 	</data>
 	<data name="Fermentation agent" xml:space="preserve">
@@ -303,14 +303,14 @@
 		<comment>1</comment>
 	</data>
 	<data name="Nutrition Information" xml:space="preserve">
-		<value>Declaração nutricional</value>
+		<value>Declaração Nutricional</value>
 		<comment>Nutrition Information&#13; &#13; The presentation of the nutrition declaration is regulated in Article 34 of the FIC Regulation.&#13; &#13; The order of presentation of the different elements of the nutrition declaration is defined in Annex XV of the FIC Regulation.&#13; &#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02011R1169-20180101&amp;qid=1701362311604</comment>
 		<comment>The presentation of the nutrition declaration is regulated in Article 34 of the FIC Regulation.</comment>
 		<comment>The order of presentation of the different elements of the nutrition declaration is defined in Annex XV of the FIC Regulation.</comment>
 		<comment>https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02011R1169-20180101&amp;qid=1701362311604</comment>
 	</data>
 	<data name="Nutritions per" xml:space="preserve">
-		<value>Nutrição por</value>
+		<value>por</value>
 		<comment>Nutrition Information&#13; &#13; Energy values and nutrition values must be indicated per 100 g or per 100 ml (Article 32(2) of the FIC Regulation).&#13; &#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02011R1169-20180101&amp;qid=1701362311604</comment>
 		<comment>Energy values and nutrition values must be indicated per 100 g or per 100 ml (Article 32(2) of the FIC Regulation).</comment>
 		<comment>https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02011R1169-20180101&amp;qid=1701362311604</comment>
@@ -356,7 +356,7 @@
 		<comment>Indication of the producer.&#13; Regulated by Article 46 of Commission Delegated Regulation (EU) 2019/33.&#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02019R0033-20231208#art_46</comment>
 	</data>
 	<data name="Protein" xml:space="preserve">
-		<value>Proteína</value>
+		<value>Proteínas</value>
 		<comment>Nutrition Information</comment>
 	</data>
 	<data name="Raw material" xml:space="preserve">
@@ -457,7 +457,7 @@
 		<comment>Nutrition Information</comment>
 	</data>
 	<data name="of which Sugars" xml:space="preserve">
-		<value>dos quais Açúcares</value>
+		<value>dos quais açúcares</value>
 		<comment>Nutrition Information</comment>
 	</data>
 </root>
