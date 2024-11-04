@@ -21,15 +21,6 @@ namespace ELabel.Models
         [MaxLength(100)]
         public string? Name { get; set; }
 
-        [Obsolete]
-        [Column("FBOBusinessName")]
-        [Ganss.Excel.Column("FBOBusinessName")]
-        [Display(Name = "Business name", Description = "Food business operator business name.")]
-        [StringLength(100)]
-        [DataType(DataType.Text)]
-        [MaxLength(100)]
-        public string? BusinessName { get; set; }
-
         [Column("FBOAddress")]
         [Ganss.Excel.Column("FBOAddress")]
         [Display(Name = "Address", Description = "Food business operator address.")]

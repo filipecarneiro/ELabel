@@ -7,6 +7,8 @@ namespace ELabel.ViewModels
     {
         public required string Name { get; set; }
 
+        public string? Brand { get; set; }
+
         public float? Volume { get; set; }
 
         [Ganss.Excel.Column("Image")]

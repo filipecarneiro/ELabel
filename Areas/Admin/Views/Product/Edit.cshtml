@@ -26,6 +26,12 @@
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="mb-3">
+                <label asp-for="Brand" class="form-label"></label>
+                <input asp-for="Brand" class="form-control" aria-describedby="BrandHelp" autocomplete="off" />
+                <div id="BrandHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Brand").FirstOrDefault()?.Description</div>
+                <span asp-validation-for="Brand" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
                 <label asp-for="Volume" class="form-label"></label>
                 <input asp-for="Volume" class="form-control" aria-describedby="VolumeHelp" />
                 <div id="VolumeHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Volume").FirstOrDefault()?.Description</div>

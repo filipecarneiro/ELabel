@@ -10,6 +10,9 @@ namespace ELabel.Models
         [MaxLength(100)]
         public required string Name { get; set; }
 
+        [MaxLength(100)]
+        public string? Brand { get; set; }
+
         public float? Volume { get; set; }
 
         public float? Weight { get; set; }

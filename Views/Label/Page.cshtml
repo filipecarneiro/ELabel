@@ -7,7 +7,7 @@
 
 <div class="text-center py-3">
     <h1 class="fs-1 text-uppercase">@Model.Title</h1>
-    <h2 class="fs-1">@Model.FoodBusinessOperator?.Name</h2>
+    <h2 class="fs-1">@Model.Brand</h2>
     <p class="fs-3">@Model.WineInformation?.Appellation</p>
 </div>
 
@@ -133,17 +133,9 @@
             }
 
             <p>
-                @if (!String.IsNullOrWhiteSpace(Model.FoodBusinessOperator.Name) || !String.IsNullOrWhiteSpace(Model.FoodBusinessOperator.BusinessName))
+                @if (!String.IsNullOrWhiteSpace(Model.FoodBusinessOperator.Name))
                 {
-                    @if (!String.IsNullOrWhiteSpace(Model.FoodBusinessOperator.Name))
-                    {
-                        <span>@Model.FoodBusinessOperator.Name</span>
-                    }
-                    else
-                    {
-                        // TODO: Remove FoodBusinessOperator BusinessName
-                        <span>@Model.FoodBusinessOperator.BusinessName</span>
-                    }
+                    <span>@Model.FoodBusinessOperator.Name</span>
                     <br>
                 }
                 @if (!String.IsNullOrWhiteSpace(Model.FoodBusinessOperator.Address))

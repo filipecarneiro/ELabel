@@ -12,6 +12,11 @@ namespace ELabel.ViewModels
         [DataType(DataType.Text)]
         public required string Name { get; set; }
 
+        [Display(Name = "Brand", Description = "Brand, producer or product marketing name.")]
+        [StringLength(100)]
+        [DataType(DataType.Text)]
+        public string? Brand { get; set; }
+
         [Display(Name = "Net volume", Description = "Enter the volume of the liquid in liters.")]
         [Range(float.Epsilon, float.MaxValue)]
         [DisplayFormat(DataFormatString = "{0:G} l")]

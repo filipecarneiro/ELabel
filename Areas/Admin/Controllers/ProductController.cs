@@ -248,7 +248,7 @@ namespace ELabel.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Name,Volume,Weight,Kind,WineInformation,ProductIngredients,PackagingGases,NutritionInformation,ResponsibleConsumption,Certifications,FoodBusinessOperator,Logistics,Portability")] WineProductEditDto wineProductEditDto)
+        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Name,Brand,Volume,Weight,Kind,WineInformation,ProductIngredients,PackagingGases,NutritionInformation,ResponsibleConsumption,Certifications,FoodBusinessOperator,Logistics,Portability")] WineProductEditDto wineProductEditDto)
         {
             if (id != wineProductEditDto.Id)
             {
