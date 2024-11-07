@@ -91,11 +91,11 @@
 		<comment>Indication of the bottler.&#13; Regulated by Article 46 of Commission Delegated Regulation (EU) 2019/33.&#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02019R0033-20231208#art_46</comment>
 	</data>
 	<data name="Bottled in a protective atmosphere" xml:space="preserve">
-		<value>Engarrafado numa atmosfera protetora</value>
+		<value>Engarrafado em atmosfera protetora</value>
 		<comment>Packaging gases&#13; Article 48a(6) of Delegated Regulation (EU) 2019/33 clearly states, ‘the indication of additives falling under the&#13; category “packaging gases” in the list of ingredients may be replaced by the specific particular “Bottled in a&#13; protective atmosphere” or “Bottling may happen in a protective atmosphere”’. &#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208</comment>
 	</data>
 	<data name="Bottling may happen in a protective atmosphere" xml:space="preserve">
-		<value>O engarrafamento pode acontecer numa atmosfera protetora</value>
+		<value>O engarrafamento pode ocorrer em atmosfera protetora</value>
 		<comment>Packaging gases&#13; Article 48a(6) of Delegated Regulation (EU) 2019/33 clearly states, ‘the indication of additives falling under the&#13; category “packaging gases” in the list of ingredients may be replaced by the specific particular “Bottled in a&#13; protective atmosphere” or “Bottling may happen in a protective atmosphere”’. &#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208</comment>
 	</data>
 	<data name="Brut" xml:space="preserve">
