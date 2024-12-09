@@ -84,7 +84,7 @@
 	</data>
 	<data name="Bottled and produced by" xml:space="preserve">
 		<value>Pudelēs pildījis un ražojis</value>
-		<comment>Indication of the bottler and producer (if they concern the same natural or legal person).&#13; Regulated by Article 46 of Commission Delegated Regulation (EU) 2019/33.&#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02019R0033-20231208#art_46</comment>
+		<comment>Deprecated. Use "Produced and Bottled by"</comment>
 	</data>
 	<data name="Bottled by" xml:space="preserve">
 		<value>Pudelēs iepildīts ar</value>
@@ -350,6 +350,10 @@
 	<data name="Preservative" xml:space="preserve">
 		<value>Konservantu</value>
 		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Produced and Bottled by" xml:space="preserve">
+		<value>Ražots un iepildīts pudelēs</value>
+		<comment>Indication of the producer and bottler (if they concern the same natural or legal person).&#13; Regulated by Article 46 of Commission Delegated Regulation (EU) 2019/33.&#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02019R0033-20231208#art_46</comment>
 	</data>
 	<data name="Produced by" xml:space="preserve">
 		<value>Režisors</value>

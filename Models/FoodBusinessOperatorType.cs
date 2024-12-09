@@ -31,7 +31,7 @@ namespace ELabel.Models
         [Display(Name = "Importer", Description = "Imported by")]
         Importer = 5,
 
-        [Display(Name = "Bottler and Producer", Description = "Bottled and produced by")]
-        BottlerAndProducer = 6
+        [Display(Name = "Producer and Bottler", Description = "Produced and Bottled by")]
+        ProducerAndBottler = 6
     }
 }
