@@ -35,7 +35,7 @@ namespace ELabel.Areas.Admin.Controllers
                 return Problem("Entity set 'ApplicationDbContext.Product'  is null.");
             }
 
-            ViewBag.SortParmName = string.IsNullOrEmpty(sortOrder) ? "-Name" : "";
+            ViewBag.SortParmName = sortOrder == "Name" ? "-Name" : "Name";
             ViewBag.SortParmVolume = sortOrder == "Volume" ? "-Volume" : "Volume";
             ViewBag.SortParmWineVintage = sortOrder == "WineVintage" ? "-WineVintage" : "WineVintage";
             ViewBag.SortParmWineType = sortOrder == "WineType" ? "-WineType" : "WineType";
@@ -45,9 +45,9 @@ namespace ELabel.Areas.Admin.Controllers
 
             var query = _context.Product
                                 .AsNoTracking()
-                                .OrderBy(i => i.Name)
+                                .OrderByDescending(i => i.WineInformation.Vintage)
+                                .ThenBy(i => i.Name)
                                 .ThenBy(i => i.Volume)
-                                .ThenBy(i => i.WineInformation.Vintage)
                                 .AsQueryable()
                                 .AsEnumerable();
 
@@ -74,7 +74,10 @@ namespace ELabel.Areas.Admin.Controllers
 
             switch (sortOrder)
             {
-                default: // "Name":
+                default:
+                    query = query.OrderByDescending(p => p.WineInformation.Vintage).ThenBy(p => p.Name).ThenBy(p => p.Volume);
+                    break;
+                case "Name":
                     query = query.OrderBy(p => p.Name).ThenBy(p => p.Volume).ThenBy(p => p.WineInformation.Vintage);
                     break;
                 case "-Name":
@@ -87,10 +90,10 @@ namespace ELabel.Areas.Admin.Controllers
                     query = query.OrderByDescending(p => p.Volume).ThenBy(p => p.Name).ThenBy(p => p.Volume).ThenBy(p => p.WineInformation.Vintage);
                     break;
                 case "WineVintage":
-                    query = query.OrderBy(p => p.WineInformation.Vintage).ThenBy(p => p.Name).ThenBy(p => p.Volume).ThenBy(p => p.WineInformation.Vintage);
+                    query = query.OrderBy(p => p.WineInformation.Vintage).ThenBy(p => p.Name).ThenBy(p => p.Volume);
                     break;
                 case "-WineVintage":
-                    query = query.OrderByDescending(p => p.WineInformation.Vintage).ThenBy(p => p.Name).ThenBy(p => p.Volume).ThenBy(p => p.WineInformation.Vintage);
+                    query = query.OrderByDescending(p => p.WineInformation.Vintage).ThenBy(p => p.Name).ThenBy(p => p.Volume);
                     break;
                 case "WineType":
                     query = query.OrderBy(p => p.WineInformation.Type).ThenBy(p => p.Name).ThenBy(p => p.Volume).ThenBy(p => p.WineInformation.Vintage);
