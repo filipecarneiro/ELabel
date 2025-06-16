@@ -47,7 +47,7 @@
     },
     {
       "provider": "cdnjs",
-      "library": "flag-icons@7.2.3",
+      "library": "flag-icons@7.5.0",
       "destination": "wwwroot/lib/flag-icons/"
     }
   ]
