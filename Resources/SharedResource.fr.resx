@@ -185,7 +185,6 @@
 	<data name="Egg" xml:space="preserve">
 		<value>Œuf</value>
 		<comment>ClarifyingAgent</comment>
-		<comment>1</comment>
 	</data>
 	<data name="Electronic label provided by" xml:space="preserve">
 		<value>Étiquette électronique fournie par</value>
@@ -232,7 +231,7 @@
 		<comment>Stabiliser</comment>
 	</data>
 	<data name="Gases and packaging gas" xml:space="preserve">
-		<value>Gaz et gas d'emballage</value>
+		<value>Gaz et gaz d'emballage</value>
 		<comment>IngredientCategory</comment>
 	</data>
 	<data name="Grapes" xml:space="preserve">
@@ -254,7 +253,7 @@
 		<comment>Indication of the importer.&#13; Regulated by Article 46 of Commission Delegated Regulation (EU) 2019/33.&#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02019R0033-20231208#art_46</comment>
 	</data>
 	<data name="Ingredients" xml:space="preserve">
-		<value>Ingredientes</value>
+		<value>Ingrédients</value>
 		<comment>Ingredients&#13; &#13; Table 2 of Part A of Annex I of Delegated Regulation (EU) 2019/934 identifies the full list of additives and processing aids that can be used in wine production.&#13; &#13; https://eur-lex.europa.eu/search.html?scope=EURLEX&amp;text=2019%2F934&amp;lang=en&amp;type=quick&amp;qid=1701362513497</comment>
 		<comment>Table 2 of Part A of Annex I of Delegated Regulation (EU) 2019/934 identifies the full list of additives and processing aids that can be used in wine productionhttps://eur-lex.europa.eu/search.html?scope=EURLEX&amp;text=2019%2F934&amp;lang=en&amp;type=quick&amp;qid=1701362513497</comment>
 	</data>
@@ -271,11 +270,11 @@
 		<comment>AcidityRegulator</comment>
 	</data>
 	<data name="Medium dry" xml:space="preserve">
-		<value>Demi-sec</value>
+		<value>Demi sec</value>
 		<comment>Check glossary with tag "Wine sugar content"</comment>
 	</data>
 	<data name="Medium sweet" xml:space="preserve">
-		<value>Demi-doux</value>
+		<value>Moelleux</value>
 		<comment>Check glossary with tag "Wine sugar content"</comment>
 	</data>
 	<data name="Metatartaric acid" xml:space="preserve">
@@ -285,22 +284,18 @@
 	<data name="Milk" xml:space="preserve">
 		<value>Lait</value>
 		<comment>ClarifyingAgent</comment>
-		<comment>1</comment>
 	</data>
 	<data name="Milk casein" xml:space="preserve">
 		<value>Caséine du lait</value>
 		<comment>ClarifyingAgent</comment>
-		<comment>1</comment>
 	</data>
 	<data name="Milk products" xml:space="preserve">
 		<value>Produits laitiers</value>
 		<comment>ClarifyingAgent</comment>
-		<comment>1</comment>
 	</data>
 	<data name="Milk protein" xml:space="preserve">
 		<value>Protéine de lait</value>
 		<comment>ClarifyingAgent</comment>
-		<comment>1</comment>
 	</data>
 	<data name="Nutrition Information" xml:space="preserve">
 		<value>Information nutritionnelle</value>
@@ -418,7 +413,6 @@
 	<data name="Sulphites" xml:space="preserve">
 		<value>Sulfites</value>
 		<comment>Preservative</comment>
-		<comment>1</comment>
 	</data>
 	<data name="Sweet" xml:space="preserve">
 		<value>Doux</value>
