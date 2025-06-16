@@ -105,14 +105,14 @@ echo "ADMIN_PASSWORD=MyAdminPassword" >> .env
 3 Start all containers:
 
 ```shell
-docker-compose pull
-docker-compose up -d
+docker compose pull
+docker compose up -d
 ```
 
 4 View Logs:
 
 ```shell
-docker-compose logs -f
+docker compose logs -f
 ```
 
 `db` will take some time in the first start, so the app will restart a couple of times. Be patient!
